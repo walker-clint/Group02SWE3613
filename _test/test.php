@@ -16,9 +16,13 @@
         <div>
             <h2>Get list of all songs as array</h2>
             echo var_dump(getAllSongs());
-            <table border="1"><td><?php
-            echo var_dump(getAllSongs());
-            ?></td></table>
+            <table border="1">
+                <td>
+                    <?php
+                    echo var_dump(getAllSongs());
+                    ?>
+                </td>
+            </table>
         </div>
         <p>This is a simple var_dump(ARRAY) which causes the php to spit out an array and it's metadata.  
             The function returns a php array.
@@ -27,9 +31,13 @@
         <div>
             <h2>Get user 1's mix tape</h2>
             echo var_dump(getUserMixTape(1));
-            <table border="1"><td><?php
-            echo var_dump(getUserMixTape(1));
-            ?></td>
+            <table border="1">
+                <td>
+                    <?php
+                    echo var_dump(getUserMixTape(1));
+                    ?>
+                </td>
+            </table>
         </div>
     </body>
 </html>
