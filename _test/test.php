@@ -15,6 +15,7 @@
 
         <div>
             <h2>Get list of all songs as array</h2>
+            echo var_dump(getAllSongs());
             <table border="1"><td><?php
             echo var_dump(getAllSongs());
             ?></td></table>
@@ -25,6 +26,7 @@
 
         <div>
             <h2>Get user 1's mix tape</h2>
+            echo var_dump(getUserMixTape(1));
             <table border="1"><td><?php
             echo var_dump(getUserMixTape(1));
             ?></td>
