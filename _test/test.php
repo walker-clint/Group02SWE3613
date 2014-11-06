@@ -21,7 +21,7 @@
             ?></td></table>
         </div>
         <p>This is a simple var_dump(ARRAY) which causes the php to spit out an array and it's metadata.  
-            The function 'getAllSongs($con)' returns a php array.
+            The function returns a php array.
         </p>
 
         <div>
