@@ -1,6 +1,6 @@
 <?php
 
-function init() {
+function initializeConnection() {
     $host = 'swe3613.com';
     $user = 'wapp02p2swe3613';
     $pass = '345dfg567dss';
@@ -15,7 +15,7 @@ function init() {
 }
 
 function getAllSongs() {
-    $con = init();
+    $con = initializeConnection();
     
     $query = 'SELECT title '
             . 'FROM tbl_song';
