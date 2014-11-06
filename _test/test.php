@@ -8,7 +8,7 @@
     <body>
         <h2>Sample query<br></h2>
         <p>The following demonstrates a simple SQL query via PHP</p>
-        <p>'queries' (will) contain the php functions that return the neccessary information gathered from an SQL query</p>
+        <p>'queries.php' (will) contain the php functions that return the necessary information gathered from an SQL query</p>
         <p>In this way one all the queries (as functions) can be written into one central location.</p>
 
         <div style="border: solid black 1px">
