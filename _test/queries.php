@@ -16,6 +16,54 @@ function initializeConnection() {
     return $con;
 }
 
+function getBestMixTape() {
+    $con = initializeConnection();
+
+    $query = 'SELECT tbl_mixtape.song_id, COUNT(*) ' .
+            'FROM tbl_mixtape ' .
+            'GROUP BY tbl_mixtape.song_id ' .
+            'ORDER BY COUNT(*) DESC ' .
+            'LIMIT 10;';
+    $stmt = $con->prepare($query);
+
+    $stmt->execute();
+    $stmt->bind_result($id, $song_count);
+    $returnArray = array();
+    while ($stmt->fetch()) {
+        //$genre = getSongGenre($id);
+        //$artist = getSongArtist($id);
+        //$tempSong = new Song($id, $song_title, $app, $flag, $you, $youApp, $genre, $artist);
+        $returnString = $id;// . '|' . $song_count;
+        array_push($returnArray, $returnString);
+    }
+
+    return $returnArray;
+}
+
+function getSong($songIDinc) {
+    $songID = htmlspecialchars($songIDinc);
+
+    $con = initializeConnection();
+
+    $query = 'SELECT song_id, title, approved, flagged, youtube, youtube_approved '
+            . 'FROM tbl_song '
+            . 'WHERE tbl_song.song_id = ?';
+    $stmt = $con->prepare($query);
+
+    $stmt->bind_param('i', $songID);
+    $stmt->execute();
+    $stmt->bind_result($id, $song_title, $app, $flag, $you, $youApp);
+    //$returnArray = array();
+    //while ($stmt->fetch()) {
+    $stmt->fetch();
+    $genre = getSongGenre($id);
+    $artist = getSongArtist($id);
+    $tempSong = new Song($id, $song_title, $app, $flag, $you, $youApp, $genre, $artist);
+    //array_push($returnArray, $tempSong);
+    //}
+    return $tempSong;
+}
+
 function getAllSongs() {
     $con = initializeConnection();
 
