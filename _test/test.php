@@ -21,8 +21,8 @@
                     The fields of a Song are accessible by $songVariableName->FieldName<br>
                     For example, '$mySong->title' is the title of $mySong
                 </p>
-                A list contains the following fields:
-                <ul>
+                A Song contains the following fields:
+                <ul style = "border: 1px solid black">
                     <li>id</b></li>the song's primary key
                     <li>title</b></li>the song's title
                     <li>approved</li>whether the song has been approved or not
