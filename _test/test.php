@@ -17,10 +17,8 @@
             <h2>Song Object</h2>
             <p>A Song Object is a php representation of a tbl_song record from SQL</p>
             <div>
-                <p>
-                    The fields of a Song are accessible by $songVariableName->FieldName<br>
-                    For example, '$mySong->title' is the title of $mySong
-                </p>
+                <p>The fields of a Song are accessible by $songVariableName->FieldName<br>
+                    For example, '$mySong->title' is the title of $mySong</p>
                 A Song contains the following fields:
                 <ul style = "border: 1px solid black">
                     <li>id</b></li>the song's primary key
@@ -40,23 +38,17 @@
             The best mix tape, the 10 most popular songs<br>
             getBestMixTape()
             <table border="1">
-                <tr>
-                    <td>
-                        <?php
+                <tr><td><?php
                         $mixTapeList = getBestMixTape();
                         echo var_dump($mixTapeList);
                         ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <?php
+                    </td></tr>
+                <tr><td><?php
                         foreach ($mixTapeList as $tempSong) {
                             echo getSong($tempSong) . '<br>';
                         }
                         ?>
-                    </td>
-                </tr>
+                    </td></tr>
             </table>
         </div>
 
@@ -65,41 +57,24 @@
             <p>The function returns a php array of Song objects.
             </p>
             <table border="1">
-                <tr>
-                    <td>
-                        getAllSongs()
-                    </td>
-<!--                    <td>
-                        Song<br>
-                    </td>-->
-                </tr>
-                <tr>
-                    <td>
-                        <?php
+                <tr><td>getAllSongs()</td></tr>
+
+                <tr><td><?php
                         $songArray = getAllSongs();
                         foreach ($songArray as $incSong) {
                             if ($incSong instanceof Song) {
                                 echo $incSong . '<br>';
                             }
                         }
-                        ?>
-                    </td>
-<!--                    <td>
-                    <?php
-                    //echo var_dump($songArray);
-                    ?>
-                    </td>-->
-                </tr>
+                        ?></td></tr>
             </table>
         </div>
-
 
         <div>
             <h2>Get user 1's mix tape</h2>
             getUserMixTape(1)
             <table border="1">
-                <td>
-                    <?php
+                <td><?php
                     echo var_dump(getUserMixTape(1));
                     ?>
                 </td>
@@ -107,22 +82,20 @@
         </div>
 
         <div>
-            <h2>Get a song's genres</h2>
-            getSongGenre(1)
+            <h2>Get a song's genres/artists</h2>
+            getSongGenre(1)<br>
+            getSongArtist(1)
             <table border="1">
-                <td>
-                    <?php
-                    echo var_dump(getSongGenre(1));
-                    ?>
-                </td>
+                <tr><td><?php echo var_dump(getSongGenre(1)); ?></td></tr>
+                <tr><td><?php echo var_dump(getSongArtist(1)); ?></td></tr>
+
             </table>
-            echo var_dump(getSongGenre(4));
+            
+            getSongGenre(11)<br>
+            getSongArtist(11)
             <table border="1">
-                <td>
-                    <?php
-                    echo var_dump(getSongGenre(4));
-                    ?>
-                </td>
+                <tr><td><?php echo var_dump(getSongGenre(11)); ?></td></tr>
+                <tr><td><?php echo var_dump(getSongArtist(11)); ?></td></tr>
             </table>
         </div>
     </body>
