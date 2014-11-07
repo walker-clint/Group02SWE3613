@@ -1,5 +1,7 @@
 <?php
 
+include './objects.php';
+
 function initializeConnection() {
     $host = 'swe3613.com';
     $user = 'wapp02p2swe3613';
@@ -17,15 +19,18 @@ function initializeConnection() {
 function getAllSongs() {
     $con = initializeConnection();
 
-    $query = 'SELECT title '
+    $query = 'SELECT song_id, title, approved, flagged, youtube, youtube_approved '
             . 'FROM tbl_song';
     $stmt = $con->prepare($query);
 
     $stmt->execute();
-    $stmt->bind_result($song_title);
+    $stmt->bind_result($id, $song_title, $app, $flag, $you, $youApp);
     $returnArray = array();
     while ($stmt->fetch()) {
-        array_push($returnArray, $song_title);
+        $genre = getSongGenre($id);
+        $artist = getSongArtist($id);
+        $tempSong = new Song($id, $song_title, $app, $flag, $you, $youApp, $genre, $artist);
+        array_push($returnArray, $tempSong);
     }
     return $returnArray;
 }
@@ -65,10 +70,32 @@ function getSongGenre($songIDinc) {
     $stmt->bind_param('i', $songID);
     $stmt->execute();
     $stmt->bind_result($songGenre);
-    
+
     $returnArray = array();
     while ($stmt->fetch()) {
         array_push($returnArray, $songGenre);
+    }
+    return $returnArray;
+}
+
+function getSongArtist($songIDinc) {
+    $songID = htmlspecialchars($songIDinc);
+
+    $con = initializeConnection();
+
+    $query = 'SELECT tbl_artist.name '
+            . 'FROM tbl_artist '
+            . 'JOIN tbl_song_artist ON tbl_song_artist.artist_id = tbl_artist.artist_id '
+            . 'WHERE tbl_song_artist.song_id = ?';
+    $stmt = $con->prepare($query);
+
+    $stmt->bind_param('i', $songID);
+    $stmt->execute();
+    $stmt->bind_result($songArtist);
+
+    $returnArray = array();
+    while ($stmt->fetch()) {
+        array_push($returnArray, $songArtist);
     }
     return $returnArray;
 }
