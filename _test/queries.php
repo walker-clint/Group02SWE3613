@@ -31,8 +31,8 @@ function getAllSongs() {
 }
 
 function getUserMixTape($userIDinc) {
-    $userID=  htmlspecialchars($userIDinc);
-    
+    $userID = htmlspecialchars($userIDinc);
+
     $con = initializeConnection();
 
     $query = 'SELECT tbl_song.title, tbl_mixtape.position FROM tbl_song ' .
@@ -41,12 +41,34 @@ function getUserMixTape($userIDinc) {
             'ORDER BY tbl_mixtape.position;';
     $stmt = $con->prepare($query);
 
-    $stmt->bind_param('i',$userID);
+    $stmt->bind_param('i', $userID);
     $stmt->execute();
-    $stmt->bind_result($song_title,$song_position);
+    $stmt->bind_result($song_title, $song_position);
     $returnArray = array();
     while ($stmt->fetch()) {
-        array_push($returnArray, ($song_title.' | '.$song_position));
+        array_push($returnArray, ($song_title . ' | ' . $song_position));
+    }
+    return $returnArray;
+}
+
+function getSongGenre($songIDinc) {
+    $songID = htmlspecialchars($songIDinc);
+
+    $con = initializeConnection();
+
+    $query = 'SELECT tbl_genre.name '
+            . 'FROM tbl_genre '
+            . 'JOIN tbl_song_genre ON tbl_song_genre.genre_id = tbl_genre.genre_id '
+            . 'WHERE tbl_song_genre.song_id = ?';
+    $stmt = $con->prepare($query);
+
+    $stmt->bind_param('i', $songID);
+    $stmt->execute();
+    $stmt->bind_result($songGenre);
+    
+    $returnArray = array();
+    while ($stmt->fetch()) {
+        array_push($returnArray, $songGenre);
     }
     return $returnArray;
 }
