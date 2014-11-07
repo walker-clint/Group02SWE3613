@@ -98,7 +98,7 @@ a.show-sidebar:hover {
 }
 .nav.main-menu > li > a, .nav.msg-menu > li > a {
   text-align: center;
-  color:#700000;
+  color:#000000;
   min-height: 40px;
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
@@ -111,7 +111,7 @@ a.show-sidebar:hover {
 .nav.main-menu > li > a:hover, .nav.main-menu > li > a:focus, .nav.main-menu > li.active > a, .nav.main-menu .open > a, .nav.main-menu .open > a:hover, .nav.main-menu .open > a:focus, .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover, .dropdown-menu > li.active > a,
 .nav.msg-menu > li > a:hover, .nav.msg-menu > li > a:focus, .nav.msg-menu > li.active > a, .nav.msg-menu .open > a, .nav.msg-menu .open > a:hover, .nav.msg-menu .open > a:focus {
   background:rgba(0, 0, 0, 0.1);
-  color:#f0f0f0;
+  color:#700000;
 }
 .nav.main-menu a.active, .nav.msg-menu a.active {
   background:rgba(0, 0, 0, 0.2);
