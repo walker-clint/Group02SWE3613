@@ -22,8 +22,28 @@ class Song {
         $this->artist = $art;
     }
 
+    private function getGenres() {
+        $genreString = '';
+
+        foreach ($this->genres as $genre) {
+            $genreString.=$genre;
+        }
+
+        return $genreString;
+    }
+
+    private function getArtists() {
+        $artistString = '';
+
+        foreach ($this->artist as $art) {
+            $artistString.=$art;
+        }
+
+        return $artistString;
+    }
+
     public function __toString() {
-        return $this->title;
+        return $this->title . '| Genre: ' . $this->getGenres() . '| Artist: ' . $this->getArtists();
     }
 
     function printSong() {
