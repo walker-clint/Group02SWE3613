@@ -26,7 +26,7 @@ class Song {
         $genreString = '';
 
         foreach ($this->genres as $genre) {
-            $genreString.=$genre;
+            $genreString.=$genre.' ';
         }
 
         return $genreString;
@@ -36,7 +36,7 @@ class Song {
         $artistString = '';
 
         foreach ($this->artist as $art) {
-            $artistString.=$art;
+            $artistString.=$art.' ';
         }
 
         return $artistString;
