@@ -98,7 +98,7 @@ a.show-sidebar:hover {
 }
 .nav.main-menu > li > a, .nav.msg-menu > li > a {
   text-align: center;
-  color:#f0f0f0;
+  color:#700000;
   min-height: 40px;
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
