@@ -69,6 +69,24 @@
                         ?></td></tr>
             </table>
         </div>
+        
+        <div>
+            <h2>Get list of approved songs as array</h2>
+            <p>The function returns a php array of Song objects.
+            </p>
+            <table border="1">
+                <tr><td>getAllSongs()</td></tr>
+
+                <tr><td><?php
+                        $songArray = getApprovedSongs();
+                        foreach ($songArray as $incSong) {
+                            if ($incSong instanceof Song) {
+                                echo $incSong . '<br>';
+                            }
+                        }
+                        ?></td></tr>
+            </table>
+        </div>
 
         <div>
             <h2>Get user 1's mix tape</h2>
