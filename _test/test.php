@@ -39,5 +39,25 @@
                 </td>
             </table>
         </div>
+
+        <div>
+            <h2>Get a song's genres</h2>
+            echo var_dump(getSongGenre(1));
+            <table border="1">
+                <td>
+                    <?php
+                    echo var_dump(getSongGenre(1));
+                    ?>
+                </td>
+            </table>
+            echo var_dump(getSongGenre(4));
+            <table border="1">
+                <td>
+                    <?php
+                    echo var_dump(getSongGenre(4));
+                    ?>
+                </td>
+            </table>
+        </div>
     </body>
 </html>
