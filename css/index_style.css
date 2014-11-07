@@ -24,7 +24,7 @@ h1{
 
 #logo {
     position:relative;
-    background: #707070; // url(../img/devoops_pattern_b10.png) 0 0 repeat;
+    background: #700000; // url(../img/devoops_pattern_b10.png) 0 0 repeat;
 }
 #logo a {
     color: #fff;
@@ -53,7 +53,7 @@ h1{
     -moz-border-radius: 0;
     border-radius: 0;
     box-shadow: 0 1px 2px #272727;
-    background: #707070;
+    background: #700000;
     z-index: 2000;
 }
 .body-expanded .navbar {
@@ -63,10 +63,10 @@ h1{
 #top-panel {
     line-height: 50px;
     height: 50px;
-    background: #707070;
+    background: #700000;
 }
 #main {
-    margin-top: 200px;
+    margin-top: 50px;
     min-height: 800px;
     overflow: hidden;
 }
