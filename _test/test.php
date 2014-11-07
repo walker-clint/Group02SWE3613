@@ -54,17 +54,16 @@
                     <td>
                         <?php
                         $songArray = getAllSongs();
-                        echo var_dump($songArray);
-                        ?>
-                    </td>
-                    <td>
-                        <?php
-                        //$songArray = getAllSongs();
                         foreach ($songArray as $incSong) {
                             if ($incSong instanceof Song) {
                                 echo $incSong . '<br>';
                             }
                         }
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo var_dump($songArray);
                         ?>
                     </td>
                 </tr>
