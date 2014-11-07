@@ -6,7 +6,7 @@
     <meta name="description" content="description">
     <meta name="author" content="Crazy Leroy's Music">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="plugins/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
@@ -30,7 +30,7 @@
                 <img src="img/cllogo_medium.png" class="img-rounded"/>
             </div>
             <ul>
-               <br><br>
+                <br><br>
             </ul>
             <ul class="nav navbar-nav pull-right panel-menu">
                 <li class="dropdown">
@@ -75,25 +75,48 @@
 </header>
 <!--End Header-->
 <!--Start Middle-->
-<div id="main" class="middle">
+<div id="main" class="container">
 
-    <div class="row">
+    <div class="container">
         <!--Start Content-->
         <div class="container-fluid">
             <div id="left-column" class="col-xs-4">
-                <p align="center">1------------------------------------------------------------------------------------------1</p>
+                <div class="well bs-component">
+                    <!--<legend>LEFT COLUMN</legend>-->
+                    <h1>Left Column</h1>
+
+                    <div class="form-horizontal" action="" method="POST"></div>
+
+                    <div class="well-1 bs-component">
+                        <p align="center">
+                            1------------------------------------------------------------------------------------------1</p>
+                    </div>
+                </div>
             </div>
             <div id="right-column" class="col-xs-8">
-                <p align="center">2--------------------------------------------------------------------------------------------------------------------------------------------------------------2 </p>
+                <div class="well bs-component">
+                    <!--<legend>RIGHT COLUMN</legend>-->
+                    <h1>Right Column</h1>
+
+                    <div class="form-horizontal" action="" method="POST"></div>
+                    <!--Start well-1-->
+                    <!--Write php to create a well-1 component around each list entry -->
+                    <div class="well-1 bs-component">
+                        <p align="center">
+                            2--------------------------------------------------------------------------------------------------------------------------------------------------------------2 </p>
+                    </div>
+                    <!--End well-1-->
+                </div>
             </div>
-
-
-
         </div>
-
-
-        <!--End Content-->
     </div>
+
+
+</div>
+
+
+<!--End Content-->
+</div>
 </div>
 <!--End Middle-->
 
