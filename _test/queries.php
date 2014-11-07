@@ -30,7 +30,9 @@ function getAllSongs() {
     return $returnArray;
 }
 
-function getUserMixTape($userID) {
+function getUserMixTape($userIDinc) {
+    $userID=  htmlspecialchars($userIDinc);
+    
     $con = initializeConnection();
 
     $query = 'SELECT tbl_song.title, tbl_mixtape.position FROM tbl_song ' .
