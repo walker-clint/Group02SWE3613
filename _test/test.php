@@ -14,6 +14,28 @@
         <p>In this way one all the queries (as functions) can be written into one central location.</p>
 
         <div>
+            <h2>Song Object</h2>
+            <p>A Song Object is a php representation of a tbl_song record from SQL</p>
+            <div>
+                <p>
+                    The fields of a Song are accessible by $songVariableName->FieldName<br>
+                    For example, '$mySong->title' is the title of $mySong
+                </p>
+                A list contains the following fields:
+                <ul>
+                    <li>id</b></li>the song's primary key
+                    <li>title</b></li>the song's title
+                    <li>approved</li>whether the song has been approved or not
+                    <li>flagged</li>whether or not the song has been flagged by user's
+                    <li>youtubeLink</li>the song's youtube link
+                    <li>youtubeApproved</li>whether or not the song's youtube link has been approved
+                    <li>genres</li>an array of the genres the song belongs to
+                    <li>artist</li>an array of the artists that wrote a song
+                </ul>
+            </div>
+        </div>
+
+        <div>
             <h2>Get Best Mix Tape</h2>
             The best mix tape, the 10 most popular songs<br>
             getBestMixTape()
@@ -40,8 +62,7 @@
 
         <div>
             <h2>Get list of all songs as array</h2>
-            <p>This is a simple var_dump(ARRAY) which causes the php to spit out an array and it's metadata.  
-                The function returns a php array.
+            <p>The function returns a php array of Song objects.
             </p>
             <table border="1">
                 <tr>
