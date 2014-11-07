@@ -45,10 +45,12 @@
             </p>
             <table border="1">
                 <tr>
-                    <td>getAllSongs()</td>
                     <td>
-                        Song<br>
+                        getAllSongs()
                     </td>
+<!--                    <td>
+                        Song<br>
+                    </td>-->
                 </tr>
                 <tr>
                     <td>
@@ -61,11 +63,11 @@
                         }
                         ?>
                     </td>
-                    <td>
-                        <?php
-                        echo var_dump($songArray);
-                        ?>
-                    </td>
+<!--                    <td>
+                    <?php
+                    //echo var_dump($songArray);
+                    ?>
+                    </td>-->
                 </tr>
             </table>
         </div>
