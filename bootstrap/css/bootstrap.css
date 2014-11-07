@@ -5038,7 +5038,7 @@ a.list-group-item-danger.active:focus {
   min-height: 20px;
   padding: 30px;
   margin-bottom: 20px;
-  background-color: #cfb070;
+  background-color: #A17D0F;
   border: 1px solid #000000;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
@@ -5057,11 +5057,14 @@ a.list-group-item-danger.active:focus {
   border-radius: 3px;
 }
 
+
+
 .well-1 {
   min-height: 20px;
   padding: 30px;
   margin-bottom: 20px;
-  background-color: #B79a58;
+  /*background-color: #B79a58;*/
+  background-color: #CFB06F;
   border: 1px solid #000000;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
