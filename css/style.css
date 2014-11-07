@@ -144,7 +144,7 @@ a.show-sidebar:hover {
   -moz-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
   padding: 0;
-  background: #6AA6D6 url(../img/devoops_pattern_b10.png) 0 0 repeat;
+  background: #707070 url(../img/devoops_pattern_b10.png) 0 0 repeat;
   box-shadow: none;
   visibility:hidden;
 }
@@ -156,7 +156,7 @@ a.show-sidebar:hover {
 }
 .main-menu .dropdown-menu > li > a {
   padding:9px 15px 9px 40px;
-  color:#f0f0f0;
+  color:#707070;
 }
 .main-menu .dropdown-menu > li:first-child > a {
   -webkit-border-radius: 0 4px 0 0;
@@ -171,7 +171,7 @@ a.show-sidebar:hover {
 #top-panel {
   line-height: 50px;
   height: 50px;
-  background: #ebebeb;
+  background: #707070;
 }
 #main {
   margin-top: 50px;
