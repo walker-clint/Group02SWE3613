@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Test Page</title>
-        <?php include './../php/queries.php'; ?>
+        <?php include_once './../php/queries.php'; ?>
 
     </head>
     <body>
