@@ -15,13 +15,29 @@
 
         <div>
             <h2>Get list of all songs as array</h2>
-            echo var_dump(getAllSongs());
             <table border="1">
-                <td>
-                    <?php
-                    echo var_dump(getAllSongs());
-                    ?>
-                </td>
+                <tr>
+                    <td>(getAllSongs());</td>
+                    <td>Song<br>
+                    ID | Title | App | Flagged? | YouTube | YouTube App</td>
+                </tr>
+                <tr>
+                    <td>
+                        <?php
+                        echo var_dump(getAllSongs());
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                        $songArray = getAllSongs();
+                        foreach ($songArray as $incSong) {
+                            if ($incSong instanceof Song) {
+                                echo $incSong->printSong() . '<br>';
+                            }
+                        }
+                        ?>
+                    </td>
+                </tr>
             </table>
         </div>
         <p>This is a simple var_dump(ARRAY) which causes the php to spit out an array and it's metadata.  
