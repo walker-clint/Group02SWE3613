@@ -129,7 +129,7 @@ return valid;
             </tr>
             <tr>
               <td width="163"><div align="right">Password:</div></td>
-              <td width="409"><input name="pass_word" type="password" value='<?php echo "$pasword" ?>' /></td>
+              <td width="409"><input name="password" type="password" value='<?php echo "$password" ?>' /></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
