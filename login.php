@@ -29,9 +29,7 @@ if($login_check > 0){
 		exit();
     } // close while
 } else {
-// Print login failure message to the user and link them back to your login page
- $errorMsg = '<font color="#FF0000">No match in our records, try again </font>';
-  exit();
+$errorMsg .= "The username or password you entered is incorrect<br />";
 }
 }// close if post
 ?>
@@ -57,15 +55,14 @@ if($login_check > 0){
     <script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
     <script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript">
+<script type="text/javascript">
 <!-- Form Validation -->
 function validate_form ( ) { 
 valid = true; 
 if ( document.logform.user_name.value == "" ) { 
 alert ( "Please enter your User Name" ); 
 valid = false;
-}
-if ( document.logform.password.value == "" ) { 
+}else if ( document.logform.password.value == "" ) { 
 alert ( "Please enter your password" ); 
 valid = false;
 }
@@ -94,28 +91,32 @@ return valid;
       <!--<legend>LEFT COLUMN</legend>-->
       <h1>Login</h1>
       <div class="well-1 bs-component">
-       
-          <form method="post" enctype="multipart/form-data" name="logform" id="logform" onsubmit="return validate_form ( );">
-            <table>
-                  <tr>
-        <td><font color="#FF0000"><?php echo "$errorMsg"; ?></font></td>
+        <table>
+              <tr>
+        <td colspan="2"><font color="#FF0000"><?php echo "$errorMsg"; ?></font></td>
       </tr>
-              <tr>
-                <td><input type="text" name="user_name" placeholder="Username" id="user_name"></td>
-              </tr>
-              <tr>
-                <td><input type="password" name="password" placeholder="Password" id="password"></td>
-              <tr>
-                <td><input type="submit" name="login" class="login login-submit" value="login">
-               
-
-              </tr>
-            </table>
-           </form>
-          
-                      <form method="post" enctype="multipart/form-data" name="registerform" id="registerform">
-                  <input type="submit" name="login" class="login login-submit" value="Register"></td>
-                  </form>
+          <form method="post" enctype="multipart/form-data" name="logform" id="logform" onsubmit="return validate_form ( );">
+            <tr>
+              <td><input type="text" name="user_name" placeholder="Username" id="user_name"></td>
+            </tr>
+            <tr>
+              <td><input type="password" name="password" placeholder="Password" id="password"></td>
+            <tr>
+              <td><input type="submit" name="login" value="login">
+            </tr>
+          </form>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+           
+            <td>
+              <FORM METHOD="LINK" ACTION="Register.php">
+                <input type="submit" name="login" value="Register">
+              </FORM>
+              </td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
