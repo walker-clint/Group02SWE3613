@@ -13,7 +13,7 @@ $firstname = ereg_replace("[^A-Za-z0-9]", "", $_POST['firstname']); // filter ev
 	$email = mysql_real_escape_string($email);
 	$secret_q = ereg_replace("[^A-Za-z0-9]", "", $_POST['secret_q']);
 	$secret_a = ereg_replace("[^A-Za-z0-9]", "", $_POST['secret_a']);
-	if((!$firstname) || (!$lastname) || (!$email) || (!$user_name || (!$password) || (!$secret_q) || (!$secret_q))){
+	if((!$firstname) || (!$lastname) || (!$email) || (!$user_name || (!$password))){
 		
 		$errorMsg = "You did not submit the following required information!<br /><br />";
 		if(!$firstname){
@@ -26,11 +26,7 @@ $firstname = ereg_replace("[^A-Za-z0-9]", "", $_POST['firstname']); // filter ev
 	       $errorMsg .= "--- Username<br />"; 
 	   }if(!$password){ 
 	       $errorMsg .= "--- Password<br />"; 
-	   }if(!$secret_q){ 
-	       $errorMsg .= "--- Secret Question<br />"; 
-	   }if(!$secret_a){ 
-	       $errorMsg .= "--- Secret Answer<br />"; 
-	   }
+	  	   }
 	} else {
 		$sql_username_check = mysql_query("SELECT user_id FROM tbl_user WHERE login='$user_name' LIMIT 1");
 	$username_check = mysql_num_rows($sql_username_check); 
@@ -105,7 +101,7 @@ return valid;
 
 <!--Start Content-->
 <div class="row">
-  <div id="left-column" class="col-sm-4">
+  <div id="left-column" class="col-sm-5">
     <div class="well bs-component"> 
       <!--<legend>LEFT COLUMN</legend>-->
       <h1>Register</h1>
@@ -124,8 +120,8 @@ return valid;
               <td width="409"><input name="lastname" type="text" value='<?php echo "$lastname" ?>' /></td>
             </tr>
             <tr>
-              <td><div align="right">Email: </div></td>
-              <td><input name="email" type="text" value='<?php echo "$email" ?>' /></td>
+              <td width="163"><div align="right">Email: </div></td>
+              <td width="409"><input name="email" type="text" value='<?php echo "$email" ?>' /></td>
             </tr>
             <tr>
               <td width="163"><div align="right">Username:</div></td>

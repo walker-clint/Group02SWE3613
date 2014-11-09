@@ -111,7 +111,7 @@ return valid;
           <tr>
            
             <td>
-              <FORM METHOD="LINK" ACTION="Register.php">
+              <FORM METHOD="LINK" ACTION="register.php">
                 <input type="submit" name="login" value="Register">
               </FORM>
               </td>
