@@ -3,7 +3,7 @@ $errorMsg = "";
 session_start(); 
 if ($_POST['user_name']) {
 //Connect to the database through our include 
-include_once './../php/queries.php';
+include_once 'php/queries.php';
 $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
 $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
 $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password='$password'"); 
@@ -14,8 +14,8 @@ if($login_check > 0){
          $id = $row["user_id"];   
         $_SESSION['id'] = $id;
         // Get member username into a session variable
-	    $user_name = $row["user_name"];   
-        $_SESSION['user_name'] = $user_name;
+	    $user_name = $row["login"];   
+        $_SESSION['login'] = $user_name;
        
 		//checks if user is an administrator or regular user
 		if($row["admin"]==0){
@@ -25,7 +25,7 @@ if($login_check > 0){
 		}
 		
 		
-		header("location: employee_menu.php"); 
+		header("location: index.html"); 
 		exit();
     } // close while
 } else {
@@ -93,10 +93,9 @@ return valid;
     <div class="well bs-component"> 
       <!--<legend>LEFT COLUMN</legend>-->
       <h1>Login</h1>
-      <div class="form-horizontal" action="" method="POST"></div>
       <div class="well-1 bs-component">
        
-          <form action="index.php" method="post" enctype="multipart/form-data" name="logform" id="logform" onsubmit="return validate_form ( );>
+          <form method="post" enctype="multipart/form-data" name="logform" id="logform" onsubmit="return validate_form ( );">
             <table>
                   <tr>
         <td><font color="#FF0000"><?php echo "$errorMsg"; ?></font></td>
@@ -108,11 +107,15 @@ return valid;
                 <td><input type="password" name="password" placeholder="Password" id="password"></td>
               <tr>
                 <td><input type="submit" name="login" class="login login-submit" value="login">
-                  <input type="submit" name="login" class="login login-submit" value="Register"></td>
+               
+
               </tr>
             </table>
-          </form>
-      
+           </form>
+          
+                      <form method="post" enctype="multipart/form-data" name="registerform" id="registerform">
+                  <input type="submit" name="login" class="login login-submit" value="Register"></td>
+                  </form>
       </div>
     </div>
   </div>
