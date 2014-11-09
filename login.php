@@ -3,7 +3,7 @@ $errorMsg = "";
 session_start(); 
 if ($_POST['user_name']) {
 //Connect to the database through our include 
-include_once '../php/queries.php';
+include_once "connect_to_mysql.php";
 $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
 $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
 $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password='$password'"); 
@@ -92,9 +92,9 @@ return valid;
       <h1>Login</h1>
       <div class="well-1 bs-component">
         <table>
-              <tr>
-        <td colspan="2"><font color="#FF0000"><?php echo "$errorMsg"; ?></font></td>
-      </tr>
+          <tr>
+            <td colspan="2"><font color="#FF0000"><?php echo "$errorMsg"; ?></font></td>
+          </tr>
           <form method="post" enctype="multipart/form-data" name="logform" id="logform" onsubmit="return validate_form ( );">
             <tr>
               <td><input type="text" name="user_name" placeholder="Username" id="user_name"></td>
@@ -109,12 +109,9 @@ return valid;
             <td>&nbsp;</td>
           </tr>
           <tr>
-           
-            <td>
-              <FORM METHOD="LINK" ACTION="register.php">
+            <td><FORM METHOD="LINK" ACTION="register.php">
                 <input type="submit" name="login" value="Register">
-              </FORM>
-              </td>
+              </FORM></td>
           </tr>
         </table>
       </div>
