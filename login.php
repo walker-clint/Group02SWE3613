@@ -3,7 +3,7 @@ $errorMsg = "";
 session_start(); 
 if ($_POST['user_name']) {
 //Connect to the database through our include 
-include_once 'php/queries.php';
+include_once '../php/queries.php';
 $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
 $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
 $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password='$password'"); 

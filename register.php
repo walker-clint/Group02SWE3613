@@ -3,7 +3,7 @@ $errorMsg = "";
 session_start(); 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 //Connect to the database through our include 
-include_once 'php/queries.php';
+include_once '../php/queries.php';
 $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
 $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']);
 $firstname = ereg_replace("[^A-Za-z0-9]", "", $_POST['firstname']); // filter everything but numbers and letters
