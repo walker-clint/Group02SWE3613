@@ -28,7 +28,16 @@ and open the template in the editor.
         addSongArtist($newSongId, $newArtist);
         addSongGenre($newSongId, $newGenre);
 
-        echo $newSongId . '<br>';
+        echo 'Song ID: '.$newSongId . '<br>';
+
+        echo getSong($newSongId).'<br>';
+        echo getSong($newSongId)->getArtists().'<br>'.  getSong($newSongId)->getGenres();
+        
+        deleteSong($newSongId);
+        deleteArtist($newArtist);
+        deleteGenre($newGenre);
+        
+        echo 'Should be empty now<br>';
 
         echo getSong($newSongId).'<br>';
         echo getSong($newSongId)->getArtists().'<br>'.  getSong($newSongId)->getGenres();

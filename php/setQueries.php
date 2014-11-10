@@ -26,6 +26,26 @@ function updateSong($id, $title, $approved, $flagged, $youtubeLink, $youtubeAppr
     $stmt->execute();
 }
 
+function deleteSong($songId) {
+    $con = initializeConnection();
+
+    $queryArtist = 'DELETE FROM tbl_song_artist WHERE song_id = ?';
+    $queryGenre = 'DELETE FROM tbl_song_genre WHERE song_id = ?';
+    $querySong = 'DELETE FROM tbl_song WHERE song_id = ?';
+
+    $stmtArtist = $con->prepare($queryArtist);
+    $stmtArtist->bind_param('i', $songId);
+    $stmtArtist->execute();
+
+    $stmtGenre = $con->prepare($queryGenre);
+    $stmtGenre->bind_param('i', $songId);
+    $stmtGenre->execute();
+
+    $stmtSong = $con->prepare($querySong);
+    $stmtSong->bind_param('i', $songId);
+    $stmtSong->execute();
+}
+
 function addArtist($name) {
     $con = initializeConnection();
 
@@ -39,7 +59,7 @@ function addArtist($name) {
     return $insertId;
 }
 
-function addGenre($name){
+function addGenre($name) {
     $con = initializeConnection();
 
     $query = 'INSERT INTO tbl_genre(name) values (?)';
@@ -47,12 +67,12 @@ function addGenre($name){
     $stmt = $con->prepare($query);
     $stmt->bind_param('s', $name);
     $stmt->execute();
-    
+
     $insertId = mysqli_insert_id($con);
     return $insertId;
 }
 
-function addSongArtist($songId, $artistId){
+function addSongArtist($songId, $artistId) {
     $con = initializeConnection();
 
     $query = 'INSERT INTO tbl_song_artist(song_id, artist_id) values (?,?)';
@@ -60,12 +80,12 @@ function addSongArtist($songId, $artistId){
     $stmt = $con->prepare($query);
     $stmt->bind_param('ii', $songId, $artistId);
     $stmt->execute();
-    
+
     $insertId = mysqli_insert_id($con);
     return $insertId;
 }
 
-function addSongGenre($songId, $genreId){
+function addSongGenre($songId, $genreId) {
     $con = initializeConnection();
 
     $query = 'INSERT INTO tbl_song_genre(song_id, genre_id) values (?,?)';
@@ -73,7 +93,37 @@ function addSongGenre($songId, $genreId){
     $stmt = $con->prepare($query);
     $stmt->bind_param('ii', $songId, $genreId);
     $stmt->execute();
-    
+
     $insertId = mysqli_insert_id($con);
     return $insertId;
+}
+
+function deleteArtist($artistId) {
+    $con = initializeConnection();
+
+    $querySong = 'DELETE FROM tbl_song_artist WHERE artist_id = ?';
+    $queryArtist = 'DELETE FROM tbl_artist WHERE artist_id = ?';
+
+    $stmtSong = $con->prepare($querySong);
+    $stmtSong->bind_param('i', $artistId);
+    $stmtSong->execute();
+
+    $stmtArtist = $con->prepare($queryArtist);
+    $stmtArtist->bind_param('i', $artistId);
+    $stmtArtist->execute();
+}
+
+function deleteGenre($genreId) {
+    $con = initializeConnection();
+
+    $querySong = 'DELETE FROM tbl_song_genre WHERE genre_id = ?';
+    $queryGenre = 'DELETE FROM tbl_genre WHERE genre_id = ?';
+
+    $stmtSong = $con->prepare($querySong);
+    $stmtSong->bind_param('i', $genreId);
+    $stmtSong->execute();
+
+    $stmtArtist = $con->prepare($queryGenre);
+    $stmtArtist->bind_param('i', $genreId);
+    $stmtArtist->execute();
 }
