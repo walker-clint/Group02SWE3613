@@ -14,8 +14,8 @@
     </head>
     <body>
         <?php
-        echo $_SERVER['DOCUMENT_ROOT'] . 'php/objects.php';
-        echo dirname(__FILE__). '/../php/objects.php';
+        echo $_SERVER['DOCUMENT_ROOT'] . 'php/objects.php<br>';
+        echo dirname(__FILE__) . '/../php/objects.php';
         ?>
         <h1>Sample queries<br></h1>
         <p>The following demonstrates SQL queries via PHP</p>
@@ -36,19 +36,19 @@
                     <li>flagged</li>whether or not the song has been flagged by user's
                     <li>youtubeLink</li>the song's youtube link
                     <li>youtubeApproved</li>whether or not the song's youtube link has been approved
-                    <li>genres</li>an array of the genres the song belongs to
-                    <li>artist</li>an array of the artists that wrote a song
+                    <li>genresArray</li>an array of the genres the song belongs to
+                    <li>artistArray</li>an array of the artists that wrote a song
                 </ul>
 
                 <?php
                 $exampleSong = getSong(21);
-                echo '$exampleSong = getSong(21)';
-                echo '$exampleSong->id = ' . $exampleSong->id . '<br>';
-                echo '$exampleSong->title = ' . $exampleSong->title . '<br>';
-                echo '$exampleSong->youtubeLink = ' . $exampleSong->youtubeLink . '<br>';
-                echo '$exampleSong->getLink() = ' . $exampleSong->getLink() . '<br>';
-                echo '$exampleSong->getEmbedLink() = ' . $exampleSong->getEmbedLink() . '<br>';
-                echo '$exampleSong->getEmbedLink(true) = ' . $exampleSong->getEmbedLink(true) . '<br>';
+                echo '$exampleSong = getSong(21)<br>';
+                echo '$exampleSong->id returns ' . $exampleSong->id . '<br>';
+                echo '$exampleSong->title returns ' . $exampleSong->title . '<br>';
+                echo '$exampleSong->youtubeLink returns ' . $exampleSong->youtubeLink . '<br>';
+                echo '$exampleSong->getLink() returns ' . $exampleSong->getLink() . '<br>';
+                echo '$exampleSong->getEmbedLink() returns ' . $exampleSong->getEmbedLink() . '<br>';
+                echo '$exampleSong->getEmbedLink(true) returns ' . $exampleSong->getEmbedLink(true) . '<br>';
                 ?>
             </div>
         </div>

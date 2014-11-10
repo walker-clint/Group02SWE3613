@@ -2,8 +2,8 @@
 
 //include_once dirname(__FILE__) . './connection.php';
 //include_once dirname(__FILE__) . './objects.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/php/connection.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/php/objects.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/connection.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 
 function getBestMixTape() {
     $con = initializeConnection();
@@ -22,7 +22,7 @@ function getBestMixTape() {
         //$genre = getSongGenre($id);
         //$artist = getSongArtist($id);
         //$tempSong = new Song($id, $song_title, $app, $flag, $you, $youApp, $genre, $artist);
-        $returnString = $id;// . '|' . $song_count;
+        $returnString = $id; // . '|' . $song_count;
         array_push($returnArray, $returnString);
     }
 

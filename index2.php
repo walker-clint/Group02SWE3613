@@ -60,7 +60,7 @@
                         <div class="well-1 bs-component">
                             <div class="video-container">
                                 <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
-                                <iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=1" frameborder="0" allowfullscreen></iframe>
+                                <iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -89,6 +89,7 @@
                                     include_once './php/queries.php';
                                     include_once './php/objects.php';
                                     $allSongs = getAllSongs();
+
                                     foreach ($allSongs as $song) {
                                         if ($song instanceof Song) {
                                             echo '<tr>';
