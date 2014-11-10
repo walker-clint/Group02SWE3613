@@ -103,6 +103,46 @@ function getApprovedSongs() {
     return $returnArray;
 }
 
+function getUnapprovedSongs() {
+    $con = initializeConnection();
+
+    $query = 'SELECT song_id, title, approved, flagged, youtube, youtube_approved '
+            . 'FROM tbl_song '
+            . 'WHERE tbl_song.approved = 0';
+    $stmt = $con->prepare($query);
+
+    $stmt->execute();
+    $stmt->bind_result($id, $song_title, $app, $flag, $you, $youApp);
+    $returnArray = array();
+    while ($stmt->fetch()) {
+        $genre = getSongGenre($id);
+        $artist = getSongArtist($id);
+        $tempSong = new Song($id, $song_title, $app, $flag, $you, $youApp, $genre, $artist);
+        array_push($returnArray, $tempSong);
+    }
+    return $returnArray;
+}
+
+function getFlaggedSongs() {
+    $con = initializeConnection();
+
+    $query = 'SELECT song_id, title, approved, flagged, youtube, youtube_approved '
+            . 'FROM tbl_song '
+            . 'WHERE tbl_song.flagged = 1';
+    $stmt = $con->prepare($query);
+
+    $stmt->execute();
+    $stmt->bind_result($id, $song_title, $app, $flag, $you, $youApp);
+    $returnArray = array();
+    while ($stmt->fetch()) {
+        $genre = getSongGenre($id);
+        $artist = getSongArtist($id);
+        $tempSong = new Song($id, $song_title, $app, $flag, $you, $youApp, $genre, $artist);
+        array_push($returnArray, $tempSong);
+    }
+    return $returnArray;
+}
+
 function getUserMixTape($userIDinc) {
     $userID = htmlspecialchars($userIDinc);
 
