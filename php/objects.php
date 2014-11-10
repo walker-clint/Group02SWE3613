@@ -23,11 +23,19 @@ class Song {
     }
 
     public function getLink() {
-        return preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i", "$1", $this->youtubeLink); //$post_details['description']);
+        return preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i", "$1", $this->youtubeLink);
     }
 
     public function getEmbedLink($autoPlay) {
-        if (!empty($autoPlay) && $autoPlay = true) {
+        if(empty($autoPlay)){
+            $autoPlay=false;
+        }
+        
+        if(empty($this->youtubeLink)||empty($this->youtubeApproved)||$this->youtubeApproved==0){//if no link, or approved not set, or approved is 0
+            return 'This song does not have a video';
+        }
+        
+        if (!empty($autoPlay) && $autoPlay == true) {
             return preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i", "<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/$1?autoplay=1\" frameborder=\"0\" allowfullscreen></iframe>", $this->youtubeLink);
         }
         else{
