@@ -11,10 +11,12 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        echo dirname(__FILE__) . '/../php/setQueries.php';
-        include_once dirname(__FILE__) . '/../php/setQueries.php';
-        include_once dirname(__FILE__) . '/../php/queries.php';
-        include_once dirname(__FILE__) . '/../php/objects.php';
+        //include_once dirname(__FILE__) . '/../php/setQueries.php';
+        //include_once dirname(__FILE__) . '/../php/queries.php';
+        //include_once dirname(__FILE__) . '/../php/objects.php';
+        include_once $_SERVER['DOCUMENT_ROOT'].'php/setQueries.php';
+        include_once $_SERVER['DOCUMENT_ROOT'].'php/queries.php';
+        include_once $_SERVER['DOCUMENT_ROOT'].'php/objects.php';
 
         $title = 'Bohemian Rhapsody';
         $approved = 1;

@@ -4,8 +4,12 @@
     <head>
         <meta charset="UTF-8">
         <title>Test Page</title>
-        <?php include_once './../php/queries.php';
-        include_once '../php/objects.php';?>
+        <?php
+        //include_once dirname(__FILE__) . '/../php/queries.php';
+        //include_once dirname(__FILE__) . '/../php/objects.php';
+        include_once $_SERVER['DOCUMENT_ROOT'] . 'php/queries.php';
+        include_once $_SERVER['DOCUMENT_ROOT'] . 'php/objects.php';
+        ?>
 
     </head>
     <body>
@@ -35,12 +39,12 @@
                 <?php
                 $exampleSong = getSong(21);
                 echo '$exampleSong = getSong(21)';
-                echo '$exampleSong->id = '.$exampleSong->id.'<br>';
-                echo '$exampleSong->title = '.$exampleSong->title.'<br>';
-                echo '$exampleSong->youtubeLink = '.$exampleSong->youtubeLink.'<br>';
-                echo '$exampleSong->getLink() = '.$exampleSong->getLink().'<br>';
-                echo '$exampleSong->getEmbedLink() = '.$exampleSong->getEmbedLink().'<br>';
-                echo '$exampleSong->getEmbedLink(true) = '.$exampleSong->getEmbedLink(true).'<br>';
+                echo '$exampleSong->id = ' . $exampleSong->id . '<br>';
+                echo '$exampleSong->title = ' . $exampleSong->title . '<br>';
+                echo '$exampleSong->youtubeLink = ' . $exampleSong->youtubeLink . '<br>';
+                echo '$exampleSong->getLink() = ' . $exampleSong->getLink() . '<br>';
+                echo '$exampleSong->getEmbedLink() = ' . $exampleSong->getEmbedLink() . '<br>';
+                echo '$exampleSong->getEmbedLink(true) = ' . $exampleSong->getEmbedLink(true) . '<br>';
                 ?>
             </div>
         </div>
@@ -81,8 +85,8 @@
                         ?></td></tr>
                 <tr><td>Below is one of the top songs' embedded videos<br>
                         <?php
-                        $randSong = rand(0,count($songArray));
-                        if($songArray[$randSong] instanceof Song){
+                        $randSong = rand(0, count($songArray));
+                        if ($songArray[$randSong] instanceof Song) {
                             echo $songArray[$randSong]->getEmbedLink();
                         }
                         ?></td></tr>
