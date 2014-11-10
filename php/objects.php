@@ -8,8 +8,8 @@ class Song {
     public $flagged;
     public $youtubeLink;
     public $youtubeApproved;
-    public $genres;
-    public $artist;
+    public $genresArray;
+    public $artistArray;
 
     public function __construct($id, $titl, $app, $flag, $you, $youApp, $gen, $art) {
         $this->id = $id;
@@ -18,8 +18,8 @@ class Song {
         $this->flagged = $flag;
         $this->youtubeLink = $you;
         $this->youtubeApproved = $youApp;
-        $this->genres = $gen;
-        $this->artist = $art;
+        $this->genresArray = $gen;
+        $this->artistArray = $art;
     }
 
     public function getLink() {
@@ -27,37 +27,44 @@ class Song {
     }
 
     public function getEmbedLink($autoPlay) {
-        if(empty($autoPlay)){
-            $autoPlay=false;
+        if (empty($autoPlay)) {
+            $autoPlay = false;
         }
-        
-        if(empty($this->youtubeLink)||empty($this->youtubeApproved)||$this->youtubeApproved==0){//if no link, or approved not set, or approved is 0
+
+        if (empty($this->youtubeLink) || empty($this->youtubeApproved) || $this->youtubeApproved == 0) {//if no link, or approved not set, or approved is 0
             return 'This song does not have a video';
         }
-        
+
         if (!empty($autoPlay) && $autoPlay == true) {
-            return preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i", "<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/$1?autoplay=1\" frameborder=\"0\" allowfullscreen></iframe>", $this->youtubeLink);
-        }
-        else{
-            return preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i", "<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/$1\" frameborder=\"0\" allowfullscreen></iframe>", $this->youtubeLink);
+            return preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i", "<iframe width=\"350\" height=\"280\" src=\"//www.youtube.com/embed/$1?autoplay=1\" frameborder=\"0\" allowfullscreen></iframe>", $this->youtubeLink);
+        } else {
+            return preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i", "<iframe width=\"350\" height=\"280\" src=\"//www.youtube.com/embed/$1\" frameborder=\"0\" allowfullscreen></iframe>", $this->youtubeLink);
         }
     }
 
-    private function getGenres() {
+    function getGenres() {
         $genreString = '';
 
-        foreach ($this->genres as $genre) {
-            $genreString.=$genre . ' ';
+        for ($i = 0; $i < count($this->genresArray); $i++) {
+            $genre = $this->genresArray[$i];
+            $genreString.=$genre;
+            if ($i + 1 < count($this->genresArray)) {
+                $genreString.=', ';
+            }
         }
 
         return $genreString;
     }
 
-    private function getArtists() {
+    function getArtists() {
         $artistString = '';
 
-        foreach ($this->artist as $art) {
-            $artistString.=$art . ' ';
+        for ($i = 0; $i < count($this->artistArray); $i++) {
+            $artist = $this->artistArray[$i];
+            $artistString.=$artist;
+            if ($i + 1 < count($this->artistArray)) {
+                $artistString.=', ';
+            }
         }
 
         return $artistString;
