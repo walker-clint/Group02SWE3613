@@ -13,6 +13,7 @@
 
     </head>
     <body>
+        <?php echo $_SERVER['DOCUMENT_ROOT'] . 'php/objects.php';?>
         <h1>Sample queries<br></h1>
         <p>The following demonstrates SQL queries via PHP</p>
         <p>'queries.php' (will) contain the php functions that return the necessary information gathered from an SQL query</p>
