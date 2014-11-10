@@ -30,6 +30,15 @@
                     <li>genres</li>an array of the genres the song belongs to
                     <li>artist</li>an array of the artists that wrote a song
                 </ul>
+
+                <?php
+                $exampleSong = getSong(21);
+                echo '$exampleSong->id = '.$exampleSong->id.'<br>';
+                echo '$exampleSong->title = '.$exampleSong->title.'<br>';
+                echo '$exampleSong->youtubeLink = '.$exampleSong->youtubeLink.'<br>';
+                echo '$exampleSong->getLink() = '.$exampleSong->getLink().'<br>';
+                echo '$exampleSong->getEmbedLink() = '.$exampleSong->getEmbedLink().'<br>';
+                ?>
             </div>
         </div>
 
@@ -69,7 +78,7 @@
                         ?></td></tr>
             </table>
         </div>
-        
+
         <div>
             <h2>Get list of approved songs as array</h2>
             <p>The function returns a php array of Song objects.
@@ -108,7 +117,7 @@
                 <tr><td><?php echo var_dump(getSongArtist(1)); ?></td></tr>
 
             </table>
-            
+
             getSongGenre(11)<br>
             getSongArtist(11)
             <table border="1">
