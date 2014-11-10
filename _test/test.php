@@ -4,7 +4,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Test Page</title>
-        <?php include_once './../php/queries.php'; ?>
+        <?php include_once './../php/queries.php';
+        include_once '../php/objects.php';?>
 
     </head>
     <body>
@@ -84,7 +85,7 @@
                         if($songArray[$randSong] instanceof Song){
                             echo $songArray[$randSong]->getEmbedLink();
                         }
-                        ?></tr></td>
+                        ?></td></tr>
             </table>
         </div>
 

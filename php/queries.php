@@ -1,6 +1,6 @@
 <?php
 
-include_once './../php/objects.php';
+//include_once './../php/objects.php';
 
 function initializeConnection() {
     $host = 'swe3613.com';
