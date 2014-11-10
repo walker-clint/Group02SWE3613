@@ -33,11 +33,13 @@
 
                 <?php
                 $exampleSong = getSong(21);
+                echo '$exampleSong = getSong(21)';
                 echo '$exampleSong->id = '.$exampleSong->id.'<br>';
                 echo '$exampleSong->title = '.$exampleSong->title.'<br>';
                 echo '$exampleSong->youtubeLink = '.$exampleSong->youtubeLink.'<br>';
                 echo '$exampleSong->getLink() = '.$exampleSong->getLink().'<br>';
                 echo '$exampleSong->getEmbedLink() = '.$exampleSong->getEmbedLink().'<br>';
+                echo '$exampleSong->getEmbedLink(true) = '.$exampleSong->getEmbedLink(true).'<br>';
                 ?>
             </div>
         </div>
