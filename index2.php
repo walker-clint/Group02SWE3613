@@ -77,12 +77,6 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <?php
-                                        include_once './php/queries.php';
-                                        include_once './php/objects.php';
-                                        $allSongs = getAllSongs();
-                                        ?>
-
                                         <td><b>Title</b></td>
 
                                         <td><b>Artist</b></td>
@@ -92,13 +86,16 @@
                                         <td><b>Actions</b></td>
                                     </tr>
                                     <?php
+                                    include_once './php/queries.php';
+                                    include_once './php/objects.php';
+                                    $allSongs = getAllSongs();
                                     foreach ($allSongs as $song) {
                                         if ($song instanceof Song) {
                                             echo '<tr>';
-                                            echo '<td>' . $song->title.'</td>';
-                                            echo '<td>' . $song->getArtists().'</td>';
-                                            echo '<td>' . $song->getGenres().'</td>';
-                                            echo '<td>'.'</td>';
+                                            echo '<td>' . $song->title . '</td>';
+                                            echo '<td>' . $song->getArtists() . '</td>';
+                                            echo '<td>' . $song->getGenres() . '</td>';
+                                            echo '<td>' . '</td>';
                                         }
                                     }
                                     ?>
