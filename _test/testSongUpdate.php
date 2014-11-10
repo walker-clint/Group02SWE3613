@@ -11,6 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+        echo dirname(__FILE__) . '/../php/setQueries.php';
         include_once dirname(__FILE__) . '/../php/setQueries.php';
         include_once dirname(__FILE__) . '/../php/queries.php';
         include_once dirname(__FILE__) . '/../php/objects.php';
