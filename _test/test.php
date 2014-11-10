@@ -78,6 +78,14 @@
                             }
                         }
                         ?></td></tr>
+                <tr><td>Below is one of the top songs' embedded videos<br>
+                        <?php
+                        $randSong = rand(0,count($songArray));
+                        //$songToPlay = $songArray[$randSong];
+                        if($songArray[$randSong] instanceof Song){
+                            echo $songArray[$randSong]->getEmbedLink();
+                        }
+                        ?>
             </table>
         </div>
 
