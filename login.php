@@ -137,13 +137,12 @@ return valid;
           </tr>
           <tr>
             <td><FORM METHOD="LINK" ACTION="register.php">
+                    <?php   echo $ayah->getPublisherHTML();   ?>
                 <input type="submit" name="login" value="Register">
               </FORM></td>
           </tr>
         </table>
-        <?php
-            echo $ayah->getPublisherHTML();
-        ?>
+
       </div>
     </div>
   </div>
