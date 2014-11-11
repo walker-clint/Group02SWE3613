@@ -1,29 +1,30 @@
-<!DOCTYPE html>
-
 <?php
-
 session_start(); 
-require_once("ayah.php");
-$ayah = new AYAH();
+if ($_POST['user_name']) {
 
-// Check to see if the user has submitted the form. You will need to replace
-// 'my_submit_button_name' with the name of your 'Submit' button.
-if (array_key_exists('my_submit_button_name', $_POST))
-{
-        // Use the AYAH object to see if the user passed or failed the game.
-        $score = $ayah->scoreResult();
+	
+	
+	require_once('recaptchalib.php');
+  $privatekey = "6LcMdf0SAAAAAGoCSMb54T2MbWvgxaNpnDqhLwSj";
+  $resp = recaptcha_check_answer ($privatekey,
+                                $_SERVER["REMOTE_ADDR"],
+                                $_POST["recaptcha_challenge_field"],
+                                $_POST["recaptcha_response_field"]);
 
-        if ($score)
-        {
-               include_once "connect_to_mysql.php";
+  if (!$resp->is_valid) {
+    // What happens when the CAPTCHA was entered incorrectly
+    die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
+         "(reCAPTCHA said: " . $resp->error . ")");
+  } else {
+//Connect to the database through our include 
+include_once "connect_to_mysql.php";
 $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
 $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
 $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password='$password'"); 
 $login_check = mysql_num_rows($sql);
 if($login_check > 0){ 
     while($row = mysql_fetch_array($sql)){
-         // Use the AYAH object to see if the user passed or failed the game
-        
+       
            		// Get member ID into a session variable
          $id = $row["user_id"];   
         $_SESSION['id'] = $id;
@@ -40,29 +41,19 @@ if($login_check > 0){
 		
 		
 		header("location: index.html"); 
-		exit();	
+		exit();
+       
+		
+		
 
     } // close while
 } else {
 $errorMsg .= "The username or password you entered is incorrect<br />";
 }
-        }
-        else
-        {
-        		// This happens if the user does not pass the game.
-                echo "Sorry, but we were not able to verify you as human. Please try again.";
-        }
-}
-
-
-
-
-
-
-
-
+  }
+}// close if post
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -86,7 +77,22 @@ $errorMsg .= "The username or password you entered is incorrect<br />";
     <![endif]-->
 <script type="text/javascript">
 <!-- Form Validation -->
+function validate_form ( ) { 
+valid = true; 
+<?php 
+$captcha_entered =array_key_exists('my_submit_button_name', $_POST);
+?>
 
+
+if ( document.logform.user_name.value == "" ) { 
+alert ( "Please enter your User Name" ); 
+valid = false;
+}else if ( document.logform.password.value == "" ) { 
+alert ( "Please enter your password" ); 
+valid = false;
+}
+return valid;
+}
 <!-- Form Validation -->
 </script>
 </head>
@@ -114,36 +120,35 @@ $errorMsg .= "The username or password you entered is incorrect<br />";
           <tr>
             <td colspan="2"><font color="#FF0000"><?php echo "$errorMsg"; ?></font></td>
           </tr>
-          <form method="post" action="">
+          <form method="post" enctype="multipart/form-data" name="logform" id="logform" onsubmit="return validate_form ( );">
             <tr>
               <td><input type="text" name="user_name" placeholder="Username" id="user_name"></td>
             </tr>
             <tr>
               <td><input type="password" name="password" placeholder="Password" id="password"></td>
             <tr>
-              <td>
-               <?php
-            // Use the AYAH object to get the HTML code needed to
-            // load and run PlayThru. You should place this code
-            // directly before your 'Submit' button.
-            echo $ayah->getPublisherHTML();
-        ?>
-        
-        <!-- Make sure the name of your 'Submit' matches the name you used on line 9. -->
-        <input type="Submit" name="my_submit_button_name" value=" Submit "></td>
+              <td><input type="submit" name="login" value="login">
             </tr>
           </form>
           <tr>
             <td>&nbsp;</td>
           </tr>
+          <tr><td>
+        <?php
+          require_once('recaptchalib.php');
+          $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
+          echo recaptcha_get_html($publickey);
+        ?>
+</td></tr>
+                 <tr>
+            <td>&nbsp;</td>
+          </tr>
           <tr>
             <td><FORM METHOD="LINK" ACTION="register.php">
-                  
                 <input type="submit" name="login" value="Register">
               </FORM></td>
           </tr>
         </table>
-
       </div>
     </div>
   </div>
