@@ -1,4 +1,5 @@
 <?php
+$errorMsg="";
 session_start(); 
 if ($_POST['user_name']) {
 
@@ -13,8 +14,8 @@ if ($_POST['user_name']) {
 
   if (!$resp->is_valid) {
     // What happens when the CAPTCHA was entered incorrectly
-    die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
-         "(reCAPTCHA said: " . $resp->error . ")");
+   $errorMsg.="The reCAPTCHA wasn't entered correctly. Go back and try it again." .
+         "(reCAPTCHA said: " . $resp->error . ")";
   } else {
 //Connect to the database through our include 
 include_once "connect_to_mysql.php";
@@ -127,18 +128,18 @@ return valid;
             <tr>
               <td><input type="password" name="password" placeholder="Password" id="password"></td>
             <tr>
-              <td><input type="submit" name="login" value="login">
+              <td>        <?php
+          require_once('recaptchalib.php');
+          $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
+          echo recaptcha_get_html($publickey);
+        ?><input type="submit" name="login" value="login">
             </tr>
           </form>
           <tr>
             <td>&nbsp;</td>
           </tr>
           <tr><td>
-        <?php
-          require_once('recaptchalib.php');
-          $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
-          echo recaptcha_get_html($publickey);
-        ?>
+
 </td></tr>
                  <tr>
             <td>&nbsp;</td>
