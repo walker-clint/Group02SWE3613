@@ -8,7 +8,7 @@ $ayah = new AYAH();
 
 // Check to see if the user has submitted the form. You will need to replace
 // 'my_submit_button_name' with the name of your 'Submit' button.
-if (array_key_exists('login', $_POST))
+if (array_key_exists('my_submit_button_name', $_POST))
 {
         // Use the AYAH object to see if the user passed or failed the game.
         $score = $ayah->scoreResult();
@@ -86,17 +86,7 @@ $errorMsg .= "The username or password you entered is incorrect<br />";
     <![endif]-->
 <script type="text/javascript">
 <!-- Form Validation -->
-function validate_form ( ) { 
-valid = true; 
-if ( document.logform.user_name.value == "" ) { 
-alert ( "Please enter your User Name" ); 
-valid = false;
-}else if ( document.logform.password.value == "" ) { 
-alert ( "Please enter your password" ); 
-valid = false;
-}
-return valid;
-}
+
 <!-- Form Validation -->
 </script>
 </head>
@@ -124,14 +114,23 @@ return valid;
           <tr>
             <td colspan="2"><font color="#FF0000"><?php echo "$errorMsg"; ?></font></td>
           </tr>
-          <form method="post" enctype="multipart/form-data" name="logform" id="logform" onsubmit="return validate_form ( );">
+          <form method="post" action="">
             <tr>
               <td><input type="text" name="user_name" placeholder="Username" id="user_name"></td>
             </tr>
             <tr>
               <td><input type="password" name="password" placeholder="Password" id="password"></td>
             <tr>
-              <td>  <?php   echo $ayah->getPublisherHTML();   ?><input type="submit" name="login" value="login"></td>
+              <td>
+               <?php
+            // Use the AYAH object to get the HTML code needed to
+            // load and run PlayThru. You should place this code
+            // directly before your 'Submit' button.
+            echo $ayah->getPublisherHTML();
+        ?>
+        
+        <!-- Make sure the name of your 'Submit' matches the name you used on line 9. -->
+        <input type="Submit" name="my_submit_button_name" value=" Submit "></td>
             </tr>
           </form>
           <tr>
