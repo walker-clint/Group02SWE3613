@@ -1,31 +1,28 @@
+<!DOCTYPE html>
+
 <?php
-$errorMsg = "";
+
 session_start(); 
-if ($_POST['user_name']) {
-	
-	
-	require_once("ayah.php");
+require_once("ayah.php");
 $ayah = new AYAH();
+
 // Check to see if the user has submitted the form. You will need to replace
 // 'my_submit_button_name' with the name of your 'Submit' button.
-
-	
-	if (array_key_exists('login', $_POST))
+if (array_key_exists('my_submit_button_name', $_POST))
 {
-          // Use the AYAH object to see if the user passed or failed the game.
-          $score = $ayah->scoreResult();
-          if ($score)
-          {
-                    //Connect to the database through our include 
-include_once "connect_to_mysql.php";
+        // Use the AYAH object to see if the user passed or failed the game.
+        $score = $ayah->scoreResult();
+
+        if ($score)
+        {
+               include_once "connect_to_mysql.php";
 $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
 $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
 $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password='$password'"); 
 $login_check = mysql_num_rows($sql);
 if($login_check > 0){ 
     while($row = mysql_fetch_array($sql)){
-         // Use the AYAH object to see if the user passed or failed the game.
-        $score = $ayah->scoreResult();
+         // Use the AYAH object to see if the user passed or failed the game
         
            		// Get member ID into a session variable
          $id = $row["user_id"];   
@@ -49,18 +46,23 @@ if($login_check > 0){
 } else {
 $errorMsg .= "The username or password you entered is incorrect<br />";
 }
-}// close if post
-          
-          else
-          {
-                // This happens if the user does not pass the game.
-                     echo "Sorry, but we were not able to verify you as human. Please try again.";
-          }
+        }
+        else
+        {
+        		// This happens if the user does not pass the game.
+                echo "Sorry, but we were not able to verify you as human. Please try again.";
+        }
 }
-	
-}
+
+
+
+
+
+
+
+
 ?>
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -129,7 +131,7 @@ return valid;
             <tr>
               <td><input type="password" name="password" placeholder="Password" id="password"></td>
             <tr>
-              <td><input type="submit" name="login" value="login">
+              <td>  <?php   echo $ayah->getPublisherHTML();   ?><input type="submit" name="login" value="login"></td>
             </tr>
           </form>
           <tr>
@@ -137,7 +139,7 @@ return valid;
           </tr>
           <tr>
             <td><FORM METHOD="LINK" ACTION="register.php">
-                    <?php   echo $ayah->getPublisherHTML();   ?>
+                  
                 <input type="submit" name="login" value="Register">
               </FORM></td>
           </tr>
