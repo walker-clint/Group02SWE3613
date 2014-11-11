@@ -8,7 +8,7 @@ $ayah = new AYAH();
 
 // Check to see if the user has submitted the form. You will need to replace
 // 'my_submit_button_name' with the name of your 'Submit' button.
-if (array_key_exists('my_submit_button_name', $_POST))
+if (array_key_exists('login', $_POST))
 {
         // Use the AYAH object to see if the user passed or failed the game.
         $score = $ayah->scoreResult();
