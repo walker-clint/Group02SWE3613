@@ -2,6 +2,19 @@
 $errorMsg = "";
 session_start(); 
 if ($_POST['user_name']) {
+	
+	
+	require_once("ayah.php");
+$ayah = new AYAH();
+// Check to see if the user has submitted the form. You will need to replace
+// 'my_submit_button_name' with the name of your 'Submit' button.
+if (array_key_exists('my_submit_button_name', $_POST))
+{
+       
+}
+	
+	
+	
 //Connect to the database through our include 
 include_once "connect_to_mysql.php";
 $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
@@ -10,7 +23,11 @@ $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password
 $login_check = mysql_num_rows($sql);
 if($login_check > 0){ 
     while($row = mysql_fetch_array($sql)){
-        // Get member ID into a session variable
+         // Use the AYAH object to see if the user passed or failed the game.
+        $score = $ayah->scoreResult();
+        if ($score)
+        {
+           		// Get member ID into a session variable
          $id = $row["user_id"];   
         $_SESSION['id'] = $id;
         // Get member username into a session variable
@@ -27,6 +44,15 @@ if($login_check > 0){
 		
 		header("location: index.html"); 
 		exit();
+        }
+        else
+        {
+            // This happens if the user does not pass the game.
+            echo "Sorry, but we were not able to verify you as human. Please try again.";
+        }
+		
+		
+
     } // close while
 } else {
 $errorMsg .= "The username or password you entered is incorrect<br />";
@@ -59,12 +85,21 @@ $errorMsg .= "The username or password you entered is incorrect<br />";
 <!-- Form Validation -->
 function validate_form ( ) { 
 valid = true; 
+<?php 
+$captcha_entered =array_key_exists('my_submit_button_name', $_POST);
+?>
+
+
 if ( document.logform.user_name.value == "" ) { 
 alert ( "Please enter your User Name" ); 
 valid = false;
 }else if ( document.logform.password.value == "" ) { 
 alert ( "Please enter your password" ); 
 valid = false;
+}else if(!<?php echo $captcha_entered?>){
+	alert ( "Please complete the captcha" ); 
+valid = false;
+	
 }
 return valid;
 }
@@ -106,6 +141,13 @@ return valid;
             </tr>
           </form>
           <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr><td>
+                  <?php
+            echo $ayah->getPublisherHTML();
+        ?></td></tr>
+                 <tr>
             <td>&nbsp;</td>
           </tr>
           <tr>
