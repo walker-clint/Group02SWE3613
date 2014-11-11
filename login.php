@@ -4,14 +4,6 @@ session_start();
 if ($_POST['user_name']) {
 	
 	
-	require_once("ayah.php");
-$ayah = new AYAH();
-// Check to see if the user has submitted the form. You will need to replace
-// 'my_submit_button_name' with the name of your 'Submit' button.
-if (array_key_exists('my_submit_button_name', $_POST))
-{
-       
-}
 	
 	
 	
@@ -24,10 +16,7 @@ $login_check = mysql_num_rows($sql);
 if($login_check > 0){ 
     while($row = mysql_fetch_array($sql)){
          // Use the AYAH object to see if the user passed or failed the game.
-        $score = $ayah->scoreResult();
-        if ($score)
-        {
-           		// Get member ID into a session variable
+      	// Get member ID into a session variable
          $id = $row["user_id"];   
         $_SESSION['id'] = $id;
         // Get member username into a session variable
@@ -44,14 +33,7 @@ if($login_check > 0){
 		
 		header("location: index.html"); 
 		exit();
-        }
-        else
-        {
-            // This happens if the user does not pass the game.
-            echo "Sorry, but we were not able to verify you as human. Please try again.";
-        }
-		
-		
+	
 
     } // close while
 } else {
@@ -122,13 +104,6 @@ $errorMsg .= "The username or password you entered is incorrect<br />";
             </tr>
           </form>
           <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr><td>
-                  <?php
-            echo $ayah->getPublisherHTML();
-        ?></td></tr>
-                 <tr>
             <td>&nbsp;</td>
           </tr>
           <tr>
