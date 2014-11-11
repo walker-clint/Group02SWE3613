@@ -1,22 +1,20 @@
 <?php
-$errorMsg="";
+$errorMsg = "";
 session_start(); 
 if ($_POST['user_name']) {
-
 	
 	
-	require_once('recaptchalib.php');
-  $privatekey = "6LcMdf0SAAAAAGoCSMb54T2MbWvgxaNpnDqhLwSj";
-  $resp = recaptcha_check_answer ($privatekey,
-                                $_SERVER["REMOTE_ADDR"],
-                                $_POST["recaptcha_challenge_field"],
-                                $_POST["recaptcha_response_field"]);
-
-  if (!$resp->is_valid) {
-    // What happens when the CAPTCHA was entered incorrectly
-   $errorMsg.="The reCAPTCHA wasn't entered correctly. Go back and try it again." .
-         "(reCAPTCHA said: " . $resp->error . ")";
-  } else {
+	require_once("ayah.php");
+$ayah = new AYAH();
+// Check to see if the user has submitted the form. You will need to replace
+// 'my_submit_button_name' with the name of your 'Submit' button.
+if (array_key_exists('my_submit_button_name', $_POST))
+{
+       
+}
+	
+	
+	
 //Connect to the database through our include 
 include_once "connect_to_mysql.php";
 $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
@@ -25,7 +23,10 @@ $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password
 $login_check = mysql_num_rows($sql);
 if($login_check > 0){ 
     while($row = mysql_fetch_array($sql)){
-       
+         // Use the AYAH object to see if the user passed or failed the game.
+        $score = $ayah->scoreResult();
+        if ($score)
+        {
            		// Get member ID into a session variable
          $id = $row["user_id"];   
         $_SESSION['id'] = $id;
@@ -43,7 +44,12 @@ if($login_check > 0){
 		
 		header("location: index.html"); 
 		exit();
-       
+        }
+        else
+        {
+            // This happens if the user does not pass the game.
+            echo "Sorry, but we were not able to verify you as human. Please try again.";
+        }
 		
 		
 
@@ -51,7 +57,6 @@ if($login_check > 0){
 } else {
 $errorMsg .= "The username or password you entered is incorrect<br />";
 }
-  }
 }// close if post
 ?>
 <!DOCTYPE html>
@@ -78,22 +83,7 @@ $errorMsg .= "The username or password you entered is incorrect<br />";
     <![endif]-->
 <script type="text/javascript">
 <!-- Form Validation -->
-function validate_form ( ) { 
-valid = true; 
-<?php 
-$captcha_entered =array_key_exists('my_submit_button_name', $_POST);
-?>
 
-
-if ( document.logform.user_name.value == "" ) { 
-alert ( "Please enter your User Name" ); 
-valid = false;
-}else if ( document.logform.password.value == "" ) { 
-alert ( "Please enter your password" ); 
-valid = false;
-}
-return valid;
-}
 <!-- Form Validation -->
 </script>
 </head>
@@ -121,26 +111,23 @@ return valid;
           <tr>
             <td colspan="2"><font color="#FF0000"><?php echo "$errorMsg"; ?></font></td>
           </tr>
-          <form method="post" enctype="multipart/form-data" name="logform" id="logform" onsubmit="return validate_form ( );">
+          <form method="post" enctype="multipart/form-data" name="logform" id="logform">
             <tr>
               <td><input type="text" name="user_name" placeholder="Username" id="user_name"></td>
             </tr>
             <tr>
               <td><input type="password" name="password" placeholder="Password" id="password"></td>
             <tr>
-              <td>        <?php
-          require_once('recaptchalib.php');
-          $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
-          echo recaptcha_get_html($publickey);
-        ?><input type="submit" name="login" value="login">
+              <td><input type="submit" name="login" value="login">
             </tr>
           </form>
           <tr>
             <td>&nbsp;</td>
           </tr>
           <tr><td>
-
-</td></tr>
+                  <?php
+            echo $ayah->getPublisherHTML();
+        ?></td></tr>
                  <tr>
             <td>&nbsp;</td>
           </tr>
