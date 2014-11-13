@@ -125,6 +125,13 @@ return valid;
                     header('Location: main_menu.php');
                     exit();
                 }
+                if (!isset($_SESSION['id']) || (trim($_SESSION['id']) == '') && !isset($fb_login)) {
+                    header("location:login.php?msg=Please+Login+Again.");
+                } else {
+                    print("In else.");
+                    header('Location: http://group02p2.swe3613.com/main_menu.php');
+                    exit();
+                }
 
             } // close while
         } else {
