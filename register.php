@@ -98,7 +98,9 @@
 <header class="navbar-collapse">
     <div id="top-panel" class="container-fluid expanded-panel">
         <div class="row">
-            <div id="logo" class="col-xs-2 col-sm-2"><img src="img/cllogo.png" class="img-responsive"/></div>
+            <div class="banner-item">
+                <div id="logo" class="col-xs-2 col-sm-2"><img src="img/cllogo.png" class="img-responsive"/></div>
+            </div>
         </div>
     </div>
 </header>
@@ -116,12 +118,11 @@
 
                         <h2>Advertisement 1</h2>
 
-                        <div class="banner-item">
 
-                            <img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
+                        <img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
 
-                            <br>
-                        </div>
+                        <br>
+
                     </div>
                     <div class="panel-footer">
 
