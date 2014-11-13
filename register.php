@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="row">
         <div id="left-column" class="col-sm-3">
             <div class="well bs-component">
-                <p></p>
+                <p>
 
                     <img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
 
