@@ -37,7 +37,7 @@
     if ($_POST['user_name']) {
 
 
-    //Connect to the database through our include
+        //Connect to the database through our include
         include_once "connect_to_mysql.php";
         $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
         $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
@@ -65,13 +65,13 @@
                     echo "admin login";
 //                header('Location: http//group02p2.swe3613.com/admin ');
                     header('Location: http://group02p2.swe3613.com/main_menu.php');
-
+                    exit();
 
                 } else {
                     echo "<br>";
                     echo "user login";
                     header('Location: main_menu.php');
-
+                    exit();
                 }
 
             } // close while
