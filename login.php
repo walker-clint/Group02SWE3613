@@ -18,6 +18,7 @@ if ($_POST['user_name']) {
             // Get member ID into a session variable
             $id = $row["user_id"];
             $_SESSION['id'] = $id;
+            echo "id= $id";
             // Get member username into a session variable
             $user_name = $row["login"];
             $_SESSION['login'] = $user_name;
