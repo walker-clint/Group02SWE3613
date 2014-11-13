@@ -8,7 +8,9 @@ if ($_POST['user_name']) {
     include_once "connect_to_mysql.php";
     $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
     $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
+    echo "<br>";
     echo "user name= $user_name";
+    echo "<br>";
     echo "password= $password";
     $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password='$password'");
     $login_check = mysql_num_rows($sql);
@@ -18,6 +20,7 @@ if ($_POST['user_name']) {
             // Get member ID into a session variable
             $id = $row["user_id"];
             $_SESSION['id'] = $id;
+            echo "<br>";
             echo "id= $id";
             // Get member username into a session variable
             $user_name = $row["login"];
@@ -25,10 +28,12 @@ if ($_POST['user_name']) {
 
             //checks if user is an administrator or regular user
             if ($row["admin"] == 0) {
+                echo "<br>";
                 echo "admin login";
                 header("Location: adminMainMenu.php");
                 exit();
             } else {
+                echo "<br>";
                 echo "user login";
                 header("Location: main_menu.php");
                 exit();
