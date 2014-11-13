@@ -11,6 +11,8 @@
         include_once "connect_to_mysql.php";
         $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
         $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
+        echo "user name= $user_name";
+        echo "password= $password";
         $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password='$password'");
         $login_check = mysql_num_rows($sql);
         if ($login_check > 0) {
