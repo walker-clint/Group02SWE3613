@@ -100,8 +100,13 @@
         <div class="row row-centered">
 
             <div id="logo" class="col-xs-6 col-sm-6"><img src="img/cllogo_medium.png" class="img-responsive"/></div>
-
+            <ul class="nav navbar-nav pull-right panel-menu">
+                <li class="btn-label-right">
+                    <a href="index.php">Home</a>
+                </li>
+            </ul>
         </div>
+
     </div>
 </header>
 <!--End Header-->
