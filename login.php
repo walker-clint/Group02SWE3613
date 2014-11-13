@@ -102,7 +102,7 @@
                     <div class="well-1 bs-component">
                         <form class="form-horizontal" action="login.php" method="post">
                             <div class="form-group">
-                                <label for="User Name" class="col-lg-4 control-label">User Name</label>
+                                <label for="user_name" class="col-lg-4 control-label">User Name</label>
 
                                 <div class="col-lg-8">
                                     <input type="text" class="form-control-1" name="user_name" placeholder="User Name">
@@ -111,7 +111,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="Password" class="col-lg-4 control-label">Password</label>
+                                <label for="password" class="col-lg-4 control-label">Password</label>
 
                                 <div class="col-lg-8">
                                     <input align="center" type="Password" class="form-control-1" name="Password"
