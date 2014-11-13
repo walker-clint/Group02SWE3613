@@ -2145,7 +2145,7 @@ http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-respo
     width: inherit;
     height: 34px;
     padding: 6px 12px;
-    font-size: 14px;
+    font-size: inherit;
     line-height: 1.42857143;
     color: #555;
     background-color: #fff;
