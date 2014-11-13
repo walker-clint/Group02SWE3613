@@ -30,7 +30,7 @@ if ($_POST['user_name']) {
             if ($row["admin"] == 0) {
                 echo "<br>";
                 echo "admin login";
-                header("Location: adminMainMenu.php");
+                header("Location: admin-Main_Menu.php");
                 exit();
             } else {
                 echo "<br>";
