@@ -129,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
         <div id="center-column" class="col-xs-6">
-            <div class="panel-primary">
+            <div class="well bs-component">
                 <!--<legend>LEFT COLUMN</legend>-->
                 <h1>Register</h1>
 
