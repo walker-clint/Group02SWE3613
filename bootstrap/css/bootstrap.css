@@ -13,6 +13,7 @@ html {
 body {
   margin: 0;
 }
+a1,
 article,
 aside,
 details,
@@ -43,10 +44,17 @@ template {
   display: none;
 }
 a {
-  background: transparent;
-}
+   background: transparent;
+ }
 a:active,
 a:hover {
+  outline: 0;
+}
+a1 {
+  background: transparent;
+}
+a1:active,
+a1:hover {
   outline: 0;
 }
 abbr[title] {
@@ -203,6 +211,20 @@ th {
   }
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
+    content: "";
+  }
+  a1,
+  a1:visited {
+    text-decoration: underline;
+  }
+  a1[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  a1[href^="javascript:"]:after,
+  a1[href^="#"]:after {
     content: "";
   }
   pre,
@@ -473,6 +495,8 @@ p1 {
   margin: 0 0 10px;
   font-size: x-small;
 }
+
+
 .lead {
   margin-bottom: 20px;
   font-size: 16px;
@@ -512,6 +536,10 @@ cite {
 a.text-primary:hover {
   color: #3071a9;
 }
+a1.text-primary:hover {
+  color: #FDE910;
+}
+
 .text-success {
   color: #3c763d;
 }
@@ -4296,11 +4324,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #808080;
 }
 .label-primary {
-  background-color: #428bca;
+  background-color: #f0ad4e;
 }
 .label-primary[href]:hover,
 .label-primary[href]:focus {
-  background-color: #3071a9;
+  background-color: #f0ad4e;
 }
 .label-success {
   background-color: #5cb85c;
@@ -4310,11 +4338,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #449d44;
 }
 .label-info {
-  background-color: #5bc0de;
+  background-color: #f0ad4e;
 }
 .label-info[href]:hover,
 .label-info[href]:focus {
-  background-color: #31b0d5;
+  background-color: #f0ad4e;
 }
 .label-warning {
   background-color: #f0ad4e;
