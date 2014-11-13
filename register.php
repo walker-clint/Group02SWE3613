@@ -41,6 +41,14 @@ if ($username_check > 0){
 		$sql = mysql_query("INSERT INTO tbl_user (user_id,login,password,email,admin,secret_question,secret_answer,first_name, last_name) 
 		VALUES('$id','$user_name', '$password', '$email', 0,'$secret_q','$secret_a','$firstname','$lastname')") or die (mysql_error());
 		
+		
+		
+		
+		//header("location: customer_information.php");
+		//exit(); 
+		
+		
+		
   header("location: index.html"); 
 		exit(); // Exit so the form and page does not display, just this success message
 	} // Close else after database duplicate field value checks

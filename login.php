@@ -19,9 +19,11 @@ if($login_check > 0){
        
 		//checks if user is an administrator or regular user
 		if($row["admin"]==0){
-			
+		//header("location: customer_information.php");	
+		//exit();
 		}else{
-			
+		//header("location: administrator_information.php");
+		//exit();
 		}
 		
 		
@@ -86,7 +88,7 @@ return valid;
 
 <!--Start Content-->
 <div class="row">
-  <div id="left-column" class="col-sm-4">
+  <div id="left-column" class="col-sm-4" align="center">
     <div class="well bs-component"> 
       <!--<legend>LEFT COLUMN</legend>-->
       <h1>Login</h1>
