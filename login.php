@@ -31,7 +31,7 @@ if ($_POST['user_name']) {
                 echo "<br>";
                 echo "admin login";
 //                header('Location: http//group02p2.swe3613.com/admin ');
-                header('Location: admin_Main_Menu.php');
+                header('Location: http://group02p2.swe3613.com/main_menu.php');
                 exit();
             } else {
                 echo "<br>";
