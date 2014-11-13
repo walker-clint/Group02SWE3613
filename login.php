@@ -76,7 +76,7 @@ if ($_POST['user_name']) {
 <header class="navbar-collapse">
     <div id="top-panel" class="container-fluid expanded-panel">
         <div class="row">
-            <div id="logo" class="col-xs-2 col-sm-2"><img src="img/cllogo.png" class="img-responsive"/></div>
+            <div id="logo" class="col-xs-6 col-sm-6"><img src="img/cllogo.png" class="img-responsive"/></div>
             <br>
             <ul class="nav navbar-nav pull-right panel-menu">
                 <li class="btn-label-right">
