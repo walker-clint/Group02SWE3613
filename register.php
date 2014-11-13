@@ -197,8 +197,8 @@
                             <div style="width: auto; height: 1em; overflow: visible">Advertisement 1</div>
                         </h2>
 
+                        <a><img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/></a>
 
-                        <img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
 
                         <br>
 
