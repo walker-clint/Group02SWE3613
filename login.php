@@ -26,18 +26,21 @@ if ($_POST['user_name']) {
             //checks if user is an administrator or regular user
             if ($row["admin"] == 0) {
                 header("Location: adminMainMenu.php");
+                exit();
             } else {
                 header("Location: main_menu.php");
+                exit();
             }
 
 
 
-            exit();
+
 
 
         } // close while
     } else {
         $errorMsg .= "The username or password you entered is incorrect<br />";
+        echo "error message";
     }
 }// close if post
 ?>
