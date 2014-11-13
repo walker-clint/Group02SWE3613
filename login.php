@@ -30,7 +30,8 @@ if ($_POST['user_name']) {
             if ($row["admin"] == 0) {
                 echo "<br>";
                 echo "admin login";
-                header('Location: admin-Main_Menu.php');
+//                header('Location: http//group02p2.swe3613.com/admin ');
+                header('Location: admin_Main_Menu.php');
                 exit();
             } else {
                 echo "<br>";
