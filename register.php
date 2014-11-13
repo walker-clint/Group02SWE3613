@@ -109,23 +109,27 @@
     <!--Start Content-->
     <div class="row">
         <div id="left-column" class="col-sm-3">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <p>
+            <div class="well bs-component">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p>
 
-                    <h2>Advertisement 1</h2>
-                    <img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
+                        <h2>Advertisement 1</h2>
+                        <img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
 
-                    <br>
-                </div>
-                <div class="panel-footer">
+                        <br>
+                    </div>
+                    <div class="panel-footer">
 
-                    Image Credit: <a
-                        href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
-                        title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
-                        Artist Painter Comic Characters Painters</a> from <a href="http://vector.me/" title="Vector.me"
-                                                                             target="_blank">Vector.me</a> (by nicubunu)
-                    </p>
+                        Image Credit: <a
+                            href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
+                            title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
+                            Artist Painter Comic Characters Painters</a> from <a href="http://vector.me/"
+                                                                                 title="Vector.me"
+                                                                                 target="_blank">Vector.me</a> (by
+                        nicubunu)
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -204,7 +208,7 @@
                 </div>
             </div>
         </div>
-<!--        <div id="left-column" class="col-xs-3"></div>-->
+        <!--        <div id="left-column" class="col-xs-3"></div>-->
         <!--End Content-->
 
     </div>
