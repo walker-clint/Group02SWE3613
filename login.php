@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php
-$errorMsg = "";
-session_start();
-if ($_POST['user_name']) {
+    <?php
+    $errorMsg = "";
+    session_start();
+    if ($_POST['user_name']) {
 
 
 //Connect to the database through our include 
-    include_once "connect_to_mysql.php";
-    $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
-    $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
-    $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password='$password'");
-    $login_check = mysql_num_rows($sql);
-    if ($login_check > 0) {
-        while ($row = mysql_fetch_array($sql)) {
-            // Use the AYAH object to see if the user passed or failed the game.
-            // Get member ID into a session variable
-            $id = $row["user_id"];
-            $_SESSION['id'] = $id;
-            // Get member username into a session variable
-            $user_name = $row["login"];
-            $_SESSION['login'] = $user_name;
+        include_once "connect_to_mysql.php";
+        $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
+        $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
+        $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password='$password'");
+        $login_check = mysql_num_rows($sql);
+        if ($login_check > 0) {
+            while ($row = mysql_fetch_array($sql)) {
+                // Use the AYAH object to see if the user passed or failed the game.
+                // Get member ID into a session variable
+                $id = $row["user_id"];
+                $_SESSION['id'] = $id;
+                // Get member username into a session variable
+                $user_name = $row["login"];
+                $_SESSION['login'] = $user_name;
 
-            //checks if user is an administrator or regular user
-            if ($row["admin"] == 0) {
-                header("Location: adminMainMenu.php");
-                exit();
-            } else {
-                header("Location: main_menu.php");
-                exit();
-            }
-        } // close while
-    } else {
-        $errorMsg .= "The username or password you entered is incorrect<br />";
-        echo "error message";
-    }
-}// close if post
-?>
+                //checks if user is an administrator or regular user
+                if ($row["admin"] == 0) {
+                    header("Location: adminMainMenu.php");
+                    exit();
+                } else {
+                    header("Location: main_menu.php");
+                    exit();
+                }
+            } // close while
+        } else {
+            $errorMsg .= "The username or password you entered is incorrect<br />";
+            echo "error message";
+        }
+    }// close if post
+    ?>
 
     <meta charset="utf-8">
     <title>Crazy Leroy's Music</title>
@@ -95,96 +95,92 @@ if ($_POST['user_name']) {
         <div id="center-column" class="col-sm-6">
             <div class="well bs-component">
                 <!--<legend>LEFT COLUMN</legend>-->
-                <h1>Login</h1>
 
 
+                <div class="col-sm-8">
+                    <h1>Login</h1>
+                    <div class="well-1 bs-component">
+                        <form class="form-horizontal" action="login.php" method="post">
+                            <div class="form-group">
+                                <label for="User Name" class="col-lg-4 control-label">User Name</label>
 
-                <div class="well-1 bs-component">
-                    <form class="form-horizontal" action="main_menu.php.php" method="post">
-                        <div class="form-group">
-                            <label for="firstName" class="col-lg-2 control-label">First Name</label>
-                            <div class="col-lg-2">
-                                <input type="text" class="form-control-1" name="firstName" placeholder="First Name">
-                            </div>
-                            <div class="col-lg-4">
-                                <label for="address" class="col-lg-5 control-label">Street Address</label>
-                                <input type="text" class="form-control-1" name="street" placeholder="Street Address">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName" class="col-lg-2 control-label">Last Name</label>
-                            <div class="col-lg-2">
-                                <input type="text" class="form-control-1" name="lastName" placeholder="Last Name">
-                            </div>
-                            <div class="col-lg-4">
-                                <label for="state" class="col-lg-5 control-label">State</label>
-                                <input type="text" class="form-control-1" name="state" placeholder="State" data-mask="AA">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="emailAddress" class="col-lg-2 control-label">Email</label>
-                            <div class="col-lg-2">
-                                <input type="email" class="form-control-1" name="emailAddress" placeholder="Email Address">
-                            </div>
-                            <div class="col-lg-4">
-                                <label for="zipcode" class="col-lg-5 control-label">Zip Code</label>
-                                <input type="phone" class="form-control-1" name="zipcode" placeholder="Zip Code" data-mask="00000">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="phoneNumber" class="col-lg-2 control-label">Phone</label>
-                            <div class="col-lg-10">
-                                <input type="phone" class="form-control-1" name="phoneNumber" placeholder="Phone Number" data-mask="(000) 000-0000">
-                            </div>
-                        </div>
-                        <div align="center"><input type="submit" value="Submit"/></div>
-                    </form>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control-1" name="user_name" placeholder="User Name">
+                                </div>
 
-                    <table>
-                        <tr>
-                            <td colspan="2"><font color="#FF0000"><?php echo "$errorMsg"; ?></font></td>
-                        </tr>
-                        <form method="post" enctype="multipart/form-data" name="logform" id="logform">
-                            <tr>
-                                <td><input type="text" name="user_name" placeholder="Username" id="user_name"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="password" name="password" placeholder="Password" id="password"></td>
-                            <tr>
-                                <td><input type="submit" name="login" value="login">
-                            </tr>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Password" class="col-lg-4 control-label">Password</label>
+
+                                <div class="col-lg-8">
+                                    <input align="center" type="Password" class="form-control-1" name="Password"
+                                           placeholder="Password">
+                                </div>
+                            </div>
+
+                            <div align="center"><input type="submit" value="Login"/></div>
+
+
                         </form>
-                        <tr>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <FORM METHOD="LINK" ACTION="register.php">
-                                    <input type="submit" name="registration" value="Register">
-                                </FORM>
-                            </td>
-                        </tr>
-                    </table>
+                    </div>
                 </div>
+
+                <div class="col-sm-4">
+                    <h1>Register</h1>
+                    <div class="well-1 bs-component">
+                        <FORM METHOD="LINK" ACTION="register.php">
+                            <input align="center" type="submit" name="registration" value="Register">
+                        </FORM>
+                    </div>
+                </div>
+
+
+                <table>
+                    <tr>
+                        <td colspan="2"><font color="#FF0000"><?php echo "$errorMsg"; ?></font></td>
+                    </tr>
+                    <form method="post" enctype="multipart/form-data" name="logform" id="logform">
+                        <tr>
+                            <td><input type="text" name="user_name" placeholder="Username" id="user_name"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="password" name="password" placeholder="Password" id="password"></td>
+                        <tr>
+                            <td><input type="submit" name="login" value="login">
+                        </tr>
+                    </form>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <FORM METHOD="LINK" ACTION="register.php">
+                                <input type="submit" name="registration" value="Register">
+                            </FORM>
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <div id="right-column" class="col-sm-3"></div>
         </div>
-        <!--End Content-->
-
+        <div id="right-column" class="col-sm-3"></div>
     </div>
-    <!--End Middle-->
+    <!--End Content-->
 
-    <!--End Container-->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <!--<script src="http://code.jquery.com/jquery.js"></script>-->
-    <script src="plugins/jquery/jquery-2.1.0.min.js"></script>
-    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="plugins/bootstrap/bootstrap.min.js"></script>
-    <script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script>
-    <script src="plugins/tinymce/tinymce.min.js"></script>
-    <script src="plugins/tinymce/jquery.tinymce.min.js"></script>
-    <!-- All functions for this theme + document.ready processing -->
-    <script src="js/devoops.js"></script>
+</div>
+<!--End Middle-->
+
+<!--End Container-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="plugins/jquery/jquery-2.1.0.min.js"></script>
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script>
+<script src="plugins/tinymce/tinymce.min.js"></script>
+<script src="plugins/tinymce/jquery.tinymce.min.js"></script>
+<!-- All functions for this theme + document.ready processing -->
+<script src="js/devoops.js"></script>
 </body>
 </html>
