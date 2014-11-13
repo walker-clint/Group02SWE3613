@@ -108,7 +108,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!--Start Content-->
     <div class="row">
         <div id="left-column" class="col-sm-3">
-            <div id="logo" class="col-xs-2 col-sm-2"><img src="img/Comic_Characters_Painter_clip_art_hight.png" class="img-responsive"/></div>
+            <div id="ad_1" class="col-xs-2 col-sm-2">
+                <img src="img/Comic_Characters_Painter_clip_art_hight.png" class="img-responsive"/>
+            </div>
+            <br>
 
             Image Credit: <a href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
                              title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
