@@ -2126,3 +2126,13 @@ http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-respo
     width: 100%;
     height: 100%;
 }
+
+/*http://speckyboy.com/2012/03/05/the-challenge-of-responsive-images/*/
+
+.banner-item {
+    overflow: hidden;
+    min-height: 300px; /* 300px is arbitrary. */
+}
+.banner-item img {
+    width: 100%;
+}
