@@ -204,7 +204,7 @@
                 </div>
             </div>
         </div>
-        <div id="left-column" class="col-xs-3"></div>
+<!--        <div id="left-column" class="col-xs-3"></div>-->
         <!--End Content-->
 
     </div>
