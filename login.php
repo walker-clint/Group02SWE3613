@@ -117,7 +117,7 @@ if ($_POST['user_name']) {
                                 <label for="password" class="col-lg-4 control-label">Password</label>
 
                                 <div class="col-lg-8">
-                                    <input align="center" type="Password" class="form-control-1" name="Password"
+                                    <input align="center" type="Password" class="form-control-1" name="password"
                                            placeholder="Password">
                                 </div>
                             </div>
