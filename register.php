@@ -114,9 +114,11 @@
             <div class="well bs-component">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <p>
+                      
 
-                        <h2>Advertisement 1</h2>
+                        <h2>
+                            <div style="width: auto; height: 1em; overflow: visible">Advertisement 1</div>
+                        </h2>
 
 
                         <img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
@@ -133,7 +135,7 @@
                                                                                  title="Vector.me"
                                                                                  target="_blank">Vector.me</a> (by
                         nicubunu)
-                        </p>
+
                     </div>
                 </div>
             </div>
