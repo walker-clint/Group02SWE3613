@@ -2131,7 +2131,7 @@ http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-respo
 
 .banner-item {
     overflow: hidden;
-    min-height: 300px; /* 300px is arbitrary. */
+    min-height: 50px; /* 300px is arbitrary. */
 }
 .banner-item img {
     width: 100%;
