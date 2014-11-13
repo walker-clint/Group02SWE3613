@@ -115,9 +115,13 @@
                         <p>
 
                         <h2>Advertisement 1</h2>
-                        <img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
 
-                        <br>
+                        <div class="banner-item">
+
+                            <img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
+
+                            <br>
+                        </div>
                     </div>
                     <div class="panel-footer">
 
