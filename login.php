@@ -32,13 +32,14 @@ if ($_POST['user_name']) {
                 echo "admin login";
 //                header('Location: http//group02p2.swe3613.com/admin ');
                 header('Location: http://group02p2.swe3613.com/main_menu.php');
-                exit();
+
             } else {
                 echo "<br>";
                 echo "user login";
                 header('Location: main_menu.php');
-                exit();
+
             }
+            exit();
         } // close while
     } else {
         $errorMsg .= "The username or password you entered is incorrect<br />";
