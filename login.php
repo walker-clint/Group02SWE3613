@@ -30,14 +30,12 @@ if ($_POST['user_name']) {
             if ($row["admin"] == 0) {
                 echo "<br>";
                 echo "admin login";
-                header("Location: admin-Main_Menu.php");
-                redirect_to("admin_Main_Menu.php");
+                header('Location: admin-Main_Menu.php');
                 exit();
             } else {
                 echo "<br>";
                 echo "user login";
-                header("Location: main_menu.php");
-                redirect_to("main_menu.php");
+                header('Location: main_menu.php');
                 exit();
             }
         } // close while
