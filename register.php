@@ -110,37 +110,8 @@
 
     <!--Start Content-->
     <div class="row">
-        <div id="left-column" class="col-sm-3">
-            <div class="well bs-component">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                      
 
-                        <h2>
-                            <div style="width: auto; height: 1em; overflow: visible">Advertisement 1</div>
-                        </h2>
-
-
-                        <img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
-
-                        <br>
-
-                    </div>
-                    <div class="panel-footer">
-
-                        Image Credit: <a
-                            href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
-                            title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
-                            Artist Painter Comic Characters Painters</a> from <a href="http://vector.me/"
-                                                                                 title="Vector.me"
-                                                                                 target="_blank">Vector.me</a> (by
-                        nicubunu)
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="center-column" class="col-xs-9">
+        <div id="left-column" class="col-xs-9">
             <div class="well bs-component">
                 <!--<legend>LEFT COLUMN</legend>-->
                 <h1>Register</h1>
@@ -216,6 +187,36 @@
             </div>
         </div>
         <!--        <div id="left-column" class="col-xs-3"></div>-->
+        <div id="right-column" class="col-sm-3">
+            <div class="well bs-component">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+
+                        <h2>
+                            <div style="width: auto; height: 1em; overflow: visible">Advertisement 1</div>
+                        </h2>
+
+
+                        <img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
+
+                        <br>
+
+                    </div>
+                    <div class="panel-footer">
+
+                        Image Credit: <a
+                            href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
+                            title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
+                            Artist Painter Comic Characters Painters</a> from <a href="http://vector.me/"
+                                                                                 title="Vector.me"
+                                                                                 target="_blank">Vector.me</a> (by
+                        nicubunu)
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <!--End Content-->
 
     </div>
