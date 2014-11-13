@@ -31,12 +31,6 @@ if ($_POST['user_name']) {
                 header("Location: main_menu.php");
                 exit();
             }
-
-
-
-
-
-
         } // close while
     } else {
         $errorMsg .= "The username or password you entered is incorrect<br />";
@@ -102,6 +96,46 @@ if ($_POST['user_name']) {
             <div class="well bs-component">
                 <!--<legend>LEFT COLUMN</legend>-->
                 <h1>Login</h1>
+                <form class="form-horizontal" action="main_menu.php.php" method="post">
+                    <div class="form-group">
+                        <label for="firstName" class="col-lg-2 control-label">First Name</label>
+                        <div class="col-lg-2">
+                            <input type="text" class="form-control-1" name="firstName" placeholder="First Name">
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="address" class="col-lg-5 control-label">Street Address</label>
+                            <input type="text" class="form-control-1" name="street" placeholder="Street Address">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName" class="col-lg-2 control-label">Last Name</label>
+                        <div class="col-lg-2">
+                            <input type="text" class="form-control-1" name="lastName" placeholder="Last Name">
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="state" class="col-lg-5 control-label">State</label>
+                            <input type="text" class="form-control-1" name="state" placeholder="State" data-mask="AA">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailAddress" class="col-lg-2 control-label">Email</label>
+                        <div class="col-lg-2">
+                            <input type="email" class="form-control-1" name="emailAddress" placeholder="Email Address">
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="zipcode" class="col-lg-5 control-label">Zip Code</label>
+                            <input type="phone" class="form-control-1" name="zipcode" placeholder="Zip Code" data-mask="00000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber" class="col-lg-2 control-label">Phone</label>
+                        <div class="col-lg-10">
+                            <input type="phone" class="form-control-1" name="phoneNumber" placeholder="Phone Number" data-mask="(000) 000-0000">
+                        </div>
+                    </div>
+                    <div align="center"><input type="submit" value="Submit"/></div>
+                </form>
+
 
                 <div class="well-1 bs-component">
                     <table>
