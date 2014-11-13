@@ -99,7 +99,8 @@
     <div id="top-panel" class="container-fluid expanded-panel">
         <div class="row">
             <div class="banner-item">
-                <div id="logo" class="col-xs-2 col-sm-2"><img src="img/cllogo.png" class="img-responsive"/></div>
+                <img src="img/cllogo.png" class="img-responsive"/>
+<!--                <div id="logo" class="col-xs-2 col-sm-2"><img src="img/cllogo.png" class="img-responsive"/></div>-->
             </div>
         </div>
     </div>
