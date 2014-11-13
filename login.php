@@ -31,7 +31,7 @@ if ($_POST['user_name']) {
             }
 
 
-            header("location: main_menu.html");
+            header("Location: main_menu.html");
             exit();
 
 
