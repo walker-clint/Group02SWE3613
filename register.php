@@ -129,7 +129,7 @@
                 </div>
             </div>
         </div>
-        <div id="center-column" class="col-xs-6">
+        <div id="center-column" class="col-xs-9">
             <div class="well bs-component">
                 <!--<legend>LEFT COLUMN</legend>-->
                 <h1>Register</h1>
