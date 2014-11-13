@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <?php
 $errorMsg = "";
 session_start();
@@ -38,9 +41,7 @@ if ($_POST['user_name']) {
     }
 }// close if post
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
     <meta charset="utf-8">
     <title>Crazy Leroy's Music</title>
     <meta name="description" content="description">
@@ -73,7 +74,7 @@ if ($_POST['user_name']) {
 <body>
 <!--Start Header-->
 <header class="navbar-collapse">
-    <div id="top-panel" class="container-fluid expanded-panel">
+    <div id="top-panel" class="container-fluid expanded-panel" aria-setsize="50px">
         <div class="row">
             <div id="logo" class="col-xs-2 col-sm-2"><img src="img/cllogo.png" class="img-responsive"/></div>
         </div>
@@ -112,7 +113,7 @@ if ($_POST['user_name']) {
                         <tr>
                             <td>
                                 <FORM METHOD="LINK" ACTION="register.php">
-                                    <input type="submit" name="login" value="Register">
+                                    <input type="submit" name="registration" value="Register">
                                 </FORM>
                             </td>
                         </tr>
