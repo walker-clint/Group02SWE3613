@@ -107,7 +107,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!--Start Content-->
     <div class="row">
-        <div id="left-column" class="col-sm-3"></div>
+        <div id="left-column" class="col-sm-3">
+            Image Credit: <a href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
+                             title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
+                Artist Painter Comic Characters Painters</a> from <a href="http://vector.me/" title="Vector.me"
+                                                                     target="_blank">Vector.me</a> (by nicubunu)
+
+        </div>
         <div id="center-column" class="col-sm-6">
             <div class="well bs-component">
                 <!--<legend>LEFT COLUMN</legend>-->
