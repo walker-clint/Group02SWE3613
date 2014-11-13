@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="row">
         <div id="left-column" class="col-sm-3">
             <div id="ad_1" class="col-xs-2 col-sm-2">
-                <img src="img/Comic_Characters_Painter_clip_art_hight.png" class="img-thumbnail"/>
+                <img src="img/Comic_Characters_Painter_clip_art_hight.png" class="img smallResolution"/>
             </div>
             <br>
 
