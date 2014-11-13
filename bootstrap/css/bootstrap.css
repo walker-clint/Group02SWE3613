@@ -5811,8 +5811,12 @@ button.close {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
-@media (max-width: 368px) {
+@media screen and (max-width: 368px) {
   img.smallResolution{
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
     min-height: 15px;
   }
 
