@@ -97,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <header class="navbar-collapse">
     <div id="top-panel" class="container-fluid expanded-panel">
         <div class="row">
-            <div id="logo" class="col-xs-2 col-sm-2"><img src="img/cllogo.png" class="img-thumbnail"/></div>
+            <div id="logo" class="col-xs-2 col-sm-2"><img src="img/cllogo.png" class="img-responsive"/></div>
         </div>
     </div>
 </header>
@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="row">
         <div id="left-column" class="col-sm-3">
             <div id="ad_1" class="col-xs-2 col-sm-2">
-                <img src="img/Comic_Characters_Painter_clip_art_hight.png" class="img-responsive"/>
+                <img src="img/Comic_Characters_Painter_clip_art_hight.png" class="img-thumbnail"/>
             </div>
             <br>
 
