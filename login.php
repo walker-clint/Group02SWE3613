@@ -57,6 +57,7 @@ $errorMsg .= "The username or password you entered is incorrect<br />";
     <script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
     <script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
     <![endif]-->
+<<<<<<< HEAD
 <script type="text/javascript">
 <!-- Form Validation -->
 function validate_form ( ) { 
@@ -72,6 +73,68 @@ return valid;
 }
 <!-- Form Validation -->
 </script>
+=======
+    <script type="text/javascript">
+        <!--
+        Form
+        Validation -->
+
+        <!--
+        Form
+        Validation -->
+    </script>
+    <?php
+    $errorMsg = "";
+    session_start();
+    if ($_POST['user_name']) {
+
+
+        //Connect to the database through our include
+        include_once "connect_to_mysql.php";
+        $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
+        $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
+        echo "<br>";
+        echo "user name= $user_name";
+        echo "<br>";
+        echo "password= $password";
+        $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password='$password'");
+        $login_check = mysql_num_rows($sql);
+        if ($login_check > 0) {
+            while ($row = mysql_fetch_array($sql)) {
+                // Use the AYAH object to see if the user passed or failed the game.
+                // Get member ID into a session variable
+                $id = $row["user_id"];
+                $_SESSION['id'] = $id;
+                echo "<br>";
+                echo "id= $id";
+                // Get member username into a session variable
+                $user_name = $row["login"];
+                $_SESSION['login'] = $user_name;
+
+                //checks if user is an administrator or regular user
+                if ($row["admin"] == 0) {
+                    echo "<br>";
+                    echo "admin login";
+//                header('Location: http//group02p2.swe3613.com/admin ');
+                    header('Location: http://group02p2.swe3613.com/main_menu.php');
+                    exit();
+
+                } else {
+                    echo "<br>";
+                    echo "user login";
+                    header('Location: main_menu.php');
+                    exit();
+                }
+
+            } // close while
+        } else {
+            $errorMsg .= "The username or password you entered is incorrect<br />";
+            echo "error message";
+        }
+    }// close if post
+    ?>
+
+>>>>>>> 1de204fb3b384bb1308fae6e00db6893d2bceddb
 </head>
 <body>
 <!--Start Header-->
