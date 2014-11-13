@@ -24,9 +24,11 @@ if ($_POST['user_name']) {
 
             //checks if user is an administrator or regular user
             if ($row["admin"] == 0) {
+                echo "admin login";
                 header("Location: adminMainMenu.php");
                 exit();
             } else {
+                echo "user login";
                 header("Location: main_menu.php");
                 exit();
             }
