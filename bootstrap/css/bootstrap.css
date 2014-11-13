@@ -5813,7 +5813,7 @@ button.close {
 
 @media screen and (max-width: 368px) {
   img.smallResolution{
-    min-height: 150px;
+    min-height: 50px;
   }
 
 }
