@@ -100,6 +100,7 @@
         <div class="row row-centered">
 
             <div id="logo" class="col-xs-6 col-sm-6"><img src="img/cllogo_medium.png" class="img-responsive"/></div>
+            <br>
             <ul class="nav navbar-nav pull-right panel-menu">
                 <li class="btn-label-right">
                     <div class="well-1 btn">
