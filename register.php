@@ -110,9 +110,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div id="left-column" class="col-sm-3">
             <div class="well bs-component">
                 <p></p>
-                <div id="ad_1" class="col-xs-2 col-sm-2">
-                    <img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img smallResolution"/>
-                </div>
+
+                    <img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
+
                 <br>
 
                 Image Credit: <a
@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </p>
             </div>
         </div>
-        <div id="center-column" class="col-sm-6">
+        <div id="center-column" class="col-xs-6">
             <div class="well bs-component">
                 <!--<legend>LEFT COLUMN</legend>-->
                 <h1>Register</h1>
@@ -198,7 +198,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
         </div>
-        <div id="left-column" class="col-sm-3"></div>
+        <div id="left-column" class="col-xs-3"></div>
         <!--End Content-->
 
     </div>
