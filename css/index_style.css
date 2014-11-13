@@ -9,6 +9,7 @@ body {
 .modal-open #content {z-index: inherit;}
 .body-expanded .expanded-panel, .fancybox-margin .expanded-panel, .modal-open .expanded-panel {
     margin-right: 15px;
+    min-height: 100px;
 }
 .body-screensaver {
     overflow: hidden;
@@ -55,6 +56,7 @@ h1{
     box-shadow: 0 1px 2px #272727;
     background: #700000;
     z-index: 2000;
+    min-height: 100px;
 }
 .body-expanded .navbar {
     z-index: 9;
@@ -2125,4 +2127,51 @@ http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-respo
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+/*http://speckyboy.com/2012/03/05/the-challenge-of-responsive-images/*/
+
+.banner-item {
+    overflow: hidden;
+    min-height: 50px; /* 300px is arbitrary. */
+}
+.banner-item img {
+    width: 100%;
+}
+
+
+.form-control-1 {
+    display: block;
+    width: inherit;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: inherit;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.form-control-2 {
+    display: block;
+    width: 80px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
