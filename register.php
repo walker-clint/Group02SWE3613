@@ -97,7 +97,7 @@
 <!--Start Header-->
 <header class="navbar-collapse">
     <div id="top-panel" class="container-fluid expanded-panel">
-        <div class="row">
+        <div class="row row-centered">
 
             <div id="logo" class="col-xs-6 col-sm-6"><img src="img/cllogo_medium.png" class="img-responsive"/></div>
 
@@ -109,14 +109,14 @@
 <div id="main" class="container-fluid">
 
     <!--Start Content-->
-    <div class="row">
+    <div class="row row-centered">
 
-        <div id="left-column" class="col-xs-9">
+        <div id="left-column" class="col-sm-9">
             <div class="well bs-component">
                 <!--<legend>LEFT COLUMN</legend>-->
                 <h1>Register</h1>
 
-                <div class="well-1 bs-component">
+                <div class="well-1 bs-component ">
                     <table>
                         <form align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
                               method="post" enctype="multipart/form-data">
@@ -189,7 +189,7 @@
         <!--        <div id="left-column" class="col-xs-3"></div>-->
         <div id="right-column" class="col-sm-3">
             <div class="well bs-component">
-                <div class="panel panel-default">
+                <div class="panel p">
                     <div class="panel-body">
 
 
