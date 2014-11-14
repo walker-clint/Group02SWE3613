@@ -73,6 +73,21 @@
         </div>
 
         <div>
+            <h2>Get a user's MixTape</h2>
+            <p>$mixTape= getMixTape(1)</p>
+            <?php
+            $mixTape = getMixtape(1);
+
+            foreach ($mixTape as $mtEntry) {
+                if ($mtEntry instanceof MixSong) {
+                    echo $mtEntry->position . ' ' . $mtEntry . '<br>';
+                }
+            }
+            ?>
+
+        </div>
+
+        <div>
             <h2>Get list of all songs as array</h2>
             <p>The function returns a php array of Song objects.
             </p>
