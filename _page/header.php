@@ -1,4 +1,3 @@
-
 <header class="navbar-collapse">
     <div id="logo" class="col-xs-6 col-sm-6">
         <img src="img/cllogo_medium.png" class="img-responsive"/>
@@ -20,4 +19,4 @@
             </ul>
         </div>
     </div>
-</header>';
+</header>
