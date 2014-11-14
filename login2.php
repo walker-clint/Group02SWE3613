@@ -48,11 +48,11 @@
                         <!--<legend>LEFT COLUMN</legend>-->
                         <h1 align="center">Login</h1>
                         <div class="well-1 bs-component">
-                            <form class="form-horizontal" action="" method="post">
+                            <form class="form-horizontal" action="php/loginService.php" method="post">
                                 <div class="form-group">
                                     <label for="user_name" class="col-lg-4 control-label">User Name</label>
                                     <div class="col-lg-8">
-                                        <input type="text" class="form-control-1" name="user_name" placeholder="User Name">
+                                        <input type="text" class="form-control-1" name="username" placeholder="User Name">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -63,7 +63,7 @@
                                     </div>
                                 </div>
                                 <div align="center">
-                                    <input class="btn" type="submit" value="Login"/>
+                                    <input type="button" value="Login"/>
                                 </div>
                             </form>
                         </div>
