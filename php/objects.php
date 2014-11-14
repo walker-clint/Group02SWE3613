@@ -81,3 +81,46 @@ class Song {
     }
 
 }
+
+class User {
+
+    public $id;
+    public $login;
+    public $password;
+    public $email;
+    public $admin;
+    public $secret_question;
+    public $secret_answer;
+    public $first_name;
+    public $last_name;
+
+    public function __construct($id, $log, $email, $first_name, $last_name) {
+        $this->id = $id;
+        $this->login = $log;
+        $this->email = $email;
+        $this->first_name = $first_name;
+        $this->last_name = $last_name;
+    }
+
+}
+
+class MixSong {
+
+    public $song;
+    public $position;
+
+    public function __construct($s, $pos) {
+        $this->song = $s;
+        $this->position = $pos;
+    }
+
+    public function compare($a, $b) {
+        if ($a instanceof MixSong && $b instanceof MixSong) {
+            return $a->song - $b->song;
+        }
+    }
+    
+    public function __toString(){
+        return getSong($this->song)->title;
+    }
+}
