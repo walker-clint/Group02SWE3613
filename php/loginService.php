@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include("connection.php");
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -54,6 +54,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="submit" value=" Submit "/><br />
 
             </form>
+
+
         </div>
+
     </body>
 </html>
