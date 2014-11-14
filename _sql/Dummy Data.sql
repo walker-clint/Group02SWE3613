@@ -25,6 +25,7 @@ INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, 
 INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `first_name`, `last_name`) VALUES ('user14', 'pass', 'fake14@fake.com', '0', 'Bob14', 'Smith14');
 INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `first_name`, `last_name`) VALUES ('user15', 'pass', 'fake15@fake.com', '0', 'Bob15', 'Smith15');
 INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `secret_question`,`secret_answer`,`first_name`, `last_name`) VALUES ('exampleuser', 'examplepassword', 'example@email.com', '0', 'whatisthis', 'anexample', 'examplefirst', 'examplelast');
+INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `secret_question`,`secret_answer`,`first_name`, `last_name`) VALUES ('clint', 'password', 'cwalker6@spsu.edu', '0', 'nicknae', 'tiger', 'Clinton', 'Walker');
 
 INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Symphonic Power Metal');
 INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Rock');
