@@ -196,3 +196,26 @@ function getSongArtist($songIDinc) {
     }
     return $returnArray;
 }
+
+function getMixtape($userIDInc) {
+    $userID = htmlspecialchars($userIDInc);
+
+    $con = initializeConnection();
+
+    $query = 'SELECT song_id, position '
+            . 'FROM tbl_mixtape '
+            . 'WHERE user_id = ? '
+            . 'ORDER BY position';
+    $stmt = $con->prepare($query);
+
+    $stmt->bind_param('i', $userID);
+    $stmt->execute();
+    $stmt->bind_result($song_id, $position);
+
+    $returnArray = array();
+    while ($stmt->fetch()) {
+        $newMixTapeEntry=new MixSong($song_id, $position);
+        array_push($returnArray, $newMixTapeEntry);
+    }
+    return $returnArray;
+}
