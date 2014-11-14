@@ -1,40 +1,3 @@
-<?php
-$errorMsg = "";
-session_start(); 
-if ($_POST['user_name']) {
-//Connect to the database through our include 
-include_once "connect_to_mysql.php";
-$user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
-$password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
-$sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password='$password'"); 
-$login_check = mysql_num_rows($sql);
-if($login_check > 0){ 
-    while($row = mysql_fetch_array($sql)){
-        // Get member ID into a session variable
-         $id = $row["user_id"];   
-        $_SESSION['id'] = $id;
-        // Get member username into a session variable
-	    $user_name = $row["login"];   
-        $_SESSION['login'] = $user_name;
-       
-		//checks if user is an administrator or regular user
-		if($row["admin"]==0){
-		//header("location: customer_information.php");	
-		//exit();
-		}else{
-		//header("location: administrator_information.php");
-		//exit();
-		}
-		
-		
-		header("location: index.html"); 
-		exit();
-    } // close while
-} else {
-$errorMsg .= "The username or password you entered is incorrect<br />";
-}
-}// close if post
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,40 +20,12 @@ $errorMsg .= "The username or password you entered is incorrect<br />";
     <script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
     <script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
     <![endif]-->
-<<<<<<< HEAD
-<script type="text/javascript">
-<!-- Form Validation -->
-function validate_form ( ) { 
-valid = true; 
-if ( document.logform.user_name.value == "" ) { 
-alert ( "Please enter your User Name" ); 
-valid = false;
-}else if ( document.logform.password.value == "" ) { 
-alert ( "Please enter your password" ); 
-valid = false;
-}
-return valid;
-}
-<!-- Form Validation -->
-</script>
-=======
-    <script type="text/javascript">
-        <!--
-        Form
-        Validation -->
-
-        <!--
-        Form
-        Validation -->
-    </script>
-    <?php
+<?php
     $errorMsg = "";
     session_start();
+	include_once "connect_to_mysql.php";
     if ($_POST['user_name']) {
-
-
         //Connect to the database through our include
-        include_once "connect_to_mysql.php";
         $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
         $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
         echo "<br>";
@@ -110,7 +45,6 @@ return valid;
                 // Get member username into a session variable
                 $user_name = $row["login"];
                 $_SESSION['login'] = $user_name;
-
                 //checks if user is an administrator or regular user
                 if ($row["admin"] == 0) {
                     echo "<br>";
@@ -118,30 +52,83 @@ return valid;
 //                header('Location: http//group02p2.swe3613.com/admin ');
                     header('Location: http://group02p2.swe3613.com/main_menu.php');
                     exit();
-
                 } else {
                     echo "<br>";
                     echo "user login";
                     header('Location: main_menu.php');
                     exit();
                 }
-
             } // close while
         } else {
             $errorMsg .= "The username or password you entered is incorrect<br />";
             echo "error message";
         }
     }// close if post
-    ?>
+	
+	
+	
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+//Connect to the database through our include 
 
->>>>>>> 1de204fb3b384bb1308fae6e00db6893d2bceddb
+$r_user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['r_user_name']);
+$r_password = ereg_replace("[^A-Za-z0-9]", "", $_POST['r_password']);
+$r_firstname = ereg_replace("[^A-Za-z0-9]", "", $_POST['r_firstname']); // filter everything but numbers and letters
+	$r_lastname = ereg_replace("[^A-Za-z0-9]", "", $_POST['r_lastname']); // filter everything but numbers and letters
+	$r_email = stripslashes($_POST['r_email']);
+	$r_email = strip_tags($r_email);
+	$r_email = mysql_real_escape_string($r_email);
+	$r_secret_q = ereg_replace("[^A-Za-z0-9 ]", "", $_POST['r_secret_q']);
+	$r_secret_a = ereg_replace("[^A-Za-z0-9 ]", "", $_POST['r_secret_a']);
+	if((!$r_firstname) || (!$r_lastname) || (!$r_email) || (!$r_user_name || (!$r_password))){
+		
+		$r_errorMsg = "You did not submit the following required information!<br /><br />";
+		if(!$r_firstname){
+			$r_errorMsg .= "--- First Name<br />";
+		} if(!$r_lastname){ 
+	       $r_errorMsg .= "--- Last Name<br />"; 
+		}if(!$r_email){ 
+	       $r_errorMsg .= "--- Email Address<br />"; 
+	   }if(!$r_user_name){ 
+	       $r_errorMsg .= "--- Username<br />"; 
+	   }if(!$r_password){ 
+	       $r_errorMsg .= "--- Password<br />"; 
+	  	   }
+	} else {
+		$sql_username_check = mysql_query("SELECT user_id FROM tbl_user WHERE login='$r_user_name' LIMIT 1");
+	$username_check = mysql_num_rows($sql_username_check); 
+if ($username_check > 0){ 
+		$r_errorMsg = "<u>ERROR:</u><br />The username is already in use inside our system. Please try another.";
+	} else {
+		// Add MD5 Hash to the password variable
+       $hashedPass = md5($password); 
+	   		// Get the inserted ID here to use in the activation email
+		$id = mysql_insert_id();
+		// Add user info into the database table, claim your fields then values 
+		$sql = mysql_query("INSERT INTO tbl_user (user_id,login,password,email,admin,secret_question,secret_answer,first_name, last_name) 
+		VALUES('$id','$r_user_name', '$r_password', '$r_email', 0,'$r_secret_q','$r_secret_a','$r_firstname','$r_lastname')") or die (mysql_error());
+		
+		
+		$_SESSION['id'] = $id;
+		
+  header("location: index.html"); 
+		exit(); // Exit so the form and page does not display, just this success message
+	} // Close else after database duplicate field value checks
+  } // Close else after missing vars check
+} //Close if $_POST
+    ?>
 </head>
 <body>
 <!--Start Header-->
 <header class="navbar-collapse">
   <div id="top-panel" class="container-fluid expanded-panel">
     <div class="row">
-      <div id="logo" class="col-xs-2 col-sm-2"> <img src="img/cllogo.png" class="img-responsive" /> </div>
+      <div id="logo" class="col-xs-6 col-sm-6"><img src="img/cllogo_medium.png" class="img-responsive"/></div>
+      <br>
+      <ul class="nav navbar-nav pull-right panel-menu">
+        <li class="btn-label-right">
+          <div class="well-1 btn"> <a href="index.html">Home</a> </div>
+        </li>
+      </ul>
     </div>
   </div>
 </header>
@@ -151,40 +138,96 @@ return valid;
 
 <!--Start Content-->
 <div class="row">
-  <div id="left-column" class="col-sm-4" align="center">
-    <div class="well bs-component"> 
-      <!--<legend>LEFT COLUMN</legend>-->
-      <h1>Login</h1>
-      <div class="well-1 bs-component">
-        <table>
-          <tr>
-            <td colspan="2"><font color="#FF0000"><?php echo "$errorMsg"; ?></font></td>
-          </tr>
-          <form method="post" enctype="multipart/form-data" name="logform" id="logform" onsubmit="return validate_form ( );">
-            <tr>
-              <td><input type="text" name="user_name" placeholder="Username" id="user_name"></td>
-            </tr>
-            <tr>
-              <td><input type="password" name="password" placeholder="Password" id="password"></td>
-            <tr>
-              <td><input type="submit" name="login" value="login">
-            </tr>
-          </form>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><FORM METHOD="LINK" ACTION="register.php">
-                <input type="submit" name="login" value="Register">
-              </FORM></td>
-          </tr>
-        </table>
-      </div>
+<div id="left-column" class="col-sm-1"></div>
+<div id="center1-column" class="col-sm-4">
+  <div class="well bs-component"> 
+    <!--<legend>LEFT COLUMN</legend>-->
+    <h1 align="center">Login</h1>
+    <div class="well-1 bs-component">
+      <form class="form-horizontal" action="login.php" method="post">
+        <div class="form-group">
+          <label for="user_name" class="col-lg-4 control-label">User Name</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control-1" name="user_name" placeholder="User Name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password" class="col-lg-4 control-label">Password</label>
+          <div class="col-lg-8">
+            <input align="center" type="Password" class="form-control-1" name="password"
+                                           placeholder="Password">
+          </div>
+        </div>
+        <div align="center">
+          <input type="submit" value="Login"/>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div id="right-column" class="col-sm-2"></div>
+<div id="center2-column" class="col-sm-4">
+  <div class="well bs-component"> 
+    <!--<legend>LEFT COLUMN</legend>-->
+    
+    <h1 align="center">Register</h1>
+    <div class="well-1 bs-component">
+      <form  align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
+        <font color="#FF0000"><?php echo "$r_errorMsg"; ?></font> <br>
+        <div class="form-group">
+          <label for="r_firstname" class="col-lg-4 control-label">First Name</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control-1" name="r_firstname" placeholder="First Name" value='<?php echo "$r_firstname" ?>'>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="r_lastname" class="col-lg-4 control-label">Last Name</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control-1" name="r_lastname" placeholder="Last Name" value='<?php echo "$r_lastname" ?>'>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="r_email" class="col-lg-4 control-label">Email</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control-1" name="r_email" placeholder="Email" value='<?php echo "$r_email" ?>'>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="r_user_name" class="col-lg-4 control-label">Username</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control-1" name="r_user_name" placeholder="Username" value='<?php echo "$r_user_name" ?>'>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="r_password" class="col-lg-4 control-label">Password</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control-1" name="r_password" placeholder="Password" value='<?php echo "$r_password" ?>'>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="r_secret_q" class="col-lg-4 control-label">Secret Question</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control-1" name="r_secret_q" placeholder="Secret Question" value='<?php echo "$r_secret_q" ?>'>
+          </div>
+        </div>
+        
+               <div class="form-group">
+               
+          <label for="r_secret_a" class="col-lg-4 control-label">Secret Answer</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control-1" name="r_secret_a" placeholder="Secret Answer" value='<?php echo "$r_secret_a" ?>'>
+          </div>
+        </div>
+        <div align="center">
+          <input type="submit" value="Register"/>
+        </div>
+      </form>
     </div>
   </div>
   <!--End Content--> 
   
 </div>
+<div id="right-column" class="col-sm-1"></div>
 <!--End Middle--> 
 
 <!--End Container--> 
