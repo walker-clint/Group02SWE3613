@@ -34,6 +34,7 @@ function deleteSong($songId) {
     $queryArtist = 'DELETE FROM tbl_song_artist WHERE song_id = ?';
     $queryGenre = 'DELETE FROM tbl_song_genre WHERE song_id = ?';
     $querySong = 'DELETE FROM tbl_song WHERE song_id = ?';
+    $queryMix = 'DELETE FROM tbl_mixtape WHERE song_id = ?';
 
     $stmtArtist = $con->prepare($queryArtist);
     $stmtArtist->bind_param('i', $songId);
@@ -46,6 +47,10 @@ function deleteSong($songId) {
     $stmtSong = $con->prepare($querySong);
     $stmtSong->bind_param('i', $songId);
     $stmtSong->execute();
+
+    $stmtMix = $con->prepare($queryMix);
+    $stmtMix->bind_param('i', $songId);
+    $stmtMix->execute();
 }
 
 function addArtist($name) {
@@ -128,4 +133,37 @@ function deleteGenre($genreId) {
     $stmtArtist = $con->prepare($queryGenre);
     $stmtArtist->bind_param('i', $genreId);
     $stmtArtist->execute();
+}
+
+function addMixtape($userId, $songId, $position) {
+    $con = initializeConnection();
+
+    $query = 'INSERT INTO tbl_mixtape(user_id, song_id, position) values (?,?,?)';
+
+    $stmt = $con->prepare($query);
+    $stmt->bind_param('iii', $userId, $songId, $position);
+    $stmt->execute();
+
+    //$insertId = mysqli_insert_id($con);
+    //return $insertId;
+}
+
+function updateMixtape($userId, $origSongId, $origPosition, $songId, $position) {
+    $con = initializeConnection();
+
+    $query = 'UPDATE tbl_mixtape SET song_id=?, position=? WHERE user_id =? AND song_id = ? AND position = ?';
+
+    $stmt = $con->prepare($query);
+    $stmt->bind_param('iiiii', $songId, $position, $userId, $origSongId, $origPosition);
+    $stmt->execute();
+}
+
+function deleteMixtape($userId, $songId) {
+    $con = initializeConnection();
+
+    $querySong = 'DELETE FROM tbl_mixtape WHERE song_id = ? AND user_id = ?';
+
+    $stmtSong = $con->prepare($querySong);
+    $stmtSong->bind_param('ii', $songId, $userId);
+    $stmtSong->execute();
 }
