@@ -1,25 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <title>Crazy Leroy's Music</title>
-        <meta name="description" content="description">
-        <meta name="author" content="Crazy Leroy's Music">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-        <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
-        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
-        <link href="plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
-        <link href="plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
-        <link href="plugins/xcharts/xcharts.min.css" rel="stylesheet">
-        <link href="plugins/select2/select2.css" rel="stylesheet">
-        <link href="css/index_style.css" rel="stylesheet">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
-            <script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
-            <![endif]-->
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; ?>
         <?php
         $errorMsg = "";
         session_start();
@@ -119,20 +101,9 @@
     </head>
     <body>
         <!--Start Header-->
-        <header class="navbar-collapse">
-            <div id="top-panel" class="container-fluid expanded-panel">
-                <div class="row">
-                    <div id="logo" class="col-xs-6 col-sm-6"><img src="img/cllogo_medium.png" class="img-responsive"/></div>
-                    <br>
-                    <ul class="nav navbar-nav pull-right panel-menu">
-                        <li class="btn-label-right">
-                            <div class="well-1 btn"> <a href="index.html">Home</a> </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </header>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
         <!--End Header--> 
+        
         <!--Start Middle-->
         <div id="main" class="container-fluid">
 
