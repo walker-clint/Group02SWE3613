@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <base href="../">
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/html/headLinks.html'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; ?>
     </head>
     <body>
         <!--Start Header-->
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/html/header.html'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
         <!--End Header-->
         
         <!--Start Middle-->
