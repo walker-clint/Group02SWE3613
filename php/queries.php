@@ -134,23 +134,25 @@ function getFlaggedSongs() {
 
 function getUserMixTape($userIDinc) {
     $userID = htmlspecialchars($userIDinc);
-
-    $con = initializeConnection();
-
-    $query = 'SELECT tbl_song.title, tbl_mixtape.position FROM tbl_song ' .
-            'JOIN tbl_mixtape ON tbl_mixtape.song_id = tbl_song.song_id ' .
-            'WHERE tbl_mixtape.user_id = ? ' .
-            'ORDER BY tbl_mixtape.position;';
-    $stmt = $con->prepare($query);
-
-    $stmt->bind_param('i', $userID);
-    $stmt->execute();
-    $stmt->bind_result($song_title, $song_position);
-    $returnArray = array();
-    while ($stmt->fetch()) {
-        array_push($returnArray, ($song_title . ' | ' . $song_position));
-    }
-    return $returnArray;
+    return getMixtape($userID);
+//    $userID = htmlspecialchars($userIDinc);
+//
+//    $con = initializeConnection();
+//
+//    $query = 'SELECT tbl_song.title, tbl_mixtape.position FROM tbl_song ' .
+//            'JOIN tbl_mixtape ON tbl_mixtape.song_id = tbl_song.song_id ' .
+//            'WHERE tbl_mixtape.user_id = ? ' .
+//            'ORDER BY tbl_mixtape.position;';
+//    $stmt = $con->prepare($query);
+//
+//    $stmt->bind_param('i', $userID);
+//    $stmt->execute();
+//    $stmt->bind_result($song_title, $song_position);
+//    $returnArray = array();
+//    while ($stmt->fetch()) {
+//        array_push($returnArray, ($song_title . ' | ' . $song_position));
+//    }
+//    return $returnArray;
 }
 
 function getSongGenre($songIDinc) {
