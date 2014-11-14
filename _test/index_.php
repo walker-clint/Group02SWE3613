@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/html/head.html'; ?>
+        <base href="../">
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/html/headLinks.html'; ?>
     </head>
     <body>
         <!--Start Header-->
