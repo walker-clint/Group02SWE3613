@@ -1,6 +1,7 @@
 <?php
 
-include("connection.php");
+require $_SERVER['DOCUMENT_ROOT'] . ("connection.php");
+
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -23,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //$_SESSION['login_user'] = $myusername;
         $_SESSION['user_id'] = $userId;
 
-        if($admin==1) {
+        if ($admin == 1) {
             header("Location: ./admin_Main_Menu.php");
         } else {
             header("Location: main_menu.php");

@@ -1,6 +1,7 @@
 <?php
 
-include('connection.php');
+require $_SERVER['DOCUMENT_ROOT'] . ("connection.php");
+
 session_start();
 $user_check = $_SESSION['login_user'];
 
