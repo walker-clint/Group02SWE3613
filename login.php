@@ -58,13 +58,13 @@
                                 <div class="form-group">
                                     <label for="user_name" class="col-lg-4 control-label">User Name</label>
                                     <div class="col-lg-8">
-                                        <input type="text" class="form-control-1" name="user_name" placeholder="User Name">
+                                        <input type="text" class="form-control" name="user_name" placeholder="User Name">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password" class="col-lg-4 control-label">Password</label>
                                     <div class="col-lg-8">
-                                        <input align="center" type="Password" class="form-control-1" name="password"
+                                        <input align="center" type="Password" class="form-control" name="password"
                                                placeholder="Password">
                                     </div>
                                 </div>
