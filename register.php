@@ -100,8 +100,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group">
-                                        <label for="lastname" class="col-xs-6 control-label">Last Name</label>
-                                        <div class="col-xs-12">
+                                        <label for="lastname" class="col-xs-4 control-label">Last Name</label>
+                                        <div class="col-xs-8">
                                             <input type="text" class="form-control-1" name="lastname" placeholder="Last Name" value="<?php echo "$lastname"; ?>">
                                         </div>
                                     </div>
