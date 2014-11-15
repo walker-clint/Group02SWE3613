@@ -1,4 +1,5 @@
 <?php
+
 include("connection.php");
 session_start();
 
@@ -25,6 +26,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = '<span class="error">Your Login Name or Password is invalid<br></span>';
     }
 } else {
-    $error = '<span class="error">DID NOT CONNECT TO SERVER<br></span>'
-?>
-
+    $error = '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
+}
