@@ -8,7 +8,7 @@
         session_start();
         include_once "connect_to_mysql.php";
         //if ($_POST['user_name']) {
-        if($_SESSION['id']){
+        if($_SESSION['id']!=NULL){
             //Connect to the database through our include
             $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
             $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
