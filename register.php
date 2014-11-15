@@ -90,33 +90,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="well-1 bs-component">
                             <form class="form-horizontal" align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
 
-                                <label for="firstname" class="control-label col-xs-2 col-md-2" align="right">First Name</label>
+                                <label for="firstname" class="col-xs-2 col-md-2 control-label" align="right">First Name</label>
                                 <div class="col-xs-10 col-md-10">
-                                    <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
+                                    <input type="text" class="form-control" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
                                 </div>
-                                <label for="lastname" class="col-xs-6 control-label">Last Name</label>
-                                <div class="col-xs-12">
-                                    <input type="text" class="form-control-1" name="lastname" placeholder="Last Name" value="<?php echo "$lastname"; ?>">
+                                <label for="lastname" class="col-xs-2 col-md-2 control-label">Last Name</label>
+                                <div class="col-xs-10">
+                                    <input type="text" class="form-control" name="lastname" placeholder="Last Name" value="<?php echo "$lastname"; ?>">
                                 </div>
-                                <label for="email" class="col-lg-4 control-label">Email</label>
-                                <div class="col-lg-8">
-                                    <input type="email" class="form-control-1" name="email" placeholder="Email" value="<?php echo "$email"; ?>">
+                                <label for="email" class="col-xs-2 col-md-2 control-label">Email</label>
+                                <div class="col-lg-10">
+                                    <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo "$email"; ?>">
                                 </div>
-                                <label for="username" class="col-lg-4 control-label">Username</label>
-                                <div class="col-lg-8">
-                                    <input type="text" class="form-control-1" name="username" placeholder="Username" value="<?php echo "$username"; ?>">
+                                <label for="username" class="col-xs-2 col-md-2 control-label">Username</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo "$username"; ?>">
                                 </div>
-                                <label for="password" class="col-lg-4 control-label">Password</label>
-                                <div class="col-lg-8">
-                                    <input type="password" class="form-control-1" name="password" placeholder="Password" value="<?php echo "$password"; ?>">
+                                <label for="password" class="col-xs-2 col-md-2 control-label">Password</label>
+                                <div class="col-lg-10">
+                                    <input type="password" class="form-control" name="password" placeholder="Password" value="<?php echo "$password"; ?>">
                                 </div>
-                                <label for="secret_q" class="col-lg-4 control-label">Secret Question</label>
-                                <div class="col-lg-8">
-                                    <input type="text" class="form-control-1" name="secret_q" placeholder="Secret Question" value="<?php echo "$secret_q"; ?>">
+                                <label for="secret_q" class="col-xs-2 col-md-2 control-label">Secret Question</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" name="secret_q" placeholder="Secret Question" value="<?php echo "$secret_q"; ?>">
                                 </div>
-                                <label for="secret_a" class="col-lg-4 control-label">Secret Answer</label>
-                                <div class="col-lg-8">
-                                    <input type="text" class="form-control-1" name="secret_a" placeholder="Secret Answer" value="<?php echo "$secret_a"; ?>">
+                                <label for="secret_a" class="col-xs-2 col-md-2 control-label">Secret Answer</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" name="secret_a" placeholder="Secret Answer" value="<?php echo "$secret_a"; ?>">
                                 </div>
                             </form>
                         </div>
