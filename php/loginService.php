@@ -1,5 +1,5 @@
 <?php
-
+echo "Login Services";
 require $_SERVER['DOCUMENT_ROOT'] . ("connection.php");
 
 session_start();
@@ -9,7 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $myusername = mysqli_real_escape_string($db, $_POST['username']);
     $mypassword = mysqli_real_escape_string($db, $_POST['password']);
-
+    echo "<br>";
+    echo "username: $myusername  password: $mypassword";
+    echo "<br>";
     $sql = "SELECT user_id, admin FROM tbl_user WHERE login = '$myusername' and password = '$mypassword'";
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
