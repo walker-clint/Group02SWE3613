@@ -8,8 +8,8 @@ session_start();
    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //Connect to the database through our include 
 
-            $r_user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['r_user_name']);
-            $r_password = ereg_replace("[^A-Za-z0-9]", "", $_POST['r_password']);
+            $r_user_name = ereg_replace("[^A-Za-z0-9_]", "", $_POST['r_user_name']);
+            $r_password = ereg_replace("[^A-Za-z0-9_]", "", $_POST['r_password']);
             $r_firstname = ereg_replace("[^A-Za-z0-9]", "", $_POST['r_firstname']); // filter everything but numbers and letters
             $r_lastname = ereg_replace("[^A-Za-z0-9]", "", $_POST['r_lastname']); // filter everything but numbers and letters
             $r_email = stripslashes($_POST['r_email']);
@@ -85,7 +85,7 @@ session_start();
           <div class="form-group">
             <label for="r_email" class="col-lg-4 control-label">Email</label>
             <div class="col-lg-8">
-              <input type="text" class="form-control-1" name="r_email" placeholder="Email" value='<?php echo "$r_email" ?>'>
+              <input type="email" class="form-control-1" name="r_email" placeholder="Email" value='<?php echo "$r_email" ?>'>
             </div>
           </div>
           <div class="form-group">
@@ -97,7 +97,7 @@ session_start();
           <div class="form-group">
             <label for="r_password" class="col-lg-4 control-label">Password</label>
             <div class="col-lg-8">
-              <input type="text" class="form-control-1" name="r_password" placeholder="Password" value='<?php echo "$r_password" ?>'>
+              <input type="password" class="form-control-1" name="r_password" placeholder="Password" value='<?php echo "$r_password" ?>'>
             </div>
           </div>
           <div class="form-group">
