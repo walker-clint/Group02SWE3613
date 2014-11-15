@@ -96,44 +96,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </div>
                                 </form>
                                 <form class="form-group">
-                                    <label for="lastname" class="col-xs-2 col-md-2 control-label">Last Name</label>
+                                    <label for="lastname" class="col-xs-2 col-md-2 control-label" align="right">Last Name</label>
                                     <div class="col-xs-10 col-md-10">
                                         <input type="text" class="form-control" name="lastname" placeholder="Last Name" value="<?php echo "$lastname"; ?>">
                                     </div>
                                 </form>
                                 <form class="form-group">
-                                    <label for="email" class="col-xs-2 col-md-2 control-label">Email</label>
+                                    <label for="email" class="col-xs-2 col-md-2 control-label" align="right">Email</label>
                                     <div class="col-xs-10 col-md-10">
                                         <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo "$email"; ?>">
                                     </div>
                                 </form>
                                 <form class="form-group">
-                                    <label for="username" class="col-xs-2 col-md-2 control-label">Username</label>
+                                    <label for="username" class="col-xs-2 col-md-2 control-label" align="right">Username</label>
                                     <div class="col-xs-10 col-md-10">
                                         <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo "$username"; ?>">
                                     </div>
                                 </form>
                                 <form class="form-group">
-                                    <label for="password" class="col-xs-2 col-md-2 control-label">Password</label>
+                                    <label for="password" class="col-xs-2 col-md-2 control-label" align="right">Password</label>
                                     <div class="col-xs-10 col-md-10">
                                         <input type="password" class="form-control" name="password" placeholder="Password" value="<?php echo "$password"; ?>">
                                     </div>
                                 </form>
                                 <form class="form-group">
-                                    <label for="secret_q" class="col-xs-2 col-md-2 control-label">Secret Question</label>
+                                    <label for="secret_q" class="col-xs-2 col-md-2 control-label" align="right">Secret Question</label>
                                     <div class="col-xs-10 col-md-10">
                                         <input type="text" class="form-control" name="secret_q" placeholder="Secret Question" value="<?php echo "$secret_q"; ?>">
                                     </div>
                                 </form>
                                 <form class="form-group">
-                                    <label for="secret_a" class="col-xs-2 col-md-2 control-label">Secret Answer</label>
+                                    <label for="secret_a" class="col-xs-2 col-md-2 control-label" align="right">Secret Answer</label>
                                     <div class="col-xs-10 col-md-10">
                                         <input type="text" class="form-control" name="secret_a" placeholder="Secret Answer" value="<?php echo "$secret_a"; ?>">
                                     </div>
                                 </form>
                                 <div class="form-group">
-                                    <label class="col-lg-4 control-label">Captcha</label>
-                                    <div class="col-lg-8">
+                                    <div class="col-xs-12 col-md-12">
                                         <?php
                                         require_once('recaptchalib.php');
                                         $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
@@ -141,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         ?>
                                     </div></div>
                                 <div align="center">
-                                    <input type="submit" value="Submit"/>
+                                    <input type="button" value="Submit"/>
                                 </div>
                             </form>
                         </div>-->
