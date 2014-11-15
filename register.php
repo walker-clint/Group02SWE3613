@@ -85,10 +85,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h1>Registration</h1>
                 <div class="row">
 
-                    <div id="left-column" class="col-xs-6 col-md-6 col-lg-6">                
-                        <!--<legend>LEFT COLUMN</legend>-->
+                    <div id="left-column" class="col-xs-3 col-md-3 col-lg-3"> </div>               
+                    <!--<legend>LEFT COLUMN</legend>-->
 
-
+                    <div id="center-column" class="col-xs-6 col-md-6 col-lg-6">
                         <div class="well bs-component"> 
                             <div class="well-1 bs-component">
 
@@ -134,13 +134,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <input type="text" class="form-control" name="secret_a" placeholder="Secret Answer" value="<?php echo "$secret_a"; ?>">
                                     </div>
                                 </div>
-                            </div>
-                        </div> 
-
-                    </div>
-                    <div id="right-column" class="col-xs-6 col-md-6 col-lg-6">
-                        <div class="well bs-component">
-                            <div class="well-1 bs-component">
                                 <div class="col-xs-12 col-md-12" align="center">
                                     <?php
                                     require_once('recaptchalib.php');
@@ -155,6 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                         </div>
                     </div>
+                    <div id="right-column" class="col-xs-3 col-md-3 col-lg-3"></div>
                 </div>
             </form>
         </div>
