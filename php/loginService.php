@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $myusername = mysqli_real_escape_string($db, $_POST['username']);
     $mypassword = mysqli_real_escape_string($db, $_POST['password']);
 
-    $sql = "SELECT user_id, admin FROM tbl_user WHERE login = '$myusername' and pass = '$mypassword'";
+    $sql = "SELECT user_id, admin FROM tbl_user WHERE login = '$myusername' and password = '$mypassword'";
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $userId = $row['user_id'];
