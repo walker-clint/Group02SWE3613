@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="well-1 bs-component">
                             <form class="form-horizontal" align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                                 <div class="container">
-                                    <label for="firstname" class="control-label col-xs-1 col-md-1" align="right">First Name</label>
+                                    <label for="firstname" class="control-label col-xs-2 col-md-2" align="right">First Name</label>
                                     <div class="col-xs-4 col-md-4">
                                         <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
                                     </div>
