@@ -2,10 +2,6 @@
 <html lang="en">
 <head><?php 
 	require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
- session_start();
-        include_once "connect_to_mysql.php";
-
-
 ?>
 </head>
 <body>

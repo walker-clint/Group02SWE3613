@@ -20,7 +20,7 @@ if ($_SESSION['id']!="") {
 	$toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
 	<li class="btn-label-right">
 	<div class="well-1 btn">
-	<a href="main_menu.php">$full_name</a>
+	<a href="main_menu.php">'.$full_name.'</a>
 	</div>
 	</li>
 	<li class="btn-label-right">
