@@ -93,31 +93,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <div class="col-xs-10 col-md-10">
                                             <input type="text" class="form-control" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
                                         </div>
-
+                                    </div>
+                                    <div class="form-group">
                                         <label for="lastname" class="col-xs-2 col-md-2 control-label" align="right">Last Name</label>
                                         <div class="col-xs-10 col-md-10">
                                             <input type="text" class="form-control" name="lastname" placeholder="Last Name" value="<?php echo "$lastname"; ?>">
                                         </div>
-
+                                    </div>
+                                    <div class="form-group">
                                         <label for="email" class="col-xs-2 col-md-2 control-label" align="right">Email</label>
                                         <div class="col-xs-10 col-md-10">
                                             <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo "$email"; ?>">
                                         </div>
-
+                                    </div>
+                                    <div class="form-group">
                                         <label for="username" class="col-xs-2 col-md-2 control-label" align="right">Username</label>
                                         <div class="col-xs-10 col-md-10">
                                             <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo "$username"; ?>">
                                         </div>
-
+                                    </div>
+                                    <div class="form-group">
                                         <label for="password" class="col-xs-2 col-md-2 control-label" align="right">Password</label>
                                         <div class="col-xs-10 col-md-10">
                                             <input type="password" class="form-control" name="password" placeholder="Password" value="<?php echo "$password"; ?>">
                                         </div>
-
+                                    </div>
+                                    <div class="form-group">
                                         <label for="secret_q" class="col-xs-2 col-md-2 control-label" align="right">Secret Question</label>
                                         <div class="col-xs-10 col-md-10">
                                             <input type="text" class="form-control" name="secret_q" placeholder="Secret Question" value="<?php echo "$secret_q"; ?>">
                                         </div>
+                                    </div>
+                                    <div class="form-group">
                                         <label for="secret_a" class="col-xs-2 col-md-2 control-label" align="right">Secret Answer</label>
                                         <div class="col-xs-10 col-md-10">
                                             <input type="text" class="form-control" name="secret_a" placeholder="Secret Answer" value="<?php echo "$secret_a"; ?>">
