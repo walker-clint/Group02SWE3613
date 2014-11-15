@@ -48,9 +48,9 @@
                                     ?>
                                 </tbody>
                             </table>
-                            <div class="form-horizontal" action="">
+<!--                            <div class="form-horizontal" action="">
                                 <input class="btn btn-primary btn-lg" type="submit" value="Song Information" name="song_info">
-                            </div>
+                            </div>-->
 
                             <!--End well-1-->
                         </div>
