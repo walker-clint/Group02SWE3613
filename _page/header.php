@@ -15,9 +15,10 @@
         if (!empty($_SESSION['id'])) {
             $id = $_SESSION['id'];
             // Put stored session variables into local php variable
-            $sql = mysqli_query($db, "SELECT * FROM tbl_user WHERE user_id='$id'");
+            $con = initializeConnection();
+            $sql = mysqli_query($con, "SELECT * FROM tbl_user WHERE user_id = '$id'");
 
-            $full_name='';
+            $full_name = '';
             while ($row = mysqli_fetch_array($sql)) {
                 // Use the AYAH object to see if the user passed or failed the game.
                 // Get member ID into a session variable
@@ -31,7 +32,7 @@
 	</li>
 	<li class="btn-label-right">
 	<div class="well-1 btn">
-	<a href="'.$_SERVER['DOCUMENT_ROOT'].'/php/logoutServices.php">Log Out</a>
+	<a href="' . $_SERVER['DOCUMENT_ROOT'] . '/php/logoutServices.php">Log Out</a>
 	</li>
 	</ul>';
         } else {
