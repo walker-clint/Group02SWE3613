@@ -94,11 +94,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div class="col-xs-4 col-md-4">
                                         <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
                                     </div>
-                                </div>
-                                
-                                <label for="firstname" class="control-label col-xs-2 col-md-2" align="right">Last Name</label>
-                                <div class="col-xs-4 col-md-4">
-                                    <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
+
+
+                                    <label for="firstname" class="control-label col-xs-2 col-md-2" align="right">Last Name</label>
+                                    <div class="col-xs-4 col-md-4">
+                                        <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
+                                    </div>
                                 </div>
                                 <label for="firstname" class="control-label col-xs-4 col-md-4" align="right">Email Address</label>
                                 <div class="col-xs-8 col-md-8">
