@@ -82,10 +82,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <!--Start Content-->
             <form class="form-horizontal" align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+               <h1>Registration</h1>
                 <div class="row">
+                    
                     <div id="left-column" class="col-xs-6 col-md-6 col-lg-6">                
                         <!--<legend>LEFT COLUMN</legend>-->
-                        <h1>Registration</h1>
+                        
                         <div class="col-xs-6 col-md-6">
                             <div class="well bs-component"> 
                                 <div class="well-1 bs-component">
