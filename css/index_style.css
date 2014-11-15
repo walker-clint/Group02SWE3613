@@ -2565,15 +2565,10 @@ http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-respo
 }
 
 @media only screen and (max-device-width: 550px) {
-
     .form-textbox, .form-textarea {
-
+        align-content: center;
         width: 300px !important;
-
         min-width: 300px !important;
-
         max-width: 300px !important;
-
     }
-
 }
