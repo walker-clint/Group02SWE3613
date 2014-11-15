@@ -6,11 +6,7 @@ $errorMsg = "";
 session_start();
 echo "<br>";
 echo "require passed";
-$sql = "SELECT user_id, admin FROM tbl_user;";
-$result = mysqli_query($db, $sql);
-$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-$userId = $row['user_id'];
-$admin = $row['admin'];
+
 echo "<br>";
 session_start();
 echo "session started";
@@ -61,6 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $error = '<span class="error">Your Login Name or Password is invalid<br></span>';
     }
+//    close db connection
+    mysqli_close($db);
 } else {
     $error = '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
 }
