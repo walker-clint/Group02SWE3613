@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<br>";
     echo "password: $mypassword";
     echo "<br>";
-    $sql = "SELECT user_id, admin FROM tbl_user WHERE login = '$myusername' and password = '$mypassword'";
+    $sql = mysql_query("SELECT user_id, admin FROM tbl_user WHERE login = '$myusername' and password = '$mypassword'");
     $result = mysqli_query($con, $sql);
     if ($result == false) {
         echo "No data returned from server" . mysqli_error($con);
