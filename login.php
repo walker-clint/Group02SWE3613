@@ -75,10 +75,8 @@
                         </div>
                     </div>
                 </div>
+                <!--End Content-->
                 <div id="right-column" class="col-sm-4"></div>
-                <!--End Middle--> 
-
-                <!--End Container--> 
                 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
                 <!--<script src="http://code.jquery.com/jquery.js"></script>--> 
                 <script src="plugins/jquery/jquery-2.1.0.min.js"></script> 
