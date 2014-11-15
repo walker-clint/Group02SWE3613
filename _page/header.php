@@ -10,7 +10,7 @@ if ($_SESSION['id']!="") {
                 while ($row = mysql_fetch_array($sql)) {
                     // Use the AYAH object to see if the user passed or failed the game.
                     // Get member ID into a session variable
-                    $full_name = $row["first_name"] . $row["last_name"];
+                    $full_name = $row["first_name"] ." ". $row["last_name"];
                    
                 } // close while
             
