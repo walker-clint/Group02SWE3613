@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    
 
 
                     <h1>Register</h1>
