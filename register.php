@@ -89,26 +89,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h1>Registration</h1>
                         <div class="well-1 bs-component">
                             <form class="form-group" align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-                                <div class="col-xs-12 col-md-12">
-                                    <div class="col-xs-4 col-md-4">
-                                        <label for="firstname" class="col-xs-4 control-label">First Name</label>
-                                        <div class="col-xs-8 col-md-8">
-                                            <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-4 col-md-4">
-                                        <label for="firstname" class="col-xs-4 control-label">First Name</label>
-                                        <div class="col-xs-8 col-md-8">
-                                            <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-4 col-md-4">
-                                        <label for="firstname" class="col-xs-4 control-label">First Name</label>
-                                        <div class="col-xs-8 col-md-8">
-                                            <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
-                                        </div>
-                                    </div>
-                                </div>
+
+                                <label for="firstname" class="col-xs-4 control-label">First Name</label>
+
+                                <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
+
+                                <label for="firstname" class="col-xs-4 control-label">First Name</label>
+
+                                <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
+
+                                <label for="firstname" class="col-xs-4 control-label">First Name</label>
+
+                                <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
+
 
                             </form>
                         </div>
