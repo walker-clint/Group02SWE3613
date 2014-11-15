@@ -10,14 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //include('php/Crazy_Leroys.dbconfig.inc');
     include $_SERVER['DOCUMENT_ROOT'].'connect_to_mysql.php';
     //$con = mysqli_connect();
-    $con = mysql_connect($db_host, $db_username, $db_pass, $db_name);
-    if (!$con) {
-        echo "<br>";
-        echo "Unable to connect to database! Please try again later. Error message: " . mysqli_error($con);
-    } else {
-        echo "<br>";
-        echo "connection made with db";
-    }
+    //$con = mysql_connect($db_host, $db_username, $db_pass, $db_name);
+//    if (!$con) {
+//        echo "<br>";
+//        echo "Unable to connect to database! Please try again later. Error message: " . mysqli_error($con);
+//    } else {
+//        echo "<br>";
+//        echo "connection made with db";
+//    }
     //mysql_select_db($con, $schema);
 //    $myusername = mysqli_real_escape_string($con, $_POST['username']);
 //    $mypassword = mysqli_real_escape_string($con, $_POST['password']);
