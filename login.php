@@ -53,7 +53,7 @@
     <!--<legend>LEFT COLUMN</legend>-->
     <h1 align="center">Login</h1>
     <div class="well-1 bs-component">
-      <form class="form-horizontal"  method="post" name="logform" id="logform" action="index.php" >
+      <form class="form-horizontal"  method="post" name="logform" id="logform" >
         <font color="#FF0000"><?php echo "$errorMsg"; ?></font> <br>
         <div class="form-group">
           <label for="user_name" class="col-lg-4 control-label">User Name</label>
