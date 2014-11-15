@@ -87,8 +87,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="well bs-component"> 
                         <!--<legend>LEFT COLUMN</legend>-->
                         <h1>Registration</h1>
-                        <div class="well-1 bs-component">
-                            <form class="form-horizontal" align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+                        <form class="form-horizontal" align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+                            <div class="well-1 bs-component">
+
                                 <div class="col-xs-6 col-md-6">
                                     <form class="form-group">
                                         <label for="firstname" class="col-xs-2 col-md-2 control-label" align="right">First Name</label>
@@ -126,23 +127,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         </div>
                                     </form>
                                 </div>
-                                <div class="well-1 bs-component">
-                                    <div class="col-xs-6 col-md-6">
-                                        <div class="col-xs-12 col-md-12" align="center">
-                                            <?php
-                                            require_once('recaptchalib.php');
-                                            $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
-                                            echo recaptcha_get_html($publickey);
-                                            ?>
-                                        </div>
-                                        <br>
-                                        <div align="center">
-                                            <input type="button-primary" value="Submit"/>
-                                        </div>
+                            </div> 
+                            <div class="well-1 bs-component">
+                                <div class="col-xs-6 col-md-6">
+                                    <div class="col-xs-12 col-md-12" align="center">
+                                        <?php
+                                        require_once('recaptchalib.php');
+                                        $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
+                                        echo recaptcha_get_html($publickey);
+                                        ?>
+                                    </div>
+                                    <br>
+                                    <div align="center">
+                                        <input type="button-primary" value="Submit"/>
                                     </div>
                                 </div>
-                            </form>
-                        </div>                    
+                            </div>
+                        </form>
+
                     </div>
                 </div>
             </div>
