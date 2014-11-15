@@ -29,7 +29,7 @@ $firstname = ereg_replace("[^A-Za-z0-9]", "", $_POST['firstname']); // filter ev
 	       $errorMsg .= "--- Password<br />"; 
 	  	   }
 	} else {
-		$sql_username_check = mysql_query("SELECT useid FROM tbl_user WHERE login='$username' LIMIT 1");
+		$sql_username_check = mysql_query("SELECT user_id FROM tbl_user WHERE login='$username' LIMIT 1");
 	$username_check = mysql_num_rows($sql_username_check); 
 if ($username_check > 0){ 
 		$errorMsg = "<u>ERROR:</u><br />The username is already in use inside our system. Please try another.";
@@ -71,7 +71,8 @@ if ($username_check > 0){
 
 <!--Start Content-->
 <div class="row">
-  <div id="left-column" class="col-sm-5">
+ <div id="left-column" class="col-sm-4"></div>
+<div id="center1-column" class="col-sm-4">
     <div class="well bs-component"> 
       <!--<legend>LEFT COLUMN</legend>-->
       <h1>Register</h1>
@@ -127,6 +128,8 @@ if ($username_check > 0){
         </form>
       </div>
     </div>
+    
+<div id="right-column" class="col-sm-4"></div>
   </div>
   <!--End Content--> 
   
