@@ -2,12 +2,6 @@
 
 echo "Login Services";
 require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
-$errorMsg = "";
-session_start();
-echo "<br>";
-echo "require passed";
-
-echo "<br>";
 session_start();
 echo "session started";
 
@@ -38,15 +32,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $count = mysqli_num_rows($result);
     echo "user found == $count";
     // If result matched $myusername and $mypassword, table row must be 1 row
-    if ($count == 1) {
+    if ($count == '1') {
         // session_register("myusername");
         //$_SESSION['login_user'] = $myusername;
         $_SESSION['user_id'] = $userId;
 
         if ($admin == 1) {
-            header("Location: ./admin_Main_Menu.php");
+            header("Location: ../admin_Main_Menu.php");
         } else {
-            header("Location: main_menu.php");
+            header("Location: ../main_menu.php");
         }
     } else {
         $error = '<span class="error">Your Login Name or Password is invalid<br></span>';
