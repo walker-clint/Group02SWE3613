@@ -134,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <input type="text" class="form-control" name="secret_a" placeholder="Secret Answer" value="<?php echo "$secret_a"; ?>">
                                     </div>
                                 </div>
-                                <div class="captcha-container" align="center">
+                                <div class="form-textarea" align="center">
 <!--                                    <div class="col-xs-12 col-md-12" align="center">-->
                                         <?php
                                         require_once('recaptchalib.php');
