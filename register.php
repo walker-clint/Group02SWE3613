@@ -132,7 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </div>
                                 </form>
                                 <div class="form-group">
-                                    <div class="col-xs-12 col-md-12">
+                                    <div class="col-xs-12 col-md-12" align="center">
                                         <?php
                                         require_once('recaptchalib.php');
                                         $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
