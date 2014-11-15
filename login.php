@@ -1,5 +1,5 @@
 
-//<?php
+<?php
 //$errorMsg = "";
 //session_start();
 //include_once "connect_to_mysql.php";
