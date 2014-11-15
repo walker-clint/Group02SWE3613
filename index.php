@@ -26,6 +26,8 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div id="right-column" class="col-sm-8">
                     <h1>Top Ten Songs</h1>
                     <div class="well-1 bs-component">
                         <table class="table">
