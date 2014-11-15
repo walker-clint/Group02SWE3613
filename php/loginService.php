@@ -9,7 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // username and password sent from form 
     //include('php/Crazy_Leroys.dbconfig.inc');
     include $_SERVER['DOCUMENT_ROOT'].'connect_to_mysql.php';
-    $con = mysqli_connect($host, $user, $pass);
+    //$con = mysqli_connect();
+    $con = mysqli_connect($db_host, $db_username, $db_pass, $db_name);
     if (!$con) {
         echo "<br>";
         echo "Unable to connect to database! Please try again later. Error message: " . mysqli_error($con);
