@@ -25,13 +25,12 @@
                     $_SESSION['is_admin'] = $row["admin"];//checks if user is an administrator or regular user
 					
 					
-                        header('Location: index.php');
-                        exit();
+                        header("location: index.php");
+                    exit();
                     
                 } // close while
             } else {
                 $errorMsg .= "The username or password you entered is incorrect<br />";
-                echo "error message";
             }
         }// close if post
  // Close else after database duplicate field value checks
