@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT user_id, admin FROM tbl_user WHERE login = '$myusername' and password = '$mypassword'";
     $result = mysqli_query($con, $sql);
     if ($result == false) {
-        echo mysqli_error($con);
+        echo "No data returned from server" . mysqli_error($con);
     }
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $userId = $row['user_id'];
