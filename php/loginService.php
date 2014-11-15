@@ -24,9 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['user_id'] = $userId;
 
         if($admin==1) {
-            header("location: ./admin_Main_Menu.php");
+            header("Location: ./admin_Main_Menu.php");
         } else {
-            header("location: main_menu.php");
+            header("Location: main_menu.php");
         }
     } else {
         $error = '<span class="error">Your Login Name or Password is invalid<br></span>';
