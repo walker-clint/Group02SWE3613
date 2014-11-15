@@ -32,9 +32,7 @@ if ($_SESSION['id'] != NULL) {
 // Close else after missing vars check
 //Close if $_POST
 ?>
-<?php
-    require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
-?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
