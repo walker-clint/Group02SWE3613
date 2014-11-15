@@ -55,7 +55,7 @@
                         <!--<legend>LEFT COLUMN</legend>-->
                         <h1 align="center">Login</h1>
                         <div class="well-1 bs-component">
-                            <form class="form-horizontal" action="login.php" method="post">
+                            <form class="form-horizontal"  method="post" enctype="multipart/form-data" name="logform" id="logform" >
                              <font color="#FF0000"><?php echo "$r_errorMsg"; ?></font> <br>
                                 <div class="form-group">
                                     <label for="user_name" class="col-lg-4 control-label">User Name</label>
