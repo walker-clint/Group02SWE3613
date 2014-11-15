@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $admin = $row['admin'];
 
     $count = mysqli_num_rows($result);
-
+    echo "user found == $count";
     // If result matched $myusername and $mypassword, table row must be 1 row
     if ($count == 1) {
         // session_register("myusername");
