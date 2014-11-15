@@ -89,42 +89,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h1>Registration</h1>
                         <div class="well-1 bs-component">
                             <form class="form-horizontal" align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-                                <form class="form-group">
-                                    <label for="firstname" class="col-xs-2 col-md-2 control-label" align="right">First Name</label>
-                                    <div class="col-xs-10 col-md-10">
-                                        <input type="text" class="form-control" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
-                                    </div>
+                                <div class="col-xs-6 col-md-6">
+                                    <form class="form-group">
+                                        <label for="firstname" class="col-xs-2 col-md-2 control-label" align="right">First Name</label>
+                                        <div class="col-xs-10 col-md-10">
+                                            <input type="text" class="form-control" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
+                                        </div>
 
-                                    <label for="lastname" class="col-xs-2 col-md-2 control-label" align="right">Last Name</label>
-                                    <div class="col-xs-10 col-md-10">
-                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name" value="<?php echo "$lastname"; ?>">
-                                    </div>
+                                        <label for="lastname" class="col-xs-2 col-md-2 control-label" align="right">Last Name</label>
+                                        <div class="col-xs-10 col-md-10">
+                                            <input type="text" class="form-control" name="lastname" placeholder="Last Name" value="<?php echo "$lastname"; ?>">
+                                        </div>
 
-                                    <label for="email" class="col-xs-2 col-md-2 control-label" align="right">Email</label>
-                                    <div class="col-xs-10 col-md-10">
-                                        <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo "$email"; ?>">
-                                    </div>
+                                        <label for="email" class="col-xs-2 col-md-2 control-label" align="right">Email</label>
+                                        <div class="col-xs-10 col-md-10">
+                                            <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo "$email"; ?>">
+                                        </div>
 
-                                    <label for="username" class="col-xs-2 col-md-2 control-label" align="right">Username</label>
-                                    <div class="col-xs-10 col-md-10">
-                                        <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo "$username"; ?>">
-                                    </div>
+                                        <label for="username" class="col-xs-2 col-md-2 control-label" align="right">Username</label>
+                                        <div class="col-xs-10 col-md-10">
+                                            <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo "$username"; ?>">
+                                        </div>
 
-                                    <label for="password" class="col-xs-2 col-md-2 control-label" align="right">Password</label>
-                                    <div class="col-xs-10 col-md-10">
-                                        <input type="password" class="form-control" name="password" placeholder="Password" value="<?php echo "$password"; ?>">
-                                    </div>
+                                        <label for="password" class="col-xs-2 col-md-2 control-label" align="right">Password</label>
+                                        <div class="col-xs-10 col-md-10">
+                                            <input type="password" class="form-control" name="password" placeholder="Password" value="<?php echo "$password"; ?>">
+                                        </div>
 
-                                    <label for="secret_q" class="col-xs-2 col-md-2 control-label" align="right">Secret Question</label>
-                                    <div class="col-xs-10 col-md-10">
-                                        <input type="text" class="form-control" name="secret_q" placeholder="Secret Question" value="<?php echo "$secret_q"; ?>">
-                                    </div>
-                                    <label for="secret_a" class="col-xs-2 col-md-2 control-label" align="right">Secret Answer</label>
-                                    <div class="col-xs-10 col-md-10">
-                                        <input type="text" class="form-control" name="secret_a" placeholder="Secret Answer" value="<?php echo "$secret_a"; ?>">
-                                    </div>
-
-
+                                        <label for="secret_q" class="col-xs-2 col-md-2 control-label" align="right">Secret Question</label>
+                                        <div class="col-xs-10 col-md-10">
+                                            <input type="text" class="form-control" name="secret_q" placeholder="Secret Question" value="<?php echo "$secret_q"; ?>">
+                                        </div>
+                                        <label for="secret_a" class="col-xs-2 col-md-2 control-label" align="right">Secret Answer</label>
+                                        <div class="col-xs-10 col-md-10">
+                                            <input type="text" class="form-control" name="secret_a" placeholder="Secret Answer" value="<?php echo "$secret_a"; ?>">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-xs-6 col-md-6">
                                     <div class="col-xs-12 col-md-12" align="center">
                                         <?php
                                         require_once('recaptchalib.php');
@@ -135,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div align="center">
                                         <input type="button" value="Submit"/>
                                     </div>
-                                </form>
+                                </div>
                             </form>
                         </div>                    
                     </div>
