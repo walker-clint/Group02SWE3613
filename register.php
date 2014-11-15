@@ -131,12 +131,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
                                     echo recaptcha_get_html($publickey);
                                     ?>
-                                </div></div>
-                        <div align="center">
-                            <input type="button" value="Submit"/>
-                        </div>
-                        </form>
-                    </div>-->
+                                </div>
+                                <div align="center">
+                                    <input type="button" value="Submit"/>
+                                </div>
+                            </form>
+                        </div>                    
+                    </div>
                 </div>
             </div>
         </div>
