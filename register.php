@@ -89,35 +89,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h1>Registration</h1>
                         <div class="well-1 bs-component">
                             <form  align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-                                <div class="col-md-4 col-xs-4">
-                                    <div class="form-group">
-                                        <label for="firstname" class="col-md-4 col-xs-4 control-label">First,Last Name</label>
-                                        <div class="col-md-8 col-xs-8">
-                                            <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="col-md-4 col-xs-4">
-                                    <div class="form-group">
-                                        <label for="lastname" class="col-md-4 col-xs-4 control-label">Last Name</label>
-                                        <div class="col-md-8 col-xs-8">
-                                            <input type="text" class="form-control-1" name="lastname" placeholder="Last Name" value="<?php echo "$lastname"; ?>">
-                                        </div>
-                                    </div>
-                                </div>  
-                                <div class="col-md-4 col-xs-4">
-                                    <div class="form-group">
-                                    <label for="email" class="col-md-4 col-xs-4 control-label">Email</label>
-                                    <div class="col-md-8 col-xs-8">
-                                        <input type="email" class="form-control-1" name="email" placeholder="Email" value="<?php echo "$email"; ?>">
-                                    </div>
-                                </div>
+                                <div class="col-xs-12">
+                                    <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
                                 </div>
                             </form>
                         </div>
-                        
-                        
+
+
                         <h1>Register</h1>
                         <div class="well-1 bs-component">
 
