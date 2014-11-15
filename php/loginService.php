@@ -1,6 +1,8 @@
 <?php
 echo "Login Services";
-//require $_SERVER['DOCUMENT_ROOT'] . ("connection.php");
+require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
+$errorMsg = "";
+session_start();
 echo "<br>";
 echo "require passed";
 include('../connect_to_mysql.php');
