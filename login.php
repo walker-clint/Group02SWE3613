@@ -1,41 +1,42 @@
+
+<?php
+require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
+
+$errorMsg = "";
+session_start();
+include_once "connect_to_mysql.php";
+//if ($_POST['user_name']) {
+if ($_SESSION['id'] != NULL) {
+    //Connect to the database through our include
+    $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
+    $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
+    $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password='$password'");
+    $login_check = mysql_num_rows($sql);
+    if ($login_check > 0) {
+        while ($row = mysql_fetch_array($sql)) {
+            // Use the AYAH object to see if the user passed or failed the game.
+            // Get member ID into a session variable
+            $id = $row["user_id"];
+            $_SESSION['id'] = $id;
+            // Get member username into a session variable
+            $user_name = $row["login"];
+            $_SESSION['login'] = $user_name;
+            $is_admin = $row["admin"];
+            $_SESSION['is_admin'] = $is_admin; //checks if user is an administrator or regular user
+            header("location: index.php");
+            //exit();
+        } // close while
+    } else {
+        $errorMsg .= "The username or password you entered is incorrect<br />";
+    }
+}// close if post
+// Close else after database duplicate field value checks
+// Close else after missing vars check
+//Close if $_POST
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <?php
-        require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
-
-        $errorMsg = "";
-        session_start();
-        include_once "connect_to_mysql.php";
-        //if ($_POST['user_name']) {
-        if($_SESSION['id']!=NULL){
-            //Connect to the database through our include
-            $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
-            $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
-            $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password='$password'");
-            $login_check = mysql_num_rows($sql);
-            if ($login_check > 0) {
-                while ($row = mysql_fetch_array($sql)) {
-                    // Use the AYAH object to see if the user passed or failed the game.
-                    // Get member ID into a session variable
-                    $id = $row["user_id"];
-                    $_SESSION['id'] = $id;
-                    // Get member username into a session variable
-                    $user_name = $row["login"];
-                    $_SESSION['login'] = $user_name;
-                    $is_admin = $row["admin"];
-                    $_SESSION['is_admin'] = $is_admin; //checks if user is an administrator or regular user
-                    header("location: index.php");
-                    //exit();
-                } // close while
-            } else {
-                $errorMsg .= "The username or password you entered is incorrect<br />";
-            }
-        }// close if post
-        // Close else after database duplicate field value checks
-        // Close else after missing vars check
-        //Close if $_POST
-        ?>
     </head>
     <body>
         <!--Start Header-->
