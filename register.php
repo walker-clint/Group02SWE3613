@@ -13,8 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                                 $_POST["recaptcha_response_field"]);
   if (!$resp->is_valid) {
     // What happens when the CAPTCHA was entered incorrectly
-     $errorMsg .= "The reCAPTCHA wasn't entered correctly. Go back and try it again." .
-         "(reCAPTCHA said: " . $resp->error . ")";
+     $errorMsg .= "The reCAPTCHA wasn't entered correctly. Go back and try it again.";
   } else {
 
  
@@ -136,11 +135,15 @@ if ($username_check > 0){
               <input type="text" class="form-control-1" name="secret_a" placeholder="Secret Answer" value="<?php echo "$secret_a"; ?>">
             </div>
           </div>
-                  <?php
+          <div class="form-group">
+                  <label class="col-lg-4 control-label">Captcha</label>
+            <div class="col-lg-8">
+              <?php
           require_once('recaptchalib.php');
           $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
           echo recaptcha_get_html($publickey);
         ?>
+            </div></div>
           <div align="center">
             <input type="submit" value="Submit"/>
           </div>
