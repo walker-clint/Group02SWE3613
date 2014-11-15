@@ -8,7 +8,7 @@
         session_start();
         include_once "connect_to_mysql.php";
         //if ($_POST['user_name']) {
-        if($_SESSION['id']!=NULL){
+        if ($_SESSION['id'] != NULL) {
             //Connect to the database through our include
             $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
             $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
@@ -40,6 +40,7 @@
     <body>
         <!--Start Header-->
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
+        <?php echo $_SESSION['id'] . ' ' . $_SESSION['login']; ?>
         <!--End Header--> 
 
         <!--Start Middle-->
