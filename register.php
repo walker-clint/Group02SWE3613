@@ -1,4 +1,8 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<?php 
+require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
 $errorMsg = "";
 session_start();
    if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -50,111 +54,88 @@ session_start();
     } // Close else after missing vars check
 } //Close if $_POST
 ?>
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; ?>
-        <script type="text/javascript">
-<!-- Form Validation -->
-            function validate_form( ) {
-                valid = true;
-                if (document.logform.user_name.value == "") {
-                    alert("Please enter your User Name");
-                    valid = false;
-                }
-                if (document.logform.password.value == "") {
-                    alert("Please enter your password");
-                    valid = false;
-                }
-                return valid;
-            }
-<!-- Form Validation -->
-        </script>
-    </head>
-    <body>
-        <!--Start Header-->
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
-        <!--End Header--> 
-        <!--Start Middle-->
-        <div id="main" class="container-fluid">
- <div id="right-column" class="col-sm-4"></div>
-                <div id="center2-column" class="col-sm-4">
-                    <div class="well bs-component"> 
-                        <!--<legend>LEFT COLUMN</legend>-->
-
-                        <h1 align="center">Register</h1>
-                        <div class="well-1 bs-component">
-                            <form  align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-                                <font color="#FF0000"><?php echo "$r_errorMsg"; ?></font> <br>
-                                <div class="form-group">
-                                    <label for="r_firstname" class="col-lg-4 control-label">First Name</label>
-                                    <div class="col-lg-8">
-                                        <input type="text" class="form-control-1" name="r_firstname" placeholder="First Name" value='<?php echo "$r_firstname" ?>'>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="r_lastname" class="col-lg-4 control-label">Last Name</label>
-                                    <div class="col-lg-8">
-                                        <input type="text" class="form-control-1" name="r_lastname" placeholder="Last Name" value='<?php echo "$r_lastname" ?>'>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="r_email" class="col-lg-4 control-label">Email</label>
-                                    <div class="col-lg-8">
-                                        <input type="text" class="form-control-1" name="r_email" placeholder="Email" value='<?php echo "$r_email" ?>'>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="r_user_name" class="col-lg-4 control-label">Username</label>
-                                    <div class="col-lg-8">
-                                        <input type="text" class="form-control-1" name="r_user_name" placeholder="Username" value='<?php echo "$r_user_name" ?>'>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="r_password" class="col-lg-4 control-label">Password</label>
-                                    <div class="col-lg-8">
-                                        <input type="text" class="form-control-1" name="r_password" placeholder="Password" value='<?php echo "$r_password" ?>'>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="r_secret_q" class="col-lg-4 control-label">Secret Question</label>
-                                    <div class="col-lg-8">
-                                        <input type="text" class="form-control-1" name="r_secret_q" placeholder="Secret Question" value='<?php echo "$r_secret_q" ?>'>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <label for="r_secret_a" class="col-lg-4 control-label">Secret Answer</label>
-                                    <div class="col-lg-8">
-                                        <input type="text" class="form-control-1" name="r_secret_a" placeholder="Secret Answer" value='<?php echo "$r_secret_a" ?>'>
-                                    </div>
-                                </div>
-                                <div align="center">
-                                    <input type="submit" value="Register"/>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!--End Content--> 
-
-                </div>
-                
- <div id="right-column" class="col-sm-4"></div>
+</head>
+<body>
+<!--Start Header-->
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
+<!--End Header--> 
+<!--Start Middle-->
+<div id="main" class="container-fluid">
+  <div id="right-column" class="col-sm-4"></div>
+  <div id="center2-column" class="col-sm-4">
+    <div class="well bs-component"> 
+      <!--<legend>LEFT COLUMN</legend>-->
+      
+      <h1 align="center">Register</h1>
+      <div class="well-1 bs-component">
+        <form  align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+          <font color="#FF0000"><?php echo "$r_errorMsg"; ?></font> <br>
+          <div class="form-group">
+            <label for="r_firstname" class="col-lg-4 control-label">First Name</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control-1" name="r_firstname" placeholder="First Name" value='<?php echo "$r_firstname" ?>'>
             </div>
-            <!--End Middle--> 
+          </div>
+          <div class="form-group">
+            <label for="r_lastname" class="col-lg-4 control-label">Last Name</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control-1" name="r_lastname" placeholder="Last Name" value='<?php echo "$r_lastname" ?>'>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="r_email" class="col-lg-4 control-label">Email</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control-1" name="r_email" placeholder="Email" value='<?php echo "$r_email" ?>'>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="r_user_name" class="col-lg-4 control-label">Username</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control-1" name="r_user_name" placeholder="Username" value='<?php echo "$r_user_name" ?>'>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="r_password" class="col-lg-4 control-label">Password</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control-1" name="r_password" placeholder="Password" value='<?php echo "$r_password" ?>'>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="r_secret_q" class="col-lg-4 control-label">Secret Question</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control-1" name="r_secret_q" placeholder="Secret Question" value='<?php echo "$r_secret_q" ?>'>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="r_secret_a" class="col-lg-4 control-label">Secret Answer</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control-1" name="r_secret_a" placeholder="Secret Answer" value='<?php echo "$r_secret_a" ?>'>
+            </div>
+          </div>
+          <div align="center">
+            <input type="submit" value="Register"/>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--End Content--> 
+    
+  </div>
+  <div id="right-column" class="col-sm-4"></div>
+</div>
+<!--End Middle--> 
 
-            <!--End Container--> 
-            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-            <!--<script src="http://code.jquery.com/jquery.js"></script>--> 
-            <script src="plugins/jquery/jquery-2.1.0.min.js"></script> 
-            <script src="plugins/jquery-ui/jquery-ui.min.js"></script> 
-            <!-- Include all compiled plugins (below), or include individual files as needed --> 
-            <script src="plugins/bootstrap/bootstrap.min.js"></script> 
-            <script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script> 
-            <script src="plugins/tinymce/tinymce.min.js"></script> 
-            <script src="plugins/tinymce/jquery.tinymce.min.js"></script> 
-            <!-- All functions for this theme + document.ready processing --> 
-            <script src="js/devoops.js"></script>
-    </body>
+<!--End Container--> 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<!--<script src="http://code.jquery.com/jquery.js"></script>--> 
+<script src="plugins/jquery/jquery-2.1.0.min.js"></script> 
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="plugins/bootstrap/bootstrap.min.js"></script> 
+<script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script> 
+<script src="plugins/tinymce/tinymce.min.js"></script> 
+<script src="plugins/tinymce/jquery.tinymce.min.js"></script> 
+<!-- All functions for this theme + document.ready processing --> 
+<script src="js/devoops.js"></script>
+</body>
 </html>
