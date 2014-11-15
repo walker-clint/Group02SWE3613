@@ -10,13 +10,15 @@
         <?php
         $toplinks = "";
         session_start();
-        include_once "connect_to_mysql.php";
-        if ($_SESSION['id'] != "") {
+        //include_once "connect_to_mysql.php";
+        require_once $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
+        if (empty($_SESSION['id'])) {
             $id = $_SESSION['id'];
             // Put stored session variables into local php variable
-            $sql = mysql_query("SELECT * FROM tbl_user WHERE user_id='$id'");
+            $sql = mysqli_query($db, "SELECT * FROM tbl_user WHERE user_id='$id'");
 
-            while ($row = mysql_fetch_array($sql)) {
+            $full_name='';
+            while ($row = mysqli_fetch_array($sql)) {
                 // Use the AYAH object to see if the user passed or failed the game.
                 // Get member ID into a session variable
                 $full_name = $row["first_name"] . " " . $row["last_name"];

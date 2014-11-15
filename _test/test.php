@@ -14,8 +14,8 @@
     </head>
     <body>
         <?php
-        echo $_SERVER['DOCUMENT_ROOT'] . 'php/objects.php<br>';
-        echo dirname(__FILE__) . '/../php/objects.php';
+//        echo $_SERVER['DOCUMENT_ROOT'] . 'php/objects.php<br>';
+//        echo dirname(__FILE__) . '/../php/objects.php';
         ?>
         <h1>Sample queries<br></h1>
         <p>The following demonstrates SQL queries via PHP</p>
