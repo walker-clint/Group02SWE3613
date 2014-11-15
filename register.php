@@ -137,6 +137,7 @@ if ($username_check > 0){
             </div>
           </div>
                   <?php
+          require_once('recaptchalib.php');
           $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
           echo recaptcha_get_html($publickey);
         ?>
