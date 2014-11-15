@@ -11,10 +11,6 @@
             //Connect to the database through our include
             $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
             $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
-            echo "<br>";
-            echo "user name= $user_name";
-            echo "<br>";
-            echo "password= $password";
             $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password='$password'");
             $login_check = mysql_num_rows($sql);
             if ($login_check > 0) {
@@ -23,15 +19,13 @@
                     // Get member ID into a session variable
                     $id = $row["user_id"];
                     $_SESSION['id'] = $id;
-                    echo "<br>";
-                    echo "id= $id";
                     // Get member username into a session variable
                     $user_name = $row["login"];
                     $_SESSION['login'] = $user_name;
                     $_SESSION['is_admin'] = $row["admin"];//checks if user is an administrator or regular user
 					
 					
-                        header('Location: main_menu.php');
+                        header('Location: index.php');
                         exit();
                     
                 } // close while
@@ -62,6 +56,7 @@
                         <h1 align="center">Login</h1>
                         <div class="well-1 bs-component">
                             <form class="form-horizontal" action="login.php" method="post">
+                             <font color="#FF0000"><?php echo "$r_errorMsg"; ?></font> <br>
                                 <div class="form-group">
                                     <label for="user_name" class="col-lg-4 control-label">User Name</label>
                                     <div class="col-lg-8">
