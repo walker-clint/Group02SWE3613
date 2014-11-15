@@ -22,7 +22,8 @@
                     // Get member username into a session variable
                     $user_name = $row["login"];
                     $_SESSION['login'] = $user_name;
-                    $_SESSION['is_admin'] = $row["admin"];//checks if user is an administrator or regular user
+					$is_admin = $row["admin"];
+                    $_SESSION['is_admin'] = $is_admin;//checks if user is an administrator or regular user
 					
 					
                         header("location: index.php");
@@ -54,7 +55,7 @@
                         <!--<legend>LEFT COLUMN</legend>-->
                         <h1 align="center">Login</h1>
                         <div class="well-1 bs-component">
-                            <form class="form-horizontal"  method="post" enctype="multipart/form-data" name="logform" id="logform" >
+                            <form class="form-horizontal"  method="post" name="logform" id="logform" >
                              <font color="#FF0000"><?php echo "$errorMsg"; ?></font> <br>
                                 <div class="form-group">
                                     <label for="user_name" class="col-lg-4 control-label">User Name</label>
