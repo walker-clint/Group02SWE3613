@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<br>";
         echo "connection made with db";
     }
+    mysqli_select_db($con, $schema);
 //    $myusername = mysqli_real_escape_string($con, $_POST['username']);
 //    $mypassword = mysqli_real_escape_string($con, $_POST['password']);
 
