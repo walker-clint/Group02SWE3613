@@ -5,7 +5,7 @@ $errorMsg = "";
 session_start();
 echo "<br>";
 echo "require passed";
-include('../connect_to_mysql.php');
+
 echo "<br>";
 session_start();
 echo "session started";
