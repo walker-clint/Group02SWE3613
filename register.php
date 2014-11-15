@@ -86,6 +86,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div id="center1-column" class="col-sm-8">
                     <div class="well bs-component"> 
                         <!--<legend>LEFT COLUMN</legend>-->
+                        <h1>Registration</h1>
+                        <div class="well-1 bs-component">
+                            <form  align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label for="firstname" class="col-xs-4 control-label">First Name</label>
+                                        <div class="col-xs-8">
+                                            <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label for="lastname" class="col-xs-6 control-label">Last Name</label>
+                                        <div class="col-xs-12">
+                                            <input type="text" class="form-control-1" name="lastname" placeholder="Last Name" value="<?php echo "$lastname"; ?>">
+                                        </div>
+                                    </div>
+                                    
+                                </div>  
+                            </form>
+                        </div>
+                        
+                        
                         <h1>Register</h1>
                         <div class="well-1 bs-component">
 
