@@ -3,7 +3,21 @@ require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
 $errorMsg = "";
 session_start(); 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-//Connect to the database through our include 
+//Connect to the database through our include
+
+			require_once('recaptchalib.php');
+  $privatekey = "6LcMdf0SAAAAAGoCSMb54T2MbWvgxaNpnDqhLwSj";
+  $resp = recaptcha_check_answer ($privatekey,
+                                $_SERVER["REMOTE_ADDR"],
+                                $_POST["recaptcha_challenge_field"],
+                                $_POST["recaptcha_response_field"]);
+  if (!$resp->is_valid) {
+    // What happens when the CAPTCHA was entered incorrectly
+     $errorMsg .= "The reCAPTCHA wasn't entered correctly. Go back and try it again." .
+         "(reCAPTCHA said: " . $resp->error . ")";
+  } else {
+
+ 
 include_once "connect_to_mysql.php";
 $username = ereg_replace("[^A-Za-z0-9]", "", $_POST['username']);
 $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']);
@@ -54,7 +68,7 @@ if ($username_check > 0){
 		exit(); // Exit so the form and page does not display, just this success message
 	} // Close else after database duplicate field value checks
   } // Close else after missing vars check
-} //Close if $_POST
+}} //Close if $_POST
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -122,6 +136,10 @@ if ($username_check > 0){
               <input type="text" class="form-control-1" name="secret_a" placeholder="Secret Answer" value="<?php echo "$secret_a"; ?>">
             </div>
           </div>
+                  <?php
+          $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
+          echo recaptcha_get_html($publickey);
+        ?>
           <div align="center">
             <input type="submit" value="Submit"/>
           </div>
