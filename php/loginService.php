@@ -1,6 +1,6 @@
 <?php
 echo "Login Services";
-require $_SERVER['DOCUMENT_ROOT'] . ("connection.php");
+//require $_SERVER['DOCUMENT_ROOT'] . ("connection.php");
 echo "require passed";
 session_start();
 echo "session started";
