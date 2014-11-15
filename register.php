@@ -85,10 +85,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h1>Registration</h1>
                 <div class="row">
 
-                    <div id="left-column" class="col-xs-1 col-md-1 col-lg-1"> </div>               
+                    <div id="left-column" class="col-xs-2 col-md-2 col-lg-2"> </div>               
                     <!--<legend>LEFT COLUMN</legend>-->
 
-                    <div id="center-column" class="col-xs-10 col-md-10 col-lg-10">
+                    <div id="center-column" class="col-xs-8 col-md-8 col-lg-8">
                         <div class="well bs-component"> 
                             <div class="well-1 bs-component">
 
@@ -148,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                         </div>
                     </div>
-                    <div id="right-column" class="col-xs-1 col-md-1 col-lg-1"></div>
+                    <div id="right-column" class="col-xs-2 col-md-2 col-lg-2"></div>
                 </div>
             </form>
         </div>
