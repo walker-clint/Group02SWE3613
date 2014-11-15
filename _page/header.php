@@ -11,7 +11,8 @@
         $toplinks = "";
         session_start();
         //include_once "connect_to_mysql.php";
-        require_once $_SERVER['SERVER_NAME'] . ("/php/connection.php");
+        require_once $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
+        
         if (!empty($_SESSION['id'])) {
             $id = $_SESSION['id'];
             // Put stored session variables into local php variable
