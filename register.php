@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-                header("location: index.html");
+                header("location: main_menu.php");
                 exit(); // Exit so the form and page does not display, just this success message
             } // Close else after database duplicate field value checks
         } // Close else after missing vars check
