@@ -45,7 +45,7 @@ if ($_SESSION['id']!="") {
 
 ?>
 <header class="navbar-collapse">
-  <div id="logo" class="col-xs-6 col-sm-6"> <img src="img/cllogo_medium.png" class="img-responsive"/> </div>
+  <div id="logo" class="col-xs-6 col-sm-6" href="index.php"> <img src="img/cllogo_medium.png" class="img-responsive"/> </div>
   <div id="top-panel" class="container-fluid expanded-panel"> <br>
     <div class="row"><?php echo $toplinks; ?></div>
   </div>
