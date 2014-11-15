@@ -1,6 +1,6 @@
 <?php
 
-require $_SERVER['DOCUMENT_ROOT'] . ("connection.php");
+require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // username and password sent from form
