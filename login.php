@@ -6,6 +6,7 @@ include_once "connect_to_mysql.php";
 //if ($_POST['user_name']) {
 if ($_SESSION['id'] != NULL) {
     //Connect to the database through our include
+    echo "inside session login php start";
     $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
     $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
     $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password='$password'");
