@@ -7,7 +7,7 @@ function initializeConnection() {
     $schema = 'swe3613_db02p2';
 
     //$con = mysqli_connect($host, $user, $password, $database, $port, $socket)
-    $con = mysqli_connect($host, $user, $pass);//, $schema);
+    $con = mysqli_connect($host, $user, $pass, $schema);
     //mysqli_select_db($con, $schema);
 
     if ($con->connect_error) {
