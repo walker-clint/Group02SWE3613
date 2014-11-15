@@ -136,12 +136,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                                 <div class="captcha-container" align="center">
                                     <!--                                    <div class="col-xs-12 col-md-12" align="center">-->
-                                    <?php
-                                    require_once('recaptchalib.php');
-                                    $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
-                                    echo recaptcha_get_html($publickey);
-                                    ?>
-                                    <!--                                    </div>-->
+                                    <div class="captcha-container frame">
+                                        <?php
+                                        require_once('recaptchalib.php');
+                                        $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
+                                        echo recaptcha_get_html($publickey);
+                                        ?>
+                                    </div>
                                 </div>
                                 <div class="col-xs-12 col-md-12" align="center"></div>
                                 <div align="center">
