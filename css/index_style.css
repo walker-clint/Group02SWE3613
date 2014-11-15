@@ -2133,7 +2133,7 @@ http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-respo
     position: absolute;
     padding-bottom: 50%;
     padding-top: 25%;
-    overflow: visible;
+    overflow: inherit;
     align-self: center;
 }
 
