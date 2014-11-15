@@ -136,7 +136,7 @@ if ($username_check > 0){
             </div>
           </div>
           <div class="form-group">
-                  <label class="col-lg-4 control-label">Captcha</label>
+<!--                  <label class="col-lg-4 control-label">Captcha</label>-->
             <div class="col-lg-8">
               <?php
           require_once('recaptchalib.php');
