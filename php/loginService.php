@@ -8,6 +8,14 @@ echo "session started";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // username and password sent from form 
     include('Crazy_Leroys.dbconfig.inc');
+    $con = mysqli_connect($host, $user, $pass);
+    if (!$con) {
+        echo "<br>";
+        echo "Unable to connect to database! Please try again later. Error message: " . mysqli_error($con);
+    } else {
+        echo "<br>";
+        echo "connection made with db";
+    }
 //    $myusername = mysqli_real_escape_string($con, $_POST['username']);
 //    $mypassword = mysqli_real_escape_string($con, $_POST['password']);
 
