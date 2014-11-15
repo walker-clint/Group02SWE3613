@@ -8,11 +8,11 @@ echo "session started";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // username and password sent from form 
     include('/php/connection.php');
-    $myusername = mysqli_real_escape_string($con, $_POST['username']);
-    $mypassword = mysqli_real_escape_string($con, $_POST['password']);
+//    $myusername = mysqli_real_escape_string($con, $_POST['username']);
+//    $mypassword = mysqli_real_escape_string($con, $_POST['password']);
 
-    //$myusername = $_POST['username'];
-    //$mypassword = $_POST['password'];
+    $myusername = $_POST['username'];
+    $mypassword = $_POST['password'];
     echo "<br>";
     echo "username: $myusername";
     echo "<br>";
