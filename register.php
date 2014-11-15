@@ -90,15 +90,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="well-1 bs-component">
                             <form class="form-group" align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
 
-                                <label for="firstname" class="col-xs-4 control-label">First Name</label>
+                                <label for="firstname">First Name</label>
 
                                 <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
 
-                                <label for="firstname" class="col-xs-4 control-label">First Name</label>
+                                <label for="firstname">Last Name</label>
 
                                 <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
 
-                                <label for="firstname" class="col-xs-4 control-label">First Name</label>
+                                <label for="firstname">First Name</label>
 
                                 <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
 
