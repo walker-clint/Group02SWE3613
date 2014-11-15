@@ -7,7 +7,7 @@ echo "session started";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // username and password sent from form 
-    include('Crazy_Leroys.dbconfig.inc');
+    include('php/Crazy_Leroys.dbconfig.inc');
     $con = mysqli_connect($host, $user, $pass);
     if (!$con) {
         echo "<br>";
