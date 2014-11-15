@@ -141,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     echo recaptcha_get_html($publickey);
                                     ?>
                                 </div>
-                                <br>
+                                <div class="col-xs-12 col-md-12" align="center"></div>
                                 <div align="center">
                                     <input type="submit" value="Submit"/>
                                 </div>
