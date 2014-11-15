@@ -2,7 +2,7 @@
 
 
     <div id="logo" class="col-xs-6 col-sm-6">
-        <a href="index.php"> <img src="img/cllogo_medium.png" class="img-responsive"></a>
+        <a href="index.php"><img src="img/cllogo_medium.png" class="img-responsive" /></a>
     </div>
 
     <div id="top-panel" class="container-fluid expanded-panel"> <br>
