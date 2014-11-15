@@ -1,8 +1,10 @@
 <?php
 echo "Login Services";
 //require $_SERVER['DOCUMENT_ROOT'] . ("connection.php");
+echo "<br>";
 echo "require passed";
 include('connect_to_mysql.php');
+echo "<br>";
 session_start();
 echo "session started";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
