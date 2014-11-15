@@ -77,43 +77,43 @@ session_start();
           <div class="form-group">
             <label for="r_firstname" class="col-lg-4 control-label">First Name</label>
             <div class="col-lg-8">
-              <input type="text" class="form-control-1" name="r_firstname" placeholder="First Name" value='<?php echo "$r_firstname" ?>'>
+              <input type="text" class="form-control-1" name="r_firstname" placeholder="First Name" value="<?php echo "$r_firstname"; ?>">
             </div>
           </div>
           <div class="form-group">
             <label for="r_lastname" class="col-lg-4 control-label">Last Name</label>
             <div class="col-lg-8">
-              <input type="text" class="form-control-1" name="r_lastname" placeholder="Last Name" value='<?php echo "$r_lastname" ?>'>
+              <input type="text" class="form-control-1" name="r_lastname" placeholder="Last Name" value="<?php echo "$r_lastname"; ?>">
             </div>
           </div>
           <div class="form-group">
             <label for="r_email" class="col-lg-4 control-label">Email</label>
             <div class="col-lg-8">
-              <input type="email" class="form-control-1" name="r_email" placeholder="Email" value='<?php echo "$r_email" ?>'>
+              <input type="email" class="form-control-1" name="r_email" placeholder="Email" value="<?php echo "$r_email"; ?>">
             </div>
           </div>
           <div class="form-group">
             <label for="r_user_name" class="col-lg-4 control-label">Username</label>
             <div class="col-lg-8">
-              <input type="text" class="form-control-1" name="r_user_name" placeholder="Username" value='<?php echo "$r_user_name" ?>'>
+              <input type="text" class="form-control-1" name="r_user_name" placeholder="Username" value="<?php echo "$r_user_name"; ?>">
             </div>
           </div>
           <div class="form-group">
             <label for="r_password" class="col-lg-4 control-label">Password</label>
             <div class="col-lg-8">
-              <input type="password" class="form-control-1" name="r_password" placeholder="Password" value='<?php echo "$r_password" ?>'>
+              <input type="password" class="form-control-1" name="r_password" placeholder="Password" value="<?php echo "$r_password"; ?>">
             </div>
           </div>
           <div class="form-group">
             <label for="r_secret_q" class="col-lg-4 control-label">Secret Question</label>
             <div class="col-lg-8">
-              <input type="text" class="form-control-1" name="r_secret_q" placeholder="Secret Question" value='<?php echo "$r_secret_q" ?>'>
+              <input type="text" class="form-control-1" name="r_secret_q" placeholder="Secret Question" value="<?php echo "$r_secret_q"; ?>">
             </div>
           </div>
           <div class="form-group">
             <label for="r_secret_a" class="col-lg-4 control-label">Secret Answer</label>
             <div class="col-lg-8">
-              <input type="text" class="form-control-1" name="r_secret_a" placeholder="Secret Answer" value='<?php echo "$r_secret_a" ?>'>
+              <input type="text" class="form-control-1" name="r_secret_a" placeholder="Secret Answer" value="<?php echo "$r_secret_a"; ?>">
             </div>
           </div>
           <div align="center">
