@@ -14,7 +14,7 @@
             <!--Start Content-->
             <div class="row">
                 <div id="left-column" class="col-sm-4">
-                    <h1>Name and artist of song playing</h1>
+                    <h1>Name and artist of song playing. Even if the</h1>
                     <div class="well bs-component">
                         <div class="well-1 bs-component">
                             <div class="video-container">
@@ -38,9 +38,7 @@
 
                                         <td><b>Artist</b></td>
 
-                                        <td><b>???</b></td>
-
-                                        <td><b>Actions</b></td>
+                                        <td><b>Play Song</b></td>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -50,6 +48,9 @@
                                     ?>
                                 </tbody>
                             </table>
+                            <div class="form-horizontal" action="">
+                                <input class="btn btn-primary btn-lg" type="submit" name="song_info">
+                            </div>
 
                             <!--End well-1-->
                         </div>
