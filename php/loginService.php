@@ -6,12 +6,18 @@ $errorMsg = "";
 session_start();
 echo "<br>";
 echo "require passed";
-
+$sql = "SELECT user_id, admin FROM tbl_user;";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+$userId = $row['user_id'];
+$admin = $row['admin'];
 echo "<br>";
 session_start();
 echo "session started";
 $myusername = mysqli_real_escape_string($db, $_POST['username']);
 $mypassword = mysqli_real_escape_string($db, $_POST['password']);
+$non_secure_username = $_POST['username'];
+$non_secure_password = $_POST['password'];
 echo "<br>";
 echo "Before server";
 echo "<br>";
@@ -19,9 +25,13 @@ echo "username: $myusername";
 echo "<br>";
 echo "password: $mypassword";
 echo "<br>";
+echo "username: $non_secure_username";
+echo "<br>";
+echo "password: $non_secure_password";
+echo "<br>";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // username and password sent from form 
-
+    
     $myusername = mysqli_real_escape_string($db, $_POST['username']);
     $mypassword = mysqli_real_escape_string($db, $_POST['password']);
     echo "<br>";
