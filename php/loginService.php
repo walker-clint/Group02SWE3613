@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($count == 1) {
         // session_register("myusername");
         $_SESSION['login_user'] = $myusername;
+        //TODO We need to store the user's ID instead of/in addition to the name
 
         header("location: main_menu.php");
     } else {
