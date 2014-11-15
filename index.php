@@ -14,16 +14,12 @@
     <!--Start Content-->
     <div class="row">
         <div id="left-column" class="col-sm-4">
+          <h1>Name and artist of song playing</h1>
             <div class="well bs-component">
-                <!--<legend>LEFT COLUMN</legend>-->
-                <h1>Left Column</h1>
-
-                <!--                <div class="form-horizontal" action="left" method="POST"></div>-->
-
                 <div class="well-1 bs-component">
                     <div class="video-container">
-                        <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
-                        <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=1" frameborder="0" allowfullscreen></iframe>-->
+<!--                         to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
+                        <iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=1" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
