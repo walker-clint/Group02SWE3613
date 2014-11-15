@@ -30,7 +30,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $userId = $row['user_id'];
     $admin = $row['admin'];
-
+    echo "<br>";
+    echo "user id: $userId";
+    echo "<br>";
+    echo "admin: $admin";
+    echo "<br>";
     $count = mysqli_num_rows($result);
     echo "user found == $count";
     // If result matched $myusername and $mypassword, table row must be 1 row
