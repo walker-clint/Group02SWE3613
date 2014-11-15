@@ -36,10 +36,13 @@ if ($_SESSION['id'] != NULL) {
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <?php
+            require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
+        ?>
     </head>
     <body>
         <!--Start Header-->
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
         <!--End Header--> 
 
         <!--Start Middle-->
