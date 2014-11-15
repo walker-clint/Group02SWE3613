@@ -2130,10 +2130,10 @@ http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-respo
 }
 
 .captcha-container{
-    position: absolute;
-    padding-bottom: 50%;
+    position: inherit;
+    padding-bottom: 20%;
     padding-top: 25%;
-    overflow: inherit;
+    overflow: visible;
 }
 
 /*http://speckyboy.com/2012/03/05/the-challenge-of-responsive-images/*/
