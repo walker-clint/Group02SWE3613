@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <form class="form-horizontal" align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                             <div class="well-1 bs-component">
                                 <div class="col-xs-6 col-md-6">
-                                    <form class="form-group">
+                                    <div class="form-group">
                                         <label for="firstname" class="col-xs-2 col-md-2 control-label" align="right">First Name</label>
                                         <div class="col-xs-10 col-md-10">
                                             <input type="text" class="form-control" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
@@ -122,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <div class="col-xs-10 col-md-10">
                                             <input type="text" class="form-control" name="secret_a" placeholder="Secret Answer" value="<?php echo "$secret_a"; ?>">
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div> 
                     </div> 
