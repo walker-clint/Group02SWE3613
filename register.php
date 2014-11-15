@@ -39,7 +39,7 @@ if ($username_check > 0){
 	   		// Get the inserted ID here to use in the activation email
 		$id = mysql_insert_id();
 		// Add user info into the database table, claim your fields then values 
-		$sql = mysql_query("INSERT INTO tbl_user (useid,login,password,email,admin,secret_question,secret_answer,first_name, last_name) 
+		$sql = mysql_query("INSERT INTO tbl_user (user_id,login,password,email,admin,secret_question,secret_answer,first_name, last_name) 
 		VALUES('$id','$username', '$password', '$email', 0,'$secret_q','$secret_a','$firstname','$lastname')") or die (mysql_error());
 		
 		
