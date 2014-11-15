@@ -39,7 +39,7 @@ exit();
                         <h1 align="center">Login</h1>
                         <div class="well-1 bs-component">
                          <div><?php echo "$msg"; ?><br>
-<p><a href="http://group02.swe3613.com/">Click here</a> to return to our home page </p>
+<p><a href="http://group02p2.swe3613.com/">Click here</a> to return to our home page </p>
                         </div>
                     </div>
                 </div>
