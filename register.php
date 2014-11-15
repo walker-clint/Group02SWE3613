@@ -127,35 +127,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </form>
                             </div>
                         </div> 
-                        <div id="right-column" class="col-sm-2">
-                            <div class="well-1 bs-component">
-                                <div class="col-xs-6 col-md-6">
-                                    <div class="col-xs-12 col-md-12" align="center">
-                                        <?php
-                                        require_once('recaptchalib.php');
-                                        $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
-                                        echo recaptcha_get_html($publickey);
-                                        ?>
-                                    </div>
-                                    <br>
-                                    <div align="center">
-                                        <input type="button-primary" value="Submit"/>
-                                    </div>
+                </div> 
+                <div id="right-column" class="col-sm-2">
+                    <div class="well bs-component">
+                        <div class="well-1 bs-component">
+                            <div class="col-xs-6 col-md-6">
+                                <div class="col-xs-12 col-md-12" align="center">
+                                    <?php
+                                    require_once('recaptchalib.php');
+                                    $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
+                                    echo recaptcha_get_html($publickey);
+                                    ?>
+                                </div>
+                                <br>
+                                <div align="center">
+                                    <input type="button-primary" value="Submit"/>
                                 </div>
                             </div>
-
                         </div>
+
+                    </div>
                     </form>
 
                 </div>
             </div>
         </div>
-    </div>
-
-</div>
+    
 <!--End Content--> 
 
-</div>
+
 <!--End Middle--> 
 
 <!--End Container--> 
