@@ -91,16 +91,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                             <form  align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                                 <font color="#FF0000"><?php echo "$errorMsg"; ?></font> <br>
-                                <div class="col-xs-5">
+                                <div class="col-xs-6">
                                     <div class="form-group">
-                                        <label for="firstname" class="col-xs-2 control-label">First Name</label>
-                                        <div class="col-xs-6">
+                                        <label for="firstname" class="col-xs-6 control-label">First Name</label>
+                                        <div class="col-xs-12">
                                             <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="lastname" class="col-xs-2 control-label">Last Name</label>
-                                        <div class="col-xs-6">
+                                        <label for="lastname" class="col-xs-6 control-label">Last Name</label>
+                                        <div class="col-xs-12">
                                             <input type="text" class="form-control-1" name="lastname" placeholder="Last Name" value="<?php echo "$lastname"; ?>">
                                         </div>
                                     </div>
