@@ -143,7 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                                 <br>
                                 <div align="center">
-                                    <input type="btn" value="Submit"/>
+                                    <input type="submit" value="Submit"/>
                                 </div>
                             </div>
                         </div>
