@@ -134,14 +134,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <input type="text" class="form-control" name="secret_a" placeholder="Secret Answer" value="<?php echo "$secret_a"; ?>">
                                     </div>
                                 </div>
-                                <div class="captcha-container">
-                                    <div class="col-xs-12 col-md-12" align="center">
+                                <div class="captcha-container" align="center">
+<!--                                    <div class="col-xs-12 col-md-12" align="center">-->
                                         <?php
                                         require_once('recaptchalib.php');
                                         $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
                                         echo recaptcha_get_html($publickey);
                                         ?>
-                                    </div>
+<!--                                    </div>-->
                                 </div>
                                 <div class="col-xs-12 col-md-12" align="center"></div>
                                 <div align="center">
