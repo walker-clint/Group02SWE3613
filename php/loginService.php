@@ -1,9 +1,9 @@
 <?php
 echo "Login Services";
 require $_SERVER['DOCUMENT_ROOT'] . ("connection.php");
-
+echo "require passed";
 session_start();
-
+echo "session started";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // username and password sent from form 
 
