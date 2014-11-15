@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h1>Registration</h1>
                         <div class="well-1 bs-component">
                             <form  align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-                                <div class="col-md-4 col-xs-4">
+                                <div class="col-md-8 col-xs-8">
                                     <div class="form-group">
                                         <label for="firstname" class="col-md-4 col-xs-4 control-label">First,Last Name</label>
                                         <div class="col-md-8 col-xs-8">
