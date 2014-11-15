@@ -7,7 +7,7 @@ include_once "connect_to_mysql.php";
 if ($_SESSION['id'] != NULL) {
     //Connect to the database through our include
     echo "inside session login php start";
-    $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['user_name']);
+    $user_name = ereg_replace("[^A-Za-z0-9]", "", $_POST['username']);
     $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
     $sql = mysql_query("SELECT * FROM tbl_user WHERE login='$user_name' AND password='$password'");
     $login_check = mysql_num_rows($sql);
@@ -62,7 +62,7 @@ if ($_SESSION['id'] != NULL) {
                                 <div class="form-group">
                                     <label for="user_name" class="col-lg-4 control-label">User Name</label>
                                     <div class="col-lg-8">
-                                        <input type="text" class="form-control" name="user_name" placeholder="User Name">
+                                        <input type="text" class="form-control" name="username" placeholder="User Name">
                                     </div>
                                 </div>
                                 <div class="form-group">

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><?php
-        require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
+    <head>
+        <?php
+            require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
         ?>
     </head>
     <body>
@@ -48,9 +49,9 @@
                                     ?>
                                 </tbody>
                             </table>
-<!--                            <div class="form-horizontal" action="">
-                                <input class="btn btn-primary btn-lg" type="submit" value="Song Information" name="song_info">
-                            </div>-->
+                            <!--                            <div class="form-horizontal" action="">
+                                                            <input class="btn btn-primary btn-lg" type="submit" value="Song Information" name="song_info">
+                                                        </div>-->
 
                             <!--End well-1-->
                         </div>
