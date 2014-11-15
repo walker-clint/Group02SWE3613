@@ -89,7 +89,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h1>Registration</h1>
                         <div class="well-1 bs-component">
                             <form  align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-                                <div class="col-xs-12">
+                                <label for="firstname" class="col-xs-6 control-label">First Name</label>
+                                <div class="col-xs-6">
                                     <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
                                 </div>
                             </form>
