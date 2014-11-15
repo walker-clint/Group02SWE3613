@@ -26,7 +26,7 @@
                     $is_admin = $row["admin"];
                     $_SESSION['is_admin'] = $is_admin; //checks if user is an administrator or regular user
                     header("location: index.php");
-                    exit();
+                    //exit();
                 } // close while
             } else {
                 $errorMsg .= "The username or password you entered is incorrect<br />";
