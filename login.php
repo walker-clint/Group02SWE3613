@@ -1,7 +1,5 @@
 
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
-
 $errorMsg = "";
 session_start();
 include_once "connect_to_mysql.php";
@@ -34,13 +32,16 @@ if ($_SESSION['id'] != NULL) {
 // Close else after missing vars check
 //Close if $_POST
 ?>
+<?php
+    require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
     </head>
     <body>
         <!--Start Header-->
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
         <!--End Header--> 
 
         <!--Start Middle-->
