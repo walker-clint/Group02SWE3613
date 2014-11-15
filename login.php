@@ -22,7 +22,7 @@ if ($_SESSION['id'] != NULL) {
             $_SESSION['login'] = $user_name;
             $is_admin = $row["admin"];
             $_SESSION['is_admin'] = $is_admin; //checks if user is an administrator or regular user
-            header("location: index.php");
+            header("location: main_menu.php");
             //exit();
         } // close while
     } else {
