@@ -91,18 +91,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <form class="form-horizontal" align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
 
                                 <label for="firstname" class="control-label col-xs-2" align="right">First Name</label>
-
-                                <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
-
+                                <div class="col-xs-10 col-md-10">
+                                    <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
+                                </div>
                                 <label for="firstname" class="control-label col-xs-2" align="right">Last Name</label>
-
-                                <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
-
+                                <div class="col-xs-10 col-md-10">
+                                    <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
+                                </div>
                                 <label for="firstname" class="control-label col-xs-2" align="right">Email Address</label>
+                                <div class="col-xs-10 col-md-10">
+                                    <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
 
-                                <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
-
-
+                                </div>
                             </form>
                         </div>
                     </div>
