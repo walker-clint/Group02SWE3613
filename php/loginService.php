@@ -9,6 +9,15 @@ echo "require passed";
 echo "<br>";
 session_start();
 echo "session started";
+ $myusername = mysqli_real_escape_string($db, $_POST['username']);
+    $mypassword = mysqli_real_escape_string($db, $_POST['password']);
+    echo "<br>";
+    echo "Before server";
+    echo "<br>";
+    echo "username: $myusername";
+    echo "<br>";
+    echo "password: $mypassword";
+    echo "<br>";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // username and password sent from form 
 
