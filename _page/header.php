@@ -31,7 +31,7 @@
 	</li>
 	<li class="btn-label-right">
 	<div class="well-1 btn">
-	<a href="logout.php">Log Out</a>
+	<a href='.$_SERVER['DOCUMENT_ROOT'].'"/php/logoutServices.php">Log Out</a>
 	</li>
 	</ul>';
         } else {
