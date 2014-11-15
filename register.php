@@ -89,11 +89,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h1>Registration</h1>
                         <div class="well-1 bs-component">
                             <form class="form-horizontal" align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-
-                                <label for="firstname" class="control-label col-xs-1 col-md-1" align="right">First Name</label>
-                                <div class="col-xs-4 col-md-4">
-                                    <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
+                                <div class="container">
+                                    <label for="firstname" class="control-label col-xs-1 col-md-1" align="right">First Name</label>
+                                    <div class="col-xs-4 col-md-4">
+                                        <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
+                                    </div>
                                 </div>
+                                
                                 <label for="firstname" class="control-label col-xs-2 col-md-2" align="right">Last Name</label>
                                 <div class="col-xs-4 col-md-4">
                                     <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
@@ -104,92 +106,92 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                             </form>
                         </div>
-                    
 
 
-                    <h1>Register</h1>
-                    <div class="well-1 bs-component">
 
-                        <form  align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-                            <font color="#FF0000"><?php echo "$errorMsg"; ?></font> <br>
-                            <div class="col-xs-6">
-                                <div class="form-group">
-                                    <label for="firstname" class="col-xs-6 control-label">First Name</label>
-                                    <div class="col-xs-12">
-                                        <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
+                        <h1>Register</h1>
+                        <div class="well-1 bs-component">
+
+                            <form  align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+                                <font color="#FF0000"><?php echo "$errorMsg"; ?></font> <br>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label for="firstname" class="col-xs-6 control-label">First Name</label>
+                                        <div class="col-xs-12">
+                                            <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastname" class="col-xs-6 control-label">Last Name</label>
+                                        <div class="col-xs-12">
+                                            <input type="text" class="form-control-1" name="lastname" placeholder="Last Name" value="<?php echo "$lastname"; ?>">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="lastname" class="col-xs-6 control-label">Last Name</label>
-                                    <div class="col-xs-12">
-                                        <input type="text" class="form-control-1" name="lastname" placeholder="Last Name" value="<?php echo "$lastname"; ?>">
+                                    <label for="email" class="col-lg-4 control-label">Email</label>
+                                    <div class="col-lg-8">
+                                        <input type="email" class="form-control-1" name="email" placeholder="Email" value="<?php echo "$email"; ?>">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-lg-4 control-label">Email</label>
-                                <div class="col-lg-8">
-                                    <input type="email" class="form-control-1" name="email" placeholder="Email" value="<?php echo "$email"; ?>">
+                                <div class="form-group">
+                                    <label for="username" class="col-lg-4 control-label">Username</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control-1" name="username" placeholder="Username" value="<?php echo "$username"; ?>">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="username" class="col-lg-4 control-label">Username</label>
-                                <div class="col-lg-8">
-                                    <input type="text" class="form-control-1" name="username" placeholder="Username" value="<?php echo "$username"; ?>">
+                                <div class="form-group">
+                                    <label for="password" class="col-lg-4 control-label">Password</label>
+                                    <div class="col-lg-8">
+                                        <input type="password" class="form-control-1" name="password" placeholder="Password" value="<?php echo "$password"; ?>">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="col-lg-4 control-label">Password</label>
-                                <div class="col-lg-8">
-                                    <input type="password" class="form-control-1" name="password" placeholder="Password" value="<?php echo "$password"; ?>">
+                                <div class="form-group">
+                                    <label for="secret_q" class="col-lg-4 control-label">Secret Question</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control-1" name="secret_q" placeholder="Secret Question" value="<?php echo "$secret_q"; ?>">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="secret_q" class="col-lg-4 control-label">Secret Question</label>
-                                <div class="col-lg-8">
-                                    <input type="text" class="form-control-1" name="secret_q" placeholder="Secret Question" value="<?php echo "$secret_q"; ?>">
+                                <div class="form-group">
+                                    <label for="secret_a" class="col-lg-4 control-label">Secret Answer</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control-1" name="secret_a" placeholder="Secret Answer" value="<?php echo "$secret_a"; ?>">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="secret_a" class="col-lg-4 control-label">Secret Answer</label>
-                                <div class="col-lg-8">
-                                    <input type="text" class="form-control-1" name="secret_a" placeholder="Secret Answer" value="<?php echo "$secret_a"; ?>">
+                                <div class="form-group">
+                                    <!--                  <label class="col-lg-4 control-label">Captcha</label>-->
+                                    <div class="col-lg-8">
+                                        <?php
+                                        require_once('recaptchalib.php');
+                                        $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
+                                        echo recaptcha_get_html($publickey);
+                                        ?>
+                                    </div></div>
+                                <div align="center">
+                                    <input type="submit" value="Submit"/>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <!--                  <label class="col-lg-4 control-label">Captcha</label>-->
-                                <div class="col-lg-8">
-                                    <?php
-                                    require_once('recaptchalib.php');
-                                    $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
-                                    echo recaptcha_get_html($publickey);
-                                    ?>
-                                </div></div>
-                            <div align="center">
-                                <input type="submit" value="Submit"/>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
+
+                    <div id="right-column" class="col-sm-2"></div>
                 </div>
+                <!--End Content--> 
 
-                <div id="right-column" class="col-sm-2"></div>
             </div>
-            <!--End Content--> 
+            <!--End Middle--> 
 
-        </div>
-        <!--End Middle--> 
-
-        <!--End Container--> 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-        <!--<script src="http://code.jquery.com/jquery.js"></script>--> 
-        <script src="plugins/jquery/jquery-2.1.0.min.js"></script> 
-        <script src="plugins/jquery-ui/jquery-ui.min.js"></script> 
-        <!-- Include all compiled plugins (below), or include individual files as needed --> 
-        <script src="plugins/bootstrap/bootstrap.min.js"></script> 
-        <script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script> 
-        <script src="plugins/tinymce/tinymce.min.js"></script> 
-        <script src="plugins/tinymce/jquery.tinymce.min.js"></script> 
-        <!-- All functions for this theme + document.ready processing --> 
-        <script src="js/devoops.js"></script>
+            <!--End Container--> 
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+            <!--<script src="http://code.jquery.com/jquery.js"></script>--> 
+            <script src="plugins/jquery/jquery-2.1.0.min.js"></script> 
+            <script src="plugins/jquery-ui/jquery-ui.min.js"></script> 
+            <!-- Include all compiled plugins (below), or include individual files as needed --> 
+            <script src="plugins/bootstrap/bootstrap.min.js"></script> 
+            <script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script> 
+            <script src="plugins/tinymce/tinymce.min.js"></script> 
+            <script src="plugins/tinymce/jquery.tinymce.min.js"></script> 
+            <!-- All functions for this theme + document.ready processing --> 
+            <script src="js/devoops.js"></script>
     </body>
 </html>
