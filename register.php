@@ -17,7 +17,7 @@ session_start();
             $r_email = mysql_real_escape_string($r_email);
             $r_secret_q = ereg_replace("[^A-Za-z0-9 ]", "", $_POST['r_secret_q']);
             $r_secret_a = ereg_replace("[^A-Za-z0-9 ]", "", $_POST['r_secret_a']);
-            if ((!$r_firstname) || (!$r_lastname) || (!$r_email) || (!$r_user_name || (!$r_password))) {
+            if ((!$r_firstname) || (!$r_lastname) || (!$r_email) || (!$r_user_name) || (!$r_password)) {
 
                 $r_errorMsg = "You did not submit the following required information!<br /><br />";
                 if (!$r_firstname) {
@@ -32,11 +32,15 @@ session_start();
                     $r_errorMsg .= "--- Password<br />";
                 }
             } else {
-                $sql_username_check = mysql_query("SELECT user_id FROM tbl_user WHERE login='$r_user_name' LIMIT 1");
-                $username_check = mysql_num_rows($sql_username_check);
-                if ($username_check > 0) {
-                    $r_errorMsg = "<u>ERROR:</u><br />The username is already in use inside our system. Please try another.";
-                } else {
+ 	$sql_username_check = mysql_query("SELECT user_id FROM tbl_user WHERE login='$r_user_name' LIMIT 1");
+	$sql_email_check = mysql_query("SELECT user_id FROM tbl_user WHERE email='$r_email' LIMIT 1");
+	$username_check = mysql_num_rows($sql_username_check);
+	$email_check = mysql_num_rows($sql_email_check); 
+	if ($username_check > 0){ 
+		$errorMsg = "<u>ERROR:</u><br />Your User Name is already in use inside our system. Please try another.";
+	} else if ($email_check > 0){ 
+		$errorMsg = "<u>ERROR:</u><br />Your Email address is already in use inside our system. Please try another.";
+	} else {
                     // Add MD5 Hash to the password variable
                     $hashedPass = md5($password);
                     // Get the inserted ID here to use in the activation email
