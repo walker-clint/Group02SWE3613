@@ -93,6 +93,7 @@ if ($username_check > 0){
        
        <form  align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
           <font color="#FF0000"><?php echo "$errorMsg"; ?></font> <br>
+          <div class="row">
           <div class="form-group">
             <label for="firstname" class="col-lg-4 control-label">First Name</label>
             <div class="col-lg-8">
@@ -105,6 +106,7 @@ if ($username_check > 0){
               <input type="text" class="form-control-1" name="lastname" placeholder="Last Name" value="<?php echo "$lastname"; ?>">
             </div>
           </div>
+              </div>
           <div class="form-group">
             <label for="email" class="col-lg-4 control-label">Email</label>
             <div class="col-lg-8">
