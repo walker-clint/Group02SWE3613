@@ -72,7 +72,7 @@ session_start();
       
       <h1 align="center">Register</h1>
       <div class="well-1 bs-component">
-        <form  align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+        <form  align="center" action="register.php" method="post" enctype="multipart/form-data">
           <font color="#FF0000"><?php echo "$r_errorMsg"; ?></font> <br>
           <div class="form-group">
             <label for="r_firstname" class="col-lg-4 control-label">First Name</label>
