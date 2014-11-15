@@ -29,28 +29,30 @@
                 </div>
                 <div id="right-column" class="col-sm-8">
                     <h1>Top Ten Songs</h1>
-                    <div class="well-1 bs-component">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <td><b>Title</b></td>
+                    <div class="well bs-component">
+                        <div class="well-1 bs-component">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td><b>Title</b></td>
 
-                                    <td><b>Artist</b></td>
+                                        <td><b>Artist</b></td>
 
-                                    <td><b>???</b></td>
+                                        <td><b>???</b></td>
 
-                                    <td><b>Actions</b></td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!--Start well-1-->
+                                        <td><b>Actions</b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--Start well-1-->
 
-                                <?php
-                                ?>
-                            </tbody>
-                        </table>
+                                    <?php
+                                    ?>
+                                </tbody>
+                            </table>
 
-                        <!--End well-1-->
+                            <!--End well-1-->
+                        </div>
                     </div>
                 </div>
 
