@@ -7,18 +7,19 @@ echo "session started";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // username and password sent from form 
-    //$myusername = mysqli_real_escape_string($db, $_POST['username']);
-    //$mypassword = mysqli_real_escape_string($db, $_POST['password']);
     include('/php/connection.php');
-    $myusername = $_POST['username'];
-    $mypassword = $_POST['password'];
+    $myusername = mysqli_real_escape_string($con, $_POST['username']);
+    $mypassword = mysqli_real_escape_string($con, $_POST['password']);
+
+    //$myusername = $_POST['username'];
+    //$mypassword = $_POST['password'];
     echo "<br>";
     echo "username: $myusername";
     echo "<br>";
     echo "password: $mypassword";
     echo "<br>";
     $sql = "SELECT user_id, admin FROM tbl_user WHERE login = '$myusername' and password = '$mypassword'";
-    $result = mysqli_query($db, $sql);
+    $result = mysqli_query($con, $sql);
     if ($result == false) {
         echo mysqli_error($con);
     }
