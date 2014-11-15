@@ -28,19 +28,12 @@
                     // Get member username into a session variable
                     $user_name = $row["login"];
                     $_SESSION['login'] = $user_name;
-                    //checks if user is an administrator or regular user
-                    if ($row["admin"] == 0) {
-                        echo "<br>";
-                        echo "admin login";
-//                header('Location: http//group02p2.swe3613.com/admin ');
-                        header('Location: http://group02p2.swe3613.com/main_menu.php');
-                        exit();
-                    } else {
-                        echo "<br>";
-                        echo "user login";
+                    $_SESSION['is_admin'] = $row["admin"];//checks if user is an administrator or regular user
+					
+					
                         header('Location: main_menu.php');
                         exit();
-                    }
+                    
                 } // close while
             } else {
                 $errorMsg .= "The username or password you entered is incorrect<br />";

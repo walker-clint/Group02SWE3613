@@ -44,7 +44,7 @@ session_start();
 
                     $_SESSION['id'] = $id;
 
-                    header("location: index.html");
+                    header("location: index.php");
                     exit(); // Exit so the form and page does not display, just this success message
         } // Close else after database duplicate field value checks
     } // Close else after missing vars check
