@@ -1,8 +1,25 @@
+/**
+ * changeBox
+ * Changes the information in the infobox and displays/plays its youtube video
+ * 
+ * @param String title the title of the song
+ * @param String artist the artist(s) of the song
+ * @param String genre the genre(s) of the song
+ * @param String songLink the youtube key for the song ex: "hX3O5v-ylC4"
+ */
+
 function changeBox(title, artist, genre, songLink) {
     //alert("Playing " + songLink);
     changeInfo(title, artist, genre);
     changeVideo(songLink);
 }
+
+/**
+ * changeVideo
+ * displays and autoplays a youtube video in the HTML element with id="vidWindow"
+ * @param {type} songLink
+ * @returns {undefined}
+ */
 
 function changeVideo(songLink) {
     var element = document.getElementById("vidWindow");
@@ -15,6 +32,15 @@ function changeVideo(songLink) {
     }
     element.innerHTML = link;
 }
+
+/**
+ * changeInfo
+ * changes the song info in the HTML element with id="songInfo"
+ * @param {type} title
+ * @param {type} artist
+ * @param {type} genre
+ * @returns {undefined}
+ */
 
 function changeInfo(title, artist, genre) {
     var element = document.getElementById("songInfo");
