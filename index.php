@@ -58,7 +58,7 @@
                                             echo '<tr>';
                                             echo '<td>' . $song->getTitle_InfoBox() . '</td>';
                                             echo '<td>' . $song->getArtists() . '</td>';
-                                            echo '<td>' . '' . '</td>';
+                                            echo '</tr>';
                                         }
                                     }
                                     ?>
