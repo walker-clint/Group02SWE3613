@@ -27,10 +27,20 @@
                         <div class="well-1 bs-component">
                             <div class="video-container" id="vidWindow">
                                 <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
-                                <iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>
                                 <?php
                                 $mixTapeList = getBestMixTape();
+
+                                $randSongNumber = rand(0, count($mixTapeList));
+                                if ($mixTapeList[$randSongNumber] instanceof Song) {
+                                    $initialSong = $mixTapeList[$randSongNumber];//->getEmbedLink();
+                                    echo '<script>window.onload = '.$initialSong->getInfoBox().';</script>';
+                                }
                                 ?>
+                                <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
+                                <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php echo $initialSong; ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
+                                <script>
+                                
+                                </script>
                             </div><p id="songInfo"></p>
                         </div>
                     </div>
