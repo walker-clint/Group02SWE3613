@@ -11,7 +11,7 @@
         $toplinks = "";
         //session_start();
         //include_once "connect_to_mysql.php";
-        require_once $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
+        require_once $_SERVER['SERVER_NAME'] . ("/php/connection.php");
         
         if (!empty($_SESSION['user_id'])) {
             $id = $_SESSION['user_id'];
