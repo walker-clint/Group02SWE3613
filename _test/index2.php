@@ -24,7 +24,7 @@
                                 <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
                                 <iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>
 
-                            </div><p id="songInfo">abcd</p>
+                            </div><p id="songInfo"></p>
                         </div>
                     </div>
                 </div>
@@ -56,9 +56,10 @@
                                     include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
                                     include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 
-                                    $allSongs = getAllSongs();
+                                    $allSongsInt = getBestMixTape();
 
-                                    foreach ($allSongs as $song) {
+                                    foreach ($allSongsInt as $songInt) {
+                                        $song = getSong($songInt);
                                         if ($song instanceof Song) {
                                             $songTitle = $song->title;
                                             $songArtist = $song->getArtists();
