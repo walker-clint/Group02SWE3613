@@ -3,7 +3,10 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/connection.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 
-//get the 10 songs that are part of the most users' playlists, returns an array of ints
+/**
+ * get the 10 songs that are part of the most users' playlists
+ * @return array an array of ints
+ */
 function getBestMixTape() {
     $con = initializeConnection();
 
@@ -29,6 +32,11 @@ function getBestMixTape() {
 }
 
 //returns a Song object with all the information for a given song
+/**
+ * get a song object matching the given primary key
+ * @param int $songIDinc the primary key of the wanted song
+ * @return Song
+ */
 function getSong($songIDinc) {
     $songID = htmlspecialchars($songIDinc);
 
@@ -51,7 +59,10 @@ function getSong($songIDinc) {
     return $tempSong;
 }
 
-//returns an array of Song objects for all songs
+/**
+ * returns all songs in the DB
+ * @return Song[] all the songs in the DB
+ */
 function getAllSongs() {
     $con = initializeConnection();
 
@@ -71,7 +82,10 @@ function getAllSongs() {
     return $returnArray;
 }
 
-//returns an array of Song objects for all APPROVED songs
+/**
+ * returns all approved songs in the DB
+ * @return Song[] all the approved songs in the DB
+ */
 function getApprovedSongs() {
     $con = initializeConnection();
 
@@ -92,7 +106,10 @@ function getApprovedSongs() {
     return $returnArray;
 }
 
-//returns an array of Song objects for all UNAPPROVED songs
+/**
+ * returns all unapproved songs in the DB
+ * @return Song[] all the unapproved songs in the DB
+ */
 function getUnapprovedSongs() {
     $con = initializeConnection();
 
@@ -113,7 +130,10 @@ function getUnapprovedSongs() {
     return $returnArray;
 }
 
-//returns an array of Song objects for all FLAGGED songs
+/**
+ * returns all flagged songs in the DB
+ * @return Song[] all the flagged songs in the DB
+ */
 function getFlaggedSongs() {
     $con = initializeConnection();
 
@@ -134,7 +154,11 @@ function getFlaggedSongs() {
     return $returnArray;
 }
 
-//deprecated function, now a wrapper; returns a user's mixtape
+/**
+ * @deprecated
+ * @param int $userIDinc
+ * @return MixSong[] array of mixtap records
+ */
 function getUserMixTape($userIDinc) {
     $userID = htmlspecialchars($userIDinc);
     return getMixtape($userID);
@@ -158,7 +182,10 @@ function getUserMixTape($userIDinc) {
 //    return $returnArray;
 }
 
-//returns all the genres of a song in an array
+/**
+ * @param int $songIDinc the primary key of the wanted song
+ * @return String[] the genres of the given song
+ */
 function getSongGenre($songIDinc) {
     $songID = htmlspecialchars($songIDinc);
 
@@ -181,7 +208,10 @@ function getSongGenre($songIDinc) {
     return $returnArray;
 }
 
-//returns all the artists for a song in an array
+/**
+ * @param int $songIDinc the primary key of the wanted song
+ * @return String[] the artists of the given song
+ */
 function getSongArtist($songIDinc) {
     $songID = htmlspecialchars($songIDinc);
 
@@ -204,7 +234,11 @@ function getSongArtist($songIDinc) {
     return $returnArray;
 }
 
-//gets a user's mixtape ordered by position, returns an array of MixSong objects
+/**
+ * returns the mixtape records for a user
+ * @param int $userIDInc the primary key of the user
+ * @return MixSong[] an array of the user's mixtape
+ */
 function getMixtape($userIDInc) {
     $userID = htmlspecialchars($userIDInc);
 
