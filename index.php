@@ -49,9 +49,9 @@
 
                                     foreach ($mixTapeList as $song) {
                                         if ($song instanceof Song) {
-                                            $songTitle = getSong($song)->title;
-                                            $songArtist = getSong($song)->getArtists();
-                                            $songLink = getSong($song)->getLink();
+                                            $songTitle = $song->title;
+                                            $songArtist = $song->getArtists();
+                                            $songLink = $song->getLink();
 
                                             echo '<tr>';
                                             echo '<td>' . $song->getTitle_InfoBox() . '</td>';
