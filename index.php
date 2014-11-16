@@ -33,9 +33,7 @@
                                 $randSongNumber = rand(0, (count($mixTapeList) - 1));
                                 $initialSong = getSong($mixTapeList[$randSongNumber]);
                                 if ($initialSong instanceof Song) {
-                                    //$initialSong = $mixTapeList[$randSongNumber]; //->getEmbedLink();
-                                    //echo '<script>document.ready(function(){' . $initialSong->getInfoBox() . ';});</script>';
-                                    echo '<script>window.onload = (function(){' . $initialSong->getInfoBox() . ';});</script>';
+                                    echo '<script>window.onload = (function(){' . $initialSong->getJavascriptInfoBox() . ';});</script>';
                                 }
                                 ?>
                                 <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->

@@ -41,7 +41,7 @@ class Song {
      * returns HTML to generate changeBox() javascript with the song's info
      * @return String formatted HTML
      */
-    public function getInfoBox() {
+    public function getJavascriptInfoBox() {
         return 'changeBox(\'' . $this->title . '\''
                 . ',\'' . $this->getArtists() . '\''
                 . ',\'' . $this->getGenres() . '\''
