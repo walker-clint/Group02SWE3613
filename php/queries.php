@@ -1,7 +1,5 @@
 <?php
 
-//include_once dirname(__FILE__) . './connection.php';
-//include_once dirname(__FILE__) . './objects.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/connection.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 
