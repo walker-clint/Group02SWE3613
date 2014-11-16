@@ -21,7 +21,12 @@ class Song {
         $this->genresArray = $gen;
         $this->artistArray = $art;
     }
-
+    
+    /**
+     * getTitle_InfoBox()
+     * returns HTML to make a clickable title that updates the infobox
+     * @return String formatted HTML
+     */
     public function getTitle_InfoBox() {
         return '<span onclick="changeBox(\'' . $this->title . '\''
                 . ',\'' . $this->getArtists() . '\''
@@ -30,11 +35,18 @@ class Song {
                 . 'onmouseover="" style="cursor: pointer;">'
                 . $this->title . '</span>';
     }
-
+    
+    /**
+     * @return String the youtube key for the song
+     */
     public function getLink() {
         return preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i", "$1", $this->youtubeLink);
     }
 
+    /**
+     * @param boolean $autoPlay true to autoplay the embedded video
+     * @return String HTML for an embedded youtube video
+     */
     public function getEmbedLink($autoPlay) {
         if (empty($autoPlay)) {
             $autoPlay = false;
@@ -50,7 +62,10 @@ class Song {
             return preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i", "<iframe width=\"350\" height=\"280\" src=\"//www.youtube.com/embed/$1\" frameborder=\"0\" allowfullscreen></iframe>", $this->youtubeLink);
         }
     }
-
+    
+    /**
+     * @return string the genres of the song, formatted with commas
+     */
     function getGenres() {
         $genreString = '';
 
@@ -65,6 +80,9 @@ class Song {
         return $genreString;
     }
 
+    /**
+     * @return string the artists of the song, formatted with commas
+     */
     function getArtists() {
         $artistString = '';
 
