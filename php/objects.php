@@ -22,6 +22,13 @@ class Song {
         $this->artistArray = $art;
     }
 
+    public function getInfoBox() {
+        return '<span onclick="changeBox(\'' . $this->title . '\''
+                . ',\'' . $this->getArtists() . '\''
+                . ',\'' . $this->getGenres() . '\''
+                . ',\'' . $this->getLink() . '\')">' . $this->title . '</span>';
+    }
+
     public function getLink() {
         return preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i", "$1", $this->youtubeLink);
     }
@@ -119,8 +126,9 @@ class MixSong {
             return $a->song - $b->song;
         }
     }
-    
-    public function __toString(){
+
+    public function __toString() {
         return getSong($this->song)->title;
     }
+
 }
