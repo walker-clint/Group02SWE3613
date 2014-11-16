@@ -5,6 +5,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/connection.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 
+//get the 10 songs that are part of the most users' playlists, returns an array of ints
 function getBestMixTape() {
     $con = initializeConnection();
 
@@ -29,6 +30,7 @@ function getBestMixTape() {
     return $returnArray;
 }
 
+//returns a Song object with all the information for a given song
 function getSong($songIDinc) {
     $songID = htmlspecialchars($songIDinc);
 
@@ -42,17 +44,16 @@ function getSong($songIDinc) {
     $stmt->bind_param('i', $songID);
     $stmt->execute();
     $stmt->bind_result($id, $song_title, $app, $flag, $you, $youApp);
-    //$returnArray = array();
-    //while ($stmt->fetch()) {
+    
     $stmt->fetch();
     $genre = getSongGenre($id);
     $artist = getSongArtist($id);
     $tempSong = new Song($id, $song_title, $app, $flag, $you, $youApp, $genre, $artist);
-    //array_push($returnArray, $tempSong);
-    //}
+    
     return $tempSong;
 }
 
+//returns an array of Song objects for all songs
 function getAllSongs() {
     $con = initializeConnection();
 
@@ -72,6 +73,7 @@ function getAllSongs() {
     return $returnArray;
 }
 
+//returns an array of Song objects for all APPROVED songs
 function getApprovedSongs() {
     $con = initializeConnection();
 
@@ -92,6 +94,7 @@ function getApprovedSongs() {
     return $returnArray;
 }
 
+//returns an array of Song objects for all UNAPPROVED songs
 function getUnapprovedSongs() {
     $con = initializeConnection();
 
@@ -112,6 +115,7 @@ function getUnapprovedSongs() {
     return $returnArray;
 }
 
+//returns an array of Song objects for all FLAGGED songs
 function getFlaggedSongs() {
     $con = initializeConnection();
 
@@ -132,6 +136,7 @@ function getFlaggedSongs() {
     return $returnArray;
 }
 
+//deprecated function, now a wrapper; returns a user's mixtape
 function getUserMixTape($userIDinc) {
     $userID = htmlspecialchars($userIDinc);
     return getMixtape($userID);
@@ -155,6 +160,7 @@ function getUserMixTape($userIDinc) {
 //    return $returnArray;
 }
 
+//returns all the genres of a song in an array
 function getSongGenre($songIDinc) {
     $songID = htmlspecialchars($songIDinc);
 
@@ -177,6 +183,7 @@ function getSongGenre($songIDinc) {
     return $returnArray;
 }
 
+//returns all the artists for a song in an array
 function getSongArtist($songIDinc) {
     $songID = htmlspecialchars($songIDinc);
 
@@ -199,6 +206,7 @@ function getSongArtist($songIDinc) {
     return $returnArray;
 }
 
+//gets a user's mixtape ordered by position, returns an array of MixSong objects
 function getMixtape($userIDInc) {
     $userID = htmlspecialchars($userIDInc);
 
@@ -216,7 +224,7 @@ function getMixtape($userIDInc) {
 
     $returnArray = array();
     while ($stmt->fetch()) {
-        $newMixTapeEntry=new MixSong($song_id, $position);
+        $newMixTapeEntry = new MixSong($song_id, $position);
         array_push($returnArray, $newMixTapeEntry);
     }
     return $returnArray;
