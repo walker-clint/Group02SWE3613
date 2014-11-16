@@ -21,11 +21,11 @@
                     <div class="well bs-component">
                         <div class="well-1 bs-component">
                             <div class="video-container">
-                                <!--                         to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
-                                <iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4" frameborder="0" allowfullscreen></iframe>-->
-                                <!--for autoplay comment above line and uncomment the line below-->
+                                <div class="video-container" id="vidWindow">
+                                <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
+                                <iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>
 
-
+                            </div><p id="songInfo">abcd</p>
                             </div>
                         </div>
                     </div>
@@ -46,17 +46,29 @@
                                 </thead>
                                 <tbody>
                                     <!--Start well-1-->
+ <?php echo '<script src="http://' . $_SERVER['SERVER_NAME'] . '/js/songFunctions.js"></script>' ?>
 
                                     <?php
-									$mixTapeList = getBestMixTape();
-									 foreach ($mixTapeList as $tempSong) {
-										 echo "<tr>
-                                        <td>".getSong($tempSong)->title ."</td>
+                                    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
+                                    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 
-                                        <td>Artist</td>
+                                    $mixTapeList = getBestMixTape();
 
-                                        <td>Play Song</td>
-                                    </tr>";
+                                    foreach ($mixTapeList as $song) {
+                                        if ($song instanceof Song) {
+                                            $songTitle = $song->title;
+                                            $songArtist = $song->getArtists();
+                                            $songGenre = $song->getGenres();
+                                            $songLink = $song->getLink();
+
+                                            echo '<tr>';
+                                            echo '<td>' . $song->getTitle_InfoBox() . '</td>';
+                                            echo '<td>' . $song->getArtists() . '</td>';
+                                            echo '<td>' . $song->getGenres() . '</td>';
+                                            echo '<td>' . '' . '</td>';
+                                        }
+                                    }
+                                    ?>
                            
                         }
 					
