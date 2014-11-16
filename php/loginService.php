@@ -25,13 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //$_SESSION['login_user'] = $myusername;
         $_SESSION['user_id'] = $userId;
         if ($admin == 1) {
-            header("Location: " . $_SERVER['DOCUMENT_ROOT'] . "/admin_Main_Menu.php");
+            header('Location: ' . $_SERVER['DOCUMENT_ROOT'] .'/admin_Main_Menu.php');
         } else {
-            header("Location: " . $_SERVER['DOCUMENT_ROOT'] . "/main_menu.php");
+            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
         }
     } else {
         $error = '<span class="error">Your Login Name or Password is invalid<br></span>';
-        header("Location: " . $_SERVER['DOCUMENT_ROOT'] . "/login.php");
+        header('Location: ' . $_SERVER['DOCUMENT_ROOT'] . '/login.php');
     }
 } else {
     $error = '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
