@@ -26,7 +26,9 @@ class Song {
         return '<span onclick="changeBox(\'' . $this->title . '\''
                 . ',\'' . $this->getArtists() . '\''
                 . ',\'' . $this->getGenres() . '\''
-                . ',\'' . $this->getLink() . '\')">' . $this->title . '</span>';
+                . ',\'' . $this->getLink() . '\')" '
+                . 'onmouseover="" style="cursor: pointer;">'
+                . $this->title . '</span>';
     }
 
     public function getLink() {
