@@ -11,15 +11,26 @@ class Song {
     public $genresArray;
     public $artistArray;
 
-    public function __construct($id, $titl, $app, $flag, $you, $youApp, $gen, $art) {
+    /**
+     * 
+     * @param int $id the primary key of the song
+     * @param String $title the title of the song
+     * @param boolean $approved whether the song has been approved or not
+     * @param boolean $flagged whether the song has been flagged by users
+     * @param boolean $youtubeLink the song's youtube link
+     * @param boolean $youtubeApproved whether the song's youtube link has been approved
+     * @param String[] $genres the genre(s) of the song
+     * @param String[] $artists the artist(s) of the song
+     */
+    public function __construct($id, $title, $approved, $flagged, $youtubeLink, $youtubeApproved, $genres, $artists) {
         $this->id = $id;
-        $this->title = $titl;
-        $this->approved = $app;
-        $this->flagged = $flag;
-        $this->youtubeLink = $you;
-        $this->youtubeApproved = $youApp;
-        $this->genresArray = $gen;
-        $this->artistArray = $art;
+        $this->title = $title;
+        $this->approved = $approved;
+        $this->flagged = $flagged;
+        $this->youtubeLink = $youtubeLink;
+        $this->youtubeApproved = $youtubeApproved;
+        $this->genresArray = $genres;
+        $this->artistArray = $artists;
     }
     
     /**
