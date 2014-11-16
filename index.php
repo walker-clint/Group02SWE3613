@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <base href="../">
+        <!--<base href="../">-->
         <?php
-            require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
+        require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
         ?>
     </head>
     <body>
@@ -11,12 +11,12 @@
         <!--End Header-->
         <!--Start Middle-->
         <div id="main" class="container-fluid">
-			<!--Start Content-->
+            <!--Start Content-->
             <div class="row">
                 <div id="left-column" class="col-sm-4">
                     <div class="well bs-component">
                         <!--<legend>LEFT COLUMN</legend>-->
-                        <h1>Name and artist of song playing. Even if the</h1>
+                        <h1></h1>
 
                         <div class="form-horizontal" action="" method="POST"></div>
 
@@ -25,7 +25,7 @@
                                 <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
                                 <iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>
 
-                            </div><p id="songInfo">abcd</p>
+                            </div><p id="songInfo"></p>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
 
                                         <td><b>Artist</b></td>
                                     </tr>
-                                          </thead>
+                                </thead>
                                 <tbody>
                                     <?php echo '<script src="http://' . $_SERVER['SERVER_NAME'] . '/js/songFunctions.js"></script>' ?>
 
@@ -53,32 +53,28 @@
                                     include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
                                     include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 
-                                     $mixTapeList = getBestMixTape();
+                                    $mixTapeList = getBestMixTape();
 
-                                    foreach ($mixTapeList as $song) {
+                                    foreach ($mixTapeList as $songInt) {
+                                        $song = getSong($songInt);
                                         if ($song instanceof Song) {
                                             $songTitle = $song->title;
                                             $songArtist = $song->getArtists();
                                             $songGenre = $song->getGenres();
                                             $songLink = $song->getLink();
 
-
-
-                                            echo '<tr>
-                                        <td>'.getSong($tempSong)->getTitle_InfoBox() .'</td>
-                                        <td>'. $song->getArtists() .'</td>
-                                    </tr>';
+                                            echo '<tr>' .
+                                            '<td>' . $song->getTitle_InfoBox() . '</td>' .
+                                            '<td>' . $song->getArtists() . '</td>' .
+                                            '</tr>';
                                         }
-										
-										
                                     }
                                     ?>
 
-                          
+
                                     <!--Start well-1-->
 
-                                    <?php
-                                    ?>
+                                    <?php ?>
                                 </tbody>
                             </table>
 
@@ -88,20 +84,20 @@
 
                 </div>
 
-        </div>
-        <!--End Middle-->
+            </div>
+            <!--End Middle-->
 
-        <!--End Container-->
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <!--<script src="http://code.jquery.com/jquery.js"></script>-->
-        <script src="plugins/jquery/jquery-2.1.0.min.js"></script>
-        <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="plugins/bootstrap/bootstrap.min.js"></script>
-        <script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script>
-        <script src="plugins/tinymce/tinymce.min.js"></script>
-        <script src="plugins/tinymce/jquery.tinymce.min.js"></script>
-        <!-- All functions for this theme + document.ready processing -->
-        <script src="js/devoops.js"></script>
+            <!--End Container-->
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <!--<script src="http://code.jquery.com/jquery.js"></script>-->
+            <script src="plugins/jquery/jquery-2.1.0.min.js"></script>
+            <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="plugins/bootstrap/bootstrap.min.js"></script>
+            <script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script>
+            <script src="plugins/tinymce/tinymce.min.js"></script>
+            <script src="plugins/tinymce/jquery.tinymce.min.js"></script>
+            <!-- All functions for this theme + document.ready processing -->
+            <script src="js/devoops.js"></script>
     </body>
 </html>
