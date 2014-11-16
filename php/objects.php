@@ -136,6 +136,10 @@ class Song {
 
 }
 
+/**
+ * represents a user in the DB, deprecated, user info is stored in session data or loaded as needed
+ * @deprecated
+ */
 class User {
 
     public $id;
@@ -148,9 +152,17 @@ class User {
     public $first_name;
     public $last_name;
 
-    public function __construct($id, $log, $email, $first_name, $last_name) {
+    /**
+     * 
+     * @param int $id the user's primary key
+     * @param String $login the user's login name
+     * @param String $email the user's email address
+     * @param String $first_name the user's first name
+     * @param String $last_name the user's last name
+     */
+    public function __construct($id, $login, $email, $first_name, $last_name) {
         $this->id = $id;
-        $this->login = $log;
+        $this->login = $login;
         $this->email = $email;
         $this->first_name = $first_name;
         $this->last_name = $last_name;
