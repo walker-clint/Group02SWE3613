@@ -30,17 +30,15 @@
                                 <?php
                                 $mixTapeList = getBestMixTape();
 
-                                $randSongNumber = rand(0, count($mixTapeList));
-                                if ($mixTapeList[$randSongNumber] instanceof Song) {
-                                    $initialSong = $mixTapeList[$randSongNumber];//->getEmbedLink();
-                                    echo '<script>window.onload = '.$initialSong->getInfoBox().';</script>';
+                                $randSongNumber = rand(0, (count($mixTapeList) - 1));
+                                $initialSong = getSong($mixTapeList[$randSongNumber]);
+                                if ($initialSong instanceof Song) {
+                                    //$initialSong = $mixTapeList[$randSongNumber]; //->getEmbedLink();
+                                    echo '<script>document.ready(function(){' . $initialSong->getInfoBox() . ';});</script>';
                                 }
                                 ?>
                                 <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
-                                <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php echo $initialSong; ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
-                                <script>
-                                
-                                </script>
+                                <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;  ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
                             </div><p id="songInfo"></p>
                         </div>
                     </div>
