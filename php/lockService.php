@@ -16,7 +16,7 @@ $session_user = $row['login'];
 
 $callingPage = basename($_SERVER['PHP_SELF']);
 $adminPage = strpos($callingPage, 'dmin');
-echo $callingPage . ' | ' . $adminPage . ' |admin: ' . $session_admin;
+echo $callingPage . '<br>' . $adminPage . ' | '. $session_admin;
 
 if (!isset($session_user)) {
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/login.php');
