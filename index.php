@@ -39,9 +39,9 @@
 
                                         <td><b>Artist</b></td>
                                     </tr>
-                                    <?php echo '<script src="http://' . $_SERVER['SERVER_NAME'] . '/js/songFunctions.js"></script>' ?>
-
-                                    <?php
+                                    </thead>
+                                <tbody>
+                                    <?php echo '<script src="http://' . $_SERVER['SERVER_NAME'] . '/js/songFunctions.js"></script>';
                                     include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
                                     include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 
@@ -49,9 +49,9 @@
 
                                     foreach ($mixTapeList as $song) {
                                         if ($song instanceof Song) {
-                                            $songTitle = $song->title;
-                                            $songArtist = $song->getArtists();
-                                            $songLink = $song->getLink();
+                                            $songTitle = getSong($song)->title;
+                                            $songArtist = getSong($song)->getArtists();
+                                            $songLink = getSong($song)->getLink();
 
                                             echo '<tr>';
                                             echo '<td>' . $song->getTitle_InfoBox() . '</td>';
@@ -59,13 +59,6 @@
                                             echo '</tr>';
                                         }
                                     }
-                                    ?>
-
-                                </thead>
-                                <tbody>
-                                    <!--Start well-1-->
-
-                                    <?php
                                     ?>
                                 </tbody>
                             </table>
