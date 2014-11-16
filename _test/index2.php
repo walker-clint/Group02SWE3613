@@ -95,7 +95,7 @@
                                         element.innerHTML = link;
                                     }
                                 </script>-->
-                                    <?php echo '<script src="'.$_SERVER['DOCUMENT_ROOT']. 'js/playSong.js"></script>' ?>
+                                    <?php echo '<script src="'.$_SERVER['SERVER_NAME']. '/js/playSong.js"></script>' ?>
 
                                     <?php
                                     include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
