@@ -45,7 +45,7 @@
                                     include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
                                     include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 
-                                    $mixTapeList = getBestMixTape();
+                                    $mixTapeList = getAllSongs();
 
                                     foreach ($mixTapeList as $song) {
                                         if ($song instanceof Song) {
