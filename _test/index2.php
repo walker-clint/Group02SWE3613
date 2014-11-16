@@ -48,15 +48,6 @@
 
                                         <td><b>Actions</b></td>
                                     </tr>
-<!--                                <script>
-                                    function changeBox(songLink) {
-                                        alert("test");
-                                        var element = document.getElementById("vidWindow")
-                                        var link = '<iframe width = "350" height = "280" src = "//www.youtube.com/embed/' + songLink + '?autoplay=1" frameborder = "0" allowfullscreen> </iframe>';
-                                        //var link = songLink;
-                                        element.innerHTML = link;
-                                    }
-                                </script>-->
                                     <?php echo '<script src="http://' . $_SERVER['SERVER_NAME'] . '/js/songFunctions.js"></script>' ?>
 
                                     <?php
