@@ -1,10 +1,9 @@
 <?php
 
-//include_once dirname(__FILE__) . './connection.php';
-//include_once dirname(__FILE__) . './objects.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/connection.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 
+//adds a song to the DB, returns the created primary key
 function addSong($title, $approved, $flagged, $youtubeLink, $youtubeApproved) {
     $con = initializeConnection();
 
@@ -18,6 +17,7 @@ function addSong($title, $approved, $flagged, $youtubeLink, $youtubeApproved) {
     return $insertId;
 }
 
+//updates a song in the DB
 function updateSong($id, $title, $approved, $flagged, $youtubeLink, $youtubeApproved) {
     $con = initializeConnection();
 
@@ -28,6 +28,7 @@ function updateSong($id, $title, $approved, $flagged, $youtubeLink, $youtubeAppr
     $stmt->execute();
 }
 
+//removes a song (and all references to it) from the DB
 function deleteSong($songId) {
     $con = initializeConnection();
 
@@ -53,6 +54,7 @@ function deleteSong($songId) {
     $stmtMix->execute();
 }
 
+//adds an artist to the DB, returns the created primary key
 function addArtist($name) {
     $con = initializeConnection();
 
@@ -66,6 +68,7 @@ function addArtist($name) {
     return $insertId;
 }
 
+//adds a genre to the DB, returns the created primary key
 function addGenre($name) {
     $con = initializeConnection();
 
@@ -79,6 +82,7 @@ function addGenre($name) {
     return $insertId;
 }
 
+//adds a relation between a song and artist, returns the created primary key
 function addSongArtist($songId, $artistId) {
     $con = initializeConnection();
 
@@ -92,6 +96,7 @@ function addSongArtist($songId, $artistId) {
     return $insertId;
 }
 
+//adds a relation between a song and genre, returns the created primary key
 function addSongGenre($songId, $genreId) {
     $con = initializeConnection();
 
@@ -105,6 +110,7 @@ function addSongGenre($songId, $genreId) {
     return $insertId;
 }
 
+//deletes an artist and all references from the DB
 function deleteArtist($artistId) {
     $con = initializeConnection();
 
@@ -120,6 +126,7 @@ function deleteArtist($artistId) {
     $stmtArtist->execute();
 }
 
+//deletes a genre and all references from the DB
 function deleteGenre($genreId) {
     $con = initializeConnection();
 
@@ -135,6 +142,7 @@ function deleteGenre($genreId) {
     $stmtArtist->execute();
 }
 
+//adds a Mixtape record to the DB, does not return anything
 function addMixtape($userId, $songId, $position) {
     $con = initializeConnection();
 
@@ -148,6 +156,7 @@ function addMixtape($userId, $songId, $position) {
     //return $insertId;
 }
 
+//updates a Mixtape in the DB
 function updateMixtape($userId, $origSongId, $origPosition, $songId, $position) {
     $con = initializeConnection();
 
@@ -158,6 +167,7 @@ function updateMixtape($userId, $origSongId, $origPosition, $songId, $position) 
     $stmt->execute();
 }
 
+//deletes a Mixtape record from the DB
 function deleteMixtape($userId, $songId) {
     $con = initializeConnection();
 
