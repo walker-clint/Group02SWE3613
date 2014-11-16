@@ -137,8 +137,8 @@ class Song {
 }
 
 /**
- * represents a user in the DB, deprecated, user info is stored in session data or loaded as needed
- * @deprecated
+ * represents a user in the DB
+ * @deprecated user info is stored in session data or loaded as needed
  */
 class User {
 
