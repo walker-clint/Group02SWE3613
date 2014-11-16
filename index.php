@@ -55,26 +55,30 @@
 
                                      $mixTapeList = getBestMixTape();
 
-                                    foreach ($mixTapeList as $tempSong) {
-                                       
-                                            $songTitle = getSong($tempSong)->title;
-                                            $songArtist = getSong($tempSong)->getArtists();
-                                            $songGenre = getSong($tempSong)->getGenres();
-                                            $songLink = getSong($tempSong)->getLink();
+                                    foreach ($mixTapeList as $song) {
+                                        if ($song instanceof Song) {
+                                            $songTitle = $song->title;
+                                            $songArtist = $song->getArtists();
+                                            $songGenre = $song->getGenres();
+                                            $songLink = $song->getLink();
 
 
 
                                             echo '<tr>
                                         <td>'.getSong($tempSong)->getTitle_InfoBox() .'</td>
-                                        <td>'.getSong($tempSong)->getArtists() .'</td>
+                                        <td>'. $song->getArtists() .'</td>
                                     </tr>';
-                                        
+                                        }
 										
 										
                                     }
                                     ?>
 
-                     
+                          
+                                    <!--Start well-1-->
+
+                                    <?php
+                                    ?>
                                 </tbody>
                             </table>
 
