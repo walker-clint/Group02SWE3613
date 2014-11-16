@@ -61,15 +61,9 @@
                                             $songTitle = $song->title;
                                             $songArtist = $song->getArtists();
                                             $songGenre = $song->getGenres();
-
                                             $songLink = $song->getLink();
-                                            //$link = '<iframe width = "350" height = "280" src = "//www.youtube.com/embed/' + $songLink + '?autoplay=0" frameborder = "0" allowfullscreen> </iframe>';
 
                                             echo '<tr>';
-//                                            echo '<td><span onclick="changeBox(\'' . $songTitle . '\''
-//                                            . ',\'' . $songArtist . '\''
-//                                            . ',\'' . $songGenre . '\''
-//                                            . ',\'' . $songLink . '\')">' . $song->title . '</span></td>';
                                             echo '<td>' . $song->getInfoBox() . '</td>';
                                             echo '<td>' . $song->getArtists() . '</td>';
                                             echo '<td>' . $song->getGenres() . '</td>';
