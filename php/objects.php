@@ -4,6 +4,7 @@
  * represents a Song in the DB
  */
 class Song {
+
     public $id;
     public $title;
     public $approved;
@@ -12,7 +13,7 @@ class Song {
     public $youtubeApproved;
     public $genresArray;
     public $artistArray;
-    
+
     /**
      * 
      * @param int $id the primary key of the song
@@ -34,7 +35,19 @@ class Song {
         $this->genresArray = $genres;
         $this->artistArray = $artists;
     }
-    
+
+    /**
+     * getInfoBox()
+     * returns HTML to generate changeBox() javascript with the song's info
+     * @return String formatted HTML
+     */
+    public function getInfoBox() {
+        return 'changeBox(\'' . $this->title . '\''
+                . ',\'' . $this->getArtists() . '\''
+                . ',\'' . $this->getGenres() . '\''
+                . ',\'' . $this->getLink() . '\')';
+    }
+
     /**
      * getTitle_InfoBox()
      * returns HTML to make a clickable title that updates the infobox
@@ -48,7 +61,7 @@ class Song {
                 . 'onmouseover="" style="cursor: pointer;">'
                 . $this->title . '</span>';
     }
-    
+
     /**
      * @return String the youtube key for the song
      */
@@ -75,7 +88,7 @@ class Song {
             return preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i", "<iframe width=\"350\" height=\"280\" src=\"//www.youtube.com/embed/$1\" frameborder=\"0\" allowfullscreen></iframe>", $this->youtubeLink);
         }
     }
-    
+
     /**
      * @return string the genres of the song, formatted with commas
      */
