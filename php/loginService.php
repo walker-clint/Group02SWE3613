@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //$_SESSION['login_user'] = $myusername;
         $_SESSION['user_id'] = $userId;
         if ($admin == 1) {
-            header('Location: ' . $_SERVER['SERVER_NAME'] .'/admin_main_menu.php');
+            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/admin_main_menu.php');
         } else {
             header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
         }
