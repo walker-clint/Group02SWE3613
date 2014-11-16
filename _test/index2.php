@@ -86,7 +86,7 @@
 
                                         <td><b>Actions</b></td>
                                     </tr>
-                                <script>
+<!--                                <script>
                                     function changeBox(songLink) {
                                         alert("test");
                                         var element = document.getElementById("vidWindow")
@@ -94,27 +94,28 @@
                                         //var link = songLink;
                                         element.innerHTML = link;
                                     }
-                                </script>
+                                </script>-->
+                                    <?php echo '<script src="'.$_SERVER['DOCUMENT_ROOT']. 'js/playSong.js"></script>' ?>
 
-                                <?php
-                                include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
-                                include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
+                                    <?php
+                                    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
+                                    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 
-                                $allSongs = getAllSongs();
+                                    $allSongs = getAllSongs();
 
-                                foreach ($allSongs as $song) {
-                                    if ($song instanceof Song) {
-                                        $songLink=$song->getLink();
-                                        //$link = '<iframe width = "350" height = "280" src = "//www.youtube.com/embed/' + $songLink + '?autoplay=0" frameborder = "0" allowfullscreen> </iframe>';
+                                    foreach ($allSongs as $song) {
+                                        if ($song instanceof Song) {
+                                            $songLink = $song->getLink();
+                                            //$link = '<iframe width = "350" height = "280" src = "//www.youtube.com/embed/' + $songLink + '?autoplay=0" frameborder = "0" allowfullscreen> </iframe>';
 
-                                        echo '<tr>';
-                                        echo '<td><span onclick="changeBox(\'' . $songLink . '\')">' . $song->title . '</span></td>';
-                                        echo '<td>' . $song->getArtists() . '</td>';
-                                        echo '<td>' . $song->getGenres() . '</td>';
-                                        echo '<td>' . '<a' . '</td>';
+                                            echo '<tr>';
+                                            echo '<td><span onclick="changeBox(\'' . $songLink . '\')">' . $song->title . '</span></td>';
+                                            echo '<td>' . $song->getArtists() . '</td>';
+                                            echo '<td>' . $song->getGenres() . '</td>';
+                                            echo '<td>' . '<a' . '</td>';
+                                        }
                                     }
-                                }
-                                ?>
+                                    ?>
 
                                 </thead>
                                 <tbody>
