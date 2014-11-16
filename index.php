@@ -3,6 +3,8 @@
     <head>
         <?php
             require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
+			include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
+        include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
         ?>
     </head>
     <body>
@@ -46,6 +48,19 @@
                                     <!--Start well-1-->
 
                                     <?php
+									$mixTapeList = getBestMixTape();
+									 foreach ($mixTapeList as $tempSong) {
+										 echo "<tr>
+                                        <td>".getSong($tempSong)->title ."</td>
+
+                                        <td>Artist</td>
+
+                                        <td>Play Song</td>
+                                    </tr>";
+                           
+                        }
+					
+									
                                     ?>
                                 </tbody>
                             </table>
