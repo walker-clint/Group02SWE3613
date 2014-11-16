@@ -7,12 +7,15 @@ $user_check = $_SESSION['user_id'];
 
 $con = initializeConnection();
 
-$ses_sql = mysqli_query($con, "select admin from tbl_user where user_id = '$user_check' ");
+$ses_sql = mysqli_query($con, "select login, admin from tbl_user where user_id = '$user_check' ");
 
 $row = mysqli_fetch_array($ses_sql, MYSQLI_ASSOC);
 
-$login_session = $row['admin'];
+$session_admin = $row['admin'];
+$session_user = $row['login'];
 
-if (!isset($login_session)) {
+if (!isset($session_user)) {
+    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/login.php');
+} elseif (!isset($session_admin)) {
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
 }
