@@ -48,6 +48,8 @@
 
                                         <td><b>Actions</b></td>
                                     </tr>
+                                          </thead>
+                                <tbody>
                                     <?php echo '<script src="http://' . $_SERVER['SERVER_NAME'] . '/js/songFunctions.js"></script>' ?>
 
                                     <?php
@@ -72,8 +74,7 @@
                                     }
                                     ?>
 
-                                </thead>
-                                <tbody>
+                          
                                     <!--Start well-1-->
 
                                     <?php
