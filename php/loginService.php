@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         $error = '<span class="error">Your Login Name or Password is invalid<br></span>';
-        header('Location: http://' . $_SERVER['DOCUMENT_ROOT'] . '/login.php');
+        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/login.php');
     }
 } else {
     $error = '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
