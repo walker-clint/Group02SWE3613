@@ -4,7 +4,11 @@
         <!--<base href="../">-->
         <?php
         require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
+        include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
+        include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
+        echo '<script src="http://' . $_SERVER['SERVER_NAME'] . '/js/songFunctions.js"></script>';
         ?>
+
     </head>
     <body>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
@@ -24,7 +28,9 @@
                             <div class="video-container" id="vidWindow">
                                 <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
                                 <iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>
-
+                                <?php
+                                $mixTapeList = getBestMixTape();
+                                ?>
                             </div><p id="songInfo"></p>
                         </div>
                     </div>
@@ -47,14 +53,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php echo '<script src="http://' . $_SERVER['SERVER_NAME'] . '/js/songFunctions.js"></script>' ?>
 
                                     <?php
-                                    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
-                                    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
-
-                                    $mixTapeList = getBestMixTape();
-
                                     foreach ($mixTapeList as $songInt) {
                                         $song = getSong($songInt);
                                         if ($song instanceof Song) {
