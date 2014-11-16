@@ -7,7 +7,7 @@ $user_check = $_SESSION['user_id'];
 
 $con = initializeConnection();
 
-$ses_sql = mysqli_query($con, "select username from admin where username='$user_id' ");
+$ses_sql = mysqli_query($con, "select username from admin where username= '$user_check' ");
 
 $row = mysqli_fetch_array($ses_sql, MYSQLI_ASSOC);
 
