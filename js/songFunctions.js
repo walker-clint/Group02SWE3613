@@ -6,8 +6,13 @@ function changeBox(title, artist, genre, songLink) {
 
 function changeVideo(songLink) {
     var element = document.getElementById("vidWindow");
-    var link = '<iframe width = "350" height = "280" src = "//www.youtube.com/embed/'
-            + songLink + '?autoplay=1" frameborder = "0" allowfullscreen> </iframe>';
+    var link = 'No Youtube video for this song! :(';
+
+    if (songLink.length > 0) {
+        link = '<iframe width = "350" height = "280" src = "//www.youtube.com/embed/'
+                + songLink + '?autoplay=1" frameborder = "0" allowfullscreen> </iframe>';
+
+    }
     element.innerHTML = link;
 }
 
