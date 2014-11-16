@@ -1,7 +1,9 @@
 <?php
 
+/**
+ * represents a Song in the DB
+ */
 class Song {
-
     public $id;
     public $title;
     public $approved;
@@ -10,7 +12,7 @@ class Song {
     public $youtubeApproved;
     public $genresArray;
     public $artistArray;
-
+    
     /**
      * 
      * @param int $id the primary key of the song
@@ -112,6 +114,10 @@ class Song {
         return $this->title . '| Genre: ' . $this->getGenres() . '| Artist: ' . $this->getArtists();
     }
 
+    /**
+     * @deprecated since version number
+     * @return String a string with all the fields of the song
+     */
     function printSong() {
         return $this->id . ' | ' . $this->title . ' | ' .
                 $this->approved . ' | ' . $this->flagged . ' | ' .
