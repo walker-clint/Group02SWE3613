@@ -1,3 +1,5 @@
+<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/php/lockService.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
