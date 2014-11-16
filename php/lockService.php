@@ -14,8 +14,10 @@ $row = mysqli_fetch_array($ses_sql, MYSQLI_ASSOC);
 $session_admin = $row['admin'];
 $session_user = $row['login'];
 
+$callingPage = basename($_SERVER['PHP_SELF']);
+
 if (!isset($session_user)) {
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/login.php');
-} elseif (!isset($session_admin)) {
+} elseif (strpos($callingPage, 'admin') && !isset($session_admin)) {
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
 }
