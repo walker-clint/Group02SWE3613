@@ -13,8 +13,8 @@
         //include_once "connect_to_mysql.php";
         require_once $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
         
-        if (!empty($_SESSION['id'])) {
-            $id = $_SESSION['id'];
+        if (!empty($_SESSION['user_id'])) {
+            $id = $_SESSION['user_id'];
             // Put stored session variables into local php variable
             $con = initializeConnection();
             $sql = mysqli_query($con, "SELECT * FROM tbl_user WHERE user_id = '$id'");
