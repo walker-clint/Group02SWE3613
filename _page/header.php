@@ -23,7 +23,7 @@
             while ($row = mysqli_fetch_array($sql)) {
                 // Use the AYAH object to see if the user passed or failed the game.
                 // Get member ID into a session variable
-                $full_name = $_SESSION['id'].'|'.$row["first_name"] . " " . $row["last_name"];
+                $full_name = $row["first_name"] . " " . $row["last_name"];
             } // close while
             $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
 	<li class="btn-label-right">
@@ -33,7 +33,7 @@
 	</li>
 	<li class="btn-label-right">
 	<div class="well-1 btn">
-	<a href="' . $_SERVER['SERVER_NAME'] . '/php/logoutService.php">Log Out</a>
+	<a href="http://' . $_SERVER['SERVER_NAME'] . '/php/logoutService.php">Log Out</a>
 	</li>
 	</ul>';
         } else {
