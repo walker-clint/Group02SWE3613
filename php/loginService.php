@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //$_SESSION['login_user'] = $myusername;
         $_SESSION['user_id'] = $userId;
         if ($admin == 1) {
-            header('Location: ' . $_SERVER['DOCUMENT_ROOT'] .'/admin_Main_Menu.php');
+            header('Location: ' . $_SERVER['SERVER_NAME'] .'/admin_Main_Menu.php');
         } else {
             header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
         }
