@@ -9,7 +9,7 @@
 
         <?php
         $toplinks = "";
-        session_start();
+        //session_start();
         //include_once "connect_to_mysql.php";
         require_once $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
         
