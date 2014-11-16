@@ -22,7 +22,7 @@ class Song {
         $this->artistArray = $art;
     }
 
-    public function getInfoBox() {
+    public function getTitle_InfoBox() {
         return '<span onclick="changeBox(\'' . $this->title . '\''
                 . ',\'' . $this->getArtists() . '\''
                 . ',\'' . $this->getGenres() . '\''
