@@ -18,7 +18,6 @@ function changeBox(title, artist, genre, songLink) {
  * changeVideo
  * displays and autoplays a youtube video in the HTML element with id="vidWindow"
  * @param {type} songLink
- * @returns {undefined}
  */
 
 function changeVideo(songLink) {
@@ -39,7 +38,6 @@ function changeVideo(songLink) {
  * @param {type} title
  * @param {type} artist
  * @param {type} genre
- * @returns {undefined}
  */
 
 function changeInfo(title, artist, genre) {
