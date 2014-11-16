@@ -34,19 +34,14 @@
                     <h1>Top Ten Songs</h1>
                     <div class="well bs-component">
                         <div class="well-1 bs-component">
-                            <table class="table">
+                           <table class="table">
                                 <thead>
                                     <tr>
                                         <td><b>Title</b></td>
 
                                         <td><b>Artist</b></td>
-
-                                        <td><b>Play Song</b></td>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    <!--Start well-1-->
- <?php echo '<script src="http://' . $_SERVER['SERVER_NAME'] . '/js/songFunctions.js"></script>' ?>
+                                    <?php echo '<script src="http://' . $_SERVER['SERVER_NAME'] . '/js/songFunctions.js"></script>' ?>
 
                                     <?php
                                     include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
@@ -58,21 +53,21 @@
                                         if ($song instanceof Song) {
                                             $songTitle = $song->title;
                                             $songArtist = $song->getArtists();
-                                            $songGenre = $song->getGenres();
                                             $songLink = $song->getLink();
 
                                             echo '<tr>';
                                             echo '<td>' . $song->getTitle_InfoBox() . '</td>';
                                             echo '<td>' . $song->getArtists() . '</td>';
-                                            echo '<td>' . $song->getGenres() . '</td>';
                                             echo '<td>' . '' . '</td>';
                                         }
                                     }
                                     ?>
-                           
-                        }
-					
-									
+
+                                </thead>
+                                <tbody>
+                                    <!--Start well-1-->
+
+                                    <?php
                                     ?>
                                 </tbody>
                             </table>
