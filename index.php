@@ -55,7 +55,7 @@
 
                                      $mixTapeList = getBestMixTape();
 
-                                    foreach ($mixTapeList as $song) {
+                                    foreach ($mixTapeList as $tempSong) {
                                        
                                             $songTitle = getSong($tempSong)->title;
                                             $songArtist = getSong($tempSong)->getArtists();
@@ -66,7 +66,7 @@
 
                                             echo '<tr>
                                         <td>'.getSong($tempSong)->getTitle_InfoBox() .'</td>
-                                        <td>'. $song->getArtists() .'</td>
+                                        <td>'.getSong($tempSong)->getArtists() .'</td>
                                     </tr>';
                                         
 										
