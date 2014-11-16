@@ -1,16 +1,18 @@
 <?php
 
-require $_SERVER['DOCUMENT_ROOT'] . ("connection.php");
+require_once $_SERVER['DOCUMENT_ROOT'] . ('/php/connection.php');
 
 session_start();
-$user_check = $_SESSION['login_user'];
+$user_check = $_SESSION['user_id'];
 
-$ses_sql = mysqli_query($db, "select username from admin where username='$user_check' ");
+$con = initializeConnection();
+
+$ses_sql = mysqli_query($con, "select username from admin where username='$user_id' ");
 
 $row = mysqli_fetch_array($ses_sql, MYSQLI_ASSOC);
 
-$login_session = $row['username'];
+$login_session = $row['login'];
 
 if (!isset($login_session)) {
-    header("Location: index.html");
+    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/login.php');
 }
