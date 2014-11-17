@@ -66,7 +66,7 @@ class Song {
     public function getTitleArtist_InfoBox() {
         return '<span onclick="' . $this->getJavascriptInfoBox() . '" '
                 . 'onmouseover="" style="cursor: pointer;">'
-                . $this->title . 'bt'.$this->getArtists().'</span>';
+                . $this->title . ' by '.$this->getArtists().'</span>';
     }
 
     /**
