@@ -37,7 +37,7 @@
                                 }
                                 ?>
                                 <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
-                                <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;  ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
+                                <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;   ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
                             </div><p id="songInfo"></p>
                         </div>
                     </div>
@@ -50,31 +50,31 @@
 
                         <div class="form-horizontal" action="" method="POST"></div>
 
-                      
-                          <table>
-                          
 
-                                    <?php
-									$increment = 1;
-                                    foreach ($mixTapeList as $songInt) {
-                                        $song = getSong($songInt);
-                                        if ($song instanceof Song) {
-                                            $songTitle = $song->title;
-                                            $songArtist = $song->getArtists();
-                                            $songGenre = $song->getGenres();
-                                            $songLink = $song->getLink();
+                        <table>
 
-                                            echo '<tr><td><h1>'.$increment.'</h1></td><td><div class="well-1 bs-component">'.
-                                            $song->getTitleArtist_InfoBox() .'</div></td><tr>';//' by '.$song->getArtists().'</div></td><tr>';
-                                        }
-										$increment+=1;
-                                    }
-                                    ?>
-                                    <?php ?>
-                             
-</table>
-                            <!--End well-1-->
-                    
+
+                            <?php
+                            $increment = 1;
+                            foreach ($mixTapeList as $songInt) {
+                                $song = getSong($songInt);
+                                if ($song instanceof Song) {
+                                    $songTitle = $song->title;
+                                    $songArtist = $song->getArtists();
+                                    $songGenre = $song->getGenres();
+                                    $songLink = $song->getLink();
+
+                                    echo '<tr><td><h1>' . $increment . '</h1></td><td><div class="well-1 bs-component">' .
+                                    $song->getTitleArtist_InfoBox() . '</div></td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                }
+                                $increment+=1;
+                            }
+                            ?>
+                            <?php ?>
+
+                        </table>
+                        <!--End well-1-->
+
                     </div>
 
                 </div>
