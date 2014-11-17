@@ -65,7 +65,7 @@
                                             $songLink = $song->getLink();
 
                                             echo '<tr><td><h1>'.$increment.'</h1></td><td><div class="well-1 bs-component">'.
-                                            $song->getTitle_InfoBox() .' by '.$song->getArtists().'</div></td><tr>';
+                                            $song->getTitleArtist_InfoBox() .'</div></td><tr>';//' by '.$song->getArtists().'</div></td><tr>';
                                         }
 										$increment+=1;
                                     }
