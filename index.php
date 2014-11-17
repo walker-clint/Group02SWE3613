@@ -51,17 +51,10 @@
                         <div class="form-horizontal" action="" method="POST"></div>
 
                         <div class="well-1 bs-component">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <td><b>Title</b></td>
-
-                                        <td><b>Artist</b></td>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                          
 
                                     <?php
+									$increment = 1;
                                     foreach ($mixTapeList as $songInt) {
                                         $song = getSong($songInt);
                                         if ($song instanceof Song) {
@@ -70,20 +63,14 @@
                                             $songGenre = $song->getGenres();
                                             $songLink = $song->getLink();
 
-                                            echo '<tr>' .
-                                            '<td>' . $song->getTitle_InfoBox() . '</td>' .
-                                            '<td>' . $song->getArtists() . '</td>' .
-                                            '</tr>';
+                                            echo ' <div class="well-1 bs-component"><h1>'.$increment.'</hl>'.
+                                            $song->getTitle_InfoBox() .' by '.$song->getArtists().'</div>';
                                         }
+										$increment+=1;
                                     }
                                     ?>
-
-
-                                    <!--Start well-1-->
-
                                     <?php ?>
-                                </tbody>
-                            </table>
+                             
 
                             <!--End well-1-->
                         </div>
