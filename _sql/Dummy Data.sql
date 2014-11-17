@@ -78,7 +78,7 @@ INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES (
 INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('5', '8');
 
 #6
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('Rock and Rock (Will Take You to the Mountain',1,0,'https://www.youtube.com/watch?v=eOofWzI3flA',1);
+INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('Rock and Rock (Will Take You to the Mountain)',1,0,'https://www.youtube.com/watch?v=eOofWzI3flA',1);
 INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('Skrillex');
 INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('6', '6');
 INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('6', '9');
