@@ -33,7 +33,7 @@
                                 $randSongNumber = rand(0, (count($mixTapeList) - 1));
                                 $initialSong = getSong($mixTapeList[$randSongNumber]);
                                 if ($initialSong instanceof Song) {
-                                    echo '<script>window.onload = (function(){' . $initialSong->getJavascriptInfoBox() . ';});</script>';
+                                    echo '<script>window.onload = (function(){' . $initialSong->getJavascript_changeBox() . ';});</script>';
                                 }
                                 ?>
                                 <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
