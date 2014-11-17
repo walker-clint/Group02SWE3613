@@ -40,6 +40,7 @@ INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Opera');#7
 INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Swing');#8
 INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Dubstep');#9
 INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Other');#10
+INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Metal');#11
 
 #1
 INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('Wild Horse',1,0,'https://www.youtube.com/watch?v=hX3O5v-ylC4',1);
@@ -90,9 +91,36 @@ INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('Beethoven');
 INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('8', '8');
 INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('8', '6');
 
+#9
+INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('True',1,0,'https://www.youtube.com/watch?v=PTC3zoXMrIg',1);
+INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('exist trace');
+INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('9', '9');
+INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('9', '11');
+
+#10
+INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('Tengaku',1,0,'https://www.youtube.com/watch?v=Q2meWkWqc-I',1);
+INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('WagakkiBand');
+INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('10', '10');
+INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('10', '2');
+
+#11
+INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('Scrash',1,0,'https://www.youtube.com/watch?v=vtWBan30c30',1);
+INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('Aldious');
+INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('11', '11');
+INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('11', '11');
+
+#
+#INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('',1,0,'',1);
+#INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('');
+#INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('', '');
+#INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('', '');
+
 
 INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '1', '1');
 INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '2', '2');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '9', '3');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '10', '4');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '11', '2');
 INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('2', '3', '1');
 INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('2', '2', '2');
 INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('3', '4', '1');
