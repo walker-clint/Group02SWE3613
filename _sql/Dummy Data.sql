@@ -26,126 +26,90 @@ INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, 
 INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `first_name`, `last_name`) VALUES ('user15', 'pass', 'fake15@fake.com', '0', 'Bob15', 'Smith15');
 INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `secret_question`,`secret_answer`,`first_name`, `last_name`) VALUES ('exampleuser', 'examplepassword', 'example@email.com', '0', 'whatisthis', 'anexample', 'examplefirst', 'examplelast');
 INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `secret_question`,`secret_answer`,`first_name`, `last_name`) VALUES ('clint', 'password', 'cwalker6@spsu.edu', '0', 'nicknae', 'tiger', 'Clinton', 'Walker');
+INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `secret_question`,`secret_answer`,`first_name`, `last_name`) VALUES ('dpark', 'password', 'dpark@spsu.edu', '0', 'fruit', 'apple', 'Daniel', 'Park');
+INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `secret_question`,`secret_answer`,`first_name`, `last_name`) VALUES ('bill', 'password', 'bg@ms.com', '0', 'companyname', 'microsoft', 'bill', 'gates');
 
-INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Symphonic Power Metal');
-INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Rock');
-INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Pop');
-INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Jazz');
-INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Kpop');
 
-INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('Artist1');
-INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('Artist2');
-INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('Artist3');
-INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('Norazo');
+INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Symphonic Power Metal');#1
+INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Rock');#2
+INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Pop');#3
+INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Jazz');#4
+INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Kpop');#5
+INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Classical');#6
+INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Opera');#7
+INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Swing');#8
+INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Dubstep');#9
+INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Other');#10
 
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Rock1',0);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Jazz1',1);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Pop1',1);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Symphonic Power Metal1',1);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Rock2',1);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Pop2',1);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Jazz2',1);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Rock Pop1',0);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Rock Pop2',1);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Jazz3',1);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Pop Jazz Rock1',1);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Symphonic Power Metal2',1);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Symphonic Power Metal Rock3',1);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Rock4',0);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Rock5',0);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Rock6',0);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Rock7',0);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Rock8',0);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Rock9',0);
-INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`) VALUES ('Pop4',1);
+#1
 INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('Wild Horse',1,0,'https://www.youtube.com/watch?v=hX3O5v-ylC4',1);
-
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('1', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('2', '4');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('3', '3');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('4', '1');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('5', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('6', '3');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('7', '4');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('8', '2');INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('8', '3');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('9', '2');INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('9', '3');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('10', '4');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('11', '2');INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('11', '3');INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('11', '4');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('12', '1');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('13', '1');INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('13', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('14', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('15', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('16', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('17', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('18', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('19', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('20', '3');
-INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('21', '5');
-
+INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('Norazo');
 INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('1', '1');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('2', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('3', '3');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('4', '1');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('5', '1');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('6', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('7', '3');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('8', '1');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('8', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('9', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('9', '3');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('10', '3');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('11', '1');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('11', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('11', '3');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('12', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('13', '3');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('13', '1');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('14', '1');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('15', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('16', '3');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('17', '1');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('18', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('19', '3');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('20', '1');
-INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('21', '4');
+INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('1', '5');
 
-INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '1', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '2', '4');
-INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '3', '3');
-INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '4', '1');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '', '');
-INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('2', '4', '1');
-INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('2', '12', '2');
-INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('2', '13', '3');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('2', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('2', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('2', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('2', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('2', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('2', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('2', '', '');
+#2
+INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('Chick Chick',1,0,'https://www.youtube.com/watch?v=mxzgwJ8tSE0',1);
+INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('Wang Rong Rollin');
+INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('2', '2');
+INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('2', '10');
+INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('2', '3');
+
+#3
+INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('Gargoyles, Angels of Darkness',1,0,'https://www.youtube.com/watch?v=TC5FMDjG6Mg',1);
+INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('Rhapsody of Fire');
+INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('3', '3');
+INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('3', '1');
+
+#4
+INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('Con te Partiro',1,0,'https://www.youtube.com/watch?v=tcrfvP11Hbo',1);
+INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('Andrea Bocelli');
+INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('4', '4');
+INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('4', '7');
+
+#5
+INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('Peroxide Swing',1,0,'https://www.youtube.com/watch?v=vqvMA46XYZI',1);
+INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('Michael Buble');
+INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('5', '5');
+INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('5', '8');
+
+#6
+INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('Rock and Rock (Will Take You to the Mountain',1,0,'https://www.youtube.com/watch?v=eOofWzI3flA',1);
+INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('Skrillex');
+INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('6', '6');
+INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('6', '9');
+
+#7
+INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('Party Rock Anthem',1,0,'https://www.youtube.com/watch?v=KQ6zr6kCPj8',1);
+INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('LMFAO');
+INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('7', '7');
+INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('7', '2');
+
+#8
+INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('Grosse Fuge',1,0,'https://www.youtube.com/watch?v=lxzHQrFuDkk',1);
+INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('Beethoven');
+INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('8', '8');
+INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('8', '6');
+
+
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '1', '1');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '2', '2');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('2', '3', '1');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('2', '2', '2');
 INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('3', '4', '1');
-INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('3', '12', '3');
-INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('3', '13', '6');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('3', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('3', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('3', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('3', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('3', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('3', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('3', '', '');
-INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('4', '4', '1');
-INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('4', '12', '9');
-INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('4', '13', '2');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('4', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('4', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('4', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('4', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('4', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('4', '', '');
-#INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('4', '', '');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('3', '2', '2');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('4', '2', '1');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('4', '6', '2');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('5', '8', '1');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('5', '3', '2');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('6', '2', '1');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('6', '1', '2');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('7', '6', '1');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('7', '1', '2');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('8', '3', '1');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('8', '4', '2');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('9', '2', '1');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('9', '1', '2');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('10', '2', '1');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('10', '8', '2');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('11', '6', '1');
+INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('11', '3', '2');
