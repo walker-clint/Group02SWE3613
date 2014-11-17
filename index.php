@@ -50,7 +50,7 @@
 
                         <div class="form-horizontal" action="" method="POST"></div>
 
-                        <div class="well-1 bs-component">
+                      
                           
 
                                     <?php
@@ -63,7 +63,7 @@
                                             $songGenre = $song->getGenres();
                                             $songLink = $song->getLink();
 
-                                            echo ' <div class="well-1 bs-component"><h1>'.$increment.'</hl>'.
+                                            echo '<h1>'.$increment.'</hl><div class="well-1 bs-component">'.
                                             $song->getTitle_InfoBox() .' by '.$song->getArtists().'</div>';
                                         }
 										$increment+=1;
@@ -73,7 +73,7 @@
                              
 
                             <!--End well-1-->
-                        </div>
+                    
                     </div>
 
                 </div>
