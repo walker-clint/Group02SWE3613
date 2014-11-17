@@ -31,7 +31,6 @@ function getBestMixTape() {
     return $returnArray;
 }
 
-//returns a Song object with all the information for a given song
 /**
  * get a song object matching the given primary key
  * @param int $songIDinc the primary key of the wanted song
@@ -50,12 +49,12 @@ function getSong($songIDinc) {
     $stmt->bind_param('i', $songID);
     $stmt->execute();
     $stmt->bind_result($id, $song_title, $app, $flag, $you, $youApp);
-    
+
     $stmt->fetch();
     $genre = getSongGenre($id);
     $artist = getSongArtist($id);
     $tempSong = new Song($id, $song_title, $app, $flag, $you, $youApp, $genre, $artist);
-    
+
     return $tempSong;
 }
 

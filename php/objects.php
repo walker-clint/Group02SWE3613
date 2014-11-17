@@ -37,7 +37,6 @@ class Song {
     }
 
     /**
-     * getJavascriptInfoBox()
      * returns HTML to generate changeBox() javascript with the song's info
      * @return String formatted HTML
      */
@@ -49,7 +48,6 @@ class Song {
     }
 
     /**
-     * getTitle_InfoBox()
      * returns HTML to make a clickable title that updates the infobox
      * @return String formatted HTML
      */
@@ -58,7 +56,7 @@ class Song {
                 . 'onmouseover="" style="cursor: pointer;">'
                 . $this->title . '</span>';
     }
-    
+
     /**
      * returns HTML to make a clickable title with artists that updates the infobox
      * @return String formatted HTML
@@ -66,7 +64,7 @@ class Song {
     public function getTitleArtist_InfoBox() {
         return '<span onclick="' . $this->getJavascript_changeBox() . '" '
                 . 'onmouseover="" style="cursor: pointer;">'
-                . $this->title . ' by '.$this->getArtists().'</span>';
+                . $this->title . ' by ' . $this->getArtists() . '</span>';
     }
 
     /**
