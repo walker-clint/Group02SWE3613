@@ -103,7 +103,7 @@ INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('9
 
 #10
 INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('Tengaku',1,0,'https://www.youtube.com/watch?v=Q2meWkWqc-I',1);
-INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('WagakkiBand');
+INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('Wagakki Band');
 INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('10', '10');
 INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('10', '2');
 
@@ -122,6 +122,12 @@ INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES (
 INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('12', '13');
 INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('12', '14');
 INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('12', '12');
+
+#13
+#INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('Run to the Future',1,0,'https://www.youtube.com/watch?v=g09UK5hNO34',1);
+#INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('');
+#INSERT INTO `swe3613_db02p2`.`tbl_song_artist` (`song_id`, `artist_id`) VALUES ('', '');
+#INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('', '');
 
 
 #
