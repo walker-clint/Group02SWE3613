@@ -9,6 +9,7 @@ TRUNCATE tbl_song_artist;
 TRUNCATE tbl_song_genre;
 set foreign_key_checks=1;
 
+#users
 INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `first_name`, `last_name`) VALUES ('user01', 'pass', 'fake1@fake.com', '0', 'Bob1', 'Smith1');
 INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `first_name`, `last_name`) VALUES ('user02', 'pass', 'fake2@fake.com', '1', 'Bob2', 'Smith2');
 INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `first_name`, `last_name`) VALUES ('user03', 'pass', 'fake3@fake.com', '0', 'Bob3', 'Smith3');
@@ -30,6 +31,7 @@ INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, 
 INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `secret_question`,`secret_answer`,`first_name`, `last_name`) VALUES ('bill', 'password', 'bg@ms.com', '0', 'companyname', 'microsoft', 'bill', 'gates');
 
 
+#genres
 INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Symphonic Power Metal');#1
 INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Rock');#2
 INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Pop');#3
@@ -43,6 +45,7 @@ INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Other');#10
 INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Metal');#11
 INSERT INTO `swe3613_db02p2`.`tbl_genre` (`name`) VALUES ('Alternative');#12
 
+#songs, artists and their relations
 #1
 INSERT INTO `swe3613_db02p2`.`tbl_song` (`title`,`approved`,`flagged`,`youtube`,`youtube_approved`) VALUES ('Wild Horse',1,0,'https://www.youtube.com/watch?v=hX3O5v-ylC4',1);
 INSERT INTO `swe3613_db02p2`.`tbl_artist` (`name`) VALUES ('Norazo');
@@ -128,6 +131,7 @@ INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('1
 #INSERT INTO `swe3613_db02p2`.`tbl_song_genre` (`song_id`, `genre_id`) VALUES ('', '');
 
 
+#person mixtape
 INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '1', '1');
 INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '2', '2');
 INSERT INTO `swe3613_db02p2`.`tbl_mixtape` (`user_id`, `song_id`, `position`) VALUES ('1', '9', '3');
