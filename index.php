@@ -51,6 +51,7 @@
                         <div class="form-horizontal" action="" method="POST"></div>
 
                       
+                          <table>
                           
 
                                     <?php
@@ -63,15 +64,15 @@
                                             $songGenre = $song->getGenres();
                                             $songLink = $song->getLink();
 
-                                            echo '<h1>'.$increment.'</h1><div class="well-1 bs-component">'.
-                                            $song->getTitle_InfoBox() .' by '.$song->getArtists().'</div>';
+                                            echo '<tr><td><h1>'.$increment.'</h1></td><td><div class="well-1 bs-component">'.
+                                            $song->getTitle_InfoBox() .' by '.$song->getArtists().'</div></td><tr>';
                                         }
 										$increment+=1;
                                     }
                                     ?>
                                     <?php ?>
                              
-
+</table>
                             <!--End well-1-->
                     
                     </div>
