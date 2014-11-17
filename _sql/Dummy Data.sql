@@ -10,7 +10,7 @@ TRUNCATE tbl_song_genre;
 set foreign_key_checks=1;
 
 INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `first_name`, `last_name`) VALUES ('user01', 'pass', 'fake1@fake.com', '0', 'Bob1', 'Smith1');
-INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `first_name`, `last_name`) VALUES ('user02', 'pass', 'fake2@fake.com', '0', 'Bob2', 'Smith2');
+INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `first_name`, `last_name`) VALUES ('user02', 'pass', 'fake2@fake.com', '1', 'Bob2', 'Smith2');
 INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `first_name`, `last_name`) VALUES ('user03', 'pass', 'fake3@fake.com', '0', 'Bob3', 'Smith3');
 INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `first_name`, `last_name`) VALUES ('user04', 'pass', 'fake@4fake.com', '0', 'Bob4', 'Smith4');
 INSERT INTO `swe3613_db02p2`.`tbl_user` (`login`, `password`, `email`, `admin`, `first_name`, `last_name`) VALUES ('user05', 'pass', 'fake5@fake.com', '0', 'Bob5', 'Smith5');
