@@ -63,7 +63,7 @@
                                             $songGenre = $song->getGenres();
                                             $songLink = $song->getLink();
 
-                                            echo '<h1>'.$increment.'</hl><div class="well-1 bs-component">'.
+                                            echo '<h1>'.$increment.'</h1><div class="well-1 bs-component">'.
                                             $song->getTitle_InfoBox() .' by '.$song->getArtists().'</div>';
                                         }
 										$increment+=1;
