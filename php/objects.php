@@ -58,6 +58,16 @@ class Song {
                 . 'onmouseover="" style="cursor: pointer;">'
                 . $this->title . '</span>';
     }
+    
+    /**
+     * returns HTML to make a clickable title with artists that updates the infobox
+     * @return String formatted HTML
+     */
+    public function getTitleArtist_InfoBox() {
+        return '<span onclick="' . $this->getJavascriptInfoBox() . '" '
+                . 'onmouseover="" style="cursor: pointer;">'
+                . $this->title . 'bt'.$this->getArtists().'</span>';
+    }
 
     /**
      * @return String the youtube key for the song
