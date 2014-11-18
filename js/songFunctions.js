@@ -46,11 +46,12 @@ function changeInfo(id, title, artist, genre, flagged) {
 
     if (flagged != 1) {
         var color = 'red';
-        info += '<form method="POST" action = "./php/menu_functions.php">'
+        var message = 'Flag image (incorrect information or inappropriate)';
+        info += message + '<div><form method="POST" action = "./php/menu_functions.php">'
                 + '<input type="hidden" name="actionType" value="toggleFlag">'
                 + '<input type="hidden" name="songId" value="' + id + '">'
                 + '<input type="image" src="./img/' + color + '_flag.png" height="35px" width="35px">'
-                + '</form>';
+                + '</form>'+message+'</div>';
     }
 
     element.innerHTML = info;
@@ -101,23 +102,30 @@ function changeInfo_admin(id, title, artist, genre, approved, flagged) {
             + '<br>Genre: ' + genre;
     //+ '<br>Approved: ' + approved
     //+ '<br>Flagged: ' + flagged;
-    if (approved != 1) {
-        info += '<br>Waiting on approval';
-//        info += '<form method="POST" action = "./php/functions_admin.php">'
-//                + '<input type="hidden" name="actionType" value="toggleFlag">'
-//                + '<input type="hidden" name="songId" value="' + id + '">'
-//                + '<input type="image" src="http://www.w3schools.com/images/html5_badge20.png" height="15px" width="15px">'
-//                + '</form>';
+    var thumbDirection = 'down';
+    var message = 'Un-approve';
+    if (approved == 0) {
+        thumbDirection = 'up';
+        message = 'Approve';
     }
+    info += '<div><form method="POST" action = "./php/menu_functions.php">'
+            + '<input type="hidden" name="actionType" value="toggleApproval">'
+            + '<input type="hidden" name="songId" value="' + id + '">'
+            + '<input type="image" src="./img/thumb' + thumbDirection + '.png" height="35px" width="35px">'
+            + '</form>' + message+'</div>';
+
 
     var color = 'red';
+    var message = 'Flag image (incorrect information or inappropriate)';
     if (flagged == 1) {
         color = 'green';
+        message = 'Unflag image';
     }
-    info += '<form method="POST" action = "./php/menu_functions.php">'
+    info += '<div><form method="POST" action = "./php/menu_functions.php">'
             + '<input type="hidden" name="actionType" value="toggleFlag">'
             + '<input type="hidden" name="songId" value="' + id + '">'
             + '<input type="image" src="./img/' + color + '_flag.png" height="35px" width="35px">'
-            + '</form>';
+            + '</form>'+message+'</div>';
+
     element.innerHTML = info;
 }
