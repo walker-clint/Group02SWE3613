@@ -9,7 +9,7 @@
  */
 
 function changeBox(title, artist, genre, songLink) {
-    //alert("Playing " + songLink);
+//alert("Playing " + songLink);
     changeInfo(title, artist, genre);
     changeVideo(songLink);
 }
@@ -23,11 +23,9 @@ function changeBox(title, artist, genre, songLink) {
 function changeVideo(songLink) {
     var element = document.getElementById("vidWindow");
     var link = 'No Youtube video for this song! :(';
-
     if (songLink.length > 0) {
         link = '<iframe width = "350" height = "280" src = "//www.youtube.com/embed/'
                 + songLink + '?autoplay=1" frameborder = "0" allowfullscreen> </iframe>';
-
     }
     element.innerHTML = link;
 }
@@ -58,7 +56,7 @@ function changeInfo(title, artist, genre) {
  */
 
 function changeBox_admin(id, title, artist, genre, songLink, approved, flagged) {
-    //alert("Playing " + songLink);
+//alert("Playing " + songLink);
     changeInfo_admin(id, title, artist, genre, approved, flagged);
     changeVideo_admin(songLink);
 }
@@ -71,11 +69,9 @@ function changeBox_admin(id, title, artist, genre, songLink, approved, flagged) 
 function changeVideo_admin(songLink) {
     var element = document.getElementById("vidWindow_admin");
     var link = 'No Youtube video for this song! :(';
-
     if (songLink.length > 0) {
         link = '<iframe width = "350" height = "280" src = "//www.youtube.com/embed/'
                 + songLink + '?autoplay=0" frameborder = "0" allowfullscreen> </iframe>';
-
     }
     element.innerHTML = link;
 }
@@ -92,15 +88,24 @@ function changeInfo_admin(id, title, artist, genre, approved, flagged) {
     var info = '<br>Song ID: ' + id
             + '<br>Title: ' + title
             + '<br>Artist: ' + artist
-            + '<br>Genre: ' + genre
-            + '<br>Approved: ' + approved
-            + '<br>Flagged: ' + flagged;
+            + '<br>Genre: ' + genre;
+            //+ '<br>Approved: ' + approved
+            //+ '<br>Flagged: ' + flagged;
     if (approved != 1) {
         info += '<br>Waiting on approval';
-        info += '';
+//        info += '<form method="POST" action = "./php/functions_admin.php">'
+//                + '<input type="hidden" name="actionType" value="toggleFlag">'
+//                + '<input type="hidden" name="songId" value="' + id + '">'
+//                + '<input type="image" src="http://www.w3schools.com/images/html5_badge20.png" height="15px" width="15px">'
+//                + '</form>';
     }
+
     if (flagged == 1) {
-        info += '<br>Flagged';
+        info += '<form method="POST" action = "./php/menu_functions.php">'
+                + '<input type="hidden" name="actionType" value="toggleFlag">'
+                + '<input type="hidden" name="songId" value="' + id + '">'
+                + '<input type="image" src="./img/red_flag.png" height="35px" width="35px">'
+                + '</form>';
     }
     element.innerHTML = info;
 }
