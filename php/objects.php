@@ -48,6 +48,20 @@ class Song {
     }
 
     /**
+     * returns HTML to generate changeBox() javascript with the song's info
+     * @return String formatted HTML
+     */
+    public function js_changeBox_admin() {
+        return 'changeBox_admin(\'' . $this->id . '\''
+                . ',\'' . $this->title . '\''
+                . ',\'' . $this->getArtists() . '\''
+                . ',\'' . $this->getGenres() . '\''
+                . ',\'' . $this->getLink() . '\''
+                . ',\'' . $this->approved . '\''
+                . ',\'' . $this->flagged . '\')';
+    }
+
+    /**
      * returns HTML to make a clickable title that updates the infobox
      * @return String formatted HTML
      */
@@ -63,6 +77,16 @@ class Song {
      */
     public function js_infoBox() {
         return '<span onclick="' . $this->js_changeBox() . '" '
+                . 'onmouseover="" style="cursor: pointer;">'
+                . $this->title . ' by ' . $this->getArtists() . '</span>';
+    }
+
+    /**
+     * returns HTML to make a clickable title with artists that updates the infobox
+     * @return String formatted HTML
+     */
+    public function js_infoBox_admin() {
+        return '<span onclick="' . $this->js_changeBox_admin() . '" '
                 . 'onmouseover="" style="cursor: pointer;">'
                 . $this->title . ' by ' . $this->getArtists() . '</span>';
     }
