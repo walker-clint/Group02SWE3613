@@ -17,11 +17,17 @@ $session_user = $row['login'];
 $callingPage = basename($_SERVER['PHP_SELF']);
 $adminPage = strpos($callingPage, 'dmin');
 //echo $callingPage . '<br>' . $adminPage . ' | ' . $session_admin;
+$userType = "";
 
 if (!isset($session_user)) {
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/login.php');
     die();
-} elseif (!isset($session_admin) || ($adminPage != 0 && $session_admin != '1')) {
+} else {
+    $userType='user';
+}
+if (!isset($session_admin) || ($adminPage != 0 && $session_admin != '1')) {
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
     die();
+}else{
+    $userType='admin';
 }
