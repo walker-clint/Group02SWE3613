@@ -11,6 +11,7 @@
 
     </head>
     <body>
+        <!--Start Header-->
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
         <!--End Header-->
         <!--Start Middle-->
@@ -37,7 +38,7 @@
                                 }
                                 ?>
                                 <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
-                                <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;  ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
+                                <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;   ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
                             </div><p id="songInfo"></p>
                         </div>
                     </div>
@@ -50,10 +51,7 @@
 
                         <div class="form-horizontal" action="" method="POST"></div>
 
-
                         <table>
-
-
                             <?php
                             $increment = 1;
                             foreach ($mixTapeList as $songInt) {
