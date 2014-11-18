@@ -243,6 +243,35 @@ function getMixtape($userIDInc) {
 
     $con = initializeConnection();
 
+    $query = 'SELECT tbl_mixtape.song_id, position '
+            . 'FROM tbl_mixtape '
+            . 'JOIN tbl_song ON tbl_song.song_id = tbl_mixtape.song_id '
+            . 'WHERE user_id = ? '
+            . 'ORDER BY tbl_song.title';
+    $stmt = $con->prepare($query);
+
+    $stmt->bind_param('i', $userID);
+    $stmt->execute();
+    $stmt->bind_result($song_id, $position);
+
+    $returnArray = array();
+    while ($stmt->fetch()) {
+        $newMixTapeEntry = new MixSong($song_id, $position);
+        array_push($returnArray, $newMixTapeEntry);
+    }
+    return $returnArray;
+}
+
+/**
+ * returns the mixtape records for a user sorted by position
+ * @param int $userIDInc the primary key of the user
+ * @return MixSong[] an array of the user's mixtape
+ */
+function getMixtapeSortPosition($userIDInc) {
+    $userID = htmlspecialchars($userIDInc);
+
+    $con = initializeConnection();
+
     $query = 'SELECT song_id, position '
             . 'FROM tbl_mixtape '
             . 'WHERE user_id = ? '
