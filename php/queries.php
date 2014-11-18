@@ -12,6 +12,8 @@ function getBestMixTape() {
 
     $query = 'SELECT tbl_mixtape.song_id, COUNT(*) ' .
             'FROM tbl_mixtape ' .
+            'JOIN tbl_song ON tbl_song.song_id = tbl_mixtape.song_id ' .
+            'WHERE tbl_song.approved = 1 ' .
             'GROUP BY tbl_mixtape.song_id ' .
             'ORDER BY COUNT(*) DESC ' .
             'LIMIT 10;';
