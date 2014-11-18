@@ -19,6 +19,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $youtubeApproved = $song->youtubeApproved;
 
         updateSong($songId, $title, $approved, $flag, $youtubeLink, $youtubeApproved);
+    } else if ($_POST['actionType'] == 'toggleApproval') {
+        $songId = $_POST['songId'];
+        $song = getSong($songId);
+        $approve = 0;
+        if ($song->approved == 0) {
+            $approve = 1;
+        }
+        $title = $song->title;
+        $flag = $song->flagged;
+        $youtubeLink = $song->youtubeLink;
+        $youtubeApproved = $song->youtubeApproved;
+
+        updateSong($songId, $title, $approve, $flag, $youtubeLink, $youtubeApproved);
     }
 }
 
