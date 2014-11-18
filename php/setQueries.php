@@ -177,3 +177,29 @@ function deleteMixtape($userId, $songId) {
     $stmtSong->bind_param('ii', $songId, $userId);
     $stmtSong->execute();
 }
+
+function addUser($login, $pass, $email, $firstName, $lastName, $admin, $secretQ, $secretA) {
+    $con = initializeConnection();
+
+    $query = 'INSERT INTO tbl_user(login, password, email, first_name, last_name, admin, secret_question, secret_answer) values (?,?,?,?,?,?,?,?)';
+
+    $stmt = $con->prepare($query);
+    $stmt->bind_param('sssssiss', $login, $pass, $email, $firstName, $lastName, $admin, $secretQ, $secretA);
+    $stmt->execute();
+
+    //$insertId = $con->insert_id;
+    $insertId = mysqli_insert_id($con);
+    return $insertId;
+}
+
+function updateUser($userId, $login, $pass, $email, $firstName, $lastName, $admin, $secretQ, $secretA){
+    $con = initializeConnection();
+
+    //UPDATE tbl_user SET `login`='temp19', `password`='pass1', `email`='fake@fake.com1', `admin`='1', `first_name`='Bob1', `last_name`='Smith1' WHERE `user_id`='20';
+    $query = 'UPDATE tbl_user SET login = ?, password = ?, email = ?, first_name = ?, last_name = ?, admin = ?, secret_question = ?, secret_answer = ? '
+            . 'WHERE user_id = ?';
+
+    $stmt = $con->prepare($query);
+    $stmt->bind_param('sssssissi', $login, $pass, $email, $firstName, $lastName, $admin, $secretQ, $secretA, $userId);
+    $stmt->execute();
+}
