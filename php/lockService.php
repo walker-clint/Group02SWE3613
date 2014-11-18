@@ -20,6 +20,8 @@ $adminPage = strpos($callingPage, 'dmin');
 
 if (!isset($session_user)) {
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/login.php');
+    die();
 } elseif (!isset($session_admin) || ($adminPage != 0 && $session_admin != '1')) {
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
+    die();
 }
