@@ -37,7 +37,7 @@
 //                                }
                                 ?>
                                 <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
-                                <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;                  ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
+                                <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;  ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
                             </div><p id="songInfo"></p>
                         </div>
                     </div>
@@ -51,11 +51,11 @@
 
                         <?php
                         $songListUnapproved = getUnapprovedSongs();
-                        if (count($songListUnapproved) > 1) {
+                        if (count($songListUnapproved) > 0) {
                             ?>
                             <table class="table">
 
-                                <h1>Song List</h1>
+                                <h1>Songs awaiting approval</h1>
 
                                 <?php
                                 foreach ($songListUnapproved as $song) {
@@ -70,34 +70,17 @@
                                     }
                                 }
                                 ?>
-                            <?php } ?>
-                            <?php
-                            $songListFlagged = getFlaggedSongs();
-                            if (count($songListFlagged) > 0) {
-                                ?>
-                                <table class="table">
-
-                                    <h1>Flagged songs</h1>
-                                    <?php
-                                    foreach ($songListFlagged as $song) {
-                                        if ($song instanceof Song) {
-                                            $songTitle = $song->title;
-                                            $songArtist = $song->getArtists();
-                                            $songGenre = $song->getGenres();
-                                            $songLink = $song->getLink();
-
-                                            echo '<tr><td>'
-                                            . $song->getTitleArtist_InfoBox() . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
-                                        }
-                                    }
-                                    ?>
-                                </table>
-                            <?php } ?>
-                            <h1>Songs</h1>
+                            </table>
+                        <?php } ?>
+                        <?php
+                        $songListFlagged = getFlaggedSongs();
+                        if (count($songListFlagged) > 0) {
+                            ?>
                             <table class="table">
+
+                                <h1>Flagged songs</h1>
                                 <?php
-                                $songListNormal = getApprovedAndUnflaggedSongs();
-                                foreach ($songListNormal as $song) {
+                                foreach ($songListFlagged as $song) {
                                     if ($song instanceof Song) {
                                         $songTitle = $song->title;
                                         $songArtist = $song->getArtists();
@@ -109,9 +92,27 @@
                                     }
                                 }
                                 ?>
-                                <?php ?>
                             </table>
-                            <!--End well-1-->
+                        <?php } ?>
+                        <h1>Songs</h1>
+                        <table class="table">
+                            <?php
+                            $songListNormal = getApprovedAndUnflaggedSongs();
+                            foreach ($songListNormal as $song) {
+                                if ($song instanceof Song) {
+                                    $songTitle = $song->title;
+                                    $songArtist = $song->getArtists();
+                                    $songGenre = $song->getGenres();
+                                    $songLink = $song->getLink();
+
+                                    echo '<tr><td>'
+                                    . $song->getTitleArtist_InfoBox() . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                }
+                            }
+                            ?>
+                            <?php ?>
+                        </table>
+                        <!--End well-1-->
 
                     </div>
 
