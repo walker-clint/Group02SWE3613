@@ -57,10 +57,10 @@ function changeInfo(title, artist, genre) {
  * @param String songLink the youtube key for the song ex: "hX3O5v-ylC4"
  */
 
-function changeBox_admin(title, artist, genre, songLink) {
+function changeBox_admin(id, title, artist, genre, songLink, approved, flagged) {
     //alert("Playing " + songLink);
-    changeInfo(title, artist, genre);
-    changeVideo(songLink);
+    changeInfo_admin(id, title, artist, genre, approved, flagged);
+    changeVideo_admin(songLink);
 }
 
 /**
@@ -74,7 +74,7 @@ function changeVideo_admin(songLink) {
 
     if (songLink.length > 0) {
         link = '<iframe width = "350" height = "280" src = "//www.youtube.com/embed/'
-                + songLink + '?autoplay=1" frameborder = "0" allowfullscreen> </iframe>';
+                + songLink + '?autoplay=0" frameborder = "0" allowfullscreen> </iframe>';
 
     }
     element.innerHTML = link;
@@ -87,10 +87,20 @@ function changeVideo_admin(songLink) {
  * @param {type} genre
  */
 
-function changeInfo_admin(title, artist, genre) {
+function changeInfo_admin(id, title, artist, genre, approved, flagged) {
     var element = document.getElementById("songInfo_admin");
-    var info = 'Title: ' + title
+    var info = '<br>Song ID: ' + id
+            + '<br>Title: ' + title
             + '<br>Artist: ' + artist
-            + '<br>Genre: ' + genre;
+            + '<br>Genre: ' + genre
+            + '<br>Approved: ' + approved
+            + '<br>Flagged: ' + flagged;
+    if (approved != 1) {
+        info += '<br>Waiting on approval';
+        info += '';
+    }
+    if (flagged == 1) {
+        info += '<br>Flagged';
+    }
     element.innerHTML = info;
 }
