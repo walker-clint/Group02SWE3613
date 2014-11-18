@@ -7,22 +7,18 @@
 
         <?php
         $toplinks = "";
-        //session_start();
-        //include_once "connect_to_mysql.php";
         require_once $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
 
         if (!empty($_SESSION['user_id'])) {
             $id = $_SESSION['user_id'];
-            // Put stored session variables into local php variable
+            
             $con = initializeConnection();
             $sql = mysqli_query($con, "SELECT * FROM tbl_user WHERE user_id = '$id'");
 
             $full_name = '';
             while ($row = mysqli_fetch_array($sql)) {
-                // Use the AYAH object to see if the user passed or failed the game.
-                // Get member ID into a session variable
                 $full_name = $row["first_name"] . " " . $row["last_name"];
-            } // close while
+            }
             $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
 	<li class="btn-label-right">
 	<div class="well-1 btn">
