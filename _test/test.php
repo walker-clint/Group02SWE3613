@@ -41,8 +41,8 @@
                 </ul>
 
                 <?php
-                $exampleSong = getSong(21);
-                echo '$exampleSong = getSong(21)<br>';
+                $exampleSong = getSong(1);
+                echo '$exampleSong = getSong(1)<br>';
                 echo '$exampleSong->id returns ' . $exampleSong->id . '<br>';
                 echo '$exampleSong->title returns ' . $exampleSong->title . '<br>';
                 echo '$exampleSong->youtubeLink returns ' . $exampleSong->youtubeLink . '<br>';
