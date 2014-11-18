@@ -67,7 +67,7 @@
                                             $songLink = $song->getLink();
 
                                             echo '<tr>';
-                                            echo '<td>' . $song->getTitle_InfoBox() . '</td>';
+                                            echo '<td>' . $song->js_title_infoBox() . '</td>';
                                             echo '<td>' . $song->getArtists() . '</td>';
                                             echo '<td>' . $song->getGenres() . '</td>';
                                             echo '<td>' . '' . '</td>';
