@@ -1,86 +1,122 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/php/lockService.php'; ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; ?>
+        <!--<base href="../">-->
+        <?php
+        require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
+        include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
+        include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
+        echo '<script src="http://' . $_SERVER['SERVER_NAME'] . '/js/songFunctions.js"></script>';
+        ?>
+
     </head>
     <body>
-        <!--Start Header-->
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
         <!--End Header-->
         <!--Start Middle-->
         <div id="main" class="container-fluid">
-
-
             <!--Start Content-->
             <div class="row">
                 <div id="left-column" class="col-sm-4">
                     <div class="well bs-component">
                         <!--<legend>LEFT COLUMN</legend>-->
-                        <h1>Left Column</h1>
+                        <h1></h1>
 
                         <div class="form-horizontal" action="" method="POST"></div>
 
                         <div class="well-1 bs-component">
-                            <div class="video-container">
+                            <div class="video-container" id="vidWindow_admin">
                                 <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
-                                <iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>
-                            </div>
+                                <?php
+//                                $mixTapeList = getBestMixTape();
+//
+//                                $randSongNumber = rand(0, (count($mixTapeList) - 1));
+//                                $initialSong = getSong($mixTapeList[$randSongNumber]);
+//                                if ($initialSong instanceof Song) {
+//                                    echo '<script>window.onload = (function(){' . $initialSong->getJavascript_changeBox() . ';});</script>';
+//                                }
+                                ?>
+                                <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
+                                <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;  ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
+                            </div><p id="songInfo_admin"></p>
                         </div>
                     </div>
                 </div>
 
-                <div id="right-column" class="col-sm-8">
+                <div id="right-column" class="col-sm-4">
                     <div class="well bs-component">
                         <!--<legend>RIGHT COLUMN</legend>-->
-                        <h1>All Songs</h1>
 
                         <div class="form-horizontal" action="" method="POST"></div>
 
-                        <div class="well-1 bs-component">
+                        <?php
+                        $songListUnapproved = getUnapprovedSongs();
+                        if (count($songListUnapproved) > 0) {
+                            ?>
                             <table class="table">
-                                <thead>
-                                    <tr>
-                                        <td><b>Title</b></td>
 
-                                        <td><b>Artist</b></td>
+                                <h1>Songs awaiting approval</h1>
 
-                                        <td><b>Genres</b></td>
+                                <?php
+                                foreach ($songListUnapproved as $song) {
+                                    if ($song instanceof Song) {
+                                        $songTitle = $song->title;
+                                        $songArtist = $song->getArtists();
+                                        $songGenre = $song->getGenres();
+                                        $songLink = $song->getLink();
 
-                                        <td><b>Actions</b></td>
-                                    </tr>
-                                    <?php
-                                    include_once './php/queries.php';
-                                    include_once './php/objects.php';
-                                    $allSongs = getAllSongs();
-
-                                    foreach ($allSongs as $song) {
-                                        if ($song instanceof Song) {
-                                            echo '<tr>';
-                                            echo '<td>' . $song->title . '</td>';
-                                            echo '<td>' . $song->getArtists() . '</td>';
-                                            echo '<td>' . $song->getGenres() . '</td>';
-                                            echo '<td>' . '</td>';
-                                        }
+                                        echo '<tr><td>'
+                                        . $song->js_infoBox_admin() . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                                     }
-                                    ?>
-
-                                </thead>
-                                <tbody>
-                                    <!--Start well-1-->
-
-                                    <?php
-                                    ?>
-                                </tbody>
+                                }
+                                ?>
                             </table>
+                        <?php } ?>
+                        <?php
+                        $songListFlagged = getFlaggedSongs();
+                        if (count($songListFlagged) > 0) {
+                            ?>
+                            <table class="table">
 
-                            <!--End well-1-->
-                        </div>
+                                <h1>Flagged songs</h1>
+                                <?php
+                                foreach ($songListFlagged as $song) {
+                                    if ($song instanceof Song) {
+                                        $songTitle = $song->title;
+                                        $songArtist = $song->getArtists();
+                                        $songGenre = $song->getGenres();
+                                        $songLink = $song->getLink();
+
+                                        echo '<tr><td>'
+                                        . $song->js_infoBox_admin() . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                    }
+                                }
+                                ?>
+                            </table>
+                        <?php } ?>
+                        <h1>Songs</h1>
+                        <table class="table">
+                            <?php
+                            $songListNormal = getApprovedAndUnflaggedSongs();
+                            foreach ($songListNormal as $song) {
+                                if ($song instanceof Song) {
+                                    $songTitle = $song->title;
+                                    $songArtist = $song->getArtists();
+                                    $songGenre = $song->getGenres();
+                                    $songLink = $song->getLink();
+
+                                    echo '<tr><td>'
+                                    . $song->js_infoBox_admin() . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                }
+                            }
+                            ?>
+                            <?php ?>
+                        </table>
+                        <!--End well-1-->
+
                     </div>
 
                 </div>
-                <!--End Content-->
 
             </div>
             <!--End Middle-->
