@@ -25,7 +25,7 @@
                         <div class="form-horizontal" action="" method="POST"></div>
 
                         <div class="well-1 bs-component">
-                            <div class="video-container" id="vidWindow">
+                            <div class="video-container" id="vidWindow_admin">
                                 <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
                                 <?php
 //                                $mixTapeList = getBestMixTape();
@@ -38,7 +38,7 @@
                                 ?>
                                 <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
                                 <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;  ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
-                            </div><p id="songInfo"></p>
+                            </div><p id="songInfo_admin"></p>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                                         $songLink = $song->getLink();
 
                                         echo '<tr><td>'
-                                        . $song->getTitleArtist_InfoBox() . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                        . $song->js_infoBox() . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                                     }
                                 }
                                 ?>
@@ -88,7 +88,7 @@
                                         $songLink = $song->getLink();
 
                                         echo '<tr><td>'
-                                        . $song->getTitleArtist_InfoBox() . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                        . $song->js_infoBox() . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                                     }
                                 }
                                 ?>
@@ -106,7 +106,7 @@
                                     $songLink = $song->getLink();
 
                                     echo '<tr><td>'
-                                    . $song->getTitleArtist_InfoBox() . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                    . $song->js_infoBox() . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                                 }
                             }
                             ?>
