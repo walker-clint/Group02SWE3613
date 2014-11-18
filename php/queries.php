@@ -154,6 +154,30 @@ function getFlaggedSongs() {
 }
 
 /**
+ * returns all approved and unflagged songs in the DB
+ * @return Song[] all the flagged songs in the DB
+ */
+function getApprovedAndUnflaggedSongs() {
+    $con = initializeConnection();
+
+    $query = 'SELECT song_id, title, approved, flagged, youtube, youtube_approved '
+            . 'FROM tbl_song '
+            . 'WHERE tbl_song.flagged = 0 AND tbl_song.approved = 1';
+    $stmt = $con->prepare($query);
+
+    $stmt->execute();
+    $stmt->bind_result($id, $song_title, $app, $flag, $you, $youApp);
+    $returnArray = array();
+    while ($stmt->fetch()) {
+        $genre = getSongGenre($id);
+        $artist = getSongArtist($id);
+        $tempSong = new Song($id, $song_title, $app, $flag, $you, $youApp, $genre, $artist);
+        array_push($returnArray, $tempSong);
+    }
+    return $returnArray;
+}
+
+/**
  * @deprecated
  * @param int $userIDinc
  * @return MixSong[] array of mixtap records
