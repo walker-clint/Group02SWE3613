@@ -41,7 +41,8 @@ class Song {
      * @return String formatted HTML
      */
     public function js_changeBox() {
-        return 'changeBox(\'' . $this->title . '\''
+        return 'changeBox(\'' . $this->id . '\''
+                . ',\'' . $this->title . '\''
                 . ',\'' . $this->getArtists() . '\''
                 . ',\'' . $this->getGenres() . '\''
                 . ',\'' . $this->getLink() . '\')';
