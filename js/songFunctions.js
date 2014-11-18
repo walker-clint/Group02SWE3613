@@ -8,9 +8,9 @@
  * @param String songLink the youtube key for the song ex: "hX3O5v-ylC4"
  */
 
-function changeBox(title, artist, genre, songLink) {
+function changeBox(id, title, artist, genre, songLink) {
 //alert("Playing " + songLink);
-    changeInfo(title, artist, genre);
+    changeInfo(id, title, artist, genre);
     changeVideo(songLink);
 }
 
@@ -38,11 +38,19 @@ function changeVideo(songLink) {
  * @param {type} genre
  */
 
-function changeInfo(title, artist, genre) {
+function changeInfo(id, title, artist, genre) {
     var element = document.getElementById("songInfo");
     var info = 'Title: ' + title
             + '<br>Artist: ' + artist
             + '<br>Genre: ' + genre;
+
+    var color = 'red';
+    info += '<form method="POST" action = "./php/menu_functions.php">'
+            + '<input type="hidden" name="actionType" value="toggleFlag">'
+            + '<input type="hidden" name="songId" value="' + id + '">'
+            + '<input type="image" src="./img/' + color + '_flag.png" height="35px" width="35px">'
+            + '</form>';
+
     element.innerHTML = info;
 }
 
@@ -89,8 +97,8 @@ function changeInfo_admin(id, title, artist, genre, approved, flagged) {
             + '<br>Title: ' + title
             + '<br>Artist: ' + artist
             + '<br>Genre: ' + genre;
-            //+ '<br>Approved: ' + approved
-            //+ '<br>Flagged: ' + flagged;
+    //+ '<br>Approved: ' + approved
+    //+ '<br>Flagged: ' + flagged;
     if (approved != 1) {
         info += '<br>Waiting on approval';
 //        info += '<form method="POST" action = "./php/functions_admin.php">'
