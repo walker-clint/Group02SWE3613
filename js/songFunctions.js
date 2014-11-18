@@ -8,9 +8,9 @@
  * @param String songLink the youtube key for the song ex: "hX3O5v-ylC4"
  */
 
-function changeBox(id, title, artist, genre, songLink) {
+function changeBox(id, title, artist, genre, songLink, flagged) {
 //alert("Playing " + songLink);
-    changeInfo(id, title, artist, genre);
+    changeInfo(id, title, artist, genre, flagged);
     changeVideo(songLink);
 }
 
@@ -38,18 +38,20 @@ function changeVideo(songLink) {
  * @param {type} genre
  */
 
-function changeInfo(id, title, artist, genre) {
+function changeInfo(id, title, artist, genre, flagged) {
     var element = document.getElementById("songInfo");
     var info = 'Title: ' + title
             + '<br>Artist: ' + artist
             + '<br>Genre: ' + genre;
 
-    var color = 'red';
-    info += '<form method="POST" action = "./php/menu_functions.php">'
-            + '<input type="hidden" name="actionType" value="toggleFlag">'
-            + '<input type="hidden" name="songId" value="' + id + '">'
-            + '<input type="image" src="./img/' + color + '_flag.png" height="35px" width="35px">'
-            + '</form>';
+    if (flagged != 1) {
+        var color = 'red';
+        info += '<form method="POST" action = "./php/menu_functions.php">'
+                + '<input type="hidden" name="actionType" value="toggleFlag">'
+                + '<input type="hidden" name="songId" value="' + id + '">'
+                + '<input type="image" src="./img/' + color + '_flag.png" height="35px" width="35px">'
+                + '</form>';
+    }
 
     element.innerHTML = info;
 }
@@ -109,8 +111,8 @@ function changeInfo_admin(id, title, artist, genre, approved, flagged) {
     }
 
     var color = 'red';
-    if(flagged ==1){
-        color='green';
+    if (flagged == 1) {
+        color = 'green';
     }
     info += '<form method="POST" action = "./php/menu_functions.php">'
             + '<input type="hidden" name="actionType" value="toggleFlag">'

@@ -45,7 +45,8 @@ class Song {
                 . ',\'' . $this->title . '\''
                 . ',\'' . $this->getArtists() . '\''
                 . ',\'' . $this->getGenres() . '\''
-                . ',\'' . $this->getLink() . '\')';
+                . ',\'' . $this->getLink() . '\''
+                . ',\'' . $this->flagged . '\')';
     }
 
     /**
