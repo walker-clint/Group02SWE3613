@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -11,9 +6,6 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        //include_once dirname(__FILE__) . '/../php/setQueries.php';
-        //include_once dirname(__FILE__) . '/../php/queries.php';
-        //include_once dirname(__FILE__) . '/../php/objects.php';
         include_once $_SERVER['DOCUMENT_ROOT'] . '/php/setQueries.php';
         include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
         include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
