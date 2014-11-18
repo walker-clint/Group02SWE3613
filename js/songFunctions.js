@@ -108,12 +108,14 @@ function changeInfo_admin(id, title, artist, genre, approved, flagged) {
 //                + '</form>';
     }
 
-    if (flagged == 1) {
-        info += '<form method="POST" action = "./php/menu_functions.php">'
-                + '<input type="hidden" name="actionType" value="toggleFlag">'
-                + '<input type="hidden" name="songId" value="' + id + '">'
-                + '<input type="image" src="./img/red_flag.png" height="35px" width="35px">'
-                + '</form>';
+    var color = 'red';
+    if(flagged ==1){
+        color='green';
     }
+    info += '<form method="POST" action = "./php/menu_functions.php">'
+            + '<input type="hidden" name="actionType" value="toggleFlag">'
+            + '<input type="hidden" name="songId" value="' + id + '">'
+            + '<input type="image" src="./img/' + color + '_flag.png" height="35px" width="35px">'
+            + '</form>';
     element.innerHTML = info;
 }
