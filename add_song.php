@@ -14,7 +14,7 @@
     <div class="well bs-component">
       <h1 align="center">Login</h1>
       <div class="well-1 bs-component">
-        <form action="#" method="post">
+        <form class="form-horizontal" action="#" method="post">
           <div class="form-group">
             <label for="title" class="col-lg-4 control-label">Title</label>
             <div class="col-lg-8">
