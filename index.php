@@ -76,31 +76,31 @@
                 <!--<legend>RIGHT COLUMN</legend>-->
                 <h1>Top Ten Songs</h1>
 
-                <div class="form-horizontal" action="" method="POST"></div>
+                <div class="form-horizontal" action="" method="POST">
 
-                <table>
-                    <?php
-                    $increment = 1;
-                    foreach ($mixTapeList as $songInt) {
-                        $song = getSong($songInt);
-                        if ($song instanceof Song) {
-                            $songTitle = $song->title;
-                            $songArtist = $song->getArtists();
-                            $songGenre = $song->getGenres();
-                            $songLink = $song->getLink();
+                    <table>
+                        <?php
+                        $increment = 1;
+                        foreach ($mixTapeList as $songInt) {
+                            $song = getSong($songInt);
+                            if ($song instanceof Song) {
+                                $songTitle = $song->title;
+                                $songArtist = $song->getArtists();
+                                $songGenre = $song->getGenres();
+                                $songLink = $song->getLink();
 
-                            echo '<tr><td><h1>' . $increment . '</h1></td><td><div class="well-2 bs-component"'
-                                . 'onclick="' . $song->js_changeBox() . '" onmouseover="" style="cursor: pointer;">'
-                                . $song->js_infoBox() . '</div></td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                echo '<tr><td><h1>' . $increment . '</h1></td><td><div class="well-2 bs-component"'
+                                    . 'onclick="' . $song->js_changeBox() . '" onmouseover="" style="cursor: pointer;">'
+                                    . $song->js_infoBox() . '</div></td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                            }
+                            $increment += 1;
                         }
-                        $increment += 1;
-                    }
-                    ?>
-                    <?php ?>
+                        ?>
+                        <?php ?>
 
-                </table>
-                <!--End well-1-->
-
+                    </table>
+                    <!--End well-1-->
+                </div>
             </div>
 
         </div>
