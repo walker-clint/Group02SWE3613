@@ -7,6 +7,8 @@ $results="";
 if($_POST['title']){
 	$title = $_POST['title'];
 $sql = mysql_query("SELECT * FROM tbl_song WHERE title LIKE '%{$title}%'"); 
+$song_check = mysql_num_rows($sql); 
+if ($song_check > 0){ 
     while($row = mysql_fetch_array($sql)){
 		$song_id = $row['song_id'];
 		$song_link = $row['youtube'];
@@ -29,7 +31,7 @@ $genre_name = $genre_row['name'];
 		$artist_query = "SELECT * FROM tbl_artist where artist_id = $artist_id LIMIT 1";
 $artist_result = mysql_query($artist_query);
 while($artist_row = mysql_fetch_assoc($artist_result)){
-$artist_name = $artist_row['artist_id'];
+$artist_name = $artist_row['name'];
 }
 $results.='<tr>';
 $results.='<td>' . $song_title . '</td>';
@@ -38,8 +40,13 @@ $results.='<td>' . $genre_name . '</td>';
 $results.='<td>' . $song_link . '</td>';
 $results.='<td><button type="button" onclick="">Use This Song</button></td>';
 $results.='</tr>';
- 
-}
+	}
+	$results.='<tr><td colspan="5"><button type="button" onclick="">Submit a new Song</button></td><tr>';
+}else{
+	//no songs found	
+		
+	}
+
 }
 ?>
 </head>
@@ -59,7 +66,7 @@ $results.='</tr>';
           <div class="form-group">
             <label for="title" class="col-lg-4 control-label">Title</label>
             <div class="col-lg-8">
-              <input align="center" type="text" class="form-control" id="title" name="title">
+              <input align="center" type="text" class="form-control" id="title" name="title" value='<?php echo "$title" ?>'>
             </div>
           </div>
           <div align="center">
