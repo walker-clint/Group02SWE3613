@@ -38,13 +38,13 @@
                                 }
                                 ?>
                                 <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
-                                <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;   ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
+                                <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;      ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
                             </div><p id="songInfo"></p>
                         </div>
                     </div>
                 </div>
 
-                <div id="right-column" class="col-sm-8">
+                <div id="right-column" class="col-sm-6">
                     <div class="well bs-component">
                         <!--<legend>RIGHT COLUMN</legend>-->
                         <h1>Top Ten Songs</h1>
@@ -80,6 +80,20 @@
 
             </div>
             <!--End Middle-->
+            <div class="row">
+                <div id="left-column" class="col-sm-4">
+                    <div class="well bs-component">
+                        <div class="panel panel-footer" align="left">
+                            <div class="panel panel-default">
+
+                            </div>
+                            <div class="panel panel-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!--End Container-->
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -93,5 +107,6 @@
             <script src="plugins/tinymce/jquery.tinymce.min.js"></script>
             <!-- All functions for this theme + document.ready processing -->
             <script src="js/devoops.js"></script>
+        </div>
     </body>
 </html>
