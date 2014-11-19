@@ -85,7 +85,8 @@
         <div id="left-column" class="col-sm-2"></div>
     </div>
     <!--End Middle-->
-    <div id="left-ad" class="col-sm-4">
+    <div id="left-column" class="col-sm-2"></div>
+    <div id="left-ad" class="col-sm-2">
         <div class="well bs-component">
             <div class="panel panel-default" align="left">
                 <div class="panel panel-body">
@@ -133,7 +134,7 @@
             </div>
         </div>
     </div>
-    <div id="right-ad" class="col-sm-4">
+    <div id="right-ad" class="col-sm-2">
         <div class="well bs-component">
             <div class="panel panel-default" align="left">
                 <div class="panel panel-body">
@@ -157,6 +158,7 @@
             </div>
         </div>
     </div>
+    <div id="left-column" class="col-sm-2"></div>
     <!--footer-->
     <footer class="footer">
         <div class="container">
