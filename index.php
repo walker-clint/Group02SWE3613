@@ -92,7 +92,7 @@
                     <div class="panel panel-default" align="left">
                         <div class="panel panel-body">
                             <div align="center">
-                                <h3>You Ad here!!</h3>
+                                <h3>Your Ad here!!</h3>
                             </div>
 
                             <div id="logo" class="col-xs-12 col-sm-12">
@@ -116,7 +116,7 @@
                     <div class="panel panel-default" align="left">
                         <div class="panel panel-body">
                             <div align="center">
-                                <h3>You Ad here!!</h3>
+                                <h3>Your Ad here!!</h3>
                             </div>
 
                             <div id="logo" class="col-xs-12 col-sm-12"><img
@@ -140,7 +140,7 @@
                     <div class="panel panel-default" align="left">
                         <div class="panel panel-body">
                             <div align="center">
-                                <h3>You Ad here!!</h3>
+                                <h3>Your Ad here!!</h3>
                             </div>
 
                             <div id="logo" class="col-xs-12 col-sm-12"><img
