@@ -74,68 +74,68 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <div align="center"><h3 class="modal-title">Baking</h3></div>
+                            <!--                            <div align="center"><h3 class="modal-title">Baking</h3></div>-->
                         </div>
                         <div class="modal-body">
                             <div align="center">
-                                <div id="main" class="container-fluid">
+                                <!--                                <div id="main" class="container-fluid">-->
 
 
-                                    <div class="well bs-component">
-                                        <!--<legend>LEFT COLUMN</legend>-->
-                                        <h1 align="center">Login</h1>
+                                <div class="well bs-component">
+                                    <!--<legend>LEFT COLUMN</legend>-->
+                                    <h1 align="center">Login</h1>
 
-                                        <div class="well-1 bs-component">
-                                            <form class="form-horizontal" action="php/loginService.php" method="POST">
-                                                <!--<font color="#FF0000"><?php echo $error; ?></font> <br>-->
-                                                <div class="form-group">
-                                                    <label for="user_name" class="col-lg-4 control-label">User
-                                                        Name</label>
+                                    <div class="well-1 bs-component">
+                                        <form class="form-horizontal" action="php/loginService.php" method="POST">
+                                            <!--<font color="#FF0000"><?php echo $error; ?></font> <br>-->
+                                            <div class="form-group">
+                                                <label for="user_name" class="col-lg-4 control-label">User
+                                                    Name</label>
 
-                                                    <div class="col-lg-8">
-                                                        <input type="text" class="form-control" id="username"
-                                                               name="username" placeholder="User Name">
-                                                    </div>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="username"
+                                                           name="username" placeholder="User Name">
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="password"
-                                                           class="col-lg-4 control-label">Password</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password"
+                                                       class="col-lg-4 control-label">Password</label>
 
-                                                    <div class="col-lg-8">
-                                                        <input align="center" type="Password" class="form-control"
-                                                               id="password" name="password"
-                                                               placeholder="Password">
-                                                    </div>
+                                                <div class="col-lg-8">
+                                                    <input align="center" type="Password" class="form-control"
+                                                           id="password" name="password"
+                                                           placeholder="Password">
                                                 </div>
-                                                <div align="center">
-                                                    <input class="btn btn-primary" type="submit" value="Login"/>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="btn-group-vertical">
-                                        <a type="button" id="btn1" class="btn btn-primary btn-lg"
-                                           href="http://group04.swe3613.com/recipes.php">
-                                            Recipes
-                                        </a>
-                                        <a type="button" id="btn2" class="btn btn-primary btn-lg"
-                                           href="http://group04.swe3613.com/ingredients.php">
-                                            Ingredients
-                                        </a>
+                                            </div>
+                                            <div align="center">
+                                                <input class="btn btn-primary" type="submit" value="Login"/>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close
-                                    </button>
-                                </div>
+
+
+<!--                                <div class="btn-group-vertical">-->
+<!--                                    <a type="button" id="btn1" class="btn btn-primary btn-lg"-->
+<!--                                       href="http://group04.swe3613.com/recipes.php">-->
+<!--                                        Recipes-->
+<!--                                    </a>-->
+<!--                                    <a type="button" id="btn2" class="btn btn-primary btn-lg"-->
+<!--                                       href="http://group04.swe3613.com/ingredients.php">-->
+<!--                                        Ingredients-->
+<!--                                    </a>-->
+<!--                                </div>-->
                             </div>
-                            <!-- /.modal-content -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close
+                                </button>
+                            </div>
                         </div>
+                        <!-- /.modal-content -->
                     </div>
-                    <!-- /.modal-dialog -->
                 </div>
-                <!-- /.modal -->
+                <!-- /.modal-dialog -->
             </div>
+            <!-- /.modal -->
+        </div>
 </header>
