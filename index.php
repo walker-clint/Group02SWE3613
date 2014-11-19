@@ -83,6 +83,7 @@
         </div>
         <div id="left-column" class="col-sm-2"></div>
     </div>
+
     <!--End Middle-->
     <div row>
         <div id="left-column" class="col-sm-2"></div>
@@ -94,8 +95,8 @@
                             <h3>You Ad here!!</h3>
                         </div>
 
-                        <div id="logo" class="col-xs-12 col-sm-12"><img
-                                src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
+                        <div id="logo" class="col-xs-12 col-sm-12">
+                            <img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
                         </div>
                     </div>
                     <div class="panel panel-footer">
@@ -160,6 +161,7 @@
         </div>
         <div id="left-column" class="col-sm-2"></div>
     </div>
+
     <!--footer-->
     <footer class="footer">
         <div class="container">
