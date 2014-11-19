@@ -53,7 +53,7 @@ $results.='</tr>';
     <div class="well bs-component">
       <h1 align="center">Add Song: Search for an Existing Song</h1>
       <div class="well-1 bs-component">
-        <form class="form-horizontal" method="post">
+        <form class="form-horizontal" action="add_song_search.php" method="post">
           <div class="form-group">
             <label for="title" class="col-lg-4 control-label">Title</label>
             <div class="col-lg-8">
