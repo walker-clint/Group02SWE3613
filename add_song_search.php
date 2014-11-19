@@ -2,11 +2,7 @@
 <html lang="en">
 <head>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; 
-?>
-</head>
-<body>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; 
-
+include_once "connect_to_mysql.php";
 $results="";
 if($_POST['title']){
 	$title = $_POST['title'];
@@ -44,6 +40,11 @@ $results.='</tr>';
  
 }
 }
+?>
+</head>
+<body>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; 
+
 
 ?>
 <div id="main" class="container-fluid">
