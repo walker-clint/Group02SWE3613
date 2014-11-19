@@ -1,5 +1,4 @@
 <?php
- include_once "connect_to_mysql.php";
 // Data could be pulled from a DB or other source
 $items = array();
 $query = "SELECT * FROM tbl_song LIMIT 5";

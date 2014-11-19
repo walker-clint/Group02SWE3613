@@ -8,39 +8,38 @@
 <body>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
 <div id="main" class="container-fluid">
-  <div class="row">
-    <div id="left-column" class="col-sm-4"></div>
-    <div id="center1-column" class="col-sm-4">
-      <div class="well bs-component">
-        <h1 align="center">Login</h1>
-        <div class="well-1 bs-component">
-          <form action="#" method="post">
-            <div class="form-group">
-              <label for="title" class="col-lg-4 control-label">Title</label>
-              <div class="col-lg-8">
-                <input align="center" type="text" class="form-control" id="title" name="title">
-              </div>
+<div class="row">
+  <div id="left-column" class="col-sm-4"></div>
+  <div id="center1-column" class="col-sm-4">
+    <div class="well bs-component">
+      <h1 align="center">Login</h1>
+      <div class="well-1 bs-component">
+        <form action="#" method="post">
+          <div class="form-group">
+            <label for="title" class="col-lg-4 control-label">Title</label>
+            <div class="col-lg-8">
+              <input align="center" type="text" class="form-control" id="title" name="title">
             </div>
-            <div class="form-group">
-              <label for="artist" class="col-lg-4 control-label">Artist</label>
-              <div class="col-lg-8">
-                <input align="center" type="text" class="form-control" id="artist" name="artist">
-              </div>
+          </div>
+          <div class="form-group">
+            <label for="artist" class="col-lg-4 control-label">Artist</label>
+            <div class="col-lg-8">
+              <input align="center" type="text" class="form-control" id="artist" name="artist">
             </div>
-            <div class="form-group">
-              <label for="genre" class="col-lg-4 control-label">Genre</label>
-              <div class="col-lg-8">
-                <input align="center" type="text" class="form-control" id="genre" name="genre">
-              </div>
+          </div>
+          <div class="form-group">
+            <label for="genre" class="col-lg-4 control-label">Genre</label>
+            <div class="col-lg-8">
+              <input align="center" type="text" class="form-control" id="genre" name="genre">
             </div>
-            <div class="form-group">
-              <label for="link" class="col-lg-4 control-label">Youtube Link</label>
-              <div class="col-lg-8">
-                <input align="center" type="text" class="form-control" id="link" name="link">
-              </div>
+          </div>
+          <div class="form-group">
+            <label for="link" class="col-lg-4 control-label">Youtube Link</label>
+            <div class="col-lg-8">
+              <input align="center" type="text" class="form-control" id="link" name="link">
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -57,9 +56,8 @@
 <script src="plugins/tinymce/jquery.tinymce.min.js"></script> 
 <!-- All functions for this theme + document.ready processing --> 
 <script src="js/devoops.js"></script>
-<link rel="stylesheet" href="http://static.jquery.com/ui/css/base2.css" type="text/css" media="all" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script> 
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js" type="text/javascript"></script> 
 <script type="text/javascript">   
 
 $(document).ready(function(){
@@ -72,7 +70,7 @@ $(document).ready(function(){
 	 $("#link").val(ui.item.ylink); }, 
 	 minLength:1 
 	 }; 
-	 $("#city").autocomplete(ac_config);
+	 $("#title").autocomplete(ac_config);
 	  });
 	   </script>
 </body>
