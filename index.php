@@ -18,7 +18,7 @@
         <div id="main" class="container-fluid">
             <!--Start Content-->
             <div class="row">
-                <div id="left-column" class="col-sm-6">
+                <div id="left-column" class="col-sm-4">
                     <div class="well bs-component">
                         <!--<legend>LEFT COLUMN</legend>-->
                         <h1></h1>
@@ -44,14 +44,17 @@
                     </div>
                 </div>
 
-                <div id="left-column" class="col-sm-6">
+                <div id="left-column" class="col-sm-4">
                     <div class="well bs-component">
                         <div class="panel panel-footer" align="left">
                             <div class="panel panel-default">
-                                test
+                                <div id="logo" class="col-xs-2 col-sm-2"><img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/></div>
                             </div>
                             <div class="panel panel-footer">
-                                test footer
+                                <h3>Image Credit: <a href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
+                                                 title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
+                                    Artist Painter Comic Characters Painters</a> from <a href="http://vector.me/" title="Vector.me"
+                                </h3>
                             </div>
                         </div>
                     </div>
