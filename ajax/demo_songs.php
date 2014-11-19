@@ -1,5 +1,6 @@
 <?php
 // Data could be pulled from a DB or other source
+require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
 $items = array();
 $query = "SELECT * FROM tbl_song LIMIT 5";
 $result = mysql_query($query);
