@@ -54,15 +54,15 @@
                         </div>
                     </div>
                     <div class="panel panel-footer">
-                        <a1>
-                            <a>Image Credit: <a
+                        <p>
+                            <a1>Image Credit: <a1
                                     href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
                                     title="People Man Artist Painter Comic Characters Painters" target="_blank">People
                                     Man
-                                    Artist Painter Comic Characters Painters</a> from <a href="http://vector.me/"
+                                    Artist Painter Comic Characters Painters</a1> from <a1 href="http://vector.me/"
                                                                                          title="Vector.me"
-                            </a>
-                        </a1>
+                            </a1>
+                        </p>
                     </div>
                 </div>
             </div>
