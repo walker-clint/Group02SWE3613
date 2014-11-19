@@ -49,10 +49,10 @@
         <div id="right-column" class="col-sm-4">
             <ul class="nav nav-tabs nav-justified">
                 ...
-                <li>
+                <li><h1>Top Ten Songs</h1>
                     <div class="well bs-component">
                         <!--<legend>RIGHT COLUMN</legend>-->
-                        <h1>Top Ten Songs</h1>
+
 
                         <div class="form-horizontal" action="" method="POST">
 
@@ -80,6 +80,9 @@
                             <!--End well-1-->
                         </div>
                     </div>
+                </li>
+                <li>
+                    <h1>Top Ten Songs 2</h1>
                 </li>
             </ul>
         </div>
