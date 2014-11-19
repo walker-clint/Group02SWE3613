@@ -47,7 +47,9 @@
 
 
         <div id="right-column" class="col-sm-4">
-
+            <div align="center">
+                <h1>Your Song List</h1>
+            </div>
             <div class="well bs-component">
                 <!--<legend>RIGHT COLUMN</legend>-->
 
