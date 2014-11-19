@@ -25,7 +25,6 @@
             }
             
             $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
-<<<<<<< HEAD
             <li class="btn-label-right">
             <div class="well-1 btn">
             <a href="main_menu.php">' . $full_name . '</a>
@@ -49,31 +48,6 @@
             </div>
             </li>
             </ul>';
-=======
-	<li class="btn-label-right">
-	<div class="well-1 btn">
-	<a href="'.$indexLink.'">' . $full_name . '</a>
-	</div>
-	</li>
-	<li class="btn-label-right">
-	<div class="well-1 btn">
-	<a href="http://' . $_SERVER['SERVER_NAME'] . '/php/logoutService.php">Log Out</a>
-	</li>
-	</ul>';
-        } else {
-            $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
-	<li class="btn-label-right">
-	<div class="well-1 btn">
-	<a href="login.php">Login</a>
-	</div>
-	</li>
-	<li class="btn-label-right">
-	<div class="well-1 btn">
-	<a href="register.php">Register</a>
-	</div>
-	</li>
-	</ul>';
->>>>>>> origin/master
         }
         ?>
 
