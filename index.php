@@ -18,7 +18,7 @@
         <div id="main" class="container-fluid">
             <!--Start Content-->
             <div class="row">
-                <div id="left-column" class="col-sm-4">
+                <div id="left-column" class="col-sm-6">
                     <div class="well bs-component">
                         <!--<legend>LEFT COLUMN</legend>-->
                         <h1></h1>
@@ -40,6 +40,19 @@
                                 <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
                                 <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;      ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
                             </div><p id="songInfo"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="left-column" class="col-sm-6">
+                    <div class="well bs-component">
+                        <div class="panel panel-footer" align="left">
+                            <div class="panel panel-default">
+                                test
+                            </div>
+                            <div class="panel panel-footer">
+                                test footer
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -80,20 +93,12 @@
 
             </div>
             <!--End Middle-->
-            <div class="row">
-                <div id="left-column" class="col-sm-4">
-                    <div class="well bs-component">
-                        <div class="panel panel-footer" align="left">
-                            <div class="panel panel-default">
-
-                            </div>
-                            <div class="panel panel-footer">
-
-                            </div>
-                        </div>
-                    </div>
+            <!--footer-->
+            <footer class="footer">
+                <div class="container">
+                    <p class="text-muted">Place sticky footer content here.</p>
                 </div>
-            </div>
+            </footer>
 
             <!--End Container-->
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
