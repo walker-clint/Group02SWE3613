@@ -2,17 +2,15 @@
 <html lang="en">
 <head>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; 
-
-
-
 ?>
 </head>
 <body>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; 
+
 $results="";
 if($_POST['title']){
-	
-$sql = mysql_query("SELECT * FROM tbl_song WHERE title='$title'"); 
+	$title = $_POST['title'];
+$sql = mysql_query("SELECT * FROM tbl_song WHERE title LIKE '%{$title}%'"); 
     while($row = mysql_fetch_array($sql)){
 		$song_id = $row['song_id'];
 		$song_link = $row['youtube'];
@@ -45,7 +43,9 @@ $results.='<td><button type="button" onclick="">Use This Song</button></td>';
 $results.='</tr>';
  
 }
-}?>
+}
+
+?>
 <div id="main" class="container-fluid">
 <div class="row">
   <div id="left-column" class="col-sm-4"></div>
