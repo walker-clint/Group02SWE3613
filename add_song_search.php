@@ -34,20 +34,34 @@ while($artist_row = mysql_fetch_assoc($artist_result)){
 $artist_name = $artist_row['name'];
 }
 $results.='<tr>';
-$results.='<td>' . $song_title . '</td>';
-$results.='<td>' . $artist_name . '</td>';
-$results.='<td>' . $genre_name . '</td>';
-$results.='<td><a href="'.$song_link.'" target="_blank">Link</a></td>';
-$results.='<td><button type="button" onclick="">Use This Song</button></td>';
+$results.='<td><a href="'.$song_link.'" target="_blank">' . $song_title . ' by '. $artist_name . '</a></td>';
+$results.='<td><input class="btn btn-primary" type="submit" name = "create_exist" value="Use This Song"/></td>';
 $results.='</tr>';
 	}
-	//$results.='<tr><td colspan="5"><button type="button" onclick="">Submit a new Song</button></td><tr>';
+	//add button 
+	$results.='<tr><td colspan="5"><input class="btn btn-primary" type="submit" name = "create_new" value="Submit New Song"/></td><tr>';
 }else{
 	//no songs found	
-		
+	 header('Location: http://' . $_SERVER['SERVER_NAME'] . '/add_song_create.php');
+	 exit();
 	}
 
 }
+
+
+
+if($_POST['create_new']){
+	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/add_song_create.php');
+	 exit();
+	}
+	
+	if($_POST['create_exist']){
+		//insert mixtape
+		
+		
+		header('Location: http://' . $_SERVER['SERVER_NAME'] . '/user_song_list.php');
+	 exit();
+	}
 ?>
 </head>
 <body>
@@ -72,14 +86,11 @@ $results.='</tr>';
           <div align="center">
             <input class="btn btn-primary" type="submit" value="Submit"/>
           </div>
-        </form>
+        
         <table class="table">
           <thead>
             <tr>
-              <td><b>Title</b></td>
-              <td><b>Artist</b></td>
-              <td><b>Genre</b></td>
-              <td><b>Youtube Link</b></td>
+              <td><b>Song</b></td>
               <td><b>Action</b></td>
             </tr>
           </thead>
@@ -87,6 +98,7 @@ $results.='</tr>';
           <?php echo $results; ?>
           </tbody>
         </table>
+        </form>
       </div>
     </div>
   </div>
