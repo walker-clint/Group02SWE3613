@@ -51,10 +51,10 @@
                                 <div id="logo" class="col-xs-2 col-sm-2"><img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/></div>
                             </div>
                             <div class="panel panel-footer">
-                                <a1>Image Credit: <a href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
-                                                 title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
-                                    Artist Painter Comic Characters Painters</a> from <a href="http://vector.me/" title="Vector.me"
-                                </a1>
+<!--                                <a1>Image Credit: <a href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"-->
+<!--                                                 title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man-->
+<!--                                    Artist Painter Comic Characters Painters</a> from <a href="http://vector.me/" title="Vector.me"-->
+<!--                                </a1>-->
                             </div>
                         </div>
                     </div>
