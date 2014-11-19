@@ -47,8 +47,8 @@
             <!---->
             <!--                <div id="left-column" class="col-sm-4">-->
             <div class="well bs-component">
-                <div class="panel panel-footer" align="left">
-                    <div class="panel panel-default">
+                <div class="panel panel-default" align="left">
+                    <div class="panel panel-body">
                         <div id="logo" class="col-xs-6 col-sm-6"><img
                                 src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
                         </div>
