@@ -23,24 +23,25 @@
                 <!--<legend>LEFT COLUMN</legend>-->
                 <h1></h1>
 
-                <div class="form-horizontal" action="" method="POST"></div>
+                <div class="form-horizontal" action="" method="POST">
 
-                <div class="well-1 bs-component">
-                    <div class="video-container" id="vidWindow">
-                        <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
-                        <?php
-                        $mixTapeList = getBestMixTape();
+                    <div class="well-1 bs-component">
+                        <div class="video-container" id="vidWindow">
+                            <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
+                            <?php
+                            $mixTapeList = getBestMixTape();
 
-                        $randSongNumber = rand(0, (count($mixTapeList) - 1));
-                        $initialSong = getSong($mixTapeList[$randSongNumber]);
-                        if ($initialSong instanceof Song) {
-                            echo '<script>window.onload = (function(){' . $initialSong->js_changeBox() . ';});</script>';
-                        }
-                        ?>
-                        <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
-                        <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;      ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
+                            $randSongNumber = rand(0, (count($mixTapeList) - 1));
+                            $initialSong = getSong($mixTapeList[$randSongNumber]);
+                            if ($initialSong instanceof Song) {
+                                echo '<script>window.onload = (function(){' . $initialSong->js_changeBox() . ';});</script>';
+                            }
+                            ?>
+                            <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
+                            <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;      ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
+                        </div>
+                        <p id="songInfo"></p>
                     </div>
-                    <p id="songInfo"></p>
                 </div>
             </div>
             <!--                </div>-->
@@ -55,12 +56,16 @@
                     </div>
                     <div class="panel panel-footer">
                         <p>
-                            <a1>Image Credit: <a1
+                            <a1>Image Credit:
+                                <a1
                                     href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
                                     title="People Man Artist Painter Comic Characters Painters" target="_blank">People
                                     Man
-                                    Artist Painter Comic Characters Painters</a1> from <a1 href="http://vector.me/"
-                                                                                         title="Vector.me"
+                                    Artist Painter Comic Characters Painters
+                                </a1>
+                                from
+                                <a1 href="http://vector.me/"
+                                    title="Vector.me"
                             </a1>
                         </p>
                     </div>
