@@ -50,7 +50,7 @@
             <div class="well bs-component">
                 <div class="panel panel-default" align="left">
                     <div class="panel panel-body">
-                        <div id="logo" class="col-xs-6 col-sm-6"><img
+                        <div id="logo" class="col-xs-12 col-sm-12"><img
                                 src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
                         </div>
                     </div>
