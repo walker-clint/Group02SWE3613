@@ -49,80 +49,80 @@
             <div class="well bs-component">
                 <div class="panel panel-footer" align="left">
                     <div class="panel panel-default">
-                        <div id="logo" class="col-xs-4 col-sm-4"><img
+                        <div id="logo" class="col-xs-6 col-sm-6"><img
                                 src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
                         </div>
                     </div>
                     <div class="panel panel-footer">
-                        <!--                                <a1>Image Credit: <a href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"-->
-                        <!--                                                 title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man-->
-                        <!--                                    Artist Painter Comic Characters Painters</a> from <a href="http://vector.me/" title="Vector.me"-->
-                        <!--                                </a1>-->
+                        <a1>Image Credit: <a
+                                href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
+                                title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
+                                Artist Painter Comic Characters Painters</a> from <a href="http://vector.me/"
+                                                                                     title="Vector.me"
+                        </a1>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div
-        <id
-        ="right-column" class="col-sm-6">
-        <div class="well bs-component">
-            <!--<legend>RIGHT COLUMN</legend>-->
-            <h1>Top Ten Songs</h1>
+        <div id="right-column" class="col-sm-6">
+            <div class="well bs-component">
+                <!--<legend>RIGHT COLUMN</legend>-->
+                <h1>Top Ten Songs</h1>
 
-            <div class="form-horizontal" action="" method="POST"></div>
+                <div class="form-horizontal" action="" method="POST"></div>
 
-            <table>
-                <?php
-                $increment = 1;
-                foreach ($mixTapeList as $songInt) {
-                    $song = getSong($songInt);
-                    if ($song instanceof Song) {
-                        $songTitle = $song->title;
-                        $songArtist = $song->getArtists();
-                        $songGenre = $song->getGenres();
-                        $songLink = $song->getLink();
+                <table>
+                    <?php
+                    $increment = 1;
+                    foreach ($mixTapeList as $songInt) {
+                        $song = getSong($songInt);
+                        if ($song instanceof Song) {
+                            $songTitle = $song->title;
+                            $songArtist = $song->getArtists();
+                            $songGenre = $song->getGenres();
+                            $songLink = $song->getLink();
 
-                        echo '<tr><td><h1>' . $increment . '</h1></td><td><div class="well-2 bs-component"'
-                            . 'onclick="' . $song->js_changeBox() . '" onmouseover="" style="cursor: pointer;">'
-                            . $song->js_infoBox() . '</div></td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                            echo '<tr><td><h1>' . $increment . '</h1></td><td><div class="well-2 bs-component"'
+                                . 'onclick="' . $song->js_changeBox() . '" onmouseover="" style="cursor: pointer;">'
+                                . $song->js_infoBox() . '</div></td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                        }
+                        $increment += 1;
                     }
-                    $increment += 1;
-                }
-                ?>
-                <?php ?>
+                    ?>
+                    <?php ?>
 
-            </table>
-            <!--End well-1-->
+                </table>
+                <!--End well-1-->
+
+            </div>
 
         </div>
 
     </div>
+    <!--End Middle-->
+    <!--footer-->
+    <footer class="footer">
+        <div class="container">
+            <div align="center">
 
-</div>
-<!--End Middle-->
-<!--footer-->
-<footer class="footer">
-    <div class="container">
-        <div align="center">
-
-            <p class="text-muted">Group 02p2 Project 2 SWE3613 Southern Polytechnic State Univerisity (SPSU)</p>
+                <p class="text-muted">Group 02p2 Project 2 SWE3613 Southern Polytechnic State Univerisity (SPSU)</p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<!--End Container-->
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<!--<script src="http://code.jquery.com/jquery.js"></script>-->
-<script src="plugins/jquery/jquery-2.1.0.min.js"></script>
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
-<script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script>
-<script src="plugins/tinymce/tinymce.min.js"></script>
-<script src="plugins/tinymce/jquery.tinymce.min.js"></script>
-<!-- All functions for this theme + document.ready processing -->
-<script src="js/devoops.js"></script>
+    <!--End Container-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!--<script src="http://code.jquery.com/jquery.js"></script>-->
+    <script src="plugins/jquery/jquery-2.1.0.min.js"></script>
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script>
+    <script src="plugins/tinymce/tinymce.min.js"></script>
+    <script src="plugins/tinymce/jquery.tinymce.min.js"></script>
+    <!-- All functions for this theme + document.ready processing -->
+    <script src="js/devoops.js"></script>
 </div>
 </body>
 </html>
