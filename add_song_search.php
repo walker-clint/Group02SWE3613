@@ -10,6 +10,7 @@ $sql = mysql_query("SELECT * FROM tbl_song WHERE title LIKE '%{$title}%'");
     while($row = mysql_fetch_array($sql)){
 		$song_id = $row['song_id'];
 		$song_link = $row['youtube'];
+		$song_title = $row['title'];
         		$song_genre_query = "SELECT * FROM tbl_song_genre where song_id = $song_id LIMIT 1";
 $song_genre_result = mysql_query($song_genre_query);
 while($song_genre_row = mysql_fetch_assoc($song_genre_result)){
@@ -31,7 +32,7 @@ while($artist_row = mysql_fetch_assoc($artist_result)){
 $artist_name = $artist_row['artist_id'];
 }
 $results.='<tr>';
-$results.='<td>' . $title . '</td>';
+$results.='<td>' . $song_title . '</td>';
 $results.='<td>' . $artist_name . '</td>';
 $results.='<td>' . $genre_name . '</td>';
 $results.='<td>' . $song_link . '</td>';
