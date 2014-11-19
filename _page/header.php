@@ -19,29 +19,30 @@
             while ($row = mysqli_fetch_array($sql)) {
                 $full_name = "Welcome: " . $row["first_name"] . " " . $row["last_name"];
             }
-            $indexLink='main_menu.php';
-            if($userType=='admin'){
-                $indexLink='admin_main_menu.php';
+            $indexLink = 'main_menu.php';
+            if ($userType == 'admin') {
+                $indexLink = 'admin_main_menu.php';
             }
-            
+
             $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
-             <li class="btn-label-right">
-            <div class="well-1 btn">
-            <a href="user_song_list.php">' . "Edit Your Song List" . '</a>
-            </div>
-            </li>
             <li class="btn-label-right">
             <div class="well-1 btn">
             <a href="main_menu.php">' . $full_name . '</a>
             </div>
             </li>
+             <li class="btn-label-right">
+            <div class="well-1 btn">
+            <a href="user_song_list.php">' . "Edit Your Song List" . '</a>
+            </div>
+            </li>
+
             <li class="btn-label-right">
             <div class="well-1 btn">
             <a href="http://' . $_SERVER['SERVER_NAME'] . '/php/logoutService.php">Log Out</a>
             </li>
             </ul>';
-                } else {
-                    $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
+        } else {
+            $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
             <li class="btn-label-right">
             <div class="well-1 btn">
             <a href="login.php">Login</a>
