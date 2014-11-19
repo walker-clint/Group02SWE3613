@@ -37,11 +37,11 @@ $results.='<tr>';
 $results.='<td>' . $song_title . '</td>';
 $results.='<td>' . $artist_name . '</td>';
 $results.='<td>' . $genre_name . '</td>';
-$results.='<td>' . $song_link . '</td>';
+$results.='<td><a href="'.$song_link.'" target="_blank">Link</a></td>';
 $results.='<td><button type="button" onclick="">Use This Song</button></td>';
 $results.='</tr>';
 	}
-	$results.='<tr><td colspan="5"><button type="button" onclick="">Submit a new Song</button></td><tr>';
+	//$results.='<tr><td colspan="5"><button type="button" onclick="">Submit a new Song</button></td><tr>';
 }else{
 	//no songs found	
 		
