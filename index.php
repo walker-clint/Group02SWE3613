@@ -60,8 +60,7 @@
                         <a1>Image Credit:
                             <a1 href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
                                 title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
-                                Artist Painter Comic Characters Painters>
-                                from
+                                Artist Painter Comic Characters Painters from
                             </a1>
                             <a1 href="http://vector.me/" title="Vector.me"></a1>
                         </a1>
