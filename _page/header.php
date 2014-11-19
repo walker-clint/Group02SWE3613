@@ -19,10 +19,15 @@
             while ($row = mysqli_fetch_array($sql)) {
                 $full_name = $row["first_name"] . " " . $row["last_name"];
             }
+            $indexLink='main_menu.php';
+            if($userType=='admin'){
+                $indexLink='admin_main_menu.php';
+            }
+            
             $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
 	<li class="btn-label-right">
 	<div class="well-1 btn">
-	<a href="main_menu.php">' . $full_name . '</a>
+	<a href="'.$indexLink.'">' . $full_name . '</a>
 	</div>
 	</li>
 	<li class="btn-label-right">
