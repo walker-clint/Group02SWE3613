@@ -18,6 +18,7 @@
 <div id="main" class="container-fluid">
     <!--Start Content-->
     <div class="row">
+        <div id="left-column" class="col-sm-2"></div>
         <div id="left-column" class="col-sm-4">
             <div class="well bs-component">
                 <!--<legend>LEFT COLUMN</legend>-->
@@ -48,7 +49,7 @@
 
 
 
-        <div id="right-column" class="col-sm-6">
+        <div id="right-column" class="col-sm-4">
             <div class="well bs-component">
                 <!--<legend>RIGHT COLUMN</legend>-->
                 <h1>Top Ten Songs</h1>
@@ -81,7 +82,7 @@
             </div>
 
         </div>
-
+        <div id="left-column" class="col-sm-2"></div>
     </div>
     <!--End Middle-->
     <div id="left-ad" class="col-sm-4">
