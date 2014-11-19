@@ -42,9 +42,9 @@
                             </div><p id="songInfo"></p>
                         </div>
                     </div>
-                </div>
-
-                <div id="left-column" class="col-sm-4">
+<!--                </div>-->
+<!---->
+<!--                <div id="left-column" class="col-sm-4">-->
                     <div class="well bs-component">
                         <div class="panel panel-footer" align="left">
                             <div class="panel panel-default">
@@ -58,9 +58,9 @@
                             </div>
                         </div>
                     </div>
-<!--                </div>-->
-<!---->
-<!--                <div id="right-column" class="col-sm-6">-->
+                </div>
+
+                <div <id="right-column" class="col-sm-6">
                     <div class="well bs-component">
                         <!--<legend>RIGHT COLUMN</legend>-->
                         <h1>Top Ten Songs</h1>
