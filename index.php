@@ -55,9 +55,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div id="right-column" class="col-sm-6">
+<!--                </div>-->
+<!---->
+<!--                <div id="right-column" class="col-sm-6">-->
                     <div class="well bs-component">
                         <!--<legend>RIGHT COLUMN</legend>-->
                         <h1>Top Ten Songs</h1>
