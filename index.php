@@ -99,7 +99,7 @@
             <!--footer-->
             <footer class="footer">
                 <div class="container">
-                    <p class="text-muted">Place sticky footer content here.</p>
+                    <p class="text-muted">Group 02p2 Project 2 SWE3613 Southern Polytechnic State Univerisity (SPSU)</p>
                 </div>
             </footer>
 
