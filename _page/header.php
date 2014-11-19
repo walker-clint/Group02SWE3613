@@ -50,6 +50,11 @@
             </li>
             <li class="btn-label-right">
             <div class="well-1 btn">
+            <a data-toggle="modal" href="#myModal1">Login with modal</a>
+            </div>
+            </li>
+            <li class="btn-label-right">
+            <div class="well-1 btn">
             <a href="register.php">Register</a>
             </div>
             </li>
@@ -60,5 +65,33 @@
         <div class="row">
             <?php echo $toplinks; ?>
         </div>
+
+        <!-- Modal 1 -->
+        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-dialog modal-vertical-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <div align="center"><h3 class="modal-title">Baking</h3></div>
+                        </div>
+                        <div class="modal-body">
+                            <div align="center">
+                                <div class ="btn-group-vertical">
+                                    <a type="button" id = "btn1" class="btn btn-primary btn-lg" href="http://group04.swe3613.com/recipes.php">
+                                        Recipes
+                                    </a>
+                                    <a type="button" id = "btn2" class="btn btn-primary btn-lg" href="http://group04.swe3613.com/ingredients.php">
+                                        Ingredients
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div>
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
     </div>
 </header>
