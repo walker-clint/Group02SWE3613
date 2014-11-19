@@ -7,10 +7,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $myusername = htmlspecialchars($_POST['username']);
     $mypassword = htmlspecialchars($_POST['password']);
 
-    $con = initializeConnection();
+    $conLogin = initializeConnection();
 
     $sql = "SELECT user_id, admin FROM tbl_user WHERE login = '$myusername' and password = '$mypassword'";
-    $result = mysqli_query($con, $sql);
+    $result = mysqli_query($conLogin, $sql);
 
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $userId = $row['user_id'];
