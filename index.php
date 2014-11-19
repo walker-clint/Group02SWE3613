@@ -85,7 +85,7 @@
     </div>
 
     <!--End Middle-->
-    <div row>
+    <div class="row">
         <div id="left-column" class="col-sm-2"></div>
         <div id="left-ad" class="col-sm-2">
             <div class="well bs-component">
@@ -189,5 +189,6 @@
     <!-- All functions for this theme + document.ready processing -->
     <script src="js/devoops.js"></script>
 </div>
+
 </body>
 </html>
