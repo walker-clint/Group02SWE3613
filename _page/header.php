@@ -17,7 +17,7 @@
 
             $full_name = '';
             while ($row = mysqli_fetch_array($sql)) {
-                $full_name = $row["first_name"] . " " . $row["last_name"];
+                $full_name = "Welcome: " . $row["first_name"] . " " . $row["last_name"];
             }
             $indexLink='main_menu.php';
             if($userType=='admin'){
