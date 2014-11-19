@@ -1,10 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; 
+
+
+
+?>
 </head>
 <body>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; 
+$results="";
+if($_POST['title']){
+	
+$sql = mysql_query("SELECT * FROM tbl_song WHERE title='$title'"); 
+    while($row = mysql_fetch_array($sql)){
+		$song_id = $row['song_id'];
+		$song_link = $row['youtube'];
+        		$song_genre_query = "SELECT * FROM tbl_song_genre where song_id = $song_id LIMIT 1";
+$song_genre_result = mysql_query($song_genre_query);
+while($song_genre_row = mysql_fetch_assoc($song_genre_result)){
+$genre_id = $song_genre_row['genre_id'];
+} 
+		$song_artist_query = "SELECT * FROM tbl_song_artist where song_id = $song_id LIMIT 1";
+$song_artist_result = mysql_query($song_artist_query);
+while($song_artist_row = mysql_fetch_assoc($song_artist_result)){
+$artist_id = $song_artist_row['artist_id'];
+} 
+		$genre_query = "SELECT * FROM tbl_genre where genre_id = $genre_id LIMIT 1";
+$genre_result = mysql_query($genre_query);
+while($genre_row = mysql_fetch_assoc($genre_result)){
+$genre_name = $genre_row['name'];
+} 
+		$artist_query = "SELECT * FROM tbl_artist where artist_id = $artist_id LIMIT 1";
+$artist_result = mysql_query($artist_query);
+while($artist_row = mysql_fetch_assoc($artist_result)){
+$artist_name = $artist_row['artist_id'];
+}
+$results.='<tr>';
+$results.='<td>' . $title . '</td>';
+$results.='<td>' . $artist_name . '</td>';
+$results.='<td>' . $genre_name . '</td>';
+$results.='<td>' . $song_link . '</td>';
+$results.='<td><button type="button" onclick="">Use This Song</button></td>';
+$results.='</tr>';
+ 
+}
+}?>
 <div id="main" class="container-fluid">
 <div class="row">
   <div id="left-column" class="col-sm-4"></div>
@@ -20,9 +61,23 @@
             </div>
           </div>
           <div align="center">
-            <input class="btn btn-primary" type="submit" value="Login"/>
+            <input class="btn btn-primary" type="submit" value="Submit"/>
           </div>
         </form>
+        <table class="table">
+          <thead>
+            <tr>
+              <td><b>Title</b></td>
+              <td><b>Artist</b></td>
+              <td><b>Genre</b></td>
+              <td><b>Youtube Link</b></td>
+              <td><b>Action</b></td>
+            </tr>
+          </thead>
+          <tbody>
+          <?php echo $results; ?>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -37,6 +92,6 @@
 <script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script> 
 <script src="plugins/tinymce/tinymce.min.js"></script> 
 <script src="plugins/tinymce/jquery.tinymce.min.js"></script> 
-<!-- All functions for this theme + document.ready processing --> 
+<!-- All functions for this theme + document.ready processing -->
 </body>
 </html>

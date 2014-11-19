@@ -39,9 +39,11 @@
           </div>
           
           <div align="center">
-            <input class="btn btn-primary" type="submit" value="Login"/>
+            <input class="btn btn-primary" type="submit" value="Submit"/>
           </div>
         </form>
+        
+        
       </div>
     </div>
   </div>
