@@ -47,10 +47,12 @@
 
 
         <div id="right-column" class="col-sm-4">
-
+            <div align="center">
+                <h1>Top Ten Songs</h1>
+            </div>
             <div class="well bs-component">
                 <!--<legend>RIGHT COLUMN</legend>-->
-                <h1>Top Ten Songs</h1>
+
 
                 <div class="form-horizontal" action="" method="POST">
 
