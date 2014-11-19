@@ -82,6 +82,7 @@
                 </div>
             </div>
             <!--End Content-->
+                <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/footer.php'; ?>
             <div id="right-column" class="col-sm-4"></div>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 

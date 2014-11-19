@@ -120,7 +120,7 @@
 
             </div>
             <!--End Middle-->
-
+            <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/footer.php'; ?>
             <!--End Container-->
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <!--<script src="http://code.jquery.com/jquery.js"></script>-->

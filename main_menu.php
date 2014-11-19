@@ -162,18 +162,7 @@
     </div>
 
     <!--footer-->
-    <footer class="footer">
-        <div class="container">
-            <div align="center">
-
-                <p class="text-muted">Group 02p2 Project 2 SWE3613 Southern Polytechnic State Univerisity (SPSU)</p>
-            </div>
-            <div align="center">
-
-                <p class="text-muted">Copy Right 2014: Clinton Walker; Erik Storla; Michael Adeyosoye</p>
-            </div>
-        </div>
-    </footer>
+    <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/footer.php'; ?>
 
     <!--End Container-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
