@@ -27,7 +27,7 @@
             $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
             <li class="btn-label-right">
             <div class="well-1 btn">
-            <a href="main_menu.php">' . $full_name . '</a>
+            <a href="' . $indexLink . '">' . $full_name . '</a>
             </div>
             </li>
              <li class="btn-label-right">
@@ -115,16 +115,16 @@
                                 </div>
 
 
-<!--                                <div class="btn-group-vertical">-->
-<!--                                    <a type="button" id="btn1" class="btn btn-primary btn-lg"-->
-<!--                                       href="http://group04.swe3613.com/recipes.php">-->
-<!--                                        Recipes-->
-<!--                                    </a>-->
-<!--                                    <a type="button" id="btn2" class="btn btn-primary btn-lg"-->
-<!--                                       href="http://group04.swe3613.com/ingredients.php">-->
-<!--                                        Ingredients-->
-<!--                                    </a>-->
-<!--                                </div>-->
+                                <!--                                <div class="btn-group-vertical">-->
+                                <!--                                    <a type="button" id="btn1" class="btn btn-primary btn-lg"-->
+                                <!--                                       href="http://group04.swe3613.com/recipes.php">-->
+                                <!--                                        Recipes-->
+                                <!--                                    </a>-->
+                                <!--                                    <a type="button" id="btn2" class="btn btn-primary btn-lg"-->
+                                <!--                                       href="http://group04.swe3613.com/ingredients.php">-->
+                                <!--                                        Ingredients-->
+                                <!--                                    </a>-->
+                                <!--                                </div>-->
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close
