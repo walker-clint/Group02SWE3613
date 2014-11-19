@@ -47,37 +47,41 @@
 
 
         <div id="right-column" class="col-sm-4">
-            <div class="well bs-component">
-                <!--<legend>RIGHT COLUMN</legend>-->
-                <h1>Top Ten Songs</h1>
+            <ul class="nav nav-tabs nav-justified">
+                ...
+                <li>
+                    <div class="well bs-component">
+                        <!--<legend>RIGHT COLUMN</legend>-->
+                        <h1>Top Ten Songs</h1>
 
-                <div class="form-horizontal" action="" method="POST">
+                        <div class="form-horizontal" action="" method="POST">
 
-                    <table>
-                        <?php
-                        $increment = 1;
-                        foreach ($mixTapeList as $songInt) {
-                            $song = getSong($songInt);
-                            if ($song instanceof Song) {
-                                $songTitle = $song->title;
-                                $songArtist = $song->getArtists();
-                                $songGenre = $song->getGenres();
-                                $songLink = $song->getLink();
+                            <table>
+                                <?php
+                                $increment = 1;
+                                foreach ($mixTapeList as $songInt) {
+                                    $song = getSong($songInt);
+                                    if ($song instanceof Song) {
+                                        $songTitle = $song->title;
+                                        $songArtist = $song->getArtists();
+                                        $songGenre = $song->getGenres();
+                                        $songLink = $song->getLink();
 
-                                echo '<tr><td><h1>' . $increment . '</h1></td><td><div class="well-2 bs-component"'
-                                    . 'onclick="' . $song->js_changeBox() . '" onmouseover="" style="cursor: pointer;">'
-                                    . $song->js_infoBox() . '</div></td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
-                            }
-                            $increment += 1;
-                        }
-                        ?>
-                        <?php ?>
+                                        echo '<tr><td><h1>' . $increment . '</h1></td><td><div class="well-2 bs-component"'
+                                            . 'onclick="' . $song->js_changeBox() . '" onmouseover="" style="cursor: pointer;">'
+                                            . $song->js_infoBox() . '</div></td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                    }
+                                    $increment += 1;
+                                }
+                                ?>
+                                <?php ?>
 
-                    </table>
-                    <!--End well-1-->
-                </div>
-            </div>
-
+                            </table>
+                            <!--End well-1-->
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
         <div id="left-column" class="col-sm-2"></div>
     </div>
