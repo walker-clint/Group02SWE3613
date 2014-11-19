@@ -77,6 +77,39 @@
                         </div>
                         <div class="modal-body">
                             <div align="center">
+                                <div id="main" class="container-fluid">
+
+                                    <!--Start Content-->
+                                    <div class="row">
+                                        <div id="left-column" class="col-sm-4"></div>
+                                        <div id="center1-column" class="col-sm-4">
+                                            <div class="well bs-component">
+                                                <!--<legend>LEFT COLUMN</legend>-->
+                                                <h1 align="center">Login</h1>
+                                                <div class="well-1 bs-component">
+                                                    <form class="form-horizontal" action="php/loginService.php" method="POST">
+                                                        <!--<font color="#FF0000"><?php echo $error; ?></font> <br>-->
+                                                        <div class="form-group">
+                                                            <label for="user_name" class="col-lg-4 control-label">User Name</label>
+                                                            <div class="col-lg-8">
+                                                                <input type="text" class="form-control" id="username" name="username" placeholder="User Name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="password" class="col-lg-4 control-label">Password</label>
+                                                            <div class="col-lg-8">
+                                                                <input align="center" type="Password" class="form-control" id="password" name="password"
+                                                                       placeholder="Password">
+                                                            </div>
+                                                        </div>
+                                                        <div align="center">
+                                                            <input class="btn btn-primary" type="submit" value="Login"/>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 <div class ="btn-group-vertical">
                                     <a type="button" id = "btn1" class="btn btn-primary btn-lg" href="http://group04.swe3613.com/recipes.php">
                                         Recipes
