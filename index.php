@@ -48,7 +48,6 @@
         </div>
 
 
-
         <div id="right-column" class="col-sm-4">
             <div class="well bs-component">
                 <!--<legend>RIGHT COLUMN</legend>-->
@@ -85,80 +84,82 @@
         <div id="left-column" class="col-sm-2"></div>
     </div>
     <!--End Middle-->
-    <div id="left-column" class="col-sm-2"></div>
-    <div id="left-ad" class="col-sm-2">
-        <div class="well bs-component">
-            <div class="panel panel-default" align="left">
-                <div class="panel panel-body">
-                    <div align="center">
-                        <h3>You Ad here!!</h3>
-                    </div>
+    <div row>
+        <div id="left-column" class="col-sm-2"></div>
+        <div id="left-ad" class="col-sm-2">
+            <div class="well bs-component">
+                <div class="panel panel-default" align="left">
+                    <div class="panel panel-body">
+                        <div align="center">
+                            <h3>You Ad here!!</h3>
+                        </div>
 
-                    <div id="logo" class="col-xs-12 col-sm-12"><img
-                            src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
+                        <div id="logo" class="col-xs-12 col-sm-12"><img
+                                src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
+                        </div>
                     </div>
-                </div>
-                <div class="panel panel-footer">
-                    <a1>Image Credit: <a
-                            href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
-                            title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
-                            Artist Painter Comic Characters Painters</a> from <a href="http://vector.me"
-                                                                                 title="Vector.me" target="_blank">Vector.me</a>
-                        (by nicubunu)
-                    </a1>
+                    <div class="panel panel-footer">
+                        <a1>Image Credit: <a
+                                href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
+                                title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
+                                Artist Painter Comic Characters Painters</a> from <a href="http://vector.me"
+                                                                                     title="Vector.me" target="_blank">Vector.me</a>
+                            (by nicubunu)
+                        </a1>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="center-ad" class="col-sm-4">
-        <div class="well bs-component">
-            <div class="panel panel-default" align="left">
-                <div class="panel panel-body">
-                    <div align="center">
-                        <h3>You Ad here!!</h3>
-                    </div>
+        <div id="center-ad" class="col-sm-4">
+            <div class="well bs-component">
+                <div class="panel panel-default" align="left">
+                    <div class="panel panel-body">
+                        <div align="center">
+                            <h3>You Ad here!!</h3>
+                        </div>
 
-                    <div id="logo" class="col-xs-12 col-sm-12"><img
-                            src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
+                        <div id="logo" class="col-xs-12 col-sm-12"><img
+                                src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
+                        </div>
                     </div>
-                </div>
-                <div class="panel panel-footer">
-                    <a1>Image Credit: <a
-                            href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
-                            title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
-                            Artist Painter Comic Characters Painters</a> from <a href="http://vector.me"
-                                                                                 title="Vector.me" target="_blank">Vector.me</a>
-                        (by nicubunu)
-                    </a1>
+                    <div class="panel panel-footer">
+                        <a1>Image Credit: <a
+                                href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
+                                title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
+                                Artist Painter Comic Characters Painters</a> from <a href="http://vector.me"
+                                                                                     title="Vector.me" target="_blank">Vector.me</a>
+                            (by nicubunu)
+                        </a1>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="right-ad" class="col-sm-2">
-        <div class="well bs-component">
-            <div class="panel panel-default" align="left">
-                <div class="panel panel-body">
-                    <div align="center">
-                        <h3>You Ad here!!</h3>
-                    </div>
+        <div id="right-ad" class="col-sm-2">
+            <div class="well bs-component">
+                <div class="panel panel-default" align="left">
+                    <div class="panel panel-body">
+                        <div align="center">
+                            <h3>You Ad here!!</h3>
+                        </div>
 
-                    <div id="logo" class="col-xs-12 col-sm-12"><img
-                            src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
+                        <div id="logo" class="col-xs-12 col-sm-12"><img
+                                src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
+                        </div>
                     </div>
-                </div>
-                <div class="panel panel-footer">
-                    <a1>Image Credit: <a
-                            href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
-                            title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
-                            Artist Painter Comic Characters Painters</a> from <a href="http://vector.me"
-                                                                                 title="Vector.me" target="_blank">Vector.me</a>
-                        (by nicubunu)
-                    </a1>
+                    <div class="panel panel-footer">
+                        <a1>Image Credit: <a
+                                href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
+                                title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
+                                Artist Painter Comic Characters Painters</a> from <a href="http://vector.me"
+                                                                                     title="Vector.me" target="_blank">Vector.me</a>
+                            (by nicubunu)
+                        </a1>
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="left-column" class="col-sm-2"></div>
     </div>
-    <div id="left-column" class="col-sm-2"></div>
     <!--footer-->
     <footer class="footer">
         <div class="container">
