@@ -25,6 +25,11 @@
             }
             
             $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
+             <li class="btn-label-right">
+            <div class="well-1 btn">
+            <a href="user_song_list.php">' . "Edit Your Song List" . '</a>
+            </div>
+            </li>
             <li class="btn-label-right">
             <div class="well-1 btn">
             <a href="main_menu.php">' . $full_name . '</a>
