@@ -61,6 +61,7 @@
                     <thead>
                     <div class="well-2 bs-component">
                         <tr>
+
                             <th>
                                 <a1>Title</a1>
                             </th>
@@ -82,6 +83,7 @@
                             </th>
                             <th>
                             </th>
+
                         </tr>
                     </div>
                     </thead>
@@ -98,12 +100,12 @@
                         $songGenre = $song->getGenres();
                         $songLink = $song->getLink();
 //                        <h4>' . $increment . '</h4>
-                        echo '<tr><div class="well-2 bs-component><tr><th>' .
+                        echo '<div class="well-2 bs-component><tr><th>' .
                             $songTitle . '</th><th>' .
                             $songLink . '</th><th>' .
                             $songGenre . '</th></tr><tr><th>' .
                             $songArtist .
-                            '</th><th></th><th> <div class="btn btn-primary" >Delete</div></tr>' .
+                            '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' .
                             '</td></tr></div>';
                         $increment += 1;
                     }
