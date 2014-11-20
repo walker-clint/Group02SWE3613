@@ -73,6 +73,8 @@
                                         <h3>Genre</h3>
                                     </th>
                                     <th></th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -95,7 +97,7 @@
                                     echo '<tr><th></th><th><h2>' .
                                         $songTitle . '</h2></th><th><h2>' .
                                         $songArtist . '</h2></th><th><h2>' .
-                                        $songGenre . '</h2></th><th></th></tr><tr><th></th><th>' .
+                                        $songGenre . '</h2></th><th></th><th></th><th>' .
                                         '<div class="btn btn-primary" >Play Song</div>' .
                                         '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' .
                                         '</th><th></th></tr>';
