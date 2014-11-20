@@ -100,6 +100,7 @@
                         $songGenre = $song->getGenres();
                         $songLink = $song->getLink();
 //                        <h4>' . $increment . '</h4>
+                        echo '<div class="well-2 bs-component>">';
                         echo '<tr><th>' .
                             $songTitle . '</th><th>' .
                             $songLink . '</th><th>' .
@@ -108,6 +109,7 @@
                             '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' .
                             '</td></tr>';
                         $increment += 1;
+                        echo '</div>';
                     }
                     ?>
                     <?php ?>
