@@ -72,7 +72,7 @@
                         <th>
                             <h4>Genre</h4>
                         </th>
-                        <th></th>
+<!--                        <th></th>-->
                         <th>
                             <h4>YouTube Link</h4>
                         </th>
