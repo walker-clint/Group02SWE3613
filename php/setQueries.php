@@ -3,7 +3,15 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/connection.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 
-//adds a song to the DB, returns the created primary key
+/**
+ * Add a song to the database.
+ * @param type $title
+ * @param type $approved
+ * @param type $flagged
+ * @param type $youtubeLink
+ * @param type $youtubeApproved
+ * @return type the primary key of the created song
+ */
 function addSong($title, $approved, $flagged, $youtubeLink, $youtubeApproved) {
     $con = initializeConnection();
 
