@@ -53,7 +53,7 @@ if($_POST['create_new']){
 	}
 	
 if($_POST['create_exist']){
-//	addMixtape($id, $_POST['taskOption'],1);
+addMixtape($id, $_POST['taskOption'],1);
 		header('Location: http://' . $_SERVER['SERVER_NAME'] . '/user_song_list.php');
 	 exit();
 	}?>
