@@ -5,6 +5,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 
 /**
  * Add a song to the database.
+ * 
  * @param type $title
  * @param type $approved
  * @param type $flagged
@@ -25,7 +26,16 @@ function addSong($title, $approved, $flagged, $youtubeLink, $youtubeApproved) {
     return $insertId;
 }
 
-//updates a song in the DB
+/**
+ * Update an existing song in the DB
+ * 
+ * @param type $id the primary key of the song you wish to change
+ * @param type $title
+ * @param type $approved
+ * @param type $flagged
+ * @param type $youtubeLink
+ * @param type $youtubeApproved
+ */
 function updateSong($id, $title, $approved, $flagged, $youtubeLink, $youtubeApproved) {
     $con = initializeConnection();
 
@@ -36,7 +46,11 @@ function updateSong($id, $title, $approved, $flagged, $youtubeLink, $youtubeAppr
     $stmt->execute();
 }
 
-//removes a song (and all references to it) from the DB
+/**
+ * Deletes a song and all references to it from the DB
+ * 
+ * @param type $songId the primary key of the song to be deleted
+ */
 function deleteSong($songId) {
     $con = initializeConnection();
 
@@ -62,7 +76,12 @@ function deleteSong($songId) {
     $stmtMix->execute();
 }
 
-//adds an artist to the DB, returns the created primary key
+/**
+ * Adds an artist to the DB
+ * 
+ * @param type $name
+ * @return type the primary key of the created artist
+ */
 function addArtist($name) {
     $con = initializeConnection();
 
@@ -76,7 +95,12 @@ function addArtist($name) {
     return $insertId;
 }
 
-//adds a genre to the DB, returns the created primary key
+/**
+ * Adds a new genre to the DB
+ * 
+ * @param type $name
+ * @return type the primary key of the created genre
+ */
 function addGenre($name) {
     $con = initializeConnection();
 
@@ -90,7 +114,13 @@ function addGenre($name) {
     return $insertId;
 }
 
-//adds a relation between a song and artist, returns the created primary key
+/**
+ * Adds a relation between a song and artist, returns the created primary key
+ * 
+ * @param type $songId
+ * @param type $artistId
+ * @return type the primary key of the created relation
+ */
 function addSongArtist($songId, $artistId) {
     $con = initializeConnection();
 
@@ -104,7 +134,13 @@ function addSongArtist($songId, $artistId) {
     return $insertId;
 }
 
-//adds a relation between a song and genre, returns the created primary key
+/**
+ * adds a relation between a song and genre, returns the created primary key
+ * 
+ * @param type $songId
+ * @param type $genreId
+ * @return type the primary key of the created relation
+ */
 function addSongGenre($songId, $genreId) {
     $con = initializeConnection();
 
@@ -150,7 +186,13 @@ function deleteGenre($genreId) {
     $stmtArtist->execute();
 }
 
-//adds a Mixtape record to the DB, does not return anything
+/**
+ * Adds a new mixtape record to the DB
+ * 
+ * @param type $userId the primary key of the user
+ * @param type $songId the primary key of the song
+ * @param type $position the primary key of the created mixtape record
+ */
 function addMixtape($userId, $songId, $position) {
     $con = initializeConnection();
 
@@ -164,7 +206,15 @@ function addMixtape($userId, $songId, $position) {
     //return $insertId;
 }
 
-//updates a Mixtape in the DB
+/**
+ * Updates(changes) a mixtape in the DB
+ * 
+ * @param type $userId the primary key of the user
+ * @param type $origSongId the primary key of the initial song
+ * @param type $origPosition the position of the record
+ * @param type $songId the primary key of the new song
+ * @param type $position the new position of the record
+ */
 function updateMixtape($userId, $origSongId, $origPosition, $songId, $position) {
     $con = initializeConnection();
 
@@ -200,7 +250,7 @@ function addUser($login, $pass, $email, $firstName, $lastName, $admin, $secretQ,
     return $insertId;
 }
 
-function updateUser($userId, $login, $pass, $email, $firstName, $lastName, $admin, $secretQ, $secretA){
+function updateUser($userId, $login, $pass, $email, $firstName, $lastName, $admin, $secretQ, $secretA) {
     $con = initializeConnection();
 
     //UPDATE tbl_user SET `login`='temp19', `password`='pass1', `email`='fake@fake.com1', `admin`='1', `first_name`='Bob1', `last_name`='Smith1' WHERE `user_id`='20';
