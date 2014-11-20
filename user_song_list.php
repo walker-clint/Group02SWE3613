@@ -55,8 +55,8 @@
 
 
             <div class="form-horizontal" action="" method="POST">
-                <div class="well-2 bs-component" overflow="auto">
-                    <table class="table table-striped" width="90%" cellpadding="2" cellspacing="2">
+                <div class="well-2 bs-component">
+                    <table class="table table-striped" width="90%" cellpadding="2" cellspacing="2" overflow="auto">
                         <thead>
                         <tr>
                             <th></th>
