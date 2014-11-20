@@ -56,7 +56,7 @@
 
             <div class="form-horizontal" action="" method="POST">
                 <div class="well-2 bs-component">
-                    <table class="table table-striped" width="90%" cellpadding="5px">
+                    <table class="table table-striped" width="90%">
                         <thead>
                         <tr>
                             <th></th>
@@ -73,13 +73,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th class="col-xs-1"></th>
-                            <th class="col-xs-3"></th>
-                            <th class="col-xs-4"></th>
-                            <th class="col-xs-3"></th>
-                            <th class="col-xs-1"></th>
-                        </tr>
+<!--                        <tr>-->
+<!--                            <th class="col-xs-1"></th>-->
+<!--                            <th class="col-xs-3"></th>-->
+<!--                            <th class="col-xs-4"></th>-->
+<!--                            <th class="col-xs-3"></th>-->
+<!--                            <th class="col-xs-1"></th>-->
+<!--                        </tr>-->
                         <?php
                         $increment = 1;
                         $userMixtape = getMixtape($_SESSION['user_id']);
