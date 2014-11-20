@@ -192,7 +192,6 @@ if ($_POST['create_exist']) {
                                         '</th><th></th></tr>';
                                 }
                                 ?>
-
                                 <?php ?>
                                 </tbody>
                             </table>
@@ -296,6 +295,7 @@ if ($_POST['create_exist']) {
         </div>
     </div>
 </footer>
+
 
 <!--End Container-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
