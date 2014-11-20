@@ -2519,10 +2519,27 @@ http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-respo
     padding-top: 5%;
     overflow: auto;
     width: auto;
+}
+
+
+.captcha-container frame{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.Scroll-container {
+    position: inherit;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    overflow: auto;
+    width: auto;
     height: 50%;
 }
 
-.captcha-container frame{
+.scroll-container frame{
     position: absolute;
     top: 0;
     left: 0;
