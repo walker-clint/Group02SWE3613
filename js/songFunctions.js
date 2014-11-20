@@ -116,10 +116,13 @@ function changeInfo_admin(id, title, artist, genre, approved, flagged) {
         thumbDirection = 'up';
         message = 'Approve';
     }
+    info += '<br><a href="/php/toggleMixtape.php?songId=' + id + '">Add/remove this song from your Mixtape</a>';
+    info += '<br><a href="/songForm.php?songId=' + id + '">Edit this song</a>';
+
     info += '<a1 class="well-2"><form method="POST" action = "./php/menu_functions.php">'
             + '<input type="hidden" name="actionType" value="toggleApproval">'
             + '<input type="hidden" name="songId" value="' + id + '">'
-            + '<input type="image" src="./img/thumb' + thumbDirection + '.png" height="20px" width="20px">'
+            + '<input type="image" src="/img/thumb' + thumbDirection + '.png" height="20px" width="20px">'
             + message + '</form>' + '</a1>';
 
 
@@ -132,7 +135,7 @@ function changeInfo_admin(id, title, artist, genre, approved, flagged) {
     info += '<a1 class="well-2"><form method="POST" action = "./php/menu_functions.php">'
             + '<input type="hidden" name="actionType" value="toggleFlag">'
             + '<input type="hidden" name="songId" value="' + id + '">'
-            + '<input type="image" src="./img/' + color + '_flag.png" height="20px" width="20px">'
+            + '<input type="image" src="/img/' + color + '_flag.png" height="20px" width="20px">'
             + message + '</form>' + '</a1>';
 
     element.innerHTML = info;
