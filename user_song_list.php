@@ -68,8 +68,10 @@
                             <th>
                                 <a1>Artist</a1>
                             </th>
+                            <th>
+                                <a1>Genre</a1>
+                            </th>
 
-                            <th></th>
 
                             <!--<th></th>-->
                         </tr>
@@ -78,12 +80,8 @@
                                 <!--make into button with link-->
                                 <a1>YouTube Link</a1>
                             </th>
-                            <th>
-                                <a1>Genre</a1>
-                            </th>
-                            <th>
-                            </th>
-
+                            <th></th>
+                            <th></th>
                         </tr>
 
                         </thead>
