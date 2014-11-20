@@ -73,15 +73,14 @@ if ($_POST['create_exist']) {
 <!--Start Header-->
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
 <!--End Header-->
-<!--Start Middle-->
+<!--Start Row Main Page Data-->-->
 <div id="main" class="container-fluid">
-    <!--Start Row Main Page Data-->-->
     <div class="row">
         <div id="left-space" class="col-xs-1"></div>
         <div id="left-column" class="col-xs-4">
             <div class="well bs-component">
-                <!--<legend>LEFT COLUMN</legend>-->
                 <h1></h1>
+
                 <div class="form-horizontal" action="" method="POST">
                     <div class="well-1 bs-component">
                         <div class="video-container" id="vidWindow">
@@ -115,6 +114,7 @@ if ($_POST['create_exist']) {
                         <div align="center">
                             <input class="btn btn-primary" type="submit" value="Submit"/>
                         </div>
+                    </div>
                 </form>
                 <table class="table">
                     <thead>
@@ -190,7 +190,6 @@ if ($_POST['create_exist']) {
                             </div>
                         </div>
                     </div>
-                    <!--End well-1-->
                 </div>
             </div>
         </div>
