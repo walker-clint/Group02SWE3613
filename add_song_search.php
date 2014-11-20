@@ -1,6 +1,9 @@
 <?php 
 include_once "connect_to_mysql.php";
 $results="";
+
+session_start(); 
+ $id = $_SESSION['user_id'];
 if($_POST['title']){
 	$title = $_POST['title'];
 $sql = mysql_query("SELECT * FROM tbl_song WHERE title LIKE '%{$title}%'"); 
@@ -8,6 +11,7 @@ $song_check = mysql_num_rows($sql);
 if ($song_check > 0){ 
     while($row = mysql_fetch_array($sql)){
 		$song_id = $row['song_id'];
+		$exampleSong=$row['song_id'];
 		$song_link = $row['youtube'];
 		$song_title = $row['title'];
         		$song_genre_query = "SELECT * FROM tbl_song_genre where song_id = $song_id LIMIT 1";
@@ -45,7 +49,10 @@ $results.='<option value="'.$song_id.'">' . $song_title . ' by '. $artist_name .
 }
 
 if($_POST['play']){
-	 $exampleSong = getSongById($_POST['taskOption']);
+	  $exampleSong = getSongById($_POST['taskOption']);
+	  header('Location:'.$exampleSong->youtubeLink);
+	 exit();
+
 	}
 
 if($_POST['create_new']){
@@ -56,7 +63,7 @@ if($_POST['create_new']){
 	if($_POST['create_exist']){
 		//insert mixtape
 		
-		
+		addMixtape($id, $_POST['taskOption'], $position);
 		header('Location: http://' . $_SERVER['SERVER_NAME'] . '/user_song_list.php');
 	 exit();
 	}?>
@@ -92,8 +99,7 @@ if($_POST['create_new']){
         </form>
         <select name="taskOption">
           <?php echo $results; ?> 
-          </select>
-          <?php $exampleSong->getEmbedLink(true) ?>       
+          </select>    
       </div>
     </div>
   </div>
