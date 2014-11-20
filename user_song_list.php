@@ -103,16 +103,12 @@ if ($_POST['create_exist']) {
                 <form class="form-horizontal" action="add_song_search.php" method="post">
                     <div class="well-2 bs-component">
                         <div align="center">
-                            <div class="form-group">
-                                <label for="title" class="col-lg-2 control-label">Enter Song Title</label>
-                                <div class="col-lg-10">
-                                    <input align="center" type="text" class="form-control-1" id="title" name="title"
-                                           value='<?php echo "$title" ?>'>
-                                </div>
-                            </div>
-                        </div>
-                        <div align="center">
-                            <input class="btn btn-primary" type="submit" value="Search For or Add Song"/>
+                           <?php
+                                        $songList = getApprovedSongs();
+                                        foreach ($songList as $song) {
+                                            echo '<tr><td>' . $song->js_infoBox(true) . '</tr></td>';
+                                        }
+                                        ?>
                         </div>
                     </div>
                 </form>
