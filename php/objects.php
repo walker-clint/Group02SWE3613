@@ -40,55 +40,57 @@ class Song {
      * returns HTML to generate changeBox() javascript with the song's info
      * @return String formatted HTML
      */
-    public function js_changeBox() {
+    public function js_changeBox($focus) {
         return 'changeBox(\'' . $this->id . '\''
                 . ',\'' . $this->title . '\''
                 . ',\'' . $this->getArtists() . '\''
                 . ',\'' . $this->getGenres() . '\''
                 . ',\'' . $this->getLink() . '\''
-                . ',\'' . $this->flagged . '\')';
+                . ',\'' . $this->flagged . '\''
+                . ',\'' . $focus . '\')';
     }
 
     /**
      * returns HTML to generate changeBox() javascript with the song's info
      * @return String formatted HTML
      */
-    public function js_changeBox_admin() {
+    public function js_changeBox_admin($focus) {
         return 'changeBox_admin(\'' . $this->id . '\''
                 . ',\'' . $this->title . '\''
                 . ',\'' . $this->getArtists() . '\''
                 . ',\'' . $this->getGenres() . '\''
                 . ',\'' . $this->getLink() . '\''
                 . ',\'' . $this->approved . '\''
-                . ',\'' . $this->flagged . '\')';
+                . ',\'' . $this->flagged . '\''
+                . ',\'' . $focus . '\')';
     }
 
     /**
      * returns HTML to make a clickable title that updates the infobox
      * @return String formatted HTML
      */
-    public function js_title_infoBox() {
-        return '<span onclick="' . $this->js_changeBox() . '" '
+    public function js_title_infoBox($focus) {
+        return '<span onclick="' . $this->js_changeBox($focus) . '" '
                 . 'onmouseover="" style="cursor: pointer;">'
                 . $this->title . '</span>';
     }
 
     /**
-     * returns HTML to make a clickable title with artists that updates the infobox
+     * Returns HTML to make a clickable span that updates the infobox.  Lists the title and artists.
      * @return String formatted HTML
      */
-    public function js_infoBox() {
-        return '<span onclick="' . $this->js_changeBox() . '" '
+    public function js_infoBox($focus) {
+        return '<span onclick="' . $this->js_changeBox($focus) . '" '
                 . 'onmouseover="" style="cursor: pointer;">'
                 . $this->title . ' by ' . $this->getArtists() . '</span>';
     }
 
     /**
-     * returns HTML to make a clickable title with artists that updates the infobox
+     * Returns HTML to make a clickable span that updates the admin infobox.  Lists the title and artists.
      * @return String formatted HTML
      */
-    public function js_infoBox_admin() {
-        return '<span onclick="' . $this->js_changeBox_admin() . '" '
+    public function js_infoBox_admin($focus) {
+        return '<span onclick="' . $this->js_changeBox_admin($focus) . '" '
                 . 'onmouseover="" style="cursor: pointer;">'
                 . $this->title . ' by ' . $this->getArtists() . '</span>';
     }

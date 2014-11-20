@@ -8,11 +8,13 @@
  * @param String songLink the youtube key for the song ex: "hX3O5v-ylC4"
  */
 
-function changeBox(id, title, artist, genre, songLink, flagged) {
+function changeBox(id, title, artist, genre, songLink, flagged, focus) {
 //alert("Playing " + songLink);
     changeInfo(id, title, artist, genre, flagged);
     changeVideo(songLink);
-    location.href = "#vidWindow";
+    if (focus) {
+        location.href = "#vidWindow";
+    }
 }
 
 /**
@@ -69,11 +71,13 @@ function changeInfo(id, title, artist, genre, flagged) {
  * @param String songLink the youtube key for the song ex: "hX3O5v-ylC4"
  */
 
-function changeBox_admin(id, title, artist, genre, songLink, approved, flagged) {
+function changeBox_admin(id, title, artist, genre, songLink, approved, flagged, focus) {
 //alert("Playing " + songLink);
     changeInfo_admin(id, title, artist, genre, approved, flagged);
     changeVideo_admin(songLink);
-    location.href = "#vidWindow_admin";
+    if (focus) {
+        location.href = "#vidWindow_admin";
+    }
 }
 
 /**
