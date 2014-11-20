@@ -33,7 +33,7 @@
                                     $randSongNumber = rand(0, (count($mixTapeList) - 1));
                                     $initialSong = getSongById($mixTapeList[$randSongNumber]);
                                     if ($initialSong instanceof Song) {
-                                        echo '<script>window.onload = (function(){' . $initialSong->js_changeBox() . ';});</script>';
+                                        echo '<script>window.onload = (function(){' . $initialSong->js_changeBox(false) . ';});</script>';
                                     }
                                     ?>
                                 </div>
@@ -60,7 +60,7 @@
                         $userMixtape = getMixtape($_SESSION['user_id']);
                         foreach ($userMixtape as $songId) {
                             $song = getSongById($songId);
-                            echo $song->js_infoBox() . '<br>';
+                            echo $song->js_infoBox(true) . '<br>';
                         }
                         ?>
 
@@ -86,7 +86,7 @@
                                             <?php
                                             $songList = getApprovedSongs();
                                             foreach ($songList as $song) {
-                                                echo $song->js_infoBox() . '<br>';
+                                                echo $song->js_infoBox(true) . '<br>';
                                             }
                                             ?>
                                         </div>
