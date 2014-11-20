@@ -16,8 +16,8 @@
 <div id="main" class="container-fluid">
     <!--Start Content-->
     <div class="row">
-        <div id="left-column" class="col-sm-2"></div>
-        <div id="left-column" class="col-sm-4">
+        <div id="left-column" class="col-sm-1"></div>
+        <div id="left-column" class="col-sm-2">
             <div class="well bs-component">
                 <!--<legend>LEFT COLUMN</legend>-->
                 <h1></h1>
@@ -46,7 +46,7 @@
         </div>
 
 
-        <div id="right-column" class="col-sm-4">
+        <div id="right-column" class="col-sm-8">
             <div align="center">
                 <h1>Your Song List</h1>
             </div>
@@ -59,16 +59,16 @@
                     <table>
                         <tr>
                             <td>
-                                <h1>Title</h1>
+                                <h4>Title</h4>
                             </td>
                             <td>
-                                <h1>Artist</h1>
+                                <h4>Artist</h4>
                             </td>
                             <td>
-                                <h1>Genre</h1>
+                                <h4>Genre</h4>
                             </td>
                             <td>
-                                <h1>YouTube Link</h1>
+                                <h4>YouTube Link</h4>
                             </td>
                         </tr>
 <!--                        --><?php
@@ -106,7 +106,7 @@
             </div>
 
         </div>
-        <div id="left-column" class="col-sm-2"></div>
+        <div id="left-column" class="col-sm-1"></div>
     </div>
 
     <!--End Middle-->
