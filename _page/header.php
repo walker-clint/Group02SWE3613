@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } // Close else after missing vars check
     }
 } //Close if $_POST
-?>
+
 
 if (!empty($_SESSION['user_id'])) {
     $id = $_SESSION['user_id'];
