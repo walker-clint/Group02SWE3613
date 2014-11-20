@@ -72,20 +72,14 @@ if (!empty($_SESSION['user_id'])) {
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="btn btn-primary" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <!--                            <div align="center"><h3 class="modal-title">Baking</h3></div>-->
                         </div>
                         <div class="modal-body">
                             <div align="center">
-                                <!--                                <div id="main" class="container-fluid">-->
-
-
                                 <div class="well bs-component">
-                                    <!--<legend>LEFT COLUMN</legend>-->
                                     <h1 align="center">Login</h1>
 
                                     <div class="well-1 bs-component">
                                         <form class="form-horizontal" action="php/loginService.php" method="POST">
-                                            <!--<font color="#FF0000"><?php echo $error; ?></font> <br>-->
                                             <div class="form-group">
                                                 <label for="user_name" class="col-lg-4 control-label">User
                                                     Name</label>
@@ -112,17 +106,6 @@ if (!empty($_SESSION['user_id'])) {
                                     </div>
                                 </div>
 
-
-                                <!--                                <div class="btn-group-vertical">-->
-                                <!--                                    <a type="button" id="btn1" class="btn btn-primary btn-lg"-->
-                                <!--                                       href="http://group04.swe3613.com/recipes.php">-->
-                                <!--                                        Recipes-->
-                                <!--                                    </a>-->
-                                <!--                                    <a type="button" id="btn2" class="btn btn-primary btn-lg"-->
-                                <!--                                       href="http://group04.swe3613.com/ingredients.php">-->
-                                <!--                                        Ingredients-->
-                                <!--                                    </a>-->
-                                <!--                                </div>-->
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close

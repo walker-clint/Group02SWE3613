@@ -73,7 +73,7 @@ if ($_POST['create_exist']) {
 <!--Start Header-->
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
 <!--End Header-->
-<!--Start Row Main Page Data-->-->
+<!--Start Row Main Page Data-->
 <div id="main" class="container-fluid">
     <div class="row">
         <div id="left-space" class="col-sm-1"></div>
@@ -158,13 +158,6 @@ if ($_POST['create_exist']) {
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <!--                        <tr>-->
-                                    <!--                            <th class="col-xs-1"></th>-->
-                                    <!--                            <th class="col-xs-3"></th>-->
-                                    <!--                            <th class="col-xs-4"></th>-->
-                                    <!--                            <th class="col-xs-3"></th>-->
-                                    <!--                            <th class="col-xs-1"></th>-->
-                                    <!--                        </tr>-->
                                     <?php
                                     $increment = 1;
                                     $userMixtape = getMixtape($_SESSION['user_id']);
