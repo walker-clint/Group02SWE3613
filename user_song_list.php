@@ -1,64 +1,3 @@
-<?php
-include_once "connect_to_mysql.php";
-$results = "";
-if ($_POST['title']) {
-    $title = $_POST['title'];
-    $sql = mysql_query("SELECT * FROM tbl_song WHERE title LIKE '%{$title}%'");
-    $song_check = mysql_num_rows($sql);
-    if ($song_check > 0) {
-        while ($row = mysql_fetch_array($sql)) {
-            $song_id = $row['song_id'];
-            $song_link = $row['youtube'];
-            $song_title = $row['title'];
-            $song_genre_query = "SELECT * FROM tbl_song_genre where song_id = $song_id LIMIT 1";
-            $song_genre_result = mysql_query($song_genre_query);
-            while ($song_genre_row = mysql_fetch_assoc($song_genre_result)) {
-                $genre_id = $song_genre_row['genre_id'];
-            }
-            $song_artist_query = "SELECT * FROM tbl_song_artist where song_id = $song_id LIMIT 1";
-            $song_artist_result = mysql_query($song_artist_query);
-            while ($song_artist_row = mysql_fetch_assoc($song_artist_result)) {
-                $artist_id = $song_artist_row['artist_id'];
-            }
-            $genre_query = "SELECT * FROM tbl_genre where genre_id = $genre_id LIMIT 1";
-            $genre_result = mysql_query($genre_query);
-            while ($genre_row = mysql_fetch_assoc($genre_result)) {
-                $genre_name = $genre_row['name'];
-            }
-            $artist_query = "SELECT * FROM tbl_artist where artist_id = $artist_id LIMIT 1";
-            $artist_result = mysql_query($artist_query);
-            while ($artist_row = mysql_fetch_assoc($artist_result)) {
-                $artist_name = $artist_row['name'];
-            }
-            $results .= '<tr>';
-            $results .= '<td><a href="' . $song_link . '" target="_blank">' . $song_title . ' by ' . $artist_name . '</a></td>';
-            $results .= '<td><form class="form-horizontal" method="post"><input class="btn btn-primary" type="submit" name = "create_exist" value="Use This Song"/></form></td>';
-            $results .= '</tr>';
-        }
-        //add button
-        $results .= '<tr><td colspan="5"><form class="form-horizontal" method="post"><input class="btn btn-primary" type="submit" name = "create_new" value="Submit New Song"/></form></td><tr>';
-    } else {
-        //no songs found
-        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/add_song_create.php');
-        exit();
-    }
-
-}
-
-
-if ($_POST['create_new']) {
-    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/add_song_create.php');
-    exit();
-}
-
-if ($_POST['create_exist']) {
-    //insert mixtape
-
-
-    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/user_song_list.php');
-    exit();
-}?>
-
 <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/php/lockService.php'; ?>
 
 <!DOCTYPE html>
@@ -103,12 +42,17 @@ if ($_POST['create_exist']) {
                 <form class="form-horizontal" action="add_song_search.php" method="post">
                     <div class="well-2 bs-component">
                         <div align="center">
-                           <?php
+                           <input type="text" class="search" id="searchid" placeholder="Search for songs" /><br /><br>
+                                <table id="result" class="table">
+                                    <div class="show" align="left">
+                                        <?php
                                         $songList = getApprovedSongs();
                                         foreach ($songList as $song) {
                                             echo '<tr><td>' . $song->js_infoBox(true) . '</tr></td>';
                                         }
                                         ?>
+                                    </div>
+                                </table>
                         </div>
                     </div>
                 </form>
