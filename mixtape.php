@@ -80,14 +80,15 @@
                             <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
                             <script type="text/javascript" src="./js/liveSearch.js"></script>
                             <div class="content">
-                                Enter a song name (or part of a name) to search for: <input type="text" class="search" id="searchid" placeholder="Search for songs" /><br />
+                                <h4>Enter a song name (or part of a name) to search for:</h4>
+                                <input type="text" class="search" id="searchid" placeholder="Search for songs" /><br /><br>
                                 <table class="table">
                                     <div id="result">
                                         <div class="show" align="left">
                                             <?php
                                             $songList = getApprovedSongs();
                                             foreach ($songList as $song) {
-                                                echo $song->js_infoBox(true) . '<br>';
+                                                echo '<tr><td>' . $song->js_infoBox(true) . '</tr></td>';
                                             }
                                             ?>
                                         </div>
