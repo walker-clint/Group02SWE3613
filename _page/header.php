@@ -19,18 +19,18 @@ if (!empty($_SESSION['user_id'])) {
     }
     $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
             <li class="btn-label-right">
-            <div class="well-1 btn">
+            <div class="well-1 btn btn-primary">
             <a href="' . $indexLink . '">' . $full_name . '</a>
             </div>
             </li>
              <li class="btn-label-right">
-            <div class="well-1 btn">
+            <div class="well-1 btn btn-primary">
             <a href="user_song_list.php">' . "Edit Your Song List" . '</a>
             </div>
             </li>
 
             <li class="btn-label-right">
-            <div class="well-1 btn">
+            <div class="well-1 btn btn-warning">
             <a href="http://' . $_SERVER['SERVER_NAME'] . '/php/logoutService.php">Log Out</a>
             </li>
             </ul>';
@@ -71,7 +71,7 @@ if (!empty($_SESSION['user_id'])) {
                 <div class="modal-dialog modal-vertical-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <button type="btn btn-primary" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                             <!--                            <div align="center"><h3 class="modal-title">Baking</h3></div>-->
                         </div>
                         <div class="modal-body">
