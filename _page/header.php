@@ -104,7 +104,7 @@ if (!empty($_SESSION['user_id'])) {
 
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close
                                 </button>
                             </div>
                         </div>
