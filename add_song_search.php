@@ -36,13 +36,16 @@ $artist_name = $artist_row['name'];
 }
 $results.='<option value="'.$song_id.'">' . $song_title . '<br> by <br>'. $artist_name . '</option><a href="'.$song_link.'" target="_blank">' . $song_title . ' by '. $artist_name . '</a></td>';
 	}
+	if($_POST['taskOption']){
 	$exampleSong = getSongById($_POST['taskOption']);
 	//add button 
+	
 	$results.='<form action="'.$exampleSong->youtubeLink.'">
     <input type="submit" value="Play this Song">
 </form>';
 	$results.='<form class="form-horizontal" method="post"><input class="btn btn-primary" type="submit" name = "create_exist" value="Use this Song"/></form>';
 	$results.='<form class="form-horizontal" method="post"><input class="btn btn-primary" type="submit" name = "create_new" value="Submit New Song"/></form>';
+	}
 }else{
 	//no songs found	
 	 header('Location: http://' . $_SERVER['SERVER_NAME'] . '/add_song_create.php');
