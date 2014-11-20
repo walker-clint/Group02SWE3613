@@ -3,13 +3,16 @@ include_once "connect_to_mysql.php";
 $results="";
 if($_POST['title']){
 	$title = $_POST['title'];
-$sql = mysql_query("SELECT * FROM tbl_song WHERE title LIKE '%{$title}%'"); 
+$sql = mysql_query("
+(SELECT * FROM tbl_song WHERE title LIKE '%{$title}%') 
+           UNION
+(SELECT * FROM tbl_artist WHERE name LIKE '%{$title}%')"); 
 $song_check = mysql_num_rows($sql); 
 if ($song_check > 0){ 
     while($row = mysql_fetch_array($sql)){
-		$song_id = $row['song_id'];
-		$song_link = $row['youtube'];
-		$song_title = $row['title'];
+		$song_id = $row['tbl_song.song_id'];
+		$song_link = $row['tbl_song.youtube'];
+		$song_title = $row['tbl_song.title'];
         		$song_genre_query = "SELECT * FROM tbl_song_genre where song_id = $song_id LIMIT 1";
 $song_genre_result = mysql_query($song_genre_query);
 while($song_genre_row = mysql_fetch_assoc($song_genre_result)){
