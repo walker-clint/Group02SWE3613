@@ -19,15 +19,15 @@ $adminPage = strpos($callingPage, 'dmin');
 //echo $callingPage . '<br>' . $adminPage . ' | ' . $session_admin;
 $userType = "";
 
-if (!isset($session_user)) {
+if (isset($session_user)) {
+    $userType = 'user';
+} else {
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/login.php');
     die();
-} else {
-    $userType='user';
 }
-if (!isset($session_admin) || ($adminPage != 0 && $session_admin != '1')) {
+if ($adminPage != 0 && $session_admin != '1') {
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
     die();
-}else{
-    $userType='admin';
+} else {
+    $userType = 'admin';
 }
