@@ -87,7 +87,7 @@
                             $songGenre = $song->getGenres();
                             $songLink = $song->getLink();
 
-                            echo '<tr><th><h1>'. $increment . '</h1>' . $songTitle . '</th><th>' . $songArtist . '</th><th>' . $songGenre . '</th><th></th><th>' . $songLink . '</td> <td> <div class="btn btn-primary" >Delete</div>'  . '</td></tr>';
+                            echo '<tr><th><h4>'. $increment . '</h4><th></th>' . $songTitle . '</th><th>' . $songArtist . '</th><th>' . $songGenre . '</th><th></th><th>' . $songLink . '</td> <td> <div class="btn btn-primary" >Delete</div>'  . '</td></tr>';
                         }
 //                        foreach ($mixTapeList as $songInt) {
 //                            $song = getSongById($songInt);
