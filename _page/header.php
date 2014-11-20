@@ -98,14 +98,14 @@ if (!empty($_SESSION['user_id'])) {
                                 <div class="well bs-component">
                                     <h1 align="center">Login</h1>
 
-                                    <div class="well-1 bs-component">
+                                    <div class="well-2 bs-component">
                                         <form class="form-horizontal" action="php/loginService.php" method="POST">
                                             <div class="form-group">
                                                 <label for="user_name" class="col-lg-4 control-label">User
                                                     Name</label>
 
                                                 <div class="col-lg-8">
-                                                    <input type="text" class="form-control" id="username"
+                                                    <input type="text" class="form-control-1" id="username"
                                                            name="username" placeholder="User Name">
                                                 </div>
                                             </div>
