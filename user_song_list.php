@@ -78,7 +78,7 @@ if ($_POST['create_exist']) {
     <div class="row">
         <div id="left-space" class="col-sm-1"></div>
         <div id="left-column" class="col-sm-4">
-            <h1>CRAZY LEROY'S MUSIC</h1>
+            <h1>Awesome Tunes!</h1>
 
             <div class="well bs-component">
                 <div class="form-horizontal" action="" method="POST">
