@@ -30,13 +30,12 @@ $artist_result = mysql_query($artist_query);
 while($artist_row = mysql_fetch_assoc($artist_result)){
 $artist_name = $artist_row['name'];
 }
-$results.='<tr>';
-$results.='<td><a href="'.$song_link.'" target="_blank">' . $song_title . ' by '. $artist_name . '</a></td>';
-$results.='<td><form class="form-horizontal" method="post"><input class="btn btn-primary" type="submit" name = "create_exist" value="Use This Song"/></form></td>';
-$results.='</tr>';
+$results.='<option value="'.$song_id.'">' . $song_title . ' by '. $artist_name . '</option><a href="'.$song_link.'" target="_blank">' . $song_title . ' by '. $artist_name . '</a></td>';
 	}
 	//add button 
-	$results.='<tr><td colspan="5"><form class="form-horizontal" method="post"><input class="btn btn-primary" type="submit" name = "create_new" value="Submit New Song"/></form></td><tr>';
+	$results.='<form class="form-horizontal" method="post"><input class="btn btn-primary" type="submit" name = "play" value="Play this Song"/></form>';
+	$results.='<form class="form-horizontal" method="post"><input class="btn btn-primary" type="submit" name = "create_exist" value="Use this Song"/></form>';
+	$results.='<form class="form-horizontal" method="post"><input class="btn btn-primary" type="submit" name = "create_new" value="Submit New Song"/></form>';
 }else{
 	//no songs found	
 	 header('Location: http://' . $_SERVER['SERVER_NAME'] . '/add_song_create.php');
@@ -45,7 +44,9 @@ $results.='</tr>';
 
 }
 
-
+if($_POST['play']){
+	 $exampleSong = getSongById($_POST['taskOption']);
+	}
 
 if($_POST['create_new']){
 	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/add_song_create.php');
@@ -89,18 +90,10 @@ if($_POST['create_new']){
             <input class="btn btn-primary" type="submit" value="Submit"/>
           </div>
         </form>
-        <table class="table">
-          <thead>
-            <tr>
-              <td><b>Song</b></td>
-              <td><b>Action</b></td>
-            </tr>
-          </thead>
-          <tbody>
-          <?php echo $results; ?>
-          </tbody>
-        </table>
-        
+        <select name="taskOption">
+          <?php echo $results; ?> 
+          </select>
+          <?php $exampleSong->getEmbedLink(true) ?>       
       </div>
     </div>
   </div>
