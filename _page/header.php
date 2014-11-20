@@ -114,7 +114,7 @@ if (!empty($_SESSION['user_id'])) {
                                                        class="col-lg-4 control-label">Password</label>
 
                                                 <div class="col-lg-8">
-                                                    <input align="center" type="Password" class="form-control"
+                                                    <input align="center" type="Password" class="form-control-1"
                                                            id="password" name="password"
                                                            placeholder="Password">
                                                 </div>
