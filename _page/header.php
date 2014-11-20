@@ -1,7 +1,7 @@
 <?php
 $toplinks = "";
 require_once $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
-$indexLink='index.php';
+$indexLink = 'index.php';
 
 if (!empty($_SESSION['user_id'])) {
     $id = $_SESSION['user_id'];
@@ -50,6 +50,13 @@ if (!empty($_SESSION['user_id'])) {
             </div>
 			</a>
             </li>
+             <li class="btn-label-right">
+			<a data-toggle="modal" href="#myModal2">
+            <div class="well-1 btn btn-primary">
+            Register with modal
+            </div>
+			</a>
+            </li>
             <li class="btn-label-right">
 			<a href="register.php">
             <div class="well-1 btn btn-primary">
@@ -64,12 +71,13 @@ if (!empty($_SESSION['user_id'])) {
 
 
 <header class="navbar-collapse">
-<!--    <a href="/--><?php //echo '' . $indexLink; ?><!--">-->
+    <!--    <a href="/--><?php //echo '' . $indexLink; ?><!--">-->
     <div id="logo" class="col-xs-2 col-sm-2">
         <img src="img/cllogo_medium.png" class="img-responsive"/></a>
     </div>
 
     <div id="top-panel" class="container-fluid expanded-panel"><br>
+
         <div class="row">
             <?php echo $toplinks; ?>
         </div>
@@ -81,7 +89,8 @@ if (!empty($_SESSION['user_id'])) {
                 <div class="modal-dialog modal-vertical-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="btn btn-primary" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <button type="btn btn-primary" class="close" data-dismiss="modal" aria-hidden="true">×
+                            </button>
                         </div>
                         <div class="modal-body">
                             <div align="center">
@@ -136,7 +145,8 @@ if (!empty($_SESSION['user_id'])) {
                     <div class="modal-dialog modal-vertical-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="btn btn-primary" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <button type="btn btn-primary" class="close" data-dismiss="modal" aria-hidden="true">×
+                                </button>
                             </div>
                             <div class="modal-body">
                                 <div align="center">
@@ -145,45 +155,68 @@ if (!empty($_SESSION['user_id'])) {
                                         <div class="well-1 bs-component">
 
                                             <div class="form-group">
-                                                <label for="firstname" class="col-xs-4 col-md-4 control-label" align="right">First Name</label>
+                                                <label for="firstname" class="col-xs-4 col-md-4 control-label"
+                                                       align="right">First Name</label>
+
                                                 <div class="col-xs-8 col-md-8">
-                                                    <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
+                                                    <input type="text" class="form-control-1" name="firstname"
+                                                           placeholder="First Name" value="<?php echo "$firstname"; ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="lastname" class="col-xs-4 col-md-4 control-label" align="right">Last Name</label>
+                                                <label for="lastname" class="col-xs-4 col-md-4 control-label"
+                                                       align="right">Last Name</label>
+
                                                 <div class="col-xs-8 col-md-8">
-                                                    <input type="text" class="form-control-1" name="lastname" placeholder="Last Name" value="<?php echo "$lastname"; ?>">
+                                                    <input type="text" class="form-control-1" name="lastname"
+                                                           placeholder="Last Name" value="<?php echo "$lastname"; ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="email" class="col-xs-4 col-md-4 control-label" align="right">Email</label>
+                                                <label for="email" class="col-xs-4 col-md-4 control-label"
+                                                       align="right">Email</label>
+
                                                 <div class="col-xs-8 col-md-8">
-                                                    <input type="email" class="form-control-1" name="email" placeholder="Email" value="<?php echo "$email"; ?>">
+                                                    <input type="email" class="form-control-1" name="email"
+                                                           placeholder="Email" value="<?php echo "$email"; ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="username" class="col-xs-4 col-md-4 control-label" align="right">Username</label>
+                                                <label for="username" class="col-xs-4 col-md-4 control-label"
+                                                       align="right">Username</label>
+
                                                 <div class="col-xs-8 col-md-8">
-                                                    <input type="text" class="form-control-1" name="username" placeholder="Username" value="<?php echo "$username"; ?>">
+                                                    <input type="text" class="form-control-1" name="username"
+                                                           placeholder="Username" value="<?php echo "$username"; ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="password" class="col-xs-4 col-md-4 control-label" align="right">Password</label>
+                                                <label for="password" class="col-xs-4 col-md-4 control-label"
+                                                       align="right">Password</label>
+
                                                 <div class="col-xs-8 col-md-8">
-                                                    <input type="password" class="form-control-1" name="password" placeholder="Password" value="<?php echo "$password"; ?>">
+                                                    <input type="password" class="form-control-1" name="password"
+                                                           placeholder="Password" value="<?php echo "$password"; ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="secret_q" class="col-xs-4 col-md-4 control-label" align="right">Secret Question</label>
+                                                <label for="secret_q" class="col-xs-4 col-md-4 control-label"
+                                                       align="right">Secret Question</label>
+
                                                 <div class="col-xs-8 col-md-8">
-                                                    <input type="text" class="form-control-1" name="secret_q" placeholder="Secret Question" value="<?php echo "$secret_q"; ?>">
+                                                    <input type="text" class="form-control-1" name="secret_q"
+                                                           placeholder="Secret Question"
+                                                           value="<?php echo "$secret_q"; ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="secret_a" class="col-xs-4 col-md-4 control-label" align="right">Secret Answer</label>
+                                                <label for="secret_a" class="col-xs-4 col-md-4 control-label"
+                                                       align="right">Secret Answer</label>
+
                                                 <div class="col-xs-8 col-md-8">
-                                                    <input type="text" class="form-control-1" name="secret_a" placeholder="Secret Answer" value="<?php echo "$secret_a"; ?>">
+                                                    <input type="text" class="form-control-1" name="secret_a"
+                                                           placeholder="Secret Answer"
+                                                           value="<?php echo "$secret_a"; ?>">
                                                 </div>
                                             </div>
                                             <div class="captcha-container" align="center">
@@ -214,5 +247,5 @@ if (!empty($_SESSION['user_id'])) {
                     <!-- /.modal-dialog -->
                 </div>
                 <!-- /.modal -->
-        </div>
+            </div>
 </header>
