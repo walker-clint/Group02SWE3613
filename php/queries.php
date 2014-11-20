@@ -344,8 +344,9 @@ function getMixtape($userIDInc) {
 
     $returnArray = array();
     while ($stmt->fetch()) {
-        $newMixTapeEntry = new MixSong($song_id, $position);
-        array_push($returnArray, $newMixTapeEntry);
+        //$newMixTapeEntry = new MixSong($song_id, $position);
+        //array_push($returnArray, $newMixTapeEntry);
+        array_push($returnArray, $song_id);
     }
     return $returnArray;
 }
