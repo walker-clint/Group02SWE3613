@@ -61,10 +61,10 @@
 
                         <tr>
                             <th>
-                                <h2>Title</h2>
+                                <a1>Title</a1>
                             </th>
                             <th>
-                                <h2>Artist</h2>
+                                <a1>Artist</a1>
                             </th>
 
                             <th></th>
@@ -74,10 +74,10 @@
                         <tr>
                             <th>
                                 <!--make into button with link-->
-                                <h2>YouTube Link</h2>
+                                <a1>YouTube Link</a1>
                             </th>
                             <th>
-                                <h2>Genre</h2>
+                                <a1>Genre</a1>
                             </th>
                             <th>
                             </th>
@@ -86,6 +86,7 @@
                         </thead>
                 </div>
                 <tbody>
+
 <!--                --><?php
 //                $increment = 1;
 //                $userMixtape = getMixtape($_SESSION['user_id']);
