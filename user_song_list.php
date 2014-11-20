@@ -64,22 +64,22 @@
                                 <h2>Title</h2>
                             </th>
                             <th>
-                                <!--make into button with link-->
-                                <h2>YouTube Link</h2>
+                                <h2>Artist</h2>
                             </th>
+
                             <th></th>
 
                             <!--<th></th>-->
                         </tr>
                         <tr>
                             <th>
-                                <h2>Artist</h2>
+                                <!--make into button with link-->
+                                <h2>YouTube Link</h2>
                             </th>
                             <th>
                                 <h2>Genre</h2>
                             </th>
                             <th>
-                                <h2>Action</h2>
                             </th>
                         </tr>
 
@@ -120,7 +120,7 @@
                 //                            $increment += 1;
                 //                        }
 
-                ?>
+//                ?>
                 <?php ?>
                 </tbody>
                 </table>
