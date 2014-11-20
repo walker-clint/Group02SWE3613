@@ -58,29 +58,31 @@
 
                 <table class="table">
                     <thead>
-                    <tr>
-                        <th>
-                            <h4>Title</h4>
-                        </th>
-                        <th>
-                            <!--make into button with link-->
-                            <h4>YouTube Link</h4>
-                        </th>
-                        <th></th>
+                    <div class="well-2 bs-component">
+                        <tr>
+                            <th>
+                                <h2>Title</h2>
+                            </th>
+                            <th>
+                                <!--make into button with link-->
+                                <h2>YouTube Link</h2>
+                            </th>
+                            <th></th>
 
-                        <!--<th></th>-->
-                    </tr>
-                    <tr>
-                        <th>
-                            <h4>Artist</h4>
-                        </th>
-                        <th>
-                            <h4>Genre</h4>
-                        </th>
-                        <th>
-                            <h4>Action</h4>
-                        </th>
-                    </tr>
+                            <!--<th></th>-->
+                        </tr>
+                        <tr>
+                            <th>
+                                <h2>Artist</h2>
+                            </th>
+                            <th>
+                                <h2>Genre</h2>
+                            </th>
+                            <th>
+                                <h2>Action</h2>
+                            </th>
+                        </tr>
+                    </div>
                     </thead>
                     <tbody>
                     <?php
@@ -93,8 +95,8 @@
                         $songGenre = $song->getGenres();
                         $songLink = $song->getLink();
 //                        <h4>' . $increment . '</h4>
-                        echo '<tr><th>' . $songTitle . '</th><th>' . $songLink  . '</th><th>'
-                            . $songGenre . '</th></tr><tr><th>' . $songArtist . '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' . '</td></tr>';
+                        echo '<div class="well-2 bs-component>"><tr><th>' . $songTitle . '</th><th>' . $songLink . '</th><th>'
+                            . $songGenre . '</th></tr><tr><th>' . $songArtist . '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' . '</td></tr></div>';
                         $increment += 1;
                     }
                     //                        foreach ($mixTapeList as $songInt) {
