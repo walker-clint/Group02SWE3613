@@ -39,7 +39,7 @@
                 }
                 ?>
                                             <iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>
-                                            <iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;          ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>
+                                            <iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;           ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>
                                         </div>
                                         <p id="songInfo"></p>
                                     </div>
@@ -62,7 +62,7 @@
                                 <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
                                 <script type="text/javascript" src="./js/liveSearch.js"></script>
                                 <div class="content">
-                                    <input type="text" class="search" id="searchid" placeholder="Search for people" />&nbsp; &nbsp; Ex: <b><i>huzoor bux, neelam, ravi or sameer</i></b><br />
+                                    Enter a song name (or part of a name): <input type="text" class="search" id="searchid" placeholder="Search for songs" /><br />
                                     <div id="result"></div>
                                 </div>
                                 <?php
