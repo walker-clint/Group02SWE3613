@@ -27,7 +27,7 @@ if (!empty($_SESSION['user_id'])) {
 			</a>
             </li>
              <li class="btn-label-right">
-            <a href="user_song_list.php">
+            <a href="mixtape.php">
 			<div class="well-1 btn btn-primary">
             ' . "Edit Your Song List" . '
             </div>
