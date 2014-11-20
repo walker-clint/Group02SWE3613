@@ -97,7 +97,7 @@ if ($_POST['create_exist']) {
                     </div>
                 </div>
             </div>
-            <h1 class="small" align="center">Add Song: Search for an Existing Song</h1>
+            <h3 align="center">Add Song: Search for an Existing Song</h3>
 
             <div class="well bs-component">
                 <form class="form-horizontal" action="add_song_search.php" method="post">
@@ -112,7 +112,7 @@ if ($_POST['create_exist']) {
                             </div>
                         </div>
                         <div align="center">
-                            <input class="btn btn-primary" type="submit" value="Search or Add Song"/>
+                            <input class="btn btn-primary" type="submit" value="Search For or Add Song"/>
                         </div>
                     </div>
                 </form>
