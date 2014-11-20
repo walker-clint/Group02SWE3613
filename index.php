@@ -35,7 +35,7 @@
                             $randSongNumber = rand(0, (count($mixTapeList) - 1));
                             $initialSong = getSongById($mixTapeList[$randSongNumber]);
                             if ($initialSong instanceof Song) {
-                                echo '<script>window.onload = (function(){' . $initialSong->js_changeBox() . ';});</script>';
+                                echo '<script>window.onload = (function(){' . $initialSong->js_changeBox(false) . ';});</script>';
                             }
                             ?>
                             <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
@@ -70,8 +70,8 @@
                                 $songLink = $song->getLink();
 
                                 echo '<tr><td><h1>' . $increment . '</h1></td><td><div class="well-2 bs-component"'
-                                    . 'onclick="' . $song->js_changeBox() . '" onmouseover="" style="cursor: pointer;">'
-                                    . $song->js_infoBox() . '</div></td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                    . 'onclick="' . $song->js_changeBox(true) . '" onmouseover="" style="cursor: pointer;">'
+                                    . $song->js_infoBox(true) . '</div></td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                             }
                             $increment += 1;
                         }
