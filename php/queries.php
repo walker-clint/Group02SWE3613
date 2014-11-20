@@ -233,7 +233,7 @@ function getUserMixTape($userIDinc) {
 //    return $returnArray;
 }
 
-function getArtistById($artistIdInc){
+function getArtistById($artistIdInc) {
     $artistID = htmlspecialchars($artistIdInc);
 
     $con = initializeConnection();
@@ -270,7 +270,7 @@ function getAllArtists() {
     return $returnArray;
 }
 
-function getGenreById($genreIdInc){
+function getGenreById($genreIdInc) {
     $genreID = htmlspecialchars($genreIdInc);
 
     $con = initializeConnection();
@@ -333,6 +333,28 @@ function getSongGenre($songIDinc) {
     return $returnArray;
 }
 
+function getSongGenreIds($songIDinc) {
+    $songID = htmlspecialchars($songIDinc);
+
+    $con = initializeConnection();
+
+    $query = 'SELECT tbl_genre.genre_id '
+            . 'FROM tbl_genre '
+            . 'JOIN tbl_song_genre ON tbl_song_genre.genre_id = tbl_genre.genre_id '
+            . 'WHERE tbl_song_genre.song_id = ?';
+    $stmt = $con->prepare($query);
+
+    $stmt->bind_param('i', $songID);
+    $stmt->execute();
+    $stmt->bind_result($songGenre);
+
+    $returnArray = array();
+    while ($stmt->fetch()) {
+        array_push($returnArray, $songGenre);
+    }
+    return $returnArray;
+}
+
 /**
  * @param int $songIDinc the primary key of the wanted song
  * @return String[] the artists of the given song
@@ -343,6 +365,28 @@ function getSongArtist($songIDinc) {
     $con = initializeConnection();
 
     $query = 'SELECT tbl_artist.name '
+            . 'FROM tbl_artist '
+            . 'JOIN tbl_song_artist ON tbl_song_artist.artist_id = tbl_artist.artist_id '
+            . 'WHERE tbl_song_artist.song_id = ?';
+    $stmt = $con->prepare($query);
+
+    $stmt->bind_param('i', $songID);
+    $stmt->execute();
+    $stmt->bind_result($songArtist);
+
+    $returnArray = array();
+    while ($stmt->fetch()) {
+        array_push($returnArray, $songArtist);
+    }
+    return $returnArray;
+}
+
+function getSongArtistIds($songIDinc) {
+    $songID = htmlspecialchars($songIDinc);
+
+    $con = initializeConnection();
+
+    $query = 'SELECT tbl_artist.artist_id '
             . 'FROM tbl_artist '
             . 'JOIN tbl_song_artist ON tbl_song_artist.artist_id = tbl_artist.artist_id '
             . 'WHERE tbl_song_artist.song_id = ?';
