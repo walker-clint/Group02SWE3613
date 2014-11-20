@@ -179,6 +179,9 @@ if (!empty($_SESSION['user_id'])) {
                                                     <input class="btn btn-primary" type="submit" value="Login"/>
                                                 </div>
                                             </form>
+                                            <div align="right">
+                                                <input class="btn btn-primary" type="submit" value="Login"/>
+                                            </div>
                                         </div>
                                     </div>
 
