@@ -31,13 +31,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $errorMsg = "You did not submit the following required information!<br /><br />";
             if (!$firstname) {
                 $errorMsg .= "--- First Name<br />";
-            } if (!$lastname) {
+            }
+            if (!$lastname) {
                 $errorMsg .= "--- Last Name<br />";
-            }if (!$email) {
+            }
+            if (!$email) {
                 $errorMsg .= "--- Email Address<br />";
-            }if (!$username) {
+            }
+            if (!$username) {
                 $errorMsg .= "--- Username<br />";
-            }if (!$password) {
+            }
+            if (!$password) {
                 $errorMsg .= "--- Password<br />";
             }
         } else {
@@ -55,11 +59,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		VALUES('$id','$username', '$password', '$email', 0,'$secret_q','$secret_a','$firstname','$lastname')") or die(mysql_error());
 
 
-
-
                 //header("location: customeinformation.php");
                 //exit();
-
 
 
                 header("location: main_menu.php");
@@ -150,7 +151,8 @@ if (!empty($_SESSION['user_id'])) {
         </div>
 
         <!-- Modal 1 -->
-        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-dialog modal-vertical-centered">
                     <div class="modal-content">
@@ -205,7 +207,8 @@ if (!empty($_SESSION['user_id'])) {
             <!-- /.modal -->
 
             <!-- Modal 2 -->
-            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-dialog modal-vertical-centered">
                         <div class="modal-content">
