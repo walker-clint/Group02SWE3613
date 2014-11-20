@@ -179,7 +179,7 @@ if ($_POST['create_exist']) {
                                             $songArtist . '</h2></th><th><h2>' .
                                             $songGenre . '</h2></th><th></th><th></th><th>' .
                                             '<div class="btn btn-primary" >Play Song</div>' .
-                                            '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' .
+                                            '</th><th></th><th> <div class="btn btn-warning" >Delete</div>' .
                                             '</th><th></th></tr>';
                                     }
                                     ?>
