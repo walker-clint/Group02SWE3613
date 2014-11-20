@@ -34,7 +34,7 @@
                         <h1><?php echo $pageFunction; ?> a song</h1>
                     </div>
                     <div class="well bs-component">
-                        <form class="form-horizontal" method="post">
+                        <form class="form-horizontal" method="post" action="/php/songFormPost.php">
                             <div class="form-group">
                                 <label for="title" class="col-lg-4 control-label">Title</label>
                                 <div class="col-lg-8">
@@ -46,7 +46,7 @@
                             <div class="form-group">
                                 <label for="artist" class="col-lg-4 control-label">Artist(s)</label>
                                 <div class="col-lg-8">
-                                    <select multiple name = "Artists">
+                                    <select multiple name = "artists">
                                         <?php
                                         $artists = getAllArtists();
                                         if ($pageFunction == 'Edit') {
@@ -76,7 +76,7 @@
                             <div class="form-group">
                                 <label for="genre" class="col-lg-4 control-label">Genre(s)</label>
                                 <div class="col-lg-8">
-                                    <select multiple name = 'Genres'>
+                                    <select multiple name = 'genres'>
                                         <?php
                                         $genres = getAllGenres();
                                         if ($pageFunction == 'Edit') {
@@ -98,7 +98,7 @@
 
                                 <label class="col-lg-4 control-label"></label>
                                 <div class="col-lg-8">
-                                    <input align="center" type="text" class="form-control" id="newArtist" name="newGenre"
+                                    <input align="center" type="text" class="form-control" id="newGenre" name="newGenre"
                                            placeholder="Enter a genre not already in the system here">
                                 </div>
                             </div>
