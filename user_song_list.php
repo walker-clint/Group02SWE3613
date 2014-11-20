@@ -77,8 +77,8 @@ if ($_POST['create_exist']) {
 <div id="main" class="container-fluid">
     <!--Start Content-->
     <div class="row">
-        <!--        <div id="left-column" class="col-sm-1"></div>-->
-        <div id="left-column" class="col-sm-4">
+                <div id="left-column" class="col-sm-1"></div>
+        <div id="left-column" class="col-sm-4 ">
             <div class="well bs-component">
                 <!--<legend>LEFT COLUMN</legend>-->
                 <h1></h1>
@@ -137,7 +137,7 @@ if ($_POST['create_exist']) {
         </div>
     </div>
 
-    <div id="right-column" class="col-sm-8">
+    <div id="right-column" class="col-sm-6">
         <div align="center">
             <h1>Your Song List</h1>
         </div>
@@ -206,7 +206,7 @@ if ($_POST['create_exist']) {
         </div>
 
     </div>
-    <!--        <div id="left-column" class="col-sm-1"></div>-->
+    <div id="left-column" class="col-sm-1"></div>
 </div>
 
 <!--End Middle-->
