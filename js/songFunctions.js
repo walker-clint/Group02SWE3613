@@ -25,7 +25,7 @@ function changeVideo(songLink) {
     var link = 'No Youtube video for this song! :(';
     if (songLink.length > 0) {
         link = '<iframe width = "350" height = "280" src = "//www.youtube.com/embed/'
-                + songLink + '?autoplay=1" frameborder = "0" allowfullscreen> </iframe>';
+                + songLink + '?autoplay=0" frameborder = "0" allowfullscreen> </iframe>';
     }
     element.innerHTML = link;
 }
@@ -43,6 +43,8 @@ function changeInfo(id, title, artist, genre, flagged) {
     var info = 'Title: ' + title
             + '<br>Artist: ' + artist
             + '<br>Genre: ' + genre;
+
+    info += '<br><a href="/php/toggleMixtape.php">Add/remove this song from your Mixtape</a>';
 
     if (flagged != 1) {
         var color = 'red';
