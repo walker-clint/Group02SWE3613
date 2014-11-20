@@ -60,13 +60,13 @@
                                 <?php
                                 foreach ($songListUnapproved as $song) {
                                     if ($song instanceof Song) {
-                                        $songTitle = $song->title;
-                                        $songArtist = $song->getArtists();
-                                        $songGenre = $song->getGenres();
-                                        $songLink = $song->getLink();
+//                                        $songTitle = $song->title;
+//                                        $songArtist = $song->getArtists();
+//                                        $songGenre = $song->getGenres();
+//                                        $songLink = $song->getLink();
 
                                         echo '<tr><td>'
-                                        . $song->js_infoBox_admin() . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                        . $song->js_infoBox_admin(true) . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                                     }
                                 }
                                 ?>
@@ -82,13 +82,13 @@
                                 <?php
                                 foreach ($songListFlagged as $song) {
                                     if ($song instanceof Song) {
-                                        $songTitle = $song->title;
-                                        $songArtist = $song->getArtists();
-                                        $songGenre = $song->getGenres();
-                                        $songLink = $song->getLink();
+//                                        $songTitle = $song->title;
+//                                        $songArtist = $song->getArtists();
+//                                        $songGenre = $song->getGenres();
+//                                        $songLink = $song->getLink();
 
                                         echo '<tr><td>'
-                                        . $song->js_infoBox_admin() . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                        . $song->js_infoBox_admin(true) . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                                     }
                                 }
                                 ?>
@@ -106,7 +106,7 @@
                                     $songLink = $song->getLink();
 
                                     echo '<tr><td>'
-                                    . $song->js_infoBox_admin() . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                    . $song->js_infoBox_admin(true) . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                                 }
                             }
                             ?>
