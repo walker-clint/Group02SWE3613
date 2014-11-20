@@ -74,6 +74,7 @@
                         <th>
                             <h4>YouTube Link</h4>
                         </th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
