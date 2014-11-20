@@ -56,7 +56,7 @@
 
             <div class="form-horizontal" action="" method="POST">
                 <div class="well-2 bs-component">
-                    <table class="table table-responsive" width="90%">
+                    <table class="table table-striped" width="90%">
                         <thead>
                         <tr>
                             <th>
