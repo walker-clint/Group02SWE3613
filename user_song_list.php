@@ -79,8 +79,7 @@ if ($_POST['create_exist']) {
         <div id="left-space" class="col-xs-1"></div>
         <div id="left-column" class="col-xs-4">
             <div class="well bs-component">
-                <h1></h1>
-
+                <h1>CRAZY LEROY'S MUSIC</h1>
                 <div class="form-horizontal" action="" method="POST">
                     <div class="well-1 bs-component">
                         <div class="video-container" id="vidWindow">
@@ -127,7 +126,6 @@ if ($_POST['create_exist']) {
                     <?php echo $results; ?>
                     </tbody>
                 </table>
-
             </div>
         </div>
         <div id="right-column" class="col-xs-6">
@@ -193,7 +191,7 @@ if ($_POST['create_exist']) {
                 </div>
             </div>
         </div>
-        <div id="left-column" class="col-sm-1"></div>
+        <div id="right-space" class="col-xs-1"></div>
     </div>
 </div>
 <!--End Row Main Page Data-->
