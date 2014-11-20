@@ -12,6 +12,7 @@ function changeBox(id, title, artist, genre, songLink, flagged) {
 //alert("Playing " + songLink);
     changeInfo(id, title, artist, genre, flagged);
     changeVideo(songLink);
+    location.href = "#vidWindow";
 }
 
 /**
@@ -72,6 +73,7 @@ function changeBox_admin(id, title, artist, genre, songLink, approved, flagged) 
 //alert("Playing " + songLink);
     changeInfo_admin(id, title, artist, genre, approved, flagged);
     changeVideo_admin(songLink);
+    location.href = "#vidWindow_admin";
 }
 
 /**
