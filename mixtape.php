@@ -75,7 +75,7 @@
                     <div class="well bs-component">
                         <div class="form-horizontal" action="" method="POST">
 
-                            <form>
+                            <!--<form>-->
                                 <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
                                 <script type="text/javascript" src="./js/liveSearch.js"></script>
                                 <div class="content">
@@ -91,7 +91,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                            <!--</form>-->
                             <!--End well-1-->
                         </div>
                     </div>
