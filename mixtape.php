@@ -19,17 +19,63 @@
             <!--Start Content-->
             <div class="row">
                 <div id="left-column" class="col-sm-4"></div>
+                <div id="left-column" class="col-sm-4">
+                    <div class="well bs-component">
+                        <!--<legend>LEFT COLUMN</legend>-->
+                        <h1></h1>
+                        <div class="form-horizontal" action="" method="POST">
+
+                            <div class="well-1 bs-component">
+                                <div class="video-container" id="vidWindow">
+                                    <?php
+                                    $mixTapeList = getBestMixTape();
+
+                                    $randSongNumber = rand(0, (count($mixTapeList) - 1));
+                                    $initialSong = getSongById($mixTapeList[$randSongNumber]);
+                                    if ($initialSong instanceof Song) {
+                                        echo '<script>window.onload = (function(){' . $initialSong->js_changeBox() . ';});</script>';
+                                    }
+                                    ?>
+                                </div>
+                                <p id="songInfo"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div id="left-column" class="col-sm-2"></div>
 
                 <!--<div id="right-column" class="col-sm-4">-->
                 <div id="center1-column" class="col-sm-4">
                     <div align="center">
-                        <h1>Add a new song</h1>
+                        <h1>Make your Mixtape!</h1>
                     </div>
                     <div class="well bs-component">
                         <!--<legend>RIGHT COLUMN</legend>-->
+                        <h3>Your Mixtape</h3>
+                        <?php
+                        $userMixtape = getMixtape($_SESSION['user_id']);
+                        foreach ($userMixtape as $songId) {
+                            $song = getSongById($songId);
+                            echo $song->title . '<br>';
+                        }
+                        ?>
 
 
+
+                    </div>
+
+                </div>
+                <div id="center1-column" class="col-sm-4">
+                    <div align="center">
+                        <h1>Add another song to your Mixtape</h1>
+                    </div>
+                    <div class="well bs-component">
                         <div class="form-horizontal" action="" method="POST">
+
                             <form>
                                 <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
                                 <script type="text/javascript" src="./js/liveSearch.js"></script>
@@ -43,15 +89,14 @@
                                                 echo $song->title . '<br>';
                                             }
                                             ?>
-                                        </div></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                             <!--End well-1-->
                         </div>
                     </div>
-
                 </div>
-                <div id="left-column" class="col-sm-2"></div>
             </div>
 
             <!--End Middle-->
