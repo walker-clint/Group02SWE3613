@@ -57,9 +57,9 @@
             <div class="form-horizontal" action="" method="POST">
 
                 <table class="table">
-                    <div class="well-2 bs-component">
-                        <thead>
 
+                    <thead>
+                    <div class="well-2 bs-component">
                         <tr>
                             <th>
                                 <a1>Title</a1>
@@ -83,9 +83,9 @@
                             <th>
                             </th>
                         </tr>
-
-                        </thead>
                     </div>
+                    </thead>
+
                     <tbody>
 
                     <?php
