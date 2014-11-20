@@ -67,7 +67,7 @@
                             $songGenre = $song->getGenres();
                             $songLink = $song->getLink();
 
-                            echo '<tr><td><h1></h1>' . $songTitle . "  " . $songArtist . "  " . $songGenre . '</td><tr></tr>';
+                            echo '<tr><td><h1></h1>' . $songTitle . "  " . $songArtist . "  " . $songGenre . '<div class="btn btn-primary" >Delete</div>'  . '</td><tr></tr>';
                         }
 //                        foreach ($mixTapeList as $songInt) {
 //                            $song = getSongById($songInt);
