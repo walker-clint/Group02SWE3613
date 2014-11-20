@@ -75,140 +75,136 @@ if ($_POST['create_exist']) {
 <!--End Header-->
 <!--Start Middle-->
 <div id="main" class="container-fluid">
-    <!--Start Content-->
-    <div class="row">
-        <!--        <div id="left-column" class="col-sm-1"></div>-->
-        <div id="left-column" class="col-sm-4">
-            <div class="well bs-component">
-                <!--<legend>LEFT COLUMN</legend>-->
-                <h1></h1>
+<!--Start Content-->
+<div class="row">
+    <!--        <div id="left-column" class="col-sm-1"></div>-->
+    <div id="left-column" class="col-sm-4">
+        <div class="well bs-component">
+            <!--<legend>LEFT COLUMN</legend>-->
+            <h1></h1>
 
-                <div class="form-horizontal" action="" method="POST">
+            <div class="form-horizontal" action="" method="POST">
 
-                    <div class="well-1 bs-component">
-                        <div class="video-container" id="vidWindow">
-                            <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
-                            <?php
-                            $mixTapeList = getBestMixTape();
+                <div class="well-1 bs-component">
+                    <div class="video-container" id="vidWindow">
+                        <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
+                        <?php
+                        $mixTapeList = getBestMixTape();
 
-                            $randSongNumber = rand(0, (count($mixTapeList) - 1));
-                            $initialSong = getSongById($mixTapeList[$randSongNumber]);
-                            if ($initialSong instanceof Song) {
-                                echo '<script>window.onload = (function(){' . $initialSong->js_changeBox() . ';});</script>';
-                            }
-                            ?>
-                            <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
-                            <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;      ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
+                        $randSongNumber = rand(0, (count($mixTapeList) - 1));
+                        $initialSong = getSongById($mixTapeList[$randSongNumber]);
+                        if ($initialSong instanceof Song) {
+                            echo '<script>window.onload = (function(){' . $initialSong->js_changeBox() . ';});</script>';
+                        }
+                        ?>
+                        <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
+                        <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;      ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
+                    </div>
+                    <p id="songInfo"></p>
+                </div>
+
+            </div>
+        </div>
+        <div class="well-1 bs-component">
+            <form class="form-horizontal" action="add_song_search.php" method="post">
+                <div class="form-group">
+                    <label for="title" class="col-lg-4 control-label">Title</label>
+
+                    <div class="col-lg-8">
+                        <input align="center" type="text" class="form-control" id="title" name="title"
+                               value='<?php echo "$title" ?>'>
+                    </div>
+                </div>
+                <div align="center">
+                    <input class="btn btn-primary" type="submit" value="Submit"/>
+                </div>
+            </form>
+            <table class="table">
+                <thead>
+                <tr>
+                    <td><b>Song</b></td>
+                    <td><b>Action</b></td>
+                </tr>
+                </thead>
+                <tbody>
+                <?php echo $results; ?>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+    <div id="right-column" class="col-sm-8">
+        <div align="center">
+            <h1>Your Song List</h1>
+        </div>
+        <div class="well bs-component">
+            <!--<legend>RIGHT COLUMN</legend>-->
+
+
+            <div class="form-horizontal" action="" method="POST">
+                <div class="well-2 bs-component">
+                    <div class="captcha-container">
+                        <div class="captcha-container frame">
+                            <table class="table table-striped" width="90%" cellpadding="2" cellspacing="2"
+                                   overflow="auto">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>
+                                        <h3>Title</h3>
+                                    </th>
+                                    <th>
+                                        <h3>Artist</h3>
+                                    </th>
+                                    <th>
+                                        <h3>Genre</h3>
+                                    </th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <!--                        <tr>-->
+                                <!--                            <th class="col-xs-1"></th>-->
+                                <!--                            <th class="col-xs-3"></th>-->
+                                <!--                            <th class="col-xs-4"></th>-->
+                                <!--                            <th class="col-xs-3"></th>-->
+                                <!--                            <th class="col-xs-1"></th>-->
+                                <!--                        </tr>-->
+                                <?php
+                                $increment = 1;
+                                $userMixtape = getMixtape($_SESSION['user_id']);
+                                foreach ($userMixtape as $songId) {
+                                    $song = getSongById($songId);
+                                    $songTitle = $song->title;
+                                    $songArtist = $song->getArtists();
+                                    $songGenre = $song->getGenres();
+                                    $songLink = $song->getLink();
+                                    echo '<tr><th></th><th><h2>' .
+                                        $songTitle . '</h2></th><th><h2>' .
+                                        $songArtist . '</h2></th><th><h2>' .
+                                        $songGenre . '</h2></th><th></th><th></th><th>' .
+                                        '<div class="btn btn-primary" >Play Song</div>' .
+                                        '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' .
+                                        '</th><th></th></tr>';
+                                }
+                                ?>
+
+                                <?php ?>
+                                </tbody>
+                            </table>
                         </div>
-                        <p id="songInfo"></p>
-                    </div>
-                
-                    <h1 align="center">Add Song: Search for an Existing Song</h1>
-
-                    <div class="well-1 bs-component">
-                        <form class="form-horizontal" action="add_song_search.php" method="post">
-                            <div class="form-group">
-                                <label for="title" class="col-lg-4 control-label">Title</label>
-
-                                <div class="col-lg-8">
-                                    <input align="center" type="text" class="form-control" id="title" name="title"
-                                           value='<?php echo "$title" ?>'>
-                                </div>
-                            </div>
-                            <div align="center">
-                                <input class="btn btn-primary" type="submit" value="Submit"/>
-                            </div>
-                        </form>
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <td><b>Song</b></td>
-                                <td><b>Action</b></td>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php echo $results; ?>
-                            </tbody>
-                        </table>
-
                     </div>
                 </div>
+                <!--End well-1-->
             </div>
         </div>
+
     </div>
-</div>
-
-
-<div id="right-column" class="col-sm-8">
-    <div align="center">
-        <h1>Your Song List</h1>
-    </div>
-    <div class="well bs-component">
-        <!--<legend>RIGHT COLUMN</legend>-->
-
-
-        <div class="form-horizontal" action="" method="POST">
-            <div class="well-2 bs-component">
-                <div class="captcha-container">
-                    <div class="captcha-container frame">
-                        <table class="table table-striped" width="90%" cellpadding="2" cellspacing="2"
-                               overflow="auto">
-                            <thead>
-                            <tr>
-                                <th></th>
-                                <th>
-                                    <h3>Title</h3>
-                                </th>
-                                <th>
-                                    <h3>Artist</h3>
-                                </th>
-                                <th>
-                                    <h3>Genre</h3>
-                                </th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <!--                        <tr>-->
-                            <!--                            <th class="col-xs-1"></th>-->
-                            <!--                            <th class="col-xs-3"></th>-->
-                            <!--                            <th class="col-xs-4"></th>-->
-                            <!--                            <th class="col-xs-3"></th>-->
-                            <!--                            <th class="col-xs-1"></th>-->
-                            <!--                        </tr>-->
-                            <?php
-                            $increment = 1;
-                            $userMixtape = getMixtape($_SESSION['user_id']);
-                            foreach ($userMixtape as $songId) {
-                                $song = getSongById($songId);
-                                $songTitle = $song->title;
-                                $songArtist = $song->getArtists();
-                                $songGenre = $song->getGenres();
-                                $songLink = $song->getLink();
-                                echo '<tr><th></th><th><h2>' .
-                                    $songTitle . '</h2></th><th><h2>' .
-                                    $songArtist . '</h2></th><th><h2>' .
-                                    $songGenre . '</h2></th><th></th><th></th><th>' .
-                                    '<div class="btn btn-primary" >Play Song</div>' .
-                                    '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' .
-                                    '</th><th></th></tr>';
-                            }
-                            ?>
-
-                            <?php ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <!--End well-1-->
-        </div>
-    </div>
-
-</div>
-<!--        <div id="left-column" class="col-sm-1"></div>-->
+    <!--        <div id="left-column" class="col-sm-1"></div>-->
 </div>
 
 <!--End Middle-->
