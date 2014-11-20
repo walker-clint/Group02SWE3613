@@ -57,11 +57,8 @@
             <div class="form-horizontal" action="" method="POST">
                 <div class="well-1 bs-component">
                     <table class="table table-striped">
-
                         <thead>
-
                         <tr>
-
                             <th>
                                 <a1>Title</a1>
                             </th>
@@ -71,23 +68,9 @@
                             <th>
                                 <a1>Genre</a1>
                             </th>
-
-
-                            <!--<th></th>-->
                         </tr>
-<!--                        <tr>-->
-<!--                            <th>-->
-<!--                                <!--make into button with link-->-->
-<!--                                -->
-<!--                            </th>-->
-<!--                            <th></th>-->
-<!--                            <th></th>-->
-<!--                        </tr>-->
-
                         </thead>
-
                         <tbody>
-
                         <?php
                         $increment = 1;
                         $userMixtape = getMixtape($_SESSION['user_id']);
@@ -97,8 +80,6 @@
                             $songArtist = $song->getArtists();
                             $songGenre = $song->getGenres();
                             $songLink = $song->getLink();
-//                        <h4>' . $increment . '</h4>
-
                             echo '<tr><th>' .
                                 $songTitle . '</th><th>' .
                                 $songArtist . '</th><th>' .
@@ -106,8 +87,6 @@
                                 '<div class="btn btn-primary" >Play Song</div>' .
                                 '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' .
                                 '</td></tr>';
-                            $increment += 1;
-
                         }
                         ?>
                         <?php ?>
