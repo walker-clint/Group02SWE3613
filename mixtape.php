@@ -22,7 +22,7 @@
                 <div id="left-column" class="col-sm-4">
                     <div class="well bs-component">
                         <!--<legend>LEFT COLUMN</legend>-->
-                        <h1>Make your Mixtape!</h1>
+                        <h1></h1>
                         <div class="form-horizontal" action="" method="POST">
 
                             <div class="well-1 bs-component">
