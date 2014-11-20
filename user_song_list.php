@@ -59,29 +59,24 @@
                 <table class="table">
                     <thead>
                     <tr>
-
-
                         <th>
                             <h4>Title</h4>
                         </th>
-                        <th></th>
                         <th>
                             <!--make into button with link-->
                             <h4>YouTube Link</h4>
                         </th>
-                        <!--<th></th>-->
-                        <th>
-                            <h4>Genre</h4>
-                        </th>
+                        <th></th>
+
                         <!--<th></th>-->
                     </tr>
                     <tr>
-                        <th></th>
                         <th>
                             <h4>Artist</h4>
                         </th>
-
-                        <th></th>
+                        <th>
+                            <h4>Genre</h4>
+                        </th>
                         <th>
                             <h4>Action</h4>
                         </th>
