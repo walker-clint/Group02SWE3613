@@ -55,8 +55,9 @@
 
 
             <div class="form-horizontal" action="" method="POST">
-                <div class="well-2 bs-component">
-                    <table class="table">
+
+                <table class="table">
+                    <div class="well-2 bs-component">
                         <thead>
 
                         <tr>
@@ -84,31 +85,31 @@
                         </tr>
 
                         </thead>
-                </div>
-                <tbody>
+                    </div>
+                    <tbody>
 
-                <?php
-                $increment = 1;
-                $userMixtape = getMixtape($_SESSION['user_id']);
-                foreach ($userMixtape as $songId) {
-                    $song = getSongById($songId);
-                    $songTitle = $song->title;
-                    $songArtist = $song->getArtists();
-                    $songGenre = $song->getGenres();
-                    $songLink = $song->getLink();
+                    <?php
+                    $increment = 1;
+                    $userMixtape = getMixtape($_SESSION['user_id']);
+                    foreach ($userMixtape as $songId) {
+                        $song = getSongById($songId);
+                        $songTitle = $song->title;
+                        $songArtist = $song->getArtists();
+                        $songGenre = $song->getGenres();
+                        $songLink = $song->getLink();
 //                        <h4>' . $increment . '</h4>
-                    echo '<tr><div class="well-2 bs-component><tr><th>' .
-                        $songTitle . '</th><th>' .
-                        $songLink . '</th><th>' .
-                        $songGenre . '</th></tr><tr><th>' .
-                        $songArtist .
-                        '</th><th></th><th> <div class="btn btn-primary" >Delete</div></tr>' .
-                        '</td></tr></div>';
-                    $increment += 1;
-                }
-                ?>
-                <?php ?>
-                </tbody>
+                        echo '<tr><div class="well-2 bs-component><tr><th>' .
+                            $songTitle . '</th><th>' .
+                            $songLink . '</th><th>' .
+                            $songGenre . '</th></tr><tr><th>' .
+                            $songArtist .
+                            '</th><th></th><th> <div class="btn btn-primary" >Delete</div></tr>' .
+                            '</td></tr></div>';
+                        $increment += 1;
+                    }
+                    ?>
+                    <?php ?>
+                    </tbody>
                 </table>
                 <!--End well-1-->
             </div>
