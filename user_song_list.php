@@ -76,7 +76,7 @@
                         <tr>
                             <th class="col-xs-1"></th>
                             <th class="col-xs-3"></th>
-                            <th class="col-xs-3"></th>
+                            <th class="col-xs-4"></th>
                             <th class="col-xs-3"></th>
                             <th class="col-xs-1"></th>
                         </tr>
@@ -92,10 +92,10 @@
                             echo '<tr><th></th><th><h2>' .
                                 $songTitle . '</h2></th><th><h2>' .
                                 $songArtist . '</h2></th><th><h2>' .
-                                $songGenre . '</h2></th><th></th></tr><tr><th>' .
+                                $songGenre . '</h2></th><th></th></tr><tr><th></th><th>' .
                                 '<div class="btn btn-primary" >Play Song</div>' .
                                 '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' .
-                                '</td></tr>';
+                                '</th><th></th></tr>';
                         }
                         ?>
 
