@@ -64,7 +64,7 @@
                         <th>
                             <h4>Title</h4>
                         </th>
-                        <!--<th></th>-->
+                        <th></th>
                         <th>
                             <!--make into button with link-->
                             <h4>YouTube Link</h4>
@@ -76,7 +76,6 @@
                         <!--<th></th>-->
                     </tr>
                     <tr>
-                        <th></th>
                         <th></th>
                         <th>
                             <h4>Artist</h4>
