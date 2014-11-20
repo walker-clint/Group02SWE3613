@@ -35,18 +35,28 @@
                     </div>
                     <div class="well bs-component">
                         <form class="form-horizontal" method="post" action="/php/songFormPost.php">
+                            <input type="hidden" name="actionType" value="<?php echo $pageFunction; ?>">
+                            <?php if ($pageFunction == 'Edit') {
+                                ?><input type="hidden" name="songId" value="<?php echo $songId; ?>"><?php
+                            }
+                            ?>
+
                             <div class="form-group">
                                 <label for="title" class="col-lg-4 control-label">Title</label>
                                 <div class="col-lg-8">
                                     <input align="center" type="text" class="form-control" id="title" name="title"
-                                           value = "<?php echo $song->title; ?>">
+                                           value = "<?php
+                                           if (!empty($song)) {
+                                               echo $song->title;
+                                           }
+                                           ?>" placeholder="Enter the song title here">
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="artist" class="col-lg-4 control-label">Artist(s)</label>
                                 <div class="col-lg-8">
-                                    <select multiple name = "artists">
+                                    <select multiple name = "artists[]">
                                         <?php
                                         $artists = getAllArtists();
                                         if ($pageFunction == 'Edit') {
@@ -69,14 +79,14 @@
                                 <label class="col-lg-4 control-label"></label>
                                 <div class="col-lg-8">
                                     <input align="center" type="text" class="form-control" id="newArtist" name="newArtist"
-                                           placeholder="Enter an artist not already in the system here">
+                                           placeholder="Enter an artist if not already in the system here">
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="genre" class="col-lg-4 control-label">Genre(s)</label>
                                 <div class="col-lg-8">
-                                    <select multiple name = 'genres'>
+                                    <select multiple name = 'genres[]'>
                                         <?php
                                         $genres = getAllGenres();
                                         if ($pageFunction == 'Edit') {
@@ -99,18 +109,20 @@
                                 <label class="col-lg-4 control-label"></label>
                                 <div class="col-lg-8">
                                     <input align="center" type="text" class="form-control" id="newGenre" name="newGenre"
-                                           placeholder="Enter a genre not already in the system here">
+                                           placeholder="Enter a genre if not already in the system here">
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="link" class="col-lg-4 control-label">Youtube Link</label>
                                 <div class="col-lg-8">
                                     <input align="center" type="text" class="form-control" id="link" name="link"
-                                           value="<?php echo $song->youtubeLink ?>">
+                                           value="<?php if (!empty($song)) {
+                                            echo $song->youtubeLink;
+                                            } ?>" placeholder="example: https://www.youtube.com/watch?v=PTC3zoXMrIg">
                                 </div>
                             </div>
-                            
+
                             <div align="center">
                                 <input class="btn btn-primary" type="submit" value="Submit"/>
                             </div>
@@ -125,7 +137,7 @@
 
 
             <!--footer-->
-            <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/footer.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/footer.php'; ?>
 
             <!--End Container-->
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
