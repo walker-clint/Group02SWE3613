@@ -75,7 +75,7 @@ if ($_POST['create_exist']) {
 <!--End Header-->
 <!--Start Middle-->
 <div id="main" class="container-fluid">
-<!--Start Content-->
+<!--Start Row Main Page Data-->-->
 <div class="row">
     <div id="left-column" class="col-sm-1"></div>
     <div id="left-column" class="col-sm-4 ">
@@ -205,7 +205,10 @@ if ($_POST['create_exist']) {
     <div id="left-column" class="col-sm-1"></div>
 
 </div>
+<!--End Row Main Page Data-->
 
+<!--Start Ads-->
+<div class="container-fluid">
 <div class="row">
     <div id="left-column" class="col-sm-2"></div>
     <div id="left-ad" class="col-sm-2">
@@ -280,6 +283,8 @@ if ($_POST['create_exist']) {
     </div>
     <div id="left-column" class="col-sm-2"></div>
 </div>
+</div>
+<!--End Ads-->
 </div>
 
 <!--footer-->
