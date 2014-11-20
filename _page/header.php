@@ -56,8 +56,7 @@ if (!empty($_SESSION['user_id'])) {
 ?>
 
 <header class="navbar-collapse">
-<!--    <div id="logo" class="col-xs-6 col-sm-6">-->
-    <div navbar-brand>
+    <div id="logo" class="col-xs-6 col-sm-6">
         <a href="/<?php echo '' . $indexLink; ?>"><img src="img/cllogo_medium.png" class="img-responsive"/></a>
     </div>
 
