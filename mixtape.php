@@ -79,7 +79,7 @@
                                 <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
                                 <script type="text/javascript" src="./js/liveSearch.js"></script>
                                 <div class="content">
-                                    Enter a song name (or part of a name): <input type="text" class="search" id="searchid" placeholder="Search for songs" /><br />
+                                    Enter a song name (or part of a name) to search for: <input type="text" class="search" id="searchid" placeholder="Search for songs" /><br />
                                     <div id="result">
                                         <div class="show" align="left">
                                             <?php
