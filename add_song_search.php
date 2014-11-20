@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; 
+<?php 
 include_once "connect_to_mysql.php";
 $results="";
 if($_POST['title']){
@@ -35,11 +32,11 @@ $artist_name = $artist_row['name'];
 }
 $results.='<tr>';
 $results.='<td><a href="'.$song_link.'" target="_blank">' . $song_title . ' by '. $artist_name . '</a></td>';
-$results.='<td><form class="form-horizontal" action="add_song_search.php" method="post"><input class="btn btn-primary" type="submit" name = "create_exist" value="Use This Song"/></form></td>';
+$results.='<td><form class="form-horizontal" method="post"><input class="btn btn-primary" type="submit" name = "create_exist" value="Use This Song"/></form></td>';
 $results.='</tr>';
 	}
 	//add button 
-	$results.='<tr><td colspan="5"><form class="form-horizontal" action="add_song_search.php" method="post"><input class="btn btn-primary" type="submit" name = "create_new" value="Submit New Song"/></form></td><tr>';
+	$results.='<tr><td colspan="5"><form class="form-horizontal" method="post"><input class="btn btn-primary" type="submit" name = "create_new" value="Submit New Song"/></form></td><tr>';
 }else{
 	//no songs found	
 	 header('Location: http://' . $_SERVER['SERVER_NAME'] . '/add_song_create.php');
@@ -61,7 +58,11 @@ if($_POST['create_new']){
 		
 		header('Location: http://' . $_SERVER['SERVER_NAME'] . '/user_song_list.php');
 	 exit();
-	}
+	}?><!DOCTYPE html>
+<html lang="en">
+<head>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; 
+
 ?>
 </head>
 <body>
