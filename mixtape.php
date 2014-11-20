@@ -82,8 +82,8 @@
                             <div class="content">
                                 <h4>Enter a song name (or part of a name) to search for:</h4>
                                 <input type="text" class="search" id="searchid" placeholder="Search for songs" /><br /><br>
-                                <table class="table">
-                                    <div id="result">
+                                <!--<table class="table">-->
+                                    <table id="result" class="table">
                                         <div class="show" align="left">
                                             <?php
                                             $songList = getApprovedSongs();
@@ -92,8 +92,8 @@
                                             }
                                             ?>
                                         </div>
-                                    </div>
-                                </table>
+                                    </table>
+                                <!--</table>-->
                             </div>
                             <!--</form>-->
                             <!--End well-1-->
