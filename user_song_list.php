@@ -59,6 +59,11 @@
                     <table>
                         <?php
                         $increment = 1;
+                        $userMixtape = getMixtape($_SESSION['user_id']);
+                        foreach ($userMixtape as $songId) {
+                            $song = getSongById($songId);
+                            //do something with $song
+                        }
                         foreach ($mixTapeList as $songInt) {
                             $song = getSongById($songInt);
                             if ($song instanceof Song) {
