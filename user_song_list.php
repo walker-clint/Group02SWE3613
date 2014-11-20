@@ -59,6 +59,7 @@
                 <table class="table">
                     <thead>
                     <tr>
+                        <th></th>
                         <th>
                             <h4>Title</h4>
                         </th>
