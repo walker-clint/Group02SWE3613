@@ -55,66 +55,54 @@
 
 
             <div class="form-horizontal" action="" method="POST">
-
-                <table class="table table-striped">
-
-                    <thead>
-
+                <div class="well-2 bs-component">
+                    <table class="table table-striped" width="90%">
+                        <thead>
                         <tr>
-
-                            <th>
-                                <a1>Title</a1>
-                            </th>
-                            <th>
-                                <a1>Artist</a1>
-                            </th>
-
                             <th></th>
-
-                            <!--<th></th>-->
+                            <th>
+                                <h3>Title</h3>
+                            </th>
+                            <th>
+                                <h3>Artist</h3>
+                            </th>
+                            <th>
+                                <h3>Genre</h3>
+                            </th>
+                            <th></th>
                         </tr>
+                        </thead>
+                        <tbody>
                         <tr>
-                            <th>
-                                <!--make into button with link-->
-                                <a1>YouTube Link</a1>
-                            </th>
-                            <th>
-                                <a1>Genre</a1>
-                            </th>
-                            <th>
-                            </th>
-
+                            <th class="col-xs-1"></th>
+                            <th class="col-xs-3"></th>
+                            <th class="col-xs-3"></th>
+                            <th class="col-xs-3"></th>
+                            <th class="col-xs-1"></th>
                         </tr>
+                        <?php
+                        $increment = 1;
+                        $userMixtape = getMixtape($_SESSION['user_id']);
+                        foreach ($userMixtape as $songId) {
+                            $song = getSongById($songId);
+                            $songTitle = $song->title;
+                            $songArtist = $song->getArtists();
+                            $songGenre = $song->getGenres();
+                            $songLink = $song->getLink();
+                            echo '<tr><th></th><th><h2>' .
+                                $songTitle . '</h2></th><th><h2>' .
+                                $songArtist . '</h2></th><th><h2>' .
+                                $songGenre . '</h2></th></tr><th></th><tr><th>' .
+                                '<div class="btn btn-primary" >Play Song</div>' .
+                                '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' .
+                                '</td></tr>';
+                        }
+                        ?>
 
-                    </thead>
-
-                    <tbody>
-
-                    <?php
-                    $increment = 1;
-                    $userMixtape = getMixtape($_SESSION['user_id']);
-                    foreach ($userMixtape as $songId) {
-                        $song = getSongById($songId);
-                        $songTitle = $song->title;
-                        $songArtist = $song->getArtists();
-                        $songGenre = $song->getGenres();
-                        $songLink = $song->getLink();
-//                        <h4>' . $increment . '</h4>
-                        echo '<div class="well-2 bs-component>">';
-                        echo '<tr><th>' .
-                            $songTitle . '</th><th>' .
-                            $songLink . '</th><th>' .
-                            $songGenre . '</th></tr><tr><th>' .
-                            $songArtist .
-                            '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' .
-                            '</td></tr>';
-                        $increment += 1;
-                        echo '</div>';
-                    }
-                    ?>
-                    <?php ?>
-                    </tbody>
-                </table>
+                        <?php ?>
+                        </tbody>
+                    </table>
+                </div>
                 <!--End well-1-->
             </div>
         </div>
