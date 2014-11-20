@@ -60,7 +60,7 @@
                         $userMixtape = getMixtape($_SESSION['user_id']);
                         foreach ($userMixtape as $songId) {
                             $song = getSongById($songId);
-                            echo $song->title . '<br>';
+                            echo $song->js_infoBox() . '<br>';
                         }
                         ?>
 
@@ -86,7 +86,7 @@
                                             <?php
                                             $songList = getApprovedSongs();
                                             foreach ($songList as $song) {
-                                                echo $song->title . '<br>';
+                                                echo $song->js_infoBox() . '<br>';
                                             }
                                             ?>
                                         </div>
