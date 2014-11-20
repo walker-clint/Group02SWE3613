@@ -76,29 +76,23 @@ if ($_POST['create_exist']) {
 <!--Start Middle-->
 <div id="main" class="container-fluid">
     <!--Start Row Main Page Data-->-->
-<!--    <div class="row">-->
-        <div id="left-column" class="col-xs-1"></div>
-        <div id="left-column" class="col-xs-4 ">
+    <div class="row">
+        <div id="left-space" class="col-xs-1"></div>
+        <div id="left-column" class="col-xs-4">
             <div class="well bs-component">
                 <!--<legend>LEFT COLUMN</legend>-->
                 <h1></h1>
-
                 <div class="form-horizontal" action="" method="POST">
-
                     <div class="well-1 bs-component">
                         <div class="video-container" id="vidWindow">
-                            <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
                             <?php
                             $mixTapeList = getBestMixTape();
-
                             $randSongNumber = rand(0, (count($mixTapeList) - 1));
                             $initialSong = getSongById($mixTapeList[$randSongNumber]);
                             if ($initialSong instanceof Song) {
                                 echo '<script>window.onload = (function(){' . $initialSong->js_changeBox() . ';});</script>';
                             }
                             ?>
-                            <!--<iframe width="350" height="280" src="//www.youtube.com/embed/WUdIKdRuYc4?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
-                            <!--<iframe width="350" height="280" src="//www.youtube.com/embed/<?php // echo $initialSong;      ?>?autoplay=0" frameborder="0" allowfullscreen></iframe>-->
                         </div>
                         <p id="songInfo"></p>
                     </div>
@@ -201,7 +195,7 @@ if ($_POST['create_exist']) {
             </div>
         </div>
         <div id="left-column" class="col-sm-1"></div>
-<!--    </div>-->
+    </div>
 </div>
 <!--End Row Main Page Data-->
 
