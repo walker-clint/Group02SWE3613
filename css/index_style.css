@@ -888,7 +888,7 @@ td.beauty-hover {
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary,
 .table-hover > tbody > tr > td.primary:hover, .table-hover > tbody > tr > th.primary:hover, .table-hover > tbody > tr.primary:hover > td, .table-hover > tbody > tr.primary:hover > th {
     color: #700000;
-    background-color: #700000;
+    background-color: #1f7012;
     border-color: rgb(0, 0, 0);
 }
 
