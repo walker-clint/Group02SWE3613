@@ -75,14 +75,14 @@
 
                             <!--<th></th>-->
                         </tr>
-                        <tr>
-                            <th>
-                                <!--make into button with link-->
-                                <a1>YouTube Link</a1>
-                            </th>
-                            <th></th>
-                            <th></th>
-                        </tr>
+<!--                        <tr>-->
+<!--                            <th>-->
+<!--                                <!--make into button with link-->-->
+<!--                                -->
+<!--                            </th>-->
+<!--                            <th></th>-->
+<!--                            <th></th>-->
+<!--                        </tr>-->
 
                         </thead>
 
