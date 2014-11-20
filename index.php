@@ -33,7 +33,7 @@
                             $mixTapeList = getBestMixTape();
 
                             $randSongNumber = rand(0, (count($mixTapeList) - 1));
-                            $initialSong = getSong($mixTapeList[$randSongNumber]);
+                            $initialSong = getSongById($mixTapeList[$randSongNumber]);
                             if ($initialSong instanceof Song) {
                                 echo '<script>window.onload = (function(){' . $initialSong->js_changeBox() . ';});</script>';
                             }
@@ -62,7 +62,7 @@
                         <?php
                         $increment = 1;
                         foreach ($mixTapeList as $songInt) {
-                            $song = getSong($songInt);
+                            $song = getSongById($songInt);
                             if ($song instanceof Song) {
                                 $songTitle = $song->title;
                                 $songArtist = $song->getArtists();

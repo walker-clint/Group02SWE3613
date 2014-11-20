@@ -59,7 +59,7 @@
                                     $allSongsInt = getBestMixTape();
 
                                     foreach ($allSongsInt as $songInt) {
-                                        $song = getSong($songInt);
+                                        $song = getSongById($songInt);
                                         if ($song instanceof Song) {
                                             $songTitle = $song->title;
                                             $songArtist = $song->getArtists();

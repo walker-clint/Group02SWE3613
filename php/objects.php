@@ -221,7 +221,7 @@ class MixSong {
     }
 
     public function __toString() {
-        return getSong($this->song)->title;
+        return getSongById($this->song)->title;
     }
 
 }

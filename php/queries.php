@@ -38,7 +38,7 @@ function getBestMixTape() {
  * @param int $songIDinc the primary key of the wanted song
  * @return Song
  */
-function getSong($songIDinc) {
+function getSongById($songIDinc) {
     $songID = htmlspecialchars($songIDinc);
 
     $con = initializeConnection();
@@ -58,6 +58,30 @@ function getSong($songIDinc) {
     $tempSong = new Song($id, $song_title, $app, $flag, $you, $youApp, $genre, $artist);
 
     return $tempSong;
+}
+
+function getSongsBySearch($songTitleInc) {
+    $songTitle = '%'.htmlspecialchars($songTitleInc).'%';
+
+    $con = initializeConnection();
+
+    $query = 'SELECT song_id, title, approved, flagged, youtube, youtube_approved '
+            . 'FROM tbl_song '
+            . 'WHERE title LIKE ?';
+    $stmt = $con->prepare($query);
+
+    $stmt->bind_param('s', $songTitle);
+
+    $stmt->execute();
+    $stmt->bind_result($id, $song_title, $app, $flag, $you, $youApp);
+    $returnArray = array();
+    while ($stmt->fetch()) {
+        $genre = getSongGenre($id);
+        $artist = getSongArtist($id);
+        $tempSong = new Song($id, $song_title, $app, $flag, $you, $youApp, $genre, $artist);
+        array_push($returnArray, $tempSong);
+    }
+    return $returnArray;
 }
 
 /**
@@ -205,6 +229,42 @@ function getUserMixTape($userIDinc) {
 //        array_push($returnArray, ($song_title . ' | ' . $song_position));
 //    }
 //    return $returnArray;
+}
+
+function getAllArtists() {
+    $con = initializeConnection();
+
+    $query = 'SELECT artist_id ' .
+            'FROM tbl_artist ' .
+            'ORDER BY name';
+    $stmt = $con->prepare($query);
+
+    $stmt->execute();
+    $stmt->bind_result($id);
+    $returnArray = array();
+    while ($stmt->fetch()) {
+        array_push($returnArray, $id);
+    }
+
+    return $returnArray;
+}
+
+function getAllGenres() {
+    $con = initializeConnection();
+
+    $query = 'SELECT genre_id ' .
+            'FROM tbl_genre ' .
+            'ORDER BY name';
+    $stmt = $con->prepare($query);
+
+    $stmt->execute();
+    $stmt->bind_result($id);
+    $returnArray = array();
+    while ($stmt->fetch()) {
+        array_push($returnArray, $id);
+    }
+
+    return $returnArray;
 }
 
 /**

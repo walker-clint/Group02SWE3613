@@ -41,7 +41,7 @@
                 </ul>
 
                 <?php
-                $exampleSong = getSong(1);
+                $exampleSong = getSongById(1);
                 echo '$exampleSong = getSong(1)<br>';
                 echo '$exampleSong->id returns ' . $exampleSong->id . '<br>';
                 echo '$exampleSong->title returns ' . $exampleSong->title . '<br>';
@@ -65,7 +65,7 @@
                     </td></tr>
                 <tr><td><?php
                         foreach ($mixTapeList as $tempSong) {
-                            echo getSong($tempSong) . '<br>';
+                            echo getSongById($tempSong) . '<br>';
                         }
                         ?>
                     </td></tr>

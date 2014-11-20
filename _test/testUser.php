@@ -40,7 +40,7 @@ and open the template in the editor.
         //print out the results (should be empty)
         echo '<h3>Should be empty now</h3>';
 
-        echo getSong($newUser) . '<br>';
+        echo getSongById($newUser) . '<br>';
         ?>
     </body>
 </html>

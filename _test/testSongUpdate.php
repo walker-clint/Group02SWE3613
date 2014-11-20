@@ -35,8 +35,8 @@
         //print out results
         echo 'Song ID: ' . $newSongId . '<br>';
 
-        echo getSong($newSongId) . '<br>';
-        echo getSong($newSongId)->getArtists() . '<br>' . getSong($newSongId)->getGenres().'<br>';
+        echo getSongById($newSongId) . '<br>';
+        echo getSongById($newSongId)->getArtists() . '<br>' . getSongById($newSongId)->getGenres().'<br>';
 
         //print mixtape with song
         echo '<h3>user 1\'s mixtape with new song</h3>';
@@ -57,8 +57,8 @@
         //print out the results (should be empty)
         echo '<h3>Should be empty now</h3>';
 
-        echo getSong($newSongId) . '<br>';
-        echo getSong($newSongId)->getArtists() . '<br>' . getSong($newSongId)->getGenres();
+        echo getSongById($newSongId) . '<br>';
+        echo getSongById($newSongId)->getArtists() . '<br>' . getSongById($newSongId)->getGenres();
         
         echo '<h3>user\'s mixtape with entry deleted:</h3>';
         echo var_dump(getUserMixtape(1));
