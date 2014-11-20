@@ -56,52 +56,57 @@
 
             <div class="form-horizontal" action="" method="POST">
                 <div class="well-2 bs-component">
-                    <table class="table table-striped" width="90%" cellpadding="2" cellspacing="2" overflow="auto">
-                        <thead>
-                        <tr>
-                            <th></th>
-                            <th>
-                                <h3>Title</h3>
-                            </th>
-                            <th>
-                                <h3>Artist</h3>
-                            </th>
-                            <th>
-                                <h3>Genre</h3>
-                            </th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-<!--                        <tr>-->
-<!--                            <th class="col-xs-1"></th>-->
-<!--                            <th class="col-xs-3"></th>-->
-<!--                            <th class="col-xs-4"></th>-->
-<!--                            <th class="col-xs-3"></th>-->
-<!--                            <th class="col-xs-1"></th>-->
-<!--                        </tr>-->
-                        <?php
-                        $increment = 1;
-                        $userMixtape = getMixtape($_SESSION['user_id']);
-                        foreach ($userMixtape as $songId) {
-                            $song = getSongById($songId);
-                            $songTitle = $song->title;
-                            $songArtist = $song->getArtists();
-                            $songGenre = $song->getGenres();
-                            $songLink = $song->getLink();
-                            echo '<tr><th></th><th><h2>' .
-                                $songTitle . '</h2></th><th><h2>' .
-                                $songArtist . '</h2></th><th><h2>' .
-                                $songGenre . '</h2></th><th></th></tr><tr><th></th><th>' .
-                                '<div class="btn btn-primary" >Play Song</div>' .
-                                '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' .
-                                '</th><th></th></tr>';
-                        }
-                        ?>
+                    <div class="captcha-container">
+                        <div class="captcha-container frame">
+                            <table class="table table-striped" width="90%" cellpadding="2" cellspacing="2"
+                                   overflow="auto">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>
+                                        <h3>Title</h3>
+                                    </th>
+                                    <th>
+                                        <h3>Artist</h3>
+                                    </th>
+                                    <th>
+                                        <h3>Genre</h3>
+                                    </th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <!--                        <tr>-->
+                                <!--                            <th class="col-xs-1"></th>-->
+                                <!--                            <th class="col-xs-3"></th>-->
+                                <!--                            <th class="col-xs-4"></th>-->
+                                <!--                            <th class="col-xs-3"></th>-->
+                                <!--                            <th class="col-xs-1"></th>-->
+                                <!--                        </tr>-->
+                                <?php
+                                $increment = 1;
+                                $userMixtape = getMixtape($_SESSION['user_id']);
+                                foreach ($userMixtape as $songId) {
+                                    $song = getSongById($songId);
+                                    $songTitle = $song->title;
+                                    $songArtist = $song->getArtists();
+                                    $songGenre = $song->getGenres();
+                                    $songLink = $song->getLink();
+                                    echo '<tr><th></th><th><h2>' .
+                                        $songTitle . '</h2></th><th><h2>' .
+                                        $songArtist . '</h2></th><th><h2>' .
+                                        $songGenre . '</h2></th><th></th></tr><tr><th></th><th>' .
+                                        '<div class="btn btn-primary" >Play Song</div>' .
+                                        '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' .
+                                        '</th><th></th></tr>';
+                                }
+                                ?>
 
-                        <?php ?>
-                        </tbody>
-                    </table>
+                                <?php ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
                 <!--End well-1-->
             </div>
