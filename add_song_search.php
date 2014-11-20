@@ -34,7 +34,7 @@ $artist_result = mysql_query($artist_query);
 while($artist_row = mysql_fetch_assoc($artist_result)){
 $artist_name = $artist_row['name'];
 }
-$results.='<option value="'.$song_id.'">' . $song_title . '<br> by <br>'. $artist_name . '</option><a href="'.$song_link.'" target="_blank">' . $song_title . ' by '. $artist_name . '</a></td>';
+$results.='<option value="'.$song_id.'">' . $song_title . '<br> by <br>'. $artist_name . '</option>';
 	}
 	
 	$results.='<form class="form-horizontal" method="post"><input class="btn btn-primary" type="submit" name = "create_exist" value="Use this Song"/></form>';
