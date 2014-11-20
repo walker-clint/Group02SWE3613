@@ -42,6 +42,7 @@
                                            value = "<?php echo $song->title; ?>">
                                 </div>
                             </div>
+                            
                             <div class="form-group">
                                 <label for="artist" class="col-lg-4 control-label">Artist(s)</label>
                                 <div class="col-lg-8">
@@ -64,7 +65,14 @@
                                         ?>
                                     </select>
                                 </div>
+
+                                <label class="col-lg-4 control-label"></label>
+                                <div class="col-lg-8">
+                                    <input align="center" type="text" class="form-control" id="newArtist" name="newArtist"
+                                           placeholder="Enter an artist not already in the system here">
+                                </div>
                             </div>
+                            
                             <div class="form-group">
                                 <label for="genre" class="col-lg-4 control-label">Genre(s)</label>
                                 <div class="col-lg-8">
@@ -87,13 +95,24 @@
                                         ?>
                                     </select>
                                 </div>
+
+                                <label class="col-lg-4 control-label"></label>
+                                <div class="col-lg-8">
+                                    <input align="center" type="text" class="form-control" id="newArtist" name="newGenre"
+                                           placeholder="Enter a genre not already in the system here">
+                                </div>
                             </div>
+                            
                             <div class="form-group">
                                 <label for="link" class="col-lg-4 control-label">Youtube Link</label>
                                 <div class="col-lg-8">
                                     <input align="center" type="text" class="form-control" id="link" name="link"
                                            value="<?php echo $song->youtubeLink ?>">
                                 </div>
+                            </div>
+                            
+                            <div align="center">
+                                <input class="btn btn-primary" type="submit" value="Submit"/>
                             </div>
                         </form>
 
