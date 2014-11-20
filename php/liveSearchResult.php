@@ -1,4 +1,5 @@
 <?php
+
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 if ($_POST) {
@@ -9,11 +10,7 @@ if ($_POST) {
         $songList = getSongsBySearch($q);
     }
     foreach ($songList as $song) {
-        ?>
-        <div class="show" align="left">
-        <?php echo $song->title . '<br>'; ?>
-        </div>
-        <?php
+        echo $song->title . '<br>';
     }
 }
         
