@@ -34,10 +34,13 @@ $artist_result = mysql_query($artist_query);
 while($artist_row = mysql_fetch_assoc($artist_result)){
 $artist_name = $artist_row['name'];
 }
-$results.='<option value="'.$song_id.'">' . $song_title . ' by '. $artist_name . '</option><a href="'.$song_link.'" target="_blank">' . $song_title . ' by '. $artist_name . '</a></td>';
+$results.='<option value="'.$song_id.'">' . $song_title . '<br> by <br>'. $artist_name . '</option><a href="'.$song_link.'" target="_blank">' . $song_title . ' by '. $artist_name . '</a></td>';
 	}
+	$exampleSong = getSongById($_POST['taskOption']);
 	//add button 
-	$results.='<form class="form-horizontal" method="post"><input class="btn btn-primary" type="submit" name = "play" value="Play this Song"/></form>';
+	$results.='<form action="'.$exampleSong->youtubeLink.'">
+    <input type="submit" value="Play this Song">
+</form>';
 	$results.='<form class="form-horizontal" method="post"><input class="btn btn-primary" type="submit" name = "create_exist" value="Use this Song"/></form>';
 	$results.='<form class="form-horizontal" method="post"><input class="btn btn-primary" type="submit" name = "create_new" value="Submit New Song"/></form>';
 }else{
@@ -47,14 +50,6 @@ $results.='<option value="'.$song_id.'">' . $song_title . ' by '. $artist_name .
 	}
 
 }
-
-if($_POST['play']){
-	  $exampleSong = getSongById($_POST['taskOption']);
-	  header('Location:'.$exampleSong->youtubeLink);
-	 exit();
-
-	}
-
 if($_POST['create_new']){
 	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/add_song_create.php');
 	 exit();
