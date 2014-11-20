@@ -92,6 +92,7 @@
                                         ?>
                                     </div>
                                 </table>
+                                <em>Don't see your song? </em><a href='songForm.php'><span class='well-1 btn btn-label-right'>Add it!</span></a>
                             </div>
                             <!--</form>-->
                             <!--End well-1-->
