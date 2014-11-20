@@ -887,7 +887,7 @@ td.beauty-hover {
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary,
 .table-hover > tbody > tr > td.primary:hover, .table-hover > tbody > tr > th.primary:hover, .table-hover > tbody > tr.primary:hover > td, .table-hover > tbody > tr.primary:hover > th {
-    color: #1f7012;
+    color: #700000;
     background-color: #700000;
     border-color: rgb(0, 0, 0);
 }
@@ -895,7 +895,7 @@ td.beauty-hover {
 .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success,
 .table-hover > tbody > tr > td.success:hover, .table-hover > tbody > tr > th.success:hover, .table-hover > tbody > tr.success:hover > td, .table-hover > tbody > tr.success:hover > th {
     color: #700000;
-    background-color: #700000;
+    background-color: #1f7012;
     border-color: rgb(0, 0, 0);
 }
 
