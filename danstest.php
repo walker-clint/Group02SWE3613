@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-
-</head>
-
+<html>
 <body>
+
+<?php
+echo "I cry!";
+?> 
 
 </body>
 </html>
