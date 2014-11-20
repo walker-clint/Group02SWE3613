@@ -16,7 +16,7 @@
 <div id="main" class="container-fluid">
     <!--Start Content-->
     <div class="row">
-<!--        <div id="left-column" class="col-sm-1"></div>-->
+        <!--        <div id="left-column" class="col-sm-1"></div>-->
         <div id="left-column" class="col-sm-4">
             <div class="well bs-component">
                 <!--<legend>LEFT COLUMN</legend>-->
@@ -57,47 +57,50 @@
                 <div class="form-horizontal" action="" method="POST">
 
                     <table>
-                        <tr>
-                            <td>
-                                <h4>Title</h4>
-                            </td>
-                            <td>
-                                <h4>Artist</h4>
-                            </td>
-                            <td>
-                                <h4>Genre</h4>
-                            </td>
-                            <td>
-                                <h4>YouTube Link</h4>
-                            </td>
-                        </tr>
-<!--                        --><?php
-//                        $increment = 1;
-//                        $userMixtape = getMixtape($_SESSION['user_id']);
-//                        foreach ($userMixtape as $songId) {
-//                            $song = getSongById($songId);
-//                            $songTitle = $song->title;
-//                            $songArtist = $song->getArtists();
-//                            $songGenre = $song->getGenres();
-//                            $songLink = $song->getLink();
-//
-//                            echo '<tr><td><h1></h1>' . $songTitle . '</td><td>' . $songArtist . '</td><td>' . $songGenre . '</td><td>' . $songLink . '</td><td><div class="btn btn-primary" >Delete</div>'  . '</td><tr></tr>';
-//                        }
-////                        foreach ($mixTapeList as $songInt) {
-////                            $song = getSongById($songInt);
-////                            if ($song instanceof Song) {
-////                                $songTitle = $song->title;
-////                                $songArtist = $song->getArtists();
-////                                $songGenre = $song->getGenres();
-////                                $songLink = $song->getLink();
-////
-////                                echo '<tr><td><h1>' . $increment . '</h1></td><td><div class="well-2 bs-component"'
-////                                    . 'onclick="' . $song->js_changeBox() . '" onmouseover="" style="cursor: pointer;">'
-////                                    . $song->js_infoBox() . '</div></td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
-////                            }
-////                            $increment += 1;
-////                        }
-//                        ?>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <h4>Title</h4>
+                                </th>
+                                <th>
+                                    <h4>Artist</h4>
+                                </th>
+                                <th>
+                                    <h4>Genre</h4>
+                                </th>
+                                <th>
+                                    <h4>YouTube Link</h4>
+                                </th>
+                            </tr>
+                        </thead>
+                        <!--                        --><?php
+                        //                        $increment = 1;
+                        //                        $userMixtape = getMixtape($_SESSION['user_id']);
+                        //                        foreach ($userMixtape as $songId) {
+                        //                            $song = getSongById($songId);
+                        //                            $songTitle = $song->title;
+                        //                            $songArtist = $song->getArtists();
+                        //                            $songGenre = $song->getGenres();
+                        //                            $songLink = $song->getLink();
+                        //
+                        //                            echo '<tr><td><h1></h1>' . $songTitle . '</td><td>' . $songArtist . '</td><td>' . $songGenre . '</td><td>' . $songLink . '</td><td><div class="btn btn-primary" >Delete</div>'  . '</td><tr></tr>';
+                        //                        }
+                        ////                        foreach ($mixTapeList as $songInt) {
+                        ////                            $song = getSongById($songInt);
+                        ////                            if ($song instanceof Song) {
+                        ////                                $songTitle = $song->title;
+                        ////                                $songArtist = $song->getArtists();
+                        ////                                $songGenre = $song->getGenres();
+                        ////                                $songLink = $song->getLink();
+                        ////
+                        ////                                echo '<tr><td><h1>' . $increment . '</h1></td><td><div class="well-2 bs-component"'
+                        ////                                    . 'onclick="' . $song->js_changeBox() . '" onmouseover="" style="cursor: pointer;">'
+                        ////                                    . $song->js_infoBox() . '</div></td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                        ////                            }
+                        ////                            $increment += 1;
+                        ////                        }
+                        //
+                        ?>
                         <?php ?>
 
                     </table>
@@ -106,7 +109,7 @@
             </div>
 
         </div>
-<!--        <div id="left-column" class="col-sm-1"></div>-->
+        <!--        <div id="left-column" class="col-sm-1"></div>-->
     </div>
 
     <!--End Middle-->
