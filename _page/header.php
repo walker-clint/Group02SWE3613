@@ -19,32 +19,43 @@ if (!empty($_SESSION['user_id'])) {
     }
     $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
             <li class="btn-label-right">
-            <div class="well-1 btn btn-primary">
-            <a href="' . $indexLink . '">' . $full_name . '</a>
+            <a href="' . $indexLink . '">
+			<div class="well-1 btn btn-primary">
+            ' . $full_name . '
             </div>
+			</a>
             </li>
              <li class="btn-label-right">
-            <div class="well-1 btn btn-primary">
-            <a href="user_song_list.php">' . "Edit Your Song List" . '</a>
+            <a href="user_song_list.php">
+			<div class="well-1 btn btn-primary">
+            ' . "Edit Your Song List" . '
             </div>
+			</a>
             </li>
 
             <li class="btn-label-right">
+			<a href="http://' . $_SERVER['SERVER_NAME'] . '/php/logoutService.php">
             <div class="well-1 btn btn-warning">
-            <a href="http://' . $_SERVER['SERVER_NAME'] . '/php/logoutService.php">Log Out</a>
+            Log Out
+			</div>
+			</a>
             </li>
             </ul>';
 } else {
     $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
             <li class="btn-label-right">
+			<a data-toggle="modal" href="#myModal1">
             <div class="well-1 btn btn-primary">
-            <a data-toggle="modal" href="#myModal1">Login</a>
+            Login
             </div>
+			</a>
             </li>
             <li class="btn-label-right">
+			<a href="register.php">
             <div class="well-1 btn btn-primary">
-            <a href="register.php">Register</a>
+            Register
             </div>
+			</a>
             </li>
             </ul>';
 }
