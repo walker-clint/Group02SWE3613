@@ -62,7 +62,12 @@
                         $userMixtape = getMixtape($_SESSION['user_id']);
                         foreach ($userMixtape as $songId) {
                             $song = getSongById($songId);
-                            //do something with $song
+                            $songTitle = $song->title;
+                            $songArtist = $song->getArtists();
+                            $songGenre = $song->getGenres();
+                            $songLink = $song->getLink();
+
+                            echo '<tr><td><h1></h1>' . $songTitle . "  " . $songArtist . "  " . $songGenre . '</td><tr></tr>';
                         }
                         foreach ($mixTapeList as $songInt) {
                             $song = getSongById($songInt);
