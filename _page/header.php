@@ -36,14 +36,14 @@ if (!empty($_SESSION['user_id'])) {
             </ul>';
 } else {
     $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
+//            <li class="btn-label-right">
+//            <div class="well-1 btn">
+//            <a href="login.php">Login</a>
+//            </div>
+//            </li>
             <li class="btn-label-right">
             <div class="well-1 btn">
-            <a href="login.php">Login</a>
-            </div>
-            </li>
-            <li class="btn-label-right">
-            <div class="well-1 btn">
-            <a data-toggle="modal" href="#myModal1">Login with modal</a>
+            <a data-toggle="modal" href="#myModal1">Login</a>
             </div>
             </li>
             <li class="btn-label-right">
@@ -55,7 +55,7 @@ if (!empty($_SESSION['user_id'])) {
 }
 ?>
 
-<header class="navbar">
+<header class="navbar-collapse">
     <div id="logo" class="col-xs-6 col-sm-6">
         <a href="/<?php echo '' . $indexLink; ?>"><img src="img/cllogo_medium.png" class="img-responsive"/></a>
     </div>
