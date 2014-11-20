@@ -60,13 +60,13 @@
                         <thead>
                         <tr>
                             <th>
-                                <h2>Title</h2>
+                                <h3>Title</h3>
                             </th>
                             <th>
-                                <h2>Artist</h2>
+                                <h3>Artist</h3>
                             </th>
                             <th>
-                                <h2>Genre</h2>
+                                <h3>Genre</h3>
                             </th>
                         </tr>
                         </thead>
