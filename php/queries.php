@@ -61,13 +61,14 @@ function getSongById($songIDinc) {
 }
 
 function getSongsBySearch($songTitleInc) {
-    $songTitle = '%'.htmlspecialchars($songTitleInc).'%';
+    $songTitle = '%' . htmlspecialchars($songTitleInc) . '%';
 
     $con = initializeConnection();
 
     $query = 'SELECT song_id, title, approved, flagged, youtube, youtube_approved '
             . 'FROM tbl_song '
-            . 'WHERE title LIKE ?';
+            . 'WHERE title LIKE ? '
+            . 'ORDER BY title';
     $stmt = $con->prepare($query);
 
     $stmt->bind_param('s', $songTitle);
