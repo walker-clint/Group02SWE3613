@@ -36,18 +36,13 @@ if (!empty($_SESSION['user_id'])) {
             </ul>';
 } else {
     $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
-//            <li class="btn-label-right">
-//            <div class="well-1 btn">
-//            <a href="login.php">Login</a>
-//            </div>
-//            </li>
             <li class="btn-label-right">
-            <div class="well-1 btn">
+            <div class="well-1 btn btn-primary">
             <a data-toggle="modal" href="#myModal1">Login</a>
             </div>
             </li>
             <li class="btn-label-right">
-            <div class="well-1 btn">
+            <div class="well-1 btn btn-primary">
             <a href="register.php">Register</a>
             </div>
             </li>
