@@ -52,10 +52,8 @@ if($_POST['create_new']){
 	 exit();
 	}
 	
-	if($_POST['create_exist']){
-		//insert mixtape
-		
-		addMixtape($id, $_POST['taskOption'],1);
+if($_POST['create_exist']){
+//	addMixtape($id, $_POST['taskOption'],1);
 		header('Location: http://' . $_SERVER['SERVER_NAME'] . '/user_song_list.php');
 	 exit();
 	}?>
@@ -90,8 +88,8 @@ if($_POST['create_new']){
           </div>
         </form>
         <select name="taskOption">
-          <?php echo $results; ?> 
-          </select>    
+          <?php echo $results; ?>
+        </select>
       </div>
     </div>
   </div>
