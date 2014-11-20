@@ -58,7 +58,8 @@ if($_POST['create_new']){
 		
 		header('Location: http://' . $_SERVER['SERVER_NAME'] . '/user_song_list.php');
 	 exit();
-	}?><!DOCTYPE html>
+	}?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; 
