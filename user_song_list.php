@@ -103,7 +103,7 @@
                                 $songTitle . '</th><th>' .
                                 $songArtist . '</th><th>' .
                                 $songGenre . '</th></tr><tr><th>' .
-                                '<div class="btn btn-primary" >' . $songLink  .'</div>' .
+                                '<div class="btn btn-primary" >Play Song</div>' .
                                 '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' .
                                 '</td></tr>';
                             $increment += 1;
