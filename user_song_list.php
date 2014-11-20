@@ -116,17 +116,17 @@ if ($_POST['create_exist']) {
                         </div>
                     </div>
                 </form>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <td><b>Song</b></td>
-                        <td><b>Action</b></td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php echo $results; ?>
-                    </tbody>
-                </table>
+<!--                <table class="table">-->
+<!--                    <thead>-->
+<!--                    <tr>-->
+<!--                        <td><b>Song</b></td>-->
+<!--                        <td><b>Action</b></td>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                    --><?php //echo $results; ?>
+<!--                    </tbody>-->
+<!--                </table>-->
             </div>
         </div>
         <div id="right-column" class="col-sm-6">
