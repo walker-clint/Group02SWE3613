@@ -56,7 +56,7 @@
 
             <div class="form-horizontal" action="" method="POST">
 
-                <table class="table">
+                <table class="table table-striped">
 
                     <thead>
 
