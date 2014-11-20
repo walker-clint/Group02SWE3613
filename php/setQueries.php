@@ -154,6 +154,46 @@ function addSongGenre($songId, $genreId) {
     return $insertId;
 }
 
+function deleteSongGenre($songId, $genreId) {
+    $con = initializeConnection();
+
+    $querySong = 'DELETE FROM tbl_song_genre WHERE genre_id = ? AND song_id = ?';
+
+    $stmtSong = $con->prepare($querySong);
+    $stmtSong->bind_param('ii', $genreId, $songId);
+    $stmtSong->execute();
+}
+
+function deleteSongAllGenres($songId) {
+    $con = initializeConnection();
+
+    $querySong = 'DELETE FROM tbl_song_genre WHERE song_id = ?';
+
+    $stmtSong = $con->prepare($querySong);
+    $stmtSong->bind_param('i', $songId);
+    $stmtSong->execute();
+}
+
+function deleteSongArtist($songId, $artistId) {
+    $con = initializeConnection();
+
+    $querySong = 'DELETE FROM tbl_song_artist WHERE artist_id = ? AND song_id = ?';
+
+    $stmtSong = $con->prepare($querySong);
+    $stmtSong->bind_param('ii', $artistId, $songId);
+    $stmtSong->execute();
+}
+
+function deleteSongAllArtists($songId) {
+    $con = initializeConnection();
+
+    $querySong = 'DELETE FROM tbl_song_artist WHERE song_id = ?';
+
+    $stmtSong = $con->prepare($querySong);
+    $stmtSong->bind_param('i', $songId);
+    $stmtSong->execute();
+}
+
 //deletes an artist and all references from the DB
 function deleteArtist($artistId) {
     $con = initializeConnection();
@@ -181,9 +221,9 @@ function deleteGenre($genreId) {
     $stmtSong->bind_param('i', $genreId);
     $stmtSong->execute();
 
-    $stmtArtist = $con->prepare($queryGenre);
-    $stmtArtist->bind_param('i', $genreId);
-    $stmtArtist->execute();
+    $stmtGenre = $con->prepare($queryGenre);
+    $stmtGenre->bind_param('i', $genreId);
+    $stmtGenre->execute();
 }
 
 /**
