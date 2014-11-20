@@ -95,8 +95,13 @@
                         $songGenre = $song->getGenres();
                         $songLink = $song->getLink();
 //                        <h4>' . $increment . '</h4>
-                        echo '<div class="well-2 bs-component>"><tr><th>' . $songTitle . '</th><th>' . $songLink . '</th><th>'
-                            . $songGenre . '</th></tr><tr><th>' . $songArtist . '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' . '</td></tr></div>';
+                        echo '<div class="well-2 bs-component><tr><th>' .
+                            $songTitle . '</th><th>' .
+                            $songLink . '</th><th>' .
+                            $songGenre . '</th></tr><tr><th>' .
+                            $songArtist .
+                            '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' .
+                            '</td></tr></div>';
                         $increment += 1;
                     }
                     //                        foreach ($mixTapeList as $songInt) {
