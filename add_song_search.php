@@ -61,7 +61,7 @@ if($_POST['create_new']){
 	if($_POST['create_exist']){
 		//insert mixtape
 		
-		addMixtape($id, $_POST['taskOption'], $position);
+		addMixtape($id, $_POST['taskOption'],1);
 		header('Location: http://' . $_SERVER['SERVER_NAME'] . '/user_song_list.php');
 	 exit();
 	}?>
