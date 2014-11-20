@@ -59,6 +59,7 @@
                     <table class="table table-striped" width="90%">
                         <thead>
                         <tr>
+                            <th></th>
                             <th>
                                 <h3>Title</h3>
                             </th>
@@ -68,9 +69,17 @@
                             <th>
                                 <h3>Genre</h3>
                             </th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
+                        <tr>
+                            <th class="col-xs-1"></th>
+                            <th class="col-xs-3"></th>
+                            <th class="col-xs-3"></th>
+                            <th class="col-xs-3"></th>
+                            <th class="col-xs-1"></th>
+                        </tr>
                         <?php
                         $increment = 1;
                         $userMixtape = getMixtape($_SESSION['user_id']);
@@ -80,10 +89,10 @@
                             $songArtist = $song->getArtists();
                             $songGenre = $song->getGenres();
                             $songLink = $song->getLink();
-                            echo '<tr><th><h2>' .
+                            echo '<tr><th></th><th><h2>' .
                                 $songTitle . '</h2></th><th><h2>' .
                                 $songArtist . '</h2></th><th><h2>' .
-                                $songGenre . '</h2></th></tr><tr><th>' .
+                                $songGenre . '</h2></th></tr><th></th><tr><th>' .
                                 '<div class="btn btn-primary" >Play Song</div>' .
                                 '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' .
                                 '</td></tr>';
