@@ -64,20 +64,24 @@
                         <th>
                             <h4>Title</h4>
                         </th>
-                        <!--                        <th></th>-->
+                        <!--<th></th>-->
                         <th>
-                            <h4>Artist</h4>
+                            <!--make into button with link-->
+                            <h4>YouTube Link</h4>
                         </th>
-                        <!--                        <th></th>-->
+                        <!--<th></th>-->
                         <th>
                             <h4>Genre</h4>
                         </th>
-                        <!--                        <th></th>-->
+                        <!--<th></th>-->
                     </tr>
                     <tr>
+                        <th></th>
+                        <th></th>
                         <th>
-                            <h4>YouTube Link</h4>
+                            <h4>Artist</h4>
                         </th>
+
                         <th></th>
                         <th>
                             <h4>Action</h4>
@@ -95,8 +99,8 @@
                         $songGenre = $song->getGenres();
                         $songLink = $song->getLink();
 
-                        echo '<tr><th><h4>' . $increment . '</h4></th><th></th><th>' . $songTitle . '</th><th>' . $songArtist . '</th><th>'
-                            . $songGenre . '</th></tr><tr><th>' . $songLink . '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' . '</td></tr>';
+                        echo '<tr><th><h4>' . $increment . '</h4></th><th></th><th>' . $songTitle . '</th><th>' . $songLink  . '</th><th>'
+                            . $songGenre . '</th></tr><tr><th>' . $songArtist . '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' . '</td></tr>';
                         $increment += 1;
                     }
                     //                        foreach ($mixTapeList as $songInt) {
