@@ -10,7 +10,7 @@ if ($_POST) {
         $songList = getSongsBySearch($q);
     }
     foreach ($songList as $song) {
-        echo $song->js_infoBox(true) . '<br>';
+        echo '<tr><td>'.$song->js_infoBox(true) . '</td></tr>';
     }
 }
         

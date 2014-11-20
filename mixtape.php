@@ -55,14 +55,15 @@
                     </div>
                     <div class="well bs-component">
                         <!--<legend>RIGHT COLUMN</legend>-->
-                        <?php
-                        $userMixtape = getMixtape($_SESSION['user_id']);
-                        foreach ($userMixtape as $songId) {
-                            $song = getSongById($songId);
-                            echo $song->js_infoBox(true) . '<br>';
-                        }
-                        ?>
-
+                        <table class="table">
+                            <?php
+                            $userMixtape = getMixtape($_SESSION['user_id']);
+                            foreach ($userMixtape as $songId) {
+                                $song = getSongById($songId);
+                                echo '<tr><td>' . $song->js_infoBox(true) . '</td></tr>';
+                            }
+                            ?>
+                        </table>
 
 
                     </div>
@@ -76,10 +77,11 @@
                         <div class="form-horizontal" action="" method="POST">
 
                             <!--<form>-->
-                                <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
-                                <script type="text/javascript" src="./js/liveSearch.js"></script>
-                                <div class="content">
-                                    Enter a song name (or part of a name) to search for: <input type="text" class="search" id="searchid" placeholder="Search for songs" /><br />
+                            <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+                            <script type="text/javascript" src="./js/liveSearch.js"></script>
+                            <div class="content">
+                                Enter a song name (or part of a name) to search for: <input type="text" class="search" id="searchid" placeholder="Search for songs" /><br />
+                                <table class="table">
                                     <div id="result">
                                         <div class="show" align="left">
                                             <?php
@@ -90,7 +92,8 @@
                                             ?>
                                         </div>
                                     </div>
-                                </div>
+                                </table>
+                            </div>
                             <!--</form>-->
                             <!--End well-1-->
                         </div>
