@@ -144,13 +144,13 @@ if ($_POST['create_exist']) {
                                     <tr>
                                         <th></th>
                                         <th>
-                                            <h3>Title</h3>
+                                            <h3 class="small">Title</h3>
                                         </th>
                                         <th>
-                                            <h3>Artist</h3>
+                                            <h3 class="small">Artist</h3>
                                         </th>
                                         <th>
-                                            <h3>Genre</h3>
+                                            <h3 class="small">Genre</h3>
                                         </th>
                                         <th></th>
                                         <th></th>
