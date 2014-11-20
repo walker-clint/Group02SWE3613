@@ -117,7 +117,8 @@ function getApprovedSongs() {
 
     $query = 'SELECT song_id, title, approved, flagged, youtube, youtube_approved '
             . 'FROM tbl_song '
-            . 'WHERE tbl_song.approved = 1';
+            . 'WHERE tbl_song.approved = 1 '
+            . 'ORDER BY title';
     $stmt = $con->prepare($query);
 
     $stmt->execute();
