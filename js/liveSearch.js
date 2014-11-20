@@ -5,7 +5,7 @@ $(function () {
     {
         var searchid = $(this).val();
         var dataString = 'search=' + searchid;
-        if (searchid != '')
+        if (true || searchid != '')
         {
             $.ajax({
                 type: "POST",
