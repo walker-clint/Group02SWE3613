@@ -77,6 +77,9 @@
                             <h4>YouTube Link</h4>
                         </th>
                         <th></th>
+                        <th>
+                            <h4>Action</h4>
+                        </th>
                     </tr>
                     </thead>
                     <tbody>
