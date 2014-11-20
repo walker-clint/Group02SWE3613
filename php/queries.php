@@ -233,6 +233,25 @@ function getUserMixTape($userIDinc) {
 //    return $returnArray;
 }
 
+function getArtistById($artistIdInc){
+    $artistID = htmlspecialchars($artistIdInc);
+
+    $con = initializeConnection();
+
+    $query = 'SELECT name '
+            . 'FROM tbl_artist '
+            . 'WHERE artist_id = ?';
+    $stmt = $con->prepare($query);
+
+    $stmt->bind_param('i', $artistID);
+    $stmt->execute();
+    $stmt->bind_result($name);
+
+    $stmt->fetch();
+
+    return $name;
+}
+
 function getAllArtists() {
     $con = initializeConnection();
 
@@ -249,6 +268,25 @@ function getAllArtists() {
     }
 
     return $returnArray;
+}
+
+function getGenreById($genreIdInc){
+    $genreID = htmlspecialchars($genreIdInc);
+
+    $con = initializeConnection();
+
+    $query = 'SELECT name '
+            . 'FROM tbl_genre '
+            . 'WHERE genre_id = ?';
+    $stmt = $con->prepare($query);
+
+    $stmt->bind_param('i', $genreID);
+    $stmt->execute();
+    $stmt->bind_result($name);
+
+    $stmt->fetch();
+
+    return $name;
 }
 
 function getAllGenres() {
