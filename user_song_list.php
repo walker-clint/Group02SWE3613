@@ -56,27 +56,21 @@
 
             <div class="form-horizontal" action="" method="POST">
 
-                <table>
+                <table class="table">
                     <thead>
                     <tr>
                         <th>
                             <h4>Title</h4>
                         </th>
                         <th></th>
-                    </tr>
-                    <tr>
                         <th>
                             <h4>Artist</h4>
                         </th>
                         <th></th>
-                    </tr>
-                    <tr>
                         <th>
                             <h4>Genre</h4>
                         </th>
                         <th></th>
-                    </tr>
-                    <tr>
                         <th>
                             <h4>YouTube Link</h4>
                         </th>
