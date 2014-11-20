@@ -211,44 +211,6 @@ if ($_POST['create_exist']) {
 
 <!--End Middle-->
 
-<div id="main" class="container-fluid">
-    <div class="row">
-        <div id="left-column" class="col-sm-4"></div>
-        <div id="center1-column" class="col-sm-4">
-            <div class="well bs-component">
-                <h1 align="center">Add Song: Search for an Existing Song</h1>
-
-                <div class="well-1 bs-component">
-                    <form class="form-horizontal" action="add_song_search.php" method="post">
-                        <div class="form-group">
-                            <label for="title" class="col-lg-4 control-label">Title</label>
-
-                            <div class="col-lg-8">
-                                <input align="center" type="text" class="form-control" id="title" name="title"
-                                       value='<?php echo "$title" ?>'>
-                            </div>
-                        </div>
-                        <div align="center">
-                            <input class="btn btn-primary" type="submit" value="Submit"/>
-                        </div>
-                    </form>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <td><b>Song</b></td>
-                            <td><b>Action</b></td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php echo $results; ?>
-                        </tbody>
-                    </table>
-
-                </div>
-            </div>
-        </div>
-        <div id="right-column" class="col-sm-4"></div>
-    </div>
 
 
     <div class="row">
