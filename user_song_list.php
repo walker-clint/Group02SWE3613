@@ -64,15 +64,17 @@
                         <th>
                             <h4>Title</h4>
                         </th>
-<!--                        <th></th>-->
+                        <!--                        <th></th>-->
                         <th>
                             <h4>Artist</h4>
                         </th>
-<!--                        <th></th>-->
+                        <!--                        <th></th>-->
                         <th>
                             <h4>Genre</h4>
                         </th>
-<!--                        <th></th>-->
+                        <!--                        <th></th>-->
+                    </tr>
+                    <tr>
                         <th>
                             <h4>YouTube Link</h4>
                         </th>
@@ -83,33 +85,34 @@
                     </tr>
                     </thead>
                     <tbody>
-                        <?php
-                        $increment = 1;
-                        $userMixtape = getMixtape($_SESSION['user_id']);
-                        foreach ($userMixtape as $songId) {
-                            $song = getSongById($songId);
-                            $songTitle = $song->title;
-                            $songArtist = $song->getArtists();
-                            $songGenre = $song->getGenres();
-                            $songLink = $song->getLink();
+                    <?php
+                    $increment = 1;
+                    $userMixtape = getMixtape($_SESSION['user_id']);
+                    foreach ($userMixtape as $songId) {
+                        $song = getSongById($songId);
+                        $songTitle = $song->title;
+                        $songArtist = $song->getArtists();
+                        $songGenre = $song->getGenres();
+                        $songLink = $song->getLink();
 
-                            echo '<tr><th><h4>'. $increment . '</h4></th><th></th><th>' . $songTitle . '</th><th>' . $songArtist . '</th><th>' . $songGenre . '</th><th>' . $songLink . '</th><th></th><th> <div class="btn btn-primary" >Delete</div>'  . '</td></tr>';
-                            $increment += 1;
-                        }
-//                        foreach ($mixTapeList as $songInt) {
-//                            $song = getSongById($songInt);
-//                            if ($song instanceof Song) {
-//                                $songTitle = $song->title;
-//                                $songArtist = $song->getArtists();
-//                                $songGenre = $song->getGenres();
-//                                $songLink = $song->getLink();
-//
-//                                echo '<tr><td><h1>' . $increment . '</h1></td><td><div class="well-2 bs-component"'
-//                                    . 'onclick="' . $song->js_changeBox() . '" onmouseover="" style="cursor: pointer;">'
-//                                    . $song->js_infoBox() . '</div></td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
-//                            }
-//                            $increment += 1;
-//                        }
+                        echo '<tr><th><h4>' . $increment . '</h4></th><th></th><th>' . $songTitle . '</th><th>' . $songArtist . '</th><th>'
+                            . $songGenre . '</th></tr><tr><th>' . $songLink . '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' . '</td></tr>';
+                        $increment += 1;
+                    }
+                    //                        foreach ($mixTapeList as $songInt) {
+                    //                            $song = getSongById($songInt);
+                    //                            if ($song instanceof Song) {
+                    //                                $songTitle = $song->title;
+                    //                                $songArtist = $song->getArtists();
+                    //                                $songGenre = $song->getGenres();
+                    //                                $songLink = $song->getLink();
+                    //
+                    //                                echo '<tr><td><h1>' . $increment . '</h1></td><td><div class="well-2 bs-component"'
+                    //                                    . 'onclick="' . $song->js_changeBox() . '" onmouseover="" style="cursor: pointer;">'
+                    //                                    . $song->js_infoBox() . '</div></td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                    //                            }
+                    //                            $increment += 1;
+                    //                        }
 
                     ?>
                     <?php ?>
