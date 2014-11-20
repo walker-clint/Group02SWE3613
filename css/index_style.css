@@ -30,7 +30,11 @@ h1 {
     color: #FDE910;
     font-family: FontAwesome;
 }
-
+h2 {
+    color: #700000;
+    font-family: FontAwesome;
+    font-size: smaller;
+}
 #logo {
     position: relative;
     background: #700000;

@@ -60,13 +60,13 @@
                         <thead>
                         <tr>
                             <th>
-                                <a1>Title</a1>
+                                <h2>Title</h2>
                             </th>
                             <th>
-                                <a1>Artist</a1>
+                                <h2>Artist</h2>
                             </th>
                             <th>
-                                <a1>Genre</a1>
+                                <h2>Genre</h2>
                             </th>
                         </tr>
                         </thead>
@@ -80,10 +80,10 @@
                             $songArtist = $song->getArtists();
                             $songGenre = $song->getGenres();
                             $songLink = $song->getLink();
-                            echo '<tr><th>' .
-                                $songTitle . '</th><th>' .
-                                $songArtist . '</th><th>' .
-                                $songGenre . '</th></tr><tr><th>' .
+                            echo '<tr><th><h2>' .
+                                $songTitle . '</h2></th><th><h2>' .
+                                $songArtist . '</h2></th><th><h2>' .
+                                $songGenre . '</h2></th></tr><tr><th>' .
                                 '<div class="btn btn-primary" >Play Song</div>' .
                                 '</th><th></th><th> <div class="btn btn-primary" >Delete</div>' .
                                 '</td></tr>';
