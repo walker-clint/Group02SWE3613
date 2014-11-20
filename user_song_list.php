@@ -56,7 +56,7 @@
 
             <div class="form-horizontal" action="" method="POST">
                 <div class="well-1 bs-component">
-                    <table class="table table-striped">
+                    <table class="table table-responsive">
                         <thead>
                         <tr>
                             <th>
@@ -89,6 +89,7 @@
                                 '</td></tr>';
                         }
                         ?>
+
                         <?php ?>
                         </tbody>
                     </table>
