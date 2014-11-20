@@ -22,7 +22,7 @@
                 <div id="left-column" class="col-sm-4">
                     <div class="well bs-component">
                         <!--<legend>LEFT COLUMN</legend>-->
-                        <h1></h1>
+                        <h1>Make your Mixtape!</h1>
                         <div class="form-horizontal" action="" method="POST">
 
                             <div class="well-1 bs-component">
@@ -51,11 +51,10 @@
                 <!--<div id="right-column" class="col-sm-4">-->
                 <div id="center1-column" class="col-sm-4">
                     <div align="center">
-                        <h1>Make your Mixtape!</h1>
+                        <h1>Your Mixtape!</h1>
                     </div>
                     <div class="well bs-component">
                         <!--<legend>RIGHT COLUMN</legend>-->
-                        <h3>Your Mixtape</h3>
                         <?php
                         $userMixtape = getMixtape($_SESSION['user_id']);
                         foreach ($userMixtape as $songId) {
