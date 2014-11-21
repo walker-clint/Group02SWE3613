@@ -76,34 +76,34 @@
                     </div>
                 </div>
             </div>
+
+            <?php
+            $songListFlagged = getFlaggedSongs();
+            if (count($songListFlagged) > 0) {
+            ?>
             <div align="center">
                 <h1>Flagged songs</h1>
             </div>
             <div class="well bs-component">
-                <?php
-                $songListFlagged = getFlaggedSongs();
-                if (count($songListFlagged) > 0) {
-                    ?>
-
-                    <div class="well-1 bs-component">
-                        <table class="table table-striped">
+                <div class="well-1 bs-component">
+                    <table class="table table-striped">
 
 
-                            <?php
-                            foreach ($songListFlagged as $song) {
-                                if ($song instanceof Song) {
+                        <?php
+                        foreach ($songListFlagged as $song) {
+                            if ($song instanceof Song) {
 //                                        $songTitle = $song->title;
 //                                        $songArtist = $song->getArtists();
 //                                        $songGenre = $song->getGenres();
 //                                        $songLink = $song->getLink();
 
-                                    echo '<tr><th>'
-                                        . $song->js_infoBox_admin(true) . '</th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
-                                }
+                                echo '<tr><th>'
+                                    . $song->js_infoBox_admin(true) . '</th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                             }
-                            ?>
-                        </table>
-                    </div>
+                        }
+                        ?>
+                    </table>
+                </div>
                 <?php } ?>
             </div>
 
@@ -132,6 +132,7 @@
                         <tbody>
                         <?php
                         $songListNormal = getApprovedAndUnflaggedSongs();
+
                         foreach ($songListNormal as $song) {
                             if ($song instanceof Song) {
                                 $songTitle = $song->title;
