@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
 	$conLogin = initializeConnection();
             $sql_username_check = mysql_query("SELECT user_id FROM tbl_user WHERE login='$username' LIMIT 1");
-			$result = mysqli_query($conLogin, l_username_check);
+			$result = mysqli_query($conLogin, $sql_username_check);
 			$count = mysqli_num_rows($result);
             if ($count == 0) {
 				$hashedPass = md5($password);
