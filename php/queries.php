@@ -143,7 +143,8 @@ function getUnapprovedSongs() {
 
     $query = 'SELECT song_id, title, approved, flagged, youtube, youtube_approved '
             . 'FROM tbl_song '
-            . 'WHERE tbl_song.approved = 0';
+            . 'WHERE tbl_song.approved = 0 '
+            . 'ORDER BY title';
     $stmt = $con->prepare($query);
 
     $stmt->execute();
@@ -167,7 +168,8 @@ function getFlaggedSongs() {
 
     $query = 'SELECT song_id, title, approved, flagged, youtube, youtube_approved '
             . 'FROM tbl_song '
-            . 'WHERE tbl_song.flagged = 1';
+            . 'WHERE tbl_song.flagged = 1 '
+            . 'ORDER BY title';
     $stmt = $con->prepare($query);
 
     $stmt->execute();
@@ -191,7 +193,8 @@ function getApprovedAndUnflaggedSongs() {
 
     $query = 'SELECT song_id, title, approved, flagged, youtube, youtube_approved '
             . 'FROM tbl_song '
-            . 'WHERE tbl_song.flagged = 0 AND tbl_song.approved = 1';
+            . 'WHERE tbl_song.flagged = 0 AND tbl_song.approved = 1 '
+            . 'ORDER BY title';
     $stmt = $con->prepare($query);
 
     $stmt->execute();
@@ -320,7 +323,8 @@ function getSongGenre($songIDinc) {
     $query = 'SELECT tbl_genre.name '
             . 'FROM tbl_genre '
             . 'JOIN tbl_song_genre ON tbl_song_genre.genre_id = tbl_genre.genre_id '
-            . 'WHERE tbl_song_genre.song_id = ?';
+            . 'WHERE tbl_song_genre.song_id = ? '
+            . 'ORDER BY tbl_genre.name';
     $stmt = $con->prepare($query);
 
     $stmt->bind_param('i', $songID);
@@ -342,7 +346,8 @@ function getSongGenreIds($songIDinc) {
     $query = 'SELECT tbl_genre.genre_id '
             . 'FROM tbl_genre '
             . 'JOIN tbl_song_genre ON tbl_song_genre.genre_id = tbl_genre.genre_id '
-            . 'WHERE tbl_song_genre.song_id = ?';
+            . 'WHERE tbl_song_genre.song_id = ? '
+            . 'ORDER BY tbl_genre.name';
     $stmt = $con->prepare($query);
 
     $stmt->bind_param('i', $songID);
@@ -368,7 +373,8 @@ function getSongArtist($songIDinc) {
     $query = 'SELECT tbl_artist.name '
             . 'FROM tbl_artist '
             . 'JOIN tbl_song_artist ON tbl_song_artist.artist_id = tbl_artist.artist_id '
-            . 'WHERE tbl_song_artist.song_id = ?';
+            . 'WHERE tbl_song_artist.song_id = ? '
+            . 'ORDER BY tbl_artist.name';
     $stmt = $con->prepare($query);
 
     $stmt->bind_param('i', $songID);
@@ -390,7 +396,8 @@ function getSongArtistIds($songIDinc) {
     $query = 'SELECT tbl_artist.artist_id '
             . 'FROM tbl_artist '
             . 'JOIN tbl_song_artist ON tbl_song_artist.artist_id = tbl_artist.artist_id '
-            . 'WHERE tbl_song_artist.song_id = ?';
+            . 'WHERE tbl_song_artist.song_id = ? '
+            . 'ORDER BY tbl_artist.name';
     $stmt = $con->prepare($query);
 
     $stmt->bind_param('i', $songID);
@@ -468,12 +475,14 @@ function getMixtapeSortPosition($userIDInc) {
  * */
 function getCurrentPageURL() {
     $pageURL = 'http';
-    if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+//    if ($_SERVER["HTTPS"] == "on") {
+//        $pageURL .= "s";
+//    }
     $pageURL .= "://";
     if ($_SERVER["SERVER_PORT"] != "80") {
-        $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+        $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"];
     } else {
-        $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+        $pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
     }
     return $pageURL;
 }
