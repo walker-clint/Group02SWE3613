@@ -47,32 +47,35 @@
 
             <div class="well bs-component">
                 <!--<legend>RIGHT COLUMN</legend>-->
+                <div class="well-1 bs-component">
+                    <div class="form-horizontal" action="" method="POST"></div>
+                    <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
+                    <?php
+                    $songListUnapproved = getUnapprovedSongs();
+                    if (count($songListUnapproved) > 0) {
+                        ?>
+                        <table class="table">
 
-                <div class="form-horizontal" action="" method="POST"></div>
-                <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
-                <?php
-                $songListUnapproved = getUnapprovedSongs();
-                if (count($songListUnapproved) > 0) {
-                    ?>
-                    <table class="table">
+                            <h1>Songs awaiting approval</h1>
 
-                        <h1>Songs awaiting approval</h1>
-
-                        <?php
-                        foreach ($songListUnapproved as $song) {
-                            if ($song instanceof Song) {
+                            <?php
+                            foreach ($songListUnapproved as $song) {
+                                if ($song instanceof Song) {
 //                                        $songTitle = $song->title;
 //                                        $songArtist = $song->getArtists();
 //                                        $songGenre = $song->getGenres();
 //                                        $songLink = $song->getLink();
 
-                                echo '<tr><td>'
-                                    . $song->js_infoBox_admin(true) . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                    echo '<tr><td>'
+                                        . $song->js_infoBox_admin(true) . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                }
                             }
-                        }
-                        ?>
-                    </table>
-                <?php } ?>
+                            ?>
+                        </table>
+                    <?php } ?>
+                </div>
+            </div>
+            <div class="well bs-component">
                 <?php
                 $songListFlagged = getFlaggedSongs();
                 if (count($songListFlagged) > 0) {
@@ -103,28 +106,29 @@
         <div id="right-column" class="col-sm-4">
             <h1>Songs</h1>
 
-            <div class="well-1 bs-component">
+            <div class="well bs-component">
+                <div class="well-1 bs-component">
 
-                <table class="table">
-                    <?php
-                    $songListNormal = getApprovedAndUnflaggedSongs();
-                    foreach ($songListNormal as $song) {
-                        if ($song instanceof Song) {
-                            $songTitle = $song->title;
-                            $songArtist = $song->getArtists();
-                            $songGenre = $song->getGenres();
-                            $songLink = $song->getLink();
+                    <table class="table">
+                        <?php
+                        $songListNormal = getApprovedAndUnflaggedSongs();
+                        foreach ($songListNormal as $song) {
+                            if ($song instanceof Song) {
+                                $songTitle = $song->title;
+                                $songArtist = $song->getArtists();
+                                $songGenre = $song->getGenres();
+                                $songLink = $song->getLink();
 
-                            echo '<tr><td>'
-                                . $song->js_infoBox_admin(true) . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                echo '<tr><td>'
+                                    . $song->js_infoBox_admin(true) . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                            }
                         }
-                    }
-                    ?>
-                    <?php ?>
-                </table>
+                        ?>
+                        <?php ?>
+                    </table>
+                </div>
+                <!--End well-1-->
             </div>
-            <!--End well-1-->
-
         </div>
 
     </div>
