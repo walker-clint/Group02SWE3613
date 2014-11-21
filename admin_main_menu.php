@@ -117,7 +117,7 @@
             <div class="well bs-component">
                 <div class="well-1 bs-component">
 
-                    <table class="table-striped">
+                    <table class="table table-striped">
                         <?php
                         $songListNormal = getApprovedAndUnflaggedSongs();
                         foreach ($songListNormal as $song) {
@@ -127,8 +127,8 @@
                                 $songGenre = $song->getGenres();
                                 $songLink = $song->getLink();
 
-                                echo '<tr><td>'
-                                    . $song->js_infoBox_admin(true) . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                echo '<tr><th>'
+                                    . $song->js_infoBox_admin(true) . '</th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                             }
                         }
                         ?>
