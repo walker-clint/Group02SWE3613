@@ -14,6 +14,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST['email']);
     $secret_q = htmlspecialchars($_POST['secret_q']);
     $secret_a = htmlspecialchars($_POST['secret_a']);
+	$_SESSION['username']=$username; 
+$_SESSION['password']=$password;
+$_SESSION['firstname']=$firstname;
+$_SESSION['lastname']=$lastname;
+$_SESSION['secret_q']=$secret_q;
+$_SESSION['secret_a']=$secret_a;
+	
 	
 	 if ($resp->is_valid) {
 		 if($firstname && $lastname && $email && $username && $password){

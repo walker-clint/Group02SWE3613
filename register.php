@@ -6,6 +6,13 @@ session_start();
 require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; 
 require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
 $error = $_SESSION['error'];
+$username = $_SESSION['username'];
+$password = $_SESSION['password'];
+$firstname = $_SESSION['firstname'];
+$lastname = $_SESSION['lastname'];
+$secret_q = $_SESSION['secret_q'];
+$secret_a = $_SESSION['secret_a'];
+
 ?>
 </head>
 <body>
