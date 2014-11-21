@@ -117,7 +117,7 @@
             <div class="well bs-component">
                 <div class="well-1 bs-component">
 
-                    <table class="table table-striped">
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>
