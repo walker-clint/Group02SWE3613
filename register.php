@@ -1,5 +1,9 @@
-<?php
-$errorMsg = "";
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; 
+$error = "";
 session_start();
 
 require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
@@ -73,10 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	exit;
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; ?>
+
     </head>
     <body>
         <!--Start Header-->
