@@ -24,9 +24,14 @@ if (!empty($_SESSION['user_id'])) {
             <li class="btn-label-right">
             <a href="' . $indexLink . '">
 			<div class="well-1 btn btn-primary">
-            ' . $full_name . '
+            Top 10 Songs
             </div>
 			</a>
+            </li>
+			 <li class="btn-label-right">
+			<div class="well-1 btn btn-primary">
+            ' . $full_name . "Song List" . '
+            </div>
             </li>
             <li class="btn-label-right">
 			<a href="http://' . $_SERVER['SERVER_NAME'] . '/php/logoutService.php">
@@ -41,14 +46,14 @@ if (!empty($_SESSION['user_id'])) {
             <li class="btn-label-right">
             <a href="' . $indexLink . '">
 			<div class="well-1 btn btn-primary">
-            ' . $full_name . '
+            Top 10 Songs
             </div>
 			</a>
             </li>
              <li class="btn-label-right">
             <a href="user_song_list.php">
 			<div class="well-1 btn btn-primary">
-            ' . "Edit Your Song List" . '
+            ' . $full_name . "Song List" . '
             </div>
 			</a>
             </li>

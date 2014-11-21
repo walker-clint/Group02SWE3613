@@ -8,6 +8,7 @@ require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
 $error = $_SESSION['error'];
 $firstname = $_SESSION['firstname'];
 $lastname = $_SESSION['lastname'];
+$email = $_SESSION['email'];
 $secret_q = $_SESSION['secret_q'];
 $secret_a = $_SESSION['secret_a'];
 
