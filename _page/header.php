@@ -193,8 +193,7 @@ if (!empty($_SESSION['user_id'])) {
 
                                                     <div class="col-xs-8 col-md-8">
                                                         <input type="text" class="form-control-1" id="lastname"name="lastname"
-                                                               placeholder="Last Name"
-                                                               value="<?php echo "$lastname"; ?>">
+                                                               placeholder="Last Name">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

@@ -30,10 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
 			}
 			else{
-				   echo '<span class="error">The username is already in use inside our system. Please try another.</span>';
+				   $error =  '<span class="error">The username is already in use inside our system. Please try another.</span>';
 			}
 	
 } else {
-    echo '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
+    $error =  '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
 	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 }
