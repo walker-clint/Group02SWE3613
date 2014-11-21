@@ -9,7 +9,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/setQueries.php';
 
 session_start();
 $error = $_SESSION['error'];
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_POST['username']) {
     $privatekey = "6LcMdf0SAAAAAGoCSMb54T2MbWvgxaNpnDqhLwSj";
     $resp = recaptcha_check_answer($privatekey, $_SERVER["REMOTE_ADDR"], htmlspecialchars($_POST["recaptcha_challenge_field"]), htmlspecialchars($_POST["recaptcha_response_field"]));
     $username = htmlspecialchars($_POST['username']);

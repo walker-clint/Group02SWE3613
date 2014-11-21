@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . ("/recaptchalib.php");
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/setQueries.php';
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
- /*   $privatekey = "6LcMdf0SAAAAAGoCSMb54T2MbWvgxaNpnDqhLwSj";
+    $privatekey = "6LcMdf0SAAAAAGoCSMb54T2MbWvgxaNpnDqhLwSj";
     $resp = recaptcha_check_answer($privatekey, $_SERVER["REMOTE_ADDR"], htmlspecialchars($_POST["recaptcha_challenge_field"]), htmlspecialchars($_POST["recaptcha_response_field"]));
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			}
 			
 	 }else{
-		 flush();
+		
 		 $error = "You did not submit the following required information!<br /><br />";
             if (!$firstname) {
                 $error .= "--- First Name<br />";
@@ -62,16 +62,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 		 
 	 }
-*/
-echo htmlspecialchars($_POST['username']).'</br>';
-echo htmlspecialchars($_POST['password']).'</br>';
-echo htmlspecialchars($_POST['firstname']).'</br>';
-echo htmlspecialchars($_POST['lastname']).'</br>';
-echo htmlspecialchars($_POST['email']).'</br>';
-echo htmlspecialchars($_POST['secret_q']).'</br>';
-echo htmlspecialchars($_POST['secret_a']).'</br>';
 } else {
-    /*$error =  '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
+    $error =  '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
 	$_SESSION['error']=$error;
-	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');*/
+	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 }
