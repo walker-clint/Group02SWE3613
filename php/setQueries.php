@@ -13,8 +13,9 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
  * @param type $youtubeApproved
  * @return type the primary key of the created song
  */
-function addSong($title, $approved, $flagged, $youtubeLink, $youtubeApproved) {
+function addSong($titleInc, $approved, $flagged, $youtubeLink, $youtubeApproved) {
     $con = initializeConnection();
+    $title = htmlspecialchars($titleInc, ENT_QUOTES);
 
     $query = 'INSERT INTO tbl_song(title, approved, flagged, youtube, youtube_approved) values (?,?,?,?,?)';
 
@@ -36,8 +37,9 @@ function addSong($title, $approved, $flagged, $youtubeLink, $youtubeApproved) {
  * @param type $youtubeLink
  * @param type $youtubeApproved
  */
-function updateSong($id, $title, $approved, $flagged, $youtubeLink, $youtubeApproved) {
+function updateSong($id, $titleInc, $approved, $flagged, $youtubeLink, $youtubeApproved) {
     $con = initializeConnection();
+    $title = htmlspecialchars($title, ENT_QUOTES);
 
     $query = 'UPDATE tbl_song SET title=?, approved=?, flagged=?, youtube=?, youtube_approved=? WHERE song_id = ?';
 
@@ -82,8 +84,9 @@ function deleteSong($songId) {
  * @param type $name
  * @return type the primary key of the created artist
  */
-function addArtist($name) {
+function addArtist($nameInc) {
     $con = initializeConnection();
+    $name = htmlspecialchars($nameInc, ENT_QUOTES);
 
     $query = 'INSERT INTO tbl_artist(name) values (?)';
 
@@ -101,8 +104,9 @@ function addArtist($name) {
  * @param type $name
  * @return type the primary key of the created genre
  */
-function addGenre($name) {
+function addGenre($nameInc) {
     $con = initializeConnection();
+    $name = htmlspecialchars($name, ENT_QUOTES);
 
     $query = 'INSERT INTO tbl_genre(name) values (?)';
 
@@ -276,8 +280,15 @@ function deleteMixtape($userId, $songId) {
     $stmtSong->execute();
 }
 
-function addUser($login, $pass, $email, $firstName, $lastName, $admin, $secretQ, $secretA) {
+function addUser($loginInc, $passInc, $emailInc, $firstNameInc, $lastNameInc, $admin, $secretQInc, $secretAInc) {
     $con = initializeConnection();
+    $login = htmlspecialchars($loginInc, ENT_QUOTES);
+    $pass = htmlspecialchars($passInc, ENT_QUOTES);
+    $email = htmlspecialchars($emailInc, ENT_QUOTES);
+    $firstName = htmlspecialchars($firstNameInc, ENT_QUOTES);
+    $lastName = htmlspecialchars($lastNameInc, ENT_QUOTES);
+    $secretQ = htmlspecialchars($secretQInc, ENT_QUOTES);
+    $secretA = htmlspecialchars($secretAInc, ENT_QUOTES);
 
     $query = 'INSERT INTO tbl_user(login, password, email, first_name, last_name, admin, secret_question, secret_answer) values (?,?,?,?,?,?,?,?)';
 
@@ -290,8 +301,15 @@ function addUser($login, $pass, $email, $firstName, $lastName, $admin, $secretQ,
     return $insertId;
 }
 
-function updateUser($userId, $login, $pass, $email, $firstName, $lastName, $admin, $secretQ, $secretA) {
+function updateUser($userId, $loginInc, $passInc, $emailInc, $firstNameInc, $lastNameInc, $admin, $secretQInc, $secretAInc) {
     $con = initializeConnection();
+    $login = htmlspecialchars($loginInc, ENT_QUOTES);
+    $pass = htmlspecialchars($passInc, ENT_QUOTES);
+    $email = htmlspecialchars($emailInc, ENT_QUOTES);
+    $firstName = htmlspecialchars($firstNameInc, ENT_QUOTES);
+    $lastName = htmlspecialchars($lastNameInc, ENT_QUOTES);
+    $secretQ = htmlspecialchars($secretQInc, ENT_QUOTES);
+    $secretA = htmlspecialchars($secretAInc, ENT_QUOTES);
 
     //UPDATE tbl_user SET `login`='temp19', `password`='pass1', `email`='fake@fake.com1', `admin`='1', `first_name`='Bob1', `last_name`='Smith1' WHERE `user_id`='20';
     $query = 'UPDATE tbl_user SET login = ?, password = ?, email = ?, first_name = ?, last_name = ?, admin = ?, secret_question = ?, secret_answer = ? '

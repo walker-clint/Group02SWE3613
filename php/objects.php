@@ -42,9 +42,9 @@ class Song {
      */
     public function js_changeBox($focus) {
         return 'changeBox(\'' . $this->id . '\''
-                . ',\'' . $this->title . '\''
-                . ',\'' . $this->getArtists() . '\''
-                . ',\'' . $this->getGenres() . '\''
+                . ',\'' . htmlspecialchars($this->title, ENT_QUOTES) . '\''
+                . ',\'' . htmlspecialchars($this->getArtists(), ENT_QUOTES) . '\''
+                . ',\'' . htmlspecialchars($this->getGenres(), ENT_QUOTES) . '\''
                 . ',\'' . $this->getLink() . '\''
                 . ',\'' . $this->flagged . '\''
                 . ',\'' . $focus . '\')';
@@ -55,14 +55,14 @@ class Song {
      * @return String formatted HTML
      */
     public function js_changeBox_admin($focus) {
-        return 'changeBox_admin(\'' . $this->id . '\''
-                . ',\'' . $this->title . '\''
-                . ',\'' . $this->getArtists() . '\''
-                . ',\'' . $this->getGenres() . '\''
+        return ('changeBox_admin(\'' . $this->id . '\''
+                . ',\'' . htmlspecialchars($this->title, ENT_QUOTES) . '\''
+                . ',\'' . htmlspecialchars($this->getArtists(), ENT_QUOTES) . '\''
+                . ',\'' . htmlspecialchars($this->getGenres(), ENT_QUOTES) . '\''
                 . ',\'' . $this->getLink() . '\''
                 . ',\'' . $this->approved . '\''
                 . ',\'' . $this->flagged . '\''
-                . ',\'' . $focus . '\')';
+                . ',\'' . $focus . '\')');
     }
 
     /**
@@ -157,7 +157,9 @@ class Song {
     }
 
     public function __toString() {
-        return $this->title . '| Genre: ' . $this->getGenres() . '| Artist: ' . $this->getArtists();
+        return htmlspecialchars($this->title, ENT_QUOTES)
+                . '| Genre: ' . $this->getGenres()
+                . '| Artist: ' . $this->getArtists();
     }
 
     /**
@@ -165,7 +167,7 @@ class Song {
      * @return String a string with all the fields of the song
      */
     function printSong() {
-        return $this->id . ' | ' . $this->title . ' | ' .
+        return $this->id . ' | ' . htmlspecialchars($this->title, ENT_QUOTES) . ' | ' .
                 $this->approved . ' | ' . $this->flagged . ' | ' .
                 $this->youtubeLink . ' | ' . $this->youtubeApproved;
     }
