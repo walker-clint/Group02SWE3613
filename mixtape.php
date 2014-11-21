@@ -82,6 +82,7 @@
                             <div class="content">
                                 <em>Don't see your song? </em><a href='songForm.php'><span class='well-1 btn btn-label-right'>Add it!</span></a>
                                 <h4>Enter a song name (or part of a name) to search for:</h4>
+                                
                                 <input type="text" class="search" id="searchid" placeholder="Search for songs" /><br /><br>
                                 <table id="result" class="table">
                                     <div class="show" align="left">
