@@ -57,8 +57,6 @@
                     <div class="well-1 bs-component">
                         <div class="form-horizontal" action="" method="POST">
                             <table class="table table-striped">
-
-
                                 <?php
                                 foreach ($songListUnapproved as $song) {
                                     if ($song instanceof Song) {
