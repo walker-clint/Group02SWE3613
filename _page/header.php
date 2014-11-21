@@ -26,15 +26,18 @@ if (!empty($_SESSION['user_id'])) {
             ' . $full_name . '
             </div>
 			</a>
-            </li>
-             <li class="btn-label-right">
-            <a href="user_song_list.php">
-			<div class="well-1 btn btn-primary">
-            ' . "Edit Your Song List" . '
-            </div>
-			</a>
-            </li>
+            </li>;
 
+            if($page != "http://group02p2.swe3613.com/main_menu.php"){
+               $toplinks = $toplinks . <li class="btn-label-right">
+                <a href="user_song_list.php">
+                <div class="well-1 btn btn-primary">
+                ' . "Edit Your Song List" . '
+                </div>
+                </a>
+                </li>
+            }
+            $toplinks = $toplinks .
             <li class="btn-label-right">
 			<a href="http://' . $_SERVER['SERVER_NAME'] . '/php/logoutService.php">
             <div class="well-1 btn btn-warning">
