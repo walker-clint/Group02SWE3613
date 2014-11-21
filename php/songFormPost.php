@@ -64,7 +64,8 @@ foreach ($genres as $genre) {
     addSongGenre($songId, $genre);
 }
 
-if($userType=='admin'){
+if ($userType == 'admin') {
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/admin_main_menu.php');
+} else {
+    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/mixtape.php');
 }
-header('Location: http://' . $_SERVER['SERVER_NAME'] . '/mixtape.php');
