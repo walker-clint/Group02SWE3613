@@ -25,25 +25,22 @@
                 <h1>Song Approval Menu</h1>
             </div>
             <div class="well bs-component">
-                <!--<legend>LEFT COLUMN</legend>-->
-
-
-                <div class="form-horizontal" action="" method="POST"></div>
-
-                <div class="well-1 bs-component">
-                    <div class="video-container" id="vidWindow_admin">
-                        <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
-                        <?php
-                        //                                $mixTapeList = getBestMixTape();
-                        //
-                        //                                $randSongNumber = rand(0, (count($mixTapeList) - 1));
-                        //                                $initialSong = getSong($mixTapeList[$randSongNumber]);
-                        //                                if ($initialSong instanceof Song) {
-                        //                                    echo '<script>window.onload = (function(){' . $initialSong->getJavascript_changeBox() . ';});</script>';
-                        //                                }
-                        ?>
+                <div class="form-horizontal" action="" method="POST">
+                    <div class="well-1 bs-component">
+                        <div class="video-container" id="vidWindow_admin">
+                            <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
+                            <?php
+                            //                                $mixTapeList = getBestMixTape();
+                            //
+                            //                                $randSongNumber = rand(0, (count($mixTapeList) - 1));
+                            //                                $initialSong = getSong($mixTapeList[$randSongNumber]);
+                            //                                if ($initialSong instanceof Song) {
+                            //                                    echo '<script>window.onload = (function(){' . $initialSong->getJavascript_changeBox() . ';});</script>';
+                            //                                }
+                            ?>
+                        </div>
+                        <p id="songInfo_admin"></p>
                     </div>
-                    <p id="songInfo_admin"></p>
                 </div>
             </div>
             <div align="center">
@@ -52,30 +49,31 @@
             <div class="well bs-component">
                 <!--<legend>RIGHT COLUMN</legend>-->
                 <div class="well-1 bs-component">
-                    <div class="form-horizontal" action="" method="POST"></div>
-                    <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
-                    <?php
-                    $songListUnapproved = getUnapprovedSongs();
-                    if (count($songListUnapproved) > 0) {
-                        ?>
-                        <table class="table table-striped">
+                    <div class="form-horizontal" action="" method="POST">
+
+                        <?php
+                        $songListUnapproved = getUnapprovedSongs();
+                        if (count($songListUnapproved) > 0) {
+                            ?>
+                            <table class="table table-striped">
 
 
-                            <?php
-                            foreach ($songListUnapproved as $song) {
-                                if ($song instanceof Song) {
+                                <?php
+                                foreach ($songListUnapproved as $song) {
+                                    if ($song instanceof Song) {
 //                                        $songTitle = $song->title;
 //                                        $songArtist = $song->getArtists();
 //                                        $songGenre = $song->getGenres();
 //                                        $songLink = $song->getLink();
 
-                                    echo '<tr><th>'
-                                        . $song->js_infoBox_admin(true) . '</th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                        echo '<tr><th>'
+                                            . $song->js_infoBox_admin(true) . '</th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                    }
                                 }
-                            }
-                            ?>
-                        </table>
-                    <?php } ?>
+                                ?>
+                            </table>
+                        <?php } ?>
+                    </div>
                 </div>
             </div>
             <div align="center">
@@ -116,14 +114,15 @@
             </div>
             <div class="well bs-component">
                 <div class="well-1 bs-component">
-
+                    <a href='songForm.php'><span
+                            class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
                     <table class="table">
                         <thead>
-                            <tr>
-                                <th>
-                                    <b>Song by Artist</b>
-                                </th>
-                            </tr>
+                        <tr>
+                            <th>
+                                <b>Song by Artist</b>
+                            </th>
+                        </tr>
                         </thead>
                         <tbody>
                         <?php
