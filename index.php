@@ -18,7 +18,7 @@
 <div id="main" class="container-fluid">
     <!--Start Content-->
     <div class="row">
-        <div id="left-column" class="col-sm-2"></div>
+        <div id="left-column" class="col-sm-1"></div>
         <div id="left-column" class="col-sm-4">
             <div align="center">
                 <h1>Awesome Tunes!</h1>
@@ -45,15 +45,13 @@
                 </div>
             </div>
         </div>
-
-
-        <div id="right-column" class="col-sm-4">
+        <div id="right-column" class="col-sm-6">
             <div align="center">
                 <h1>Top <?php echo count($mixTapeList); ?> Songs</h1>
             </div>
             <div class="well bs-component">
                 <!--<legend>RIGHT COLUMN</legend>-->
-<!--                <h1>Top Ten Songs</h1>-->
+                <!--                <h1>Top Ten Songs</h1>-->
 
                 <div class="form-horizontal" action="" method="POST">
 
@@ -81,111 +79,104 @@
                     <!--End well-1-->
                 </div>
             </div>
-
         </div>
-        <div id="left-column" class="col-sm-2"></div>
+        <div id="left-column" class="col-sm-1"></div>
     </div>
+</div>
 
-    <!--End Middle-->
-    <div class="row">
-        <div id="left-column" class="col-sm-2"></div>
-        <div id="left-ad" class="col-sm-2">
-            <div class="well bs-component">
-                <div class="panel panel-default" align="left">
-                    <div class="panel panel-body">
-                        <div align="center">
-                            <h3>Your Ad here!!</h3>
-                        </div>
+<!--End Middle-->
+<div class="row">
+    <div id="left-column" class="col-sm-2"></div>
+    <div id="left-ad" class="col-sm-2">
+        <div class="well bs-component">
+            <div class="panel panel-default" align="left">
+                <div class="panel panel-body">
+                    <div align="center">
+                        <h3>Your Ad here!!</h3>
+                    </div>
 
-                        <div id="logo" class="col-xs-12 col-sm-12">
-                            <img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
-                        </div>
+                    <div id="logo" class="col-xs-12 col-sm-12">
+                        <img src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
                     </div>
-                    <div class="panel panel-footer">
-                        <a1>Image Credit: <a
-                                href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
-                                title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
-                                Artist Painter Comic Characters Painters</a> from <a href="http://vector.me"
-                                                                                     title="Vector.me" target="_blank">Vector.me</a>
-                            (by nicubunu)
-                        </a1>
-                    </div>
+                </div>
+                <div class="panel panel-footer">
+                    <a1>Image Credit: <a
+                            href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
+                            title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
+                            Artist Painter Comic Characters Painters</a> from <a href="http://vector.me"
+                                                                                 title="Vector.me" target="_blank">Vector.me</a>
+                        (by nicubunu)
+                    </a1>
                 </div>
             </div>
         </div>
-        <div id="center-ad" class="col-sm-4">
-            <div class="well bs-component">
-                <div class="panel panel-default" align="left">
-                    <div class="panel panel-body">
-                        <div align="center">
-                            <h3>Your Ad here!!</h3>
-                        </div>
-
-                        <div id="logo" class="col-xs-12 col-sm-12"><img
-                                src="img/Comic_Characters_Camera_clip_art_medium.png" class="img-responsive"/>
-                        </div>
-                    </div>
-                    <div class="panel panel-footer">
-                        <a1>Image Credit: <a href="http://vector.me/browse/161712/comic_characters_camera_clip_art"
-                                             title="Comic Characters Camera Clip Art" target="_blank">Comic Characters
-                                Camera Clip Art</a> from <a href="http://vector.me" title="Vector.me" target="_blank">Vector.me</a>
-                            (by nicubunu)
-                        </a1>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="right-ad" class="col-sm-2">
-            <div class="well bs-component">
-                <div class="panel panel-default" align="left">
-                    <div class="panel panel-body">
-                        <div align="center">
-                            <h3>Your Ad here!!</h3>
-                        </div>
-
-                        <div id="logo" class="col-xs-12 col-sm-12"><img
-                                src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
-                        </div>
-                    </div>
-                    <div class="panel panel-footer">
-                        <a1>Image Credit: <a
-                                href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
-                                title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
-                                Artist Painter Comic Characters Painters</a> from <a href="http://vector.me"
-                                                                                     title="Vector.me" target="_blank">Vector.me</a>
-                            (by nicubunu)
-                        </a1>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="left-column" class="col-sm-2"></div>
     </div>
+    <div id="center-ad" class="col-sm-4">
+        <div class="well bs-component">
+            <div class="panel panel-default" align="left">
+                <div class="panel panel-body">
+                    <div align="center">
+                        <h3>Your Ad here!!</h3>
+                    </div>
 
-    <!--footer-->
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/footer.php'; ?>
+                    <div id="logo" class="col-xs-12 col-sm-12"><img
+                            src="img/Comic_Characters_Camera_clip_art_medium.png" class="img-responsive"/>
+                    </div>
+                </div>
+                <div class="panel panel-footer">
+                    <a1>Image Credit: <a href="http://vector.me/browse/161712/comic_characters_camera_clip_art"
+                                         title="Comic Characters Camera Clip Art" target="_blank">Comic Characters
+                            Camera Clip Art</a> from <a href="http://vector.me" title="Vector.me" target="_blank">Vector.me</a>
+                        (by nicubunu)
+                    </a1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="right-ad" class="col-sm-2">
+        <div class="well bs-component">
+            <div class="panel panel-default" align="left">
+                <div class="panel panel-body">
+                    <div align="center">
+                        <h3>Your Ad here!!</h3>
+                    </div>
 
-    <!--End Container-->
+                    <div id="logo" class="col-xs-12 col-sm-12"><img
+                            src="img/Comic_Characters_Painter_clip_art_medium.png" class="img-responsive"/>
+                    </div>
+                </div>
+                <div class="panel panel-footer">
+                    <a1>Image Credit: <a
+                            href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
+                            title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
+                            Artist Painter Comic Characters Painters</a> from <a href="http://vector.me"
+                                                                                 title="Vector.me" target="_blank">Vector.me</a>
+                        (by nicubunu)
+                    </a1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="left-column" class="col-sm-2"></div>
+</div>
+
+<!--footer-->
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/footer.php'; ?>
+
+<!--End Container-->
 
 
-
-
-
-
-
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <!--<script src="http://code.jquery.com/jquery.js"></script>-->
-    <script src="plugins/jquery/jquery-2.1.0.min.js"></script>
-    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="plugins/bootstrap/bootstrap.min.js"></script>
-    <script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script>
-    <script src="plugins/tinymce/tinymce.min.js"></script>
-    <script src="plugins/tinymce/jquery.tinymce.min.js"></script>
-    <!-- All functions for this theme + document.ready processing -->
-    <script src="js/devoops.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="plugins/jquery/jquery-2.1.0.min.js"></script>
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script>
+<script src="plugins/tinymce/tinymce.min.js"></script>
+<script src="plugins/tinymce/jquery.tinymce.min.js"></script>
+<!-- All functions for this theme + document.ready processing -->
+<script src="js/devoops.js"></script>
 </div>
 
 </body>
