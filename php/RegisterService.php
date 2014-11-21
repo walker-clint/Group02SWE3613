@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // What happens when the CAPTCHA was entered incorrectly
        echo "The reCAPTCHA wasn't entered correctly. Go back and try it again.";
 		
-	//header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
+	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
     } else {
         $username = ereg_replace("[^A-Za-z0-9]", "", $_POST['username']);
         $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']);
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $errorMsg .= "--- Password<br />";
             }
 			
-	//header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
+	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
         } else {
 			 $conLogin = initializeConnection();
             $sql_username_check = mysql_query("SELECT user_id FROM tbl_user WHERE login='$username' LIMIT 1");
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($username_check > 0) {
                echo "<u>ERROR:</u><br />The username is already in use inside our system. Please try another.";
 				
-	//header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
+	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
             } else {
                 // Add MD5 Hash to the password variable
                 $hashedPass = md5($password);
@@ -58,9 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-                //header("location: customeinformation.php");
-                //exit(); 
-
+               
 
 
                header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
@@ -70,5 +68,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     echo '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
-	//header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
+	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 }
