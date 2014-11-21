@@ -2,87 +2,10 @@
 <html lang="en">
 <head>
 <?php 
-require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; 
-require $_SERVER['DOCUMENT_ROOT'] . ("/recaptchalib.php");
-require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/setQueries.php';
-
 session_start();
+require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; 
+require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
 $error = $_SESSION['error'];
-if ($_POST['username']) {
- /*   $privatekey = "6LcMdf0SAAAAAGoCSMb54T2MbWvgxaNpnDqhLwSj";
-    $resp = recaptcha_check_answer($privatekey, $_SERVER["REMOTE_ADDR"], htmlspecialchars($_POST["recaptcha_challenge_field"]), htmlspecialchars($_POST["recaptcha_response_field"]));
-    $username = htmlspecialchars($_POST['username']);
-    $password = htmlspecialchars($_POST['password']);
-    $firstname = htmlspecialchars($_POST['firstname']); // filter everything but numbers and letters
-    $lastname = htmlspecialchars($_POST['lastname']); // filter everything but numbers and letters
-    $email = htmlspecialchars($_POST['email']);
-    $secret_q = htmlspecialchars($_POST['secret_q']);
-    $secret_a = htmlspecialchars($_POST['secret_a']);
-	
-	 if ($resp->is_valid) {
-		 if($firstname && $lastname && $email && $username && $password){
-	$conLogin = initializeConnection();
-            $sql_username_check = "SELECT user_id FROM tbl_user WHERE login='$username' LIMIT 1";
-			$result = mysqli_query($conLogin, $sql_username_check);
-			$count = mysqli_num_rows($result);
-            if ($count == 0) {
-				$hashedPass = md5($password);
-                // Get the inserted ID here to use in the activation email
-                $id = mysql_insert_id();
-                // Add user info into the database table, claim your fields then values 
- $_SESSION['user_id'] = addUser($username, $password, $email, $firstname, $lastname, 0, $secret_q, $secret_a);
-             header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
-			}
-			else{
-				   $error =  '<span class="error">The username is already in use inside our system. Please try another.</span>';
-				   $_SESSION['error']=$error;
-				   header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
-	
-	
-	
-			}
-			
-	 }else{
-		 flush();
-		 $error = "You did not submit the following required information!<br /><br />";
-            if (!$firstname) {
-                $error .= "--- First Name<br />";
-            } if (!$lastname) {
-                $error .= "--- Last Name<br />";
-            }if (!$email) {
-                $error .= "--- Email Address<br />";
-            }if (!$username) {
-                $error .= "--- Username<br />";
-            }if (!$password) {
-                $error .= "--- Password<br />";
-            }
-			 
-			$_SESSION['error']=$error;
-			header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
-		 }
-	 }else{
-		  $error =  '<span class="error">Captia is not correct<br></span>';
-		  $_SESSION['error']=$error;
-	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
-		 
-	 }
-*/
-echo htmlspecialchars($_POST['username']).'</br>';
-echo htmlspecialchars($_POST['password']).'</br>';
-echo htmlspecialchars($_POST['firstname']).'</br>';
-echo htmlspecialchars($_POST['lastname']).'</br>';
-echo htmlspecialchars($_POST['email']).'</br>';
-echo htmlspecialchars($_POST['secret_q']).'</br>';
-echo htmlspecialchars($_POST['secret_a']).'</br>';
-
-} else {
-    $error =  '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
-	$_SESSION['error']=$error;
-	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
-	exit;
-}
-
 ?>
 </head>
 <body>
@@ -165,6 +88,7 @@ echo htmlspecialchars($_POST['secret_a']).'</br>';
             <div class="captcha-container" align="center">
               <div class="captcha-container frame">
                 <?php
+				require $_SERVER['DOCUMENT_ROOT'] . ("/recaptchalib.php");
                 $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
                 echo recaptcha_get_html($publickey);
                 ?>
