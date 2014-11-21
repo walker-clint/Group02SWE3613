@@ -144,7 +144,7 @@
                                 $songGenre = $song->getGenres();
                                 $songLink = $song->getLink();
 
-                                echo '<tr><th></th><div class="btn btn-responsive btn-primary">'
+                                echo '<tr><th><div class="btn btn-responsive btn-primary">'
                                     . $song->js_infoBox_admin(true) . '</div></th></tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                             }
                         }
