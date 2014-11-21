@@ -10,7 +10,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/setQueries.php';
 session_start();
 $error = $_SESSION['error'];
 if ($_POST['username']) {
-    $privatekey = "6LcMdf0SAAAAAGoCSMb54T2MbWvgxaNpnDqhLwSj";
+ /*   $privatekey = "6LcMdf0SAAAAAGoCSMb54T2MbWvgxaNpnDqhLwSj";
     $resp = recaptcha_check_answer($privatekey, $_SERVER["REMOTE_ADDR"], htmlspecialchars($_POST["recaptcha_challenge_field"]), htmlspecialchars($_POST["recaptcha_response_field"]));
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
@@ -21,7 +21,7 @@ if ($_POST['username']) {
     $secret_a = htmlspecialchars($_POST['secret_a']);
 	
 	 if ($resp->is_valid) {
-		
+		 if($firstname && $lastname && $email && $username && $password){
 	$conLogin = initializeConnection();
             $sql_username_check = "SELECT user_id FROM tbl_user WHERE login='$username' LIMIT 1";
 			$result = mysqli_query($conLogin, $sql_username_check);
@@ -33,22 +33,48 @@ if ($_POST['username']) {
                 // Add user info into the database table, claim your fields then values 
  $_SESSION['user_id'] = addUser($username, $password, $email, $firstname, $lastname, 0, $secret_q, $secret_a);
              header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
-			 exit;
 			}
 			else{
 				   $error =  '<span class="error">The username is already in use inside our system. Please try another.</span>';
 				   $_SESSION['error']=$error;
 				   header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
-	exit;
+	
 	
 	
 			}
+			
+	 }else{
+		 flush();
+		 $error = "You did not submit the following required information!<br /><br />";
+            if (!$firstname) {
+                $error .= "--- First Name<br />";
+            } if (!$lastname) {
+                $error .= "--- Last Name<br />";
+            }if (!$email) {
+                $error .= "--- Email Address<br />";
+            }if (!$username) {
+                $error .= "--- Username<br />";
+            }if (!$password) {
+                $error .= "--- Password<br />";
+            }
+			 
+			$_SESSION['error']=$error;
+			header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
+		 }
 	 }else{
 		  $error =  '<span class="error">Captia is not correct<br></span>';
 		  $_SESSION['error']=$error;
 	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
-	exit;	 
+		 
 	 }
+*/
+echo htmlspecialchars($_POST['username']).'</br>';
+echo htmlspecialchars($_POST['password']).'</br>';
+echo htmlspecialchars($_POST['firstname']).'</br>';
+echo htmlspecialchars($_POST['lastname']).'</br>';
+echo htmlspecialchars($_POST['email']).'</br>';
+echo htmlspecialchars($_POST['secret_q']).'</br>';
+echo htmlspecialchars($_POST['secret_a']).'</br>';
 
 } else {
     $error =  '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
