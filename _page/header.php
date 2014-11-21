@@ -176,10 +176,6 @@ if (!empty($_SESSION['user_id'])) {
                                     <form class="form-horizontal" align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                                         <h1>Registration</h1>
                                         <div class="row">
-
-                                            <div id="left-column" class="col-xs-0 col-md-2 col-lg-2"> </div>
-                                            <!--<legend>LEFT COLUMN</legend>-->
-
                                             <div id="center-column" class="col-xs-12 col-md-8 col-lg-8">
                                                 <div class="well bs-component">
                                                     <div class="well-1 bs-component">
@@ -243,7 +239,7 @@ if (!empty($_SESSION['user_id'])) {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div id="right-column" class="col-xs-0 col-md-2 col-lg-2"></div>
+                                            
                                         </div>
                                     </form>
                                 </div>
