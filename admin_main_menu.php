@@ -120,16 +120,17 @@
 
                     <table class="table">
                         <thead>
-                        <tr>
-                            <th>
-                                <b>Song by Artist</b>
-                            </th>
-                            <th>
-                                <a href='songForm.php'><span
-                                        class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
-                            </th>
-
-                        </tr>
+                        <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
+                                <!--                        <tr>-->
+<!--                            <th>-->
+<!--                                <b>Song by Artist</b>-->
+<!--                            </th>-->
+<!--                            <th>-->
+<!--                                <a href='songForm.php'><span-->
+<!--                                        class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>-->
+<!--                            </th>-->
+<!---->
+<!--                        </tr>-->
                         </thead>
                         <tbody>
                         <?php
@@ -142,8 +143,8 @@
                                 $songGenre = $song->getGenres();
                                 $songLink = $song->getLink();
 
-                                echo '<tr><th><div class="btn btn-primary">'
-                                    . $song->js_infoBox_admin(true) . '</div></th><th></th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                echo '<tr><div class="btn btn-primary">'
+                                    . $song->js_infoBox_admin(true) . '</div><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                             }
                         }
                         ?>
