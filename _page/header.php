@@ -123,7 +123,7 @@ if (!empty($_SESSION['user_id'])) {
                                                 <label for="user_name" class="col-xs-4 col-md-4 control-label">User
                                                     Name</label>
 
-                                                <div class="col-lg-8">
+                                                <div class="col-xs-8 col-md-8">
                                                     <input type="text" class="form-control-1" id="username"
                                                            name="username" placeholder="User Name">
                                                 </div>
@@ -132,7 +132,7 @@ if (!empty($_SESSION['user_id'])) {
                                                 <label for="password"
                                                        class="col-xs-4 col-md-4 control-label">Password</label>
 
-                                                <div class="col-lg-8">
+                                                <div class="col-xs-8 col-md-8">
                                                     <input align="center" type="Password" class="form-control-1"
                                                            id="password" name="password"
                                                            placeholder="Password">
