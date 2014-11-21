@@ -26,12 +26,12 @@
 <div id="main" class="container-fluid">
     <!--Start Content-->
     <div class="row">
-        <div id="left-column" class="col-sm-4"></div>
+        <div id="left-column" class="col-sm-2"></div>
 
         <!--<div id="right-column" class="col-sm-4">-->
-        <div id="center1-column" class="col-sm-4">
+        <div id="center1-column" class="col-sm-8">
             <div align="center">
-                <h1><?php echo $pageFunction; ?> a song</h1>
+                <h1><?php echo $pageFunction; ?> A Song</h1>
             </div>
             <div class="well bs-component">
                 <div class="well-1 bs-component">
@@ -138,7 +138,7 @@
             </div>
         </div>
 
-
+        <div id="left-column" class="col-sm-2"></div>
         <!--End Middle-->
     </div>
 
