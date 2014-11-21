@@ -73,7 +73,7 @@ if (!empty($_SESSION['user_id'])) {
 
 <header class="navbar-collapse">
     <!--    <a href="/--><?php //echo '' . $indexLink; ?><!--">-->
-    <div id="logo" class="col-xs-2 col-sm-2">
+    <div id="logo" class="col-xs-6 col-sm-6">
         <img src="img/cllogo_medium.png" class="img-responsive"/></a>
     </div>
 
