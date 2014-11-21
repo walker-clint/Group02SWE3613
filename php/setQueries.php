@@ -39,7 +39,7 @@ function addSong($titleInc, $approved, $flagged, $youtubeLink, $youtubeApproved)
  */
 function updateSong($id, $titleInc, $approved, $flagged, $youtubeLink, $youtubeApproved) {
     $con = initializeConnection();
-    $title = htmlspecialchars($title, ENT_QUOTES);
+    $title = htmlspecialchars($titleInc, ENT_QUOTES);
 
     $query = 'UPDATE tbl_song SET title=?, approved=?, flagged=?, youtube=?, youtube_approved=? WHERE song_id = ?';
 
