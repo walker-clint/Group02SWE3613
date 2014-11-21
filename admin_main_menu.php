@@ -49,10 +49,11 @@
             $songListUnapproved = getUnapprovedSongs();
             if (count($songListUnapproved) > 0) {
                 ?>
+                <div align="center">
+                    <h1>Songs awaiting approval</h1>
+                </div>
                 <div class="well bs-component">
-                    <div align="center">
-                        <h1>Songs awaiting approval</h1>
-                    </div>
+
                     <div class="well-1 bs-component">
                         <div class="form-horizontal" action="" method="POST">
                             <table class="table table-striped">
