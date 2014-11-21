@@ -140,7 +140,7 @@ if (!empty($_SESSION['user_id'])) {
             <!-- /.modal -->
 
             <!-- Modal 2 -->
-            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2"
                  aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-dialog modal-vertical-centered">
