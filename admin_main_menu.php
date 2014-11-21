@@ -21,7 +21,31 @@
     <div class="row">
         <div id="left-space" class="col-sm-2"></div>
         <div id="left-column" class="col-sm-4">
+            <div align="center">
+                <h1>Song Approval Menu</h1>
+            </div>
+            <div class="well bs-component">
+                <!--<legend>LEFT COLUMN</legend>-->
 
+
+                <div class="form-horizontal" action="" method="POST"></div>
+
+                <div class="well-1 bs-component">
+                    <div class="video-container" id="vidWindow_admin">
+                        <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
+                        <?php
+                        //                                $mixTapeList = getBestMixTape();
+                        //
+                        //                                $randSongNumber = rand(0, (count($mixTapeList) - 1));
+                        //                                $initialSong = getSong($mixTapeList[$randSongNumber]);
+                        //                                if ($initialSong instanceof Song) {
+                        //                                    echo '<script>window.onload = (function(){' . $initialSong->getJavascript_changeBox() . ';});</script>';
+                        //                                }
+                        ?>
+                    </div>
+                    <p id="songInfo_admin"></p>
+                </div>
+            </div>
             <div align="center">
                 <h1>Songs awaiting approval</h1>
             </div>
@@ -84,31 +108,7 @@
                     </div>
                 <?php } ?>
             </div>
-            <div align="center">
-                <h1>YouTube Video</h1>
-            </div>
-            <div class="well bs-component">
-                <!--<legend>LEFT COLUMN</legend>-->
 
-
-                <div class="form-horizontal" action="" method="POST"></div>
-
-                <div class="well-1 bs-component">
-                    <div class="video-container" id="vidWindow_admin">
-                        <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->
-                        <?php
-                        //                                $mixTapeList = getBestMixTape();
-                        //
-                        //                                $randSongNumber = rand(0, (count($mixTapeList) - 1));
-                        //                                $initialSong = getSong($mixTapeList[$randSongNumber]);
-                        //                                if ($initialSong instanceof Song) {
-                        //                                    echo '<script>window.onload = (function(){' . $initialSong->getJavascript_changeBox() . ';});</script>';
-                        //                                }
-                        ?>
-                    </div>
-                    <p id="songInfo_admin"></p>
-                </div>
-            </div>
         </div>
         <div id="right-column" class="col-sm-4">
             <div align="center">
