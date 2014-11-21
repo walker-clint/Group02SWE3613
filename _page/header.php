@@ -10,7 +10,7 @@ if (!empty($_SESSION['user_id'])) {
     $con = initializeConnection();
     $sql = mysqli_query($con, "SELECT * FROM tbl_user WHERE user_id = '$id'");
     $page = getCurrentPageURL();
-    echo "Current URL: " . $page;
+    //echo "Current URL: " . $page;
     $full_name = '';
     while ($row = mysqli_fetch_array($sql)) {
         $full_name = $row["first_name"] . " " . $row["last_name"];
@@ -19,7 +19,7 @@ if (!empty($_SESSION['user_id'])) {
     if ($userType == 'admin') {
         $indexLink = 'admin_main_menu.php';
     }
-    if($page == "http://group02p2.swe3613.com/main_menu.php") {
+    if($page == "http://group02p2.swe3613.com/user_song_list.php") {
         $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
             <li class="btn-label-right">
             <a href="' . $indexLink . '">
@@ -52,7 +52,6 @@ if (!empty($_SESSION['user_id'])) {
             </div>
 			</a>
             </li>
-
             <li class="btn-label-right">
 			<a href="http://' . $_SERVER['SERVER_NAME'] . '/php/logoutService.php">
             <div class="well-1 btn btn-warning">
