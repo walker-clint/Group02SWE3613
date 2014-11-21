@@ -67,8 +67,8 @@
 //                                        $songGenre = $song->getGenres();
 //                                        $songLink = $song->getLink();
 
-                                        echo '<tr><th>'
-                                            . $song->js_infoBox_admin(true) . '</th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                        echo '<tr><div class="well-5 bs-component">'
+                                            . $song->js_infoBox_admin(true) . '</div><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                                     }
                                 }
                                 ?>
