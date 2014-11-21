@@ -16,22 +16,30 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $approved = $song->approved;
         $youtubeLink = $song->youtubeLink;
         $youtubeApproved = $song->youtubeApproved;
+        {//get user's mix tape count
+            $conMixtapeCount = initializeConnection();
+            $sqlCount = "SELECT COUNT(*) as 'count' FROM tbl_mixtape WHERE user_id = " . $userId;
+            $mixResultCount = mysqli_query($conMixtape, $sqlCount);
 
-        $con = initializeConnection(); {
-            $conMixtape = initializeConnection();
+            $rowCount = mysqli_fetch_array($mixResultCount, MYSQLI_ASSOC);
+            $totalCount = $rowCount['count'];
+        }
 
-            $sql = "SELECT COUNT(*) as 'count' FROM tbl_mixtape WHERE user_id = " . $userId . " AND song_id = " . $songId;
-            $mixResult = mysqli_query($conMixtape, $sql);
+        $conMixtape = initializeConnection();
 
-            $row = mysqli_fetch_array($mixResult, MYSQLI_ASSOC);
-            //$resultuserId = $row['user_id'];
-            //$count = mysqli_num_rows($mixResult);
-            $count = $row['count'];
-            if ($count > 0) {//on list now, delete
-                deleteMixtape($userId, $songId);
-            } else {//not on list, add
-                addMixtape($userId, $songId, 1);
-            }
+        $sql = "SELECT COUNT(*) as 'count' FROM tbl_mixtape WHERE user_id = " . $userId . " AND song_id = " . $songId;
+        $mixResult = mysqli_query($conMixtape, $sql);
+
+        $row = mysqli_fetch_array($mixResult, MYSQLI_ASSOC);
+        $count = $row['count'];
+        if ($count > 0) {//on list now, delete
+            deleteMixtape($userId, $songId);
+            //$addSongMessage = 'Song removed from your mixtape!';
+        } elseif ($totalCount < 30) {//not on list, add
+            addMixtape($userId, $songId, 1);
+            //$addSongMessage = 'Song added to your mixtape!';
+        } else {
+            //$addSongMessage = 'You may only have 30 songs on your mixtape! Remove some if you want to add more!';
         }
     }
 }
