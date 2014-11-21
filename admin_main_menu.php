@@ -46,43 +46,37 @@
             <div align="center">
                 <h1>Songs awaiting approval</h1>
             </div>
-            <div class="well bs-component">
-                <!--<legend>RIGHT COLUMN</legend>-->
-                <div class="well-1 bs-component">
-                    <div class="form-horizontal" action="" method="POST">
 
-                        <?php
-                        $songListUnapproved = getUnapprovedSongs();
-                        if (count($songListUnapproved) > 0) {
-                            ?>
-                            <div class="well bs-component">
-                                <!--<legend>RIGHT COLUMN</legend>-->
-                                <div class="well-1 bs-component">
-                                    <div class="form-horizontal" action="" method="POST">
-                                        <table class="table table-striped">
+            <?php
+            $songListUnapproved = getUnapprovedSongs();
+            if (count($songListUnapproved) > 0) {
+                ?>
+                <div class="well bs-component">
+                    <!--<legend>RIGHT COLUMN</legend>-->
+                    <div class="well-1 bs-component">
+                        <div class="form-horizontal" action="" method="POST">
+                            <table class="table table-striped">
 
 
-                                            <?php
-                                            foreach ($songListUnapproved as $song) {
-                                                if ($song instanceof Song) {
+                                <?php
+                                foreach ($songListUnapproved as $song) {
+                                    if ($song instanceof Song) {
 //                                        $songTitle = $song->title;
 //                                        $songArtist = $song->getArtists();
 //                                        $songGenre = $song->getGenres();
 //                                        $songLink = $song->getLink();
 
-                                                    echo '<tr><th>'
-                                                        . $song->js_infoBox_admin(true) . '</th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
-                                                }
-                                            }
-                                            ?>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php } ?>
+                                        echo '<tr><th>'
+                                            . $song->js_infoBox_admin(true) . '</th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                    }
+                                }
+                                ?>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php } ?>
+                  
 
             <?php
             $songListFlagged = getFlaggedSongs();
