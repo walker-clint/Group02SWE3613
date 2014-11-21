@@ -3,7 +3,9 @@
 <html lang="en">
     <head>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; 
-$error = "";
+
+
+/*$error = "";
 session_start();
 
 require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
@@ -76,6 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 	exit;
 }
+*/
 ?>
 
     </head>
