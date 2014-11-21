@@ -20,17 +20,18 @@ if (isset($_POST['genres'])) {
 } else {
     $genres = [];
 }
+
 //add a new artist if given
-if (isset($_POST['newArtist']) && count($_POST['newArtist']) > 0) {
-    $newArtist = $_POST['newArtist'];
-    $newArtistId = addArtist($newArtist);
+if (isset($_POST['newArtist']) && !empty($_POST['newArtist'])) {
+    //$newArtist = $_POST['newArtist'];
+    $newArtistId = addArtist($_POST['newArtist']);
     array_push($artists, $newArtistId);
 }
 
 //add a new genre if given
-if (isset($_POST['newGenre']) && count($_POST['newGenre']) > 0) {
-    $newGenre = $_POST['newGenre'];
-    $newGenreId = addGenre($newGenre);
+if (isset($_POST['newGenre']) && !empty($_POST['newGenre'])) {
+    //$newGenre = $_POST['newGenre'];
+    $newGenreId = addGenre($_POST['newGenre']);
     array_push($genres, $newGenreId);
 }
 
