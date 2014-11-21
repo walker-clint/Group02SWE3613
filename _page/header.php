@@ -73,13 +73,6 @@ if (!empty($_SESSION['user_id'])) {
              <li class="btn-label-right">
 			<a data-toggle="modal" href="#myModal2">
             <div class="well-1 btn btn-primary">
-            Register with modal
-            </div>
-			</a>
-            </li>
-            <li class="btn-label-right">
-			<a href="register.php">
-            <div class="well-1 btn btn-primary">
             Register
             </div>
 			</a>
