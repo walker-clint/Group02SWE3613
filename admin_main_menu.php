@@ -64,7 +64,7 @@
                     ?>
 
                     <div class="well-1 bs-component">
-                        <table class="table">
+                        <table class="table table-striped">
 
 
                             <?php
@@ -115,7 +115,7 @@
             <div class="well bs-component">
                 <div class="well-1 bs-component">
 
-                    <table class="table">
+                    <table class="table table-striped">
                         <?php
                         $songListNormal = getApprovedAndUnflaggedSongs();
                         foreach ($songListNormal as $song) {
