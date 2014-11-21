@@ -2540,9 +2540,9 @@ http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-respo
     position: inherit;
     padding-bottom: 5%;
     padding-top: 5%;
-    overflow: scroll;
+    overflow: auto;
     width: auto;
-    height: 200px;
+    height: 50%;
 }
 
 .scroll-container frame{
