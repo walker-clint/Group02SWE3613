@@ -28,7 +28,7 @@ function changeVideo(songLink) {
     var link = 'No Youtube video for this song! :(';
     if (songLink.length > 0) {
         link = '<iframe width = "350" height = "280" src = "//www.youtube.com/embed/'
-                + songLink + '?autoplay=0" frameborder = "0" allowfullscreen> </iframe>';
+                + songLink + '?autoplay=1" frameborder = "0" allowfullscreen> </iframe>';
     }
     element.innerHTML = link;
 }
