@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; 
-
-
-/*$error = "";
-session_start();
+require $_SERVER['DOCUMENT_ROOT'] . ("/recaptchalib.php");
 
 require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
-require_once $_SERVER['DOCUMENT_ROOT'] . ("/recaptchalib.php");
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/setQueries.php';
-$error = $_SESSION['error'];
+
 session_start();
+$error = $_SESSION['error'];
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $privatekey = "6LcMdf0SAAAAAGoCSMb54T2MbWvgxaNpnDqhLwSj";
     $resp = recaptcha_check_answer($privatekey, $_SERVER["REMOTE_ADDR"], htmlspecialchars($_POST["recaptcha_challenge_field"]), htmlspecialchars($_POST["recaptcha_response_field"]));
@@ -77,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 	exit;
 }
-*/
+
 ?>
 </head>
 <body>
@@ -87,13 +84,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!--End Header--> 
 <!--Start Middle-->
 <div id="main" class="container-fluid">
-  <div align="center"> 
-    <!--Start Content-->
+
     <form class="form-horizontal" action="php/RegisterService.php" method="POST">
       <h1>Registration</h1>
       <div class="row">
         <div class="well bs-component">
           <div class="well-1 bs-component">
+          <font color="#FF0000"><?php echo $error; ?></font> <br>
             <div class="form-group">
               <label for="firstname" class="col-xs-4 col-md-4 control-label"
                                                            align="right">First Name</label>
@@ -160,7 +157,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="captcha-container" align="center">
               <div class="captcha-container frame">
                 <?php
-				require_once $_SERVER['DOCUMENT_ROOT'] . ("/recaptchalib.php");
                 $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
                 echo recaptcha_get_html($publickey);
                 ?>
@@ -173,5 +169,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
       </div>
     </form>
-  </div>
+
 </div>
