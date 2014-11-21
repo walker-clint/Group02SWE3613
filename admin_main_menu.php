@@ -119,7 +119,7 @@
                 <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
 
                 <div class="well-1 bs-component">
-                    <div captcha-container>
+                    <div captcha-container align="center">
                         <div captcha-container frame>
                             <table class="table">
                                 <thead>
