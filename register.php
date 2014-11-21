@@ -6,8 +6,6 @@ session_start();
 require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; 
 require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
 $error = $_SESSION['error'];
-$username = $_SESSION['username'];
-$password = $_SESSION['password'];
 $firstname = $_SESSION['firstname'];
 $lastname = $_SESSION['lastname'];
 $secret_q = $_SESSION['secret_q'];
@@ -39,7 +37,7 @@ $secret_a = $_SESSION['secret_a'];
       <div class="col-xs-8 col-md-8">
         <input type="text" class="form-control-1" id="firstname"
                                                                name="firstname"
-                                                               placeholder="First Name">
+                                                               placeholder="First Name" value='<?php echo "$firstname" ?>'>
       </div>
     </div>
     <div class="form-group">
@@ -48,7 +46,7 @@ $secret_a = $_SESSION['secret_a'];
       <div class="col-xs-8 col-md-8">
         <input type="text" class="form-control-1" id="lastname"
                                                                name="lastname"
-                                                               placeholder="Last Name">
+                                                               placeholder="Last Name" value='<?php echo "$lastname" ?>'>
       </div>
     </div>
     <div class="form-group">
@@ -57,7 +55,7 @@ $secret_a = $_SESSION['secret_a'];
       <div class="col-xs-8 col-md-8">
         <input type="email" class="form-control-1" id="email"
                                                                name="email"
-                                                               placeholder="Email">
+                                                               placeholder="Email" value='<?php echo "$email" ?>'>
       </div>
     </div>
     <div class="form-group">
@@ -84,7 +82,7 @@ $secret_a = $_SESSION['secret_a'];
       <div class="col-xs-8 col-md-8">
         <input type="text" class="form-control-1" name="secret_q"
                                                                name="secret_q"
-                                                               placeholder="Secret Question">
+                                                               placeholder="Secret Question" value='<?php echo "$secret_q" ?>'>
       </div>
     </div>
     <div class="form-group">
@@ -93,7 +91,7 @@ $secret_a = $_SESSION['secret_a'];
       <div class="col-xs-8 col-md-8">
         <input type="text" class="form-control-1" name="secret_a"
                                                                name="secret_a"
-                                                               placeholder="Secret Answer">
+                                                               placeholder="Secret Answer" value='<?php echo "$secret_a" ?>'>
       </div>
     </div>
     <div class="captcha-container" align="center">
