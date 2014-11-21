@@ -79,6 +79,7 @@
                 <h1>Your Song List</h1>
             </div>
             <div class="well bs-component">
+                <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
                 <div class="form-horizontal" action="" method="POST">
                     <div class="well-2 bs-component">
                         <div class="captcha-container">
