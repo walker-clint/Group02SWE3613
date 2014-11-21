@@ -34,7 +34,7 @@
                     $songListUnapproved = getUnapprovedSongs();
                     if (count($songListUnapproved) > 0) {
                         ?>
-                        <table class="table">
+                        <table class="table table-striped">
 
 
                             <?php
@@ -45,8 +45,8 @@
 //                                        $songGenre = $song->getGenres();
 //                                        $songLink = $song->getLink();
 
-                                    echo '<tr><td>'
-                                        . $song->js_infoBox_admin(true) . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                    echo '<tr><th>'
+                                        . $song->js_infoBox_admin(true) . '</th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                                 }
                             }
                             ?>
@@ -64,7 +64,7 @@
                     ?>
 
                     <div class="well-1 bs-component">
-                        <table class="table-striped">
+                        <table class="table table-striped">
 
 
                             <?php
@@ -75,8 +75,8 @@
 //                                        $songGenre = $song->getGenres();
 //                                        $songLink = $song->getLink();
 
-                                    echo '<tr><td>'
-                                        . $song->js_infoBox_admin(true) . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                    echo '<tr><th>'
+                                        . $song->js_infoBox_admin(true) . '</th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                                 }
                             }
                             ?>
