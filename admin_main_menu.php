@@ -88,7 +88,7 @@
                 </div>
                 <div class="well bs-component">
                     <div class="well-1 bs-component">
-                        <table class="table" bgcolor="#ff4500">
+                        <table class="table">
 
 
                             <?php
@@ -98,8 +98,8 @@
 //                                        $songArtist = $song->getArtists();
 //                                        $songGenre = $song->getGenres();
 //                                        $songLink = $song->getLink();
-
-                                    echo '<tr><th>'
+                
+                                    echo '<tr><th bgcolor="#ff4500">'
                                         . $song->js_infoBox_admin(true) . '</th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                                 }
                             }
