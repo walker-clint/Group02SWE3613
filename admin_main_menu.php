@@ -117,43 +117,47 @@
             </div>
             <div class="well bs-component">
                 <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
-                <div class="well-1 bs-component">
 
-                    <table class="table">
-                        <thead>
+                <div class="well-1 bs-component">
+                    <div captcha-container>
+                        <div captcha-container frame>
+                            <table class="table">
+                                <thead>
 
                                 <!--                        <tr>-->
-<!--                            <th>-->
-<!--                                <b>Song by Artist</b>-->
-<!--                            </th>-->
-<!--                            <th>-->
-<!--                                <a href='songForm.php'><span-->
-<!--                                        class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>-->
-<!--                            </th>-->
-<!---->
-<!--                        </tr>-->
-                        </thead>
-                        <tbody>
-                        <?php
-                        $songListNormal = getApprovedAndUnflaggedSongs();
+                                <!--                            <th>-->
+                                <!--                                <b>Song by Artist</b>-->
+                                <!--                            </th>-->
+                                <!--                            <th>-->
+                                <!--                                <a href='songForm.php'><span-->
+                                <!--                                        class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>-->
+                                <!--                            </th>-->
+                                <!---->
+                                <!--                        </tr>-->
+                                </thead>
+                                <tbody>
+                                <?php
+                                $songListNormal = getApprovedAndUnflaggedSongs();
 
-                        foreach ($songListNormal as $song) {
-                            if ($song instanceof Song) {
-                                $songTitle = $song->title;
-                                $songArtist = $song->getArtists();
-                                $songGenre = $song->getGenres();
-                                $songLink = $song->getLink();
+                                foreach ($songListNormal as $song) {
+                                    if ($song instanceof Song) {
+                                        $songTitle = $song->title;
+                                        $songArtist = $song->getArtists();
+                                        $songGenre = $song->getGenres();
+                                        $songLink = $song->getLink();
 
-                                echo '<tr><th><div class="btn btn-responsive btn-primary btn-lg">'
-                                    . $song->js_infoBox_admin(true) . '</div></th></tr>'; //' by '.$song->getArtists().'</div></td><tr>';
-                            }
-                        }
-                        ?>
-                        </tbody>
-                        <?php ?>
-                    </table>
+                                        echo '<tr><th><div class="btn btn-responsive btn-primary btn-lg">'
+                                            . $song->js_infoBox_admin(true) . '</div></th></tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                    }
+                                }
+                                ?>
+                                </tbody>
+                                <?php ?>
+                            </table>
+                        </div>
+                        <!--End well-1-->
+                    </div>
                 </div>
-                <!--End well-1-->
             </div>
         </div>
 
