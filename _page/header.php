@@ -117,7 +117,7 @@ if (!empty($_SESSION['user_id'])) {
                                 <div class="well bs-component">
                                     <h1 align="center">Login</h1>
 
-                                    <div class="well-2 bs-component">
+                                    <div class="well-1 bs-component">
                                         <form class="form-horizontal" action="php/loginService.php" method="POST">
                                             <div class="form-group">
                                                 <label for="user_name" class="col-xs-4 col-md-4 control-label">User
@@ -144,7 +144,6 @@ if (!empty($_SESSION['user_id'])) {
                                         </form>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close
@@ -212,7 +211,7 @@ if (!empty($_SESSION['user_id'])) {
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="username" class="col-xs-4 col-md-4 control-label"
-                                                           align="right"  >Username</label>
+                                                           align="right">Username</label>
 
                                                     <div class="col-xs-8 col-md-8">
                                                         <input type="text" class="form-control-1" name="username"
