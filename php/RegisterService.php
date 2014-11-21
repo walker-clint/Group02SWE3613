@@ -26,11 +26,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Add user info into the database table, claim your fields then values 
                 $sql = mysql_query("INSERT INTO tbl_user (user_id,login,password,email,admin,secret_question,secret_answer,first_name, last_name) 
 		VALUES('$id','$username', '$password', '$email', 0,'$secret_q','$secret_a','$firstname','$lastname')") or die(mysql_error());
-
-            
+ $_SESSION['user_id'] = $id;
+             header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
 			}
 			else{
 				   $error =  '<span class="error">The username is already in use inside our system. Please try another.</span>';
+				   header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 			}
 	
 } else {
