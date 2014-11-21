@@ -124,7 +124,6 @@
                             <th>
                                 <b>Song by Artist</b>
                             </th>
-                            <th></th>
                             <th>
                                 <a href='songForm.php'><span
                                         class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
