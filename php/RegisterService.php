@@ -15,7 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $secret_q = htmlspecialchars($_POST['secret_q']);
     $secret_a = htmlspecialchars($_POST['secret_a']);
 	
-	
+	 if ($resp->is_valid) {
+		 if($firstname && $lastname && $email && $username && $password){
 	$conLogin = initializeConnection();
             $sql_username_check = "SELECT user_id FROM tbl_user WHERE login='$username' LIMIT 1";
 			$result = mysqli_query($conLogin, $sql_username_check);
@@ -25,15 +26,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Get the inserted ID here to use in the activation email
                 $id = mysql_insert_id();
                 // Add user info into the database table, claim your fields then values 
-		
  $_SESSION['user_id'] = addUser($username, $password, $email, $firstname, $lastname, 0, $secret_q, $secret_a);
              header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
 			}
 			else{
 				   $error =  '<span class="error">The username is already in use inside our system. Please try another.</span>';
 				   header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
-			}
 	
+	
+	
+			}
+			
+	 }else{
+		 $error = "You did not submit the following required information!<br /><br />";
+            if (!$firstname) {
+                $error .= "--- First Name<br />";
+            } if (!$lastname) {
+                $error .= "--- Last Name<br />";
+            }if (!$email) {
+                $error .= "--- Email Address<br />";
+            }if (!$username) {
+                $error .= "--- Username<br />";
+            }if (!$password) {
+                $error .= "--- Password<br />";
+            }
+			header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
+		 }
+	 }else{
+		  $error =  '<span class="error">Captia is not correct<br></span>';
+	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
+		 
+	 }
+
 } else {
     $error =  '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
 	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
