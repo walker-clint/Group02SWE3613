@@ -43,9 +43,9 @@
                     <p id="songInfo_admin"></p>
                 </div>
             </div>
-        </div>
 
-        <div id="right-column" class="col-sm-4">
+
+
             <div class="well bs-component">
                 <!--<legend>RIGHT COLUMN</legend>-->
 
@@ -99,6 +99,8 @@
                         </table>
                     </div>
                 <?php } ?>
+                </div>
+                <div id="right-column" class="col-sm-4">
                 <h1>Songs</h1>
 
                 <div class="well-1 bs-component">
