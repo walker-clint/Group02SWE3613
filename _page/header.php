@@ -187,7 +187,8 @@ if (!empty($_SESSION['user_id'])) {
 
                                                     <div class="col-xs-8 col-md-8">
                                                         <input type="text" class="form-control-1" name="firstname"
-                                                               placeholder="First Name">
+                                                               placeholder="First Name"
+                                                               value="<?php echo "$firstname"; ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -196,7 +197,8 @@ if (!empty($_SESSION['user_id'])) {
 
                                                     <div class="col-xs-8 col-md-8">
                                                         <input type="text" class="form-control-1" name="lastname"
-                                                               placeholder="Last Name">
+                                                               placeholder="Last Name"
+                                                               value="<?php echo "$lastname"; ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -205,7 +207,7 @@ if (!empty($_SESSION['user_id'])) {
 
                                                     <div class="col-xs-8 col-md-8">
                                                         <input type="email" class="form-control-1" name="email"
-                                                               placeholder="Email">
+                                                               placeholder="Email" value="<?php echo "$email"; ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -214,7 +216,8 @@ if (!empty($_SESSION['user_id'])) {
 
                                                     <div class="col-xs-8 col-md-8">
                                                         <input type="text" class="form-control-1" name="username"
-                                                               placeholder="Username" autocomplete="off">
+                                                               placeholder="Username" autocomplete="off"
+                                                               value="<?php echo "$username"; ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -247,7 +250,6 @@ if (!empty($_SESSION['user_id'])) {
                                                     </div>
                                                 </div>
                                                 <div class="captcha-container" align="center">
-                                                    <!--                                    <div class="col-xs-12 col-md-12" align="center">-->
                                                     <div class="captcha-container frame">
                                                         <?php
                                                         require_once('recaptchalib.php');
@@ -256,7 +258,6 @@ if (!empty($_SESSION['user_id'])) {
                                                         ?>
                                                     </div>
                                                 </div>
-                                                <div class="col-xs-12 col-md-12" align="center"></div>
                                                 <div align="center">
                                                     <input type="submit" class="btn btn-primary btn-lg" value="Submit"/>
                                                 </div>
