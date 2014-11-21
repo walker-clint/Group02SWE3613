@@ -114,7 +114,7 @@
                             <label class="col-lg-4 control-label"></label>
 
                             <div class="col-lg-8">
-                                <input align="center" type="text" class="form-control" id="newGenre" name="newGenre"
+                                <input align="center" type="text" class="form-control-1" id="newGenre" name="newGenre"
                                        placeholder="Enter a genre if not already in the system here">
                             </div>
                         </div>
