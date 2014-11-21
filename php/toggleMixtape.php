@@ -38,4 +38,5 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 //send user to admin page, lockService will redirect as needed
 //header('Location: http://' . $_SERVER['SERVER_NAME'] . '/admin_main_menu.php');
-header('Location: http://' . $_SERVER['SERVER_NAME'] . '/mixtape.php');
+//header('Location: http://' . $_SERVER['SERVER_NAME'] . '/mixtape.php');
+header('Location: http://' . $_SERVER['SERVER_NAME'] . '/user_song_list.php');
