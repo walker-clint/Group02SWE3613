@@ -19,6 +19,7 @@
             <div class="row">
                 <div id="left-space" class="col-sm-1"></div>
                 <div id="left-column" class="col-sm-4">
+
                     <h1>Awesome Tunes!</h1>
 
                     <div class="well bs-component">
@@ -120,7 +121,6 @@
                                                 <?php
                                             }
                                             ?>
-                                            <?php ?>
                                             </tbody>
                                         </table>
                                     </div>
