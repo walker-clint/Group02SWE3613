@@ -152,7 +152,7 @@ if (!empty($_SESSION['user_id'])) {
                             <div class="modal-body">
                                 <div align="center">
                                     <div class="well bs-component">
-                                        <h1 align="center">Login</h1>
+                                        <h1 align="center">Login 2</h1>
 
                                         <div class="well-1 bs-component">
                                             <form class="form-horizontal" action="php/loginService.php" method="POST">
@@ -166,8 +166,7 @@ if (!empty($_SESSION['user_id'])) {
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="password"
-                                                           class="col-lg-4 control-label">Password</label>
+                                                    <label for="password" class="col-lg-4 control-label">Password</label>
 
                                                     <div class="col-lg-8">
                                                         <input align="center" type="Password" class="form-control"
