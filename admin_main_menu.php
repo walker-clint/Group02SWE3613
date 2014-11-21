@@ -99,8 +99,8 @@
 //                                        $songGenre = $song->getGenres();
 //                                        $songLink = $song->getLink();
 
-                                    echo '<tr><th bgcolor="#ff4500">'
-                                        . $song->js_infoBox_admin(true) . '</th><th></th><th></th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                    echo '<tr><th bgcolor="#ff4500"><div class="btn btn-warning"> '
+                                        . $song->js_infoBox_admin(true) . '</div></th><th></th><th></th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                                 }
                             }
                             ?>
