@@ -19,25 +19,15 @@ if (!empty($_SESSION['user_id'])) {
     if ($userType == 'admin') {
         $indexLink = 'admin_main_menu.php';
     }
-    $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
+    if($page == "http://group02p2.swe3613.com/main_menu.php") {
+        $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
             <li class="btn-label-right">
             <a href="' . $indexLink . '">
 			<div class="well-1 btn btn-primary">
             ' . $full_name . '
             </div>
 			</a>
-            </li>;
-
-            if($page != "http://group02p2.swe3613.com/main_menu.php"){
-               $toplinks = $toplinks . <li class="btn-label-right">
-                <a href="user_song_list.php">
-                <div class="well-1 btn btn-primary">
-                ' . "Edit Your Song List" . '
-                </div>
-                </a>
-                </li>
-            }
-            $toplinks = $toplinks .
+            </li>
             <li class="btn-label-right">
 			<a href="http://' . $_SERVER['SERVER_NAME'] . '/php/logoutService.php">
             <div class="well-1 btn btn-warning">
@@ -46,6 +36,32 @@ if (!empty($_SESSION['user_id'])) {
 			</a>
             </li>
             </ul>';
+    }else{
+        $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
+            <li class="btn-label-right">
+            <a href="' . $indexLink . '">
+			<div class="well-1 btn btn-primary">
+            ' . $full_name . '
+            </div>
+			</a>
+            </li>
+             <li class="btn-label-right">
+            <a href="user_song_list.php">
+			<div class="well-1 btn btn-primary">
+            ' . "Edit Your Song List" . '
+            </div>
+			</a>
+            </li>
+
+            <li class="btn-label-right">
+			<a href="http://' . $_SERVER['SERVER_NAME'] . '/php/logoutService.php">
+            <div class="well-1 btn btn-warning">
+            Log Out
+			</div>
+			</a>
+            </li>
+            </ul>';
+    }
 } else {
     $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
             <li class="btn-label-right">
