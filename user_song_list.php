@@ -108,7 +108,7 @@
                                                         <th></th>
                                                         <th><h2><?php echo $songTitle; ?></h2></th>
                                                 <th><h2><?php echo $songArtist; ?></h2></th>
-                                                <th><h2><?php echo $songGenre; ?>'</h2></th>
+                                                <th><h2><?php echo $songGenre; ?></h2></th>
                                                 <th></th>
                                                 <th></th>
                                                 <th><div class="btn btn-primary" onclick="<?php echo $song->js_changeBox(true); ?>">Play Song</div></th>
