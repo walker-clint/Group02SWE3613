@@ -24,7 +24,7 @@
 
             <div class="well bs-component">
                 <div class="form-horizontal" action="" method="POST">
-                    <div class="well-1 bs-component">
+                    <div class="well-2 bs-component">
                         <div class="video-container" id="vidWindow">
                             <?php
                             $mixTapeList = getBestMixTape();
