@@ -2,107 +2,116 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php'; ?>
-    <script src="./js/songFunctions.js"></script>
-</head>
-<body>
-<!--Start Header-->
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
-<!--End Header-->
-<!--Start Row Main Page Data-->
-<div id="main" class="container-fluid">
-    <div class="row">
-        <div id="left-space" class="col-sm-1"></div>
-        <div id="left-column" class="col-sm-4">
-            <h1>Awesome Tunes!</h1>
+    <head>
+        <?php
+        require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
+        include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
+        include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
+        ?>
+        <script src="./js/songFunctions.js"></script>
+    </head>
+    <body>
+        <!--Start Header-->
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
+        <!--End Header-->
+        <!--Start Row Main Page Data-->
+        <div id="main" class="container-fluid">
+            <div class="row">
+                <div id="left-space" class="col-sm-1"></div>
+                <div id="left-column" class="col-sm-4">
+                    <h1>Awesome Tunes!</h1>
 
-            <div class="well bs-component">
-                <div class="form-horizontal" action="" method="POST">
-                    <div class="well-1 bs-component">
-                        <div class="video-container" id="vidWindow">
-                            <?php
-                            $mixTapeList = getBestMixTape();
-                            $randSongNumber = rand(0, (count($mixTapeList) - 1));
-                            $initialSong = getSongById($mixTapeList[$randSongNumber]);
-                            if ($initialSong instanceof Song) {
-                                echo '<script>window.onload = (function(){' . $initialSong->js_changeBox() . ';});</script>';
-                            }
-                            ?>
+                    <div class="well bs-component">
+                        <div class="form-horizontal" action="" method="POST">
+                            <div class="well-1 bs-component">
+                                <div class="video-container" id="vidWindow">
+                                    <?php
+                                    $mixTapeList = getBestMixTape();
+                                    $randSongNumber = rand(0, (count($mixTapeList) - 1));
+                                    $initialSong = getSongById($mixTapeList[$randSongNumber]);
+                                    if ($initialSong instanceof Song) {
+                                        echo '<script>window.onload = (function(){' . $initialSong->js_changeBox() . ';});</script>';
+                                    }
+                                    ?>
+                                </div>
+                                <p id="songInfo"></p>
+                            </div>
                         </div>
-                        <p id="songInfo"></p>
+                    </div>
+                    <h3 align="center">Add Song: Search for an Existing Song</h3>
+
+                    <div class="well bs-component">
+                        <form class="form-horizontal" action="add_song_search.php" method="post">
+                            <div class="well-2 bs-component">
+                                <div align="center">
+                                    <input type="text" class="search" id="searchid" placeholder="Search for songs" /><br /><br>
+                                    <table id="result" class="table">
+                                        <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+                                        <script type="text/javascript" src="./js/liveSearch.js"></script>
+                                        <div class="show" align="left">
+                                            <?php
+                                            $songList = getApprovedSongs();
+                                            foreach ($songList as $song) {
+                                                echo '<tr><td>' . $song->js_infoBox(true)
+                                                . '<a href="/php/toggleMixtape.php?songId='
+                                                . $song->id . '">Add to your Mixtape</a>'
+                                                . '</tr></td>';
+                                            }
+                                            ?>
+                                        </div>
+                                    </table>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </div>
-            <h3 align="center">Add Song: Search for an Existing Song</h3>
-
-            <div class="well bs-component">
-                <form class="form-horizontal" action="add_song_search.php" method="post">
-                    <div class="well-2 bs-component">
-                        <div align="center">
-                           <input type="text" class="search" id="searchid" placeholder="Search for songs" /><br /><br>
-                                <table id="result" class="table">
-                                    <div class="show" align="left">
-                                        <?php
-                                        $songList = getApprovedSongs();
-                                        foreach ($songList as $song) {
-                                            echo '<tr><td>' . $song->js_infoBox(true) . '</tr></td>';
-                                        }
-                                        ?>
-                                    </div>
-                                </table>
-                        </div>
+                <div id="right-column" class="col-sm-6">
+                    <div align="center">
+                        <h1>Your Song List</h1>
                     </div>
-                </form>
-            </div>
-        </div>
-        <div id="right-column" class="col-sm-6">
-            <div align="center">
-                <h1>Your Song List</h1>
-            </div>
-            <div class="well bs-component">
-                <div class="form-horizontal" action="" method="POST">
-                    <div class="well-2 bs-component">
-                        <div class="captcha-container">
-                            <div class="captcha-container frame">
-                                <table class="table table-striped" width="90%" cellpadding="2" cellspacing="2"
-                                       overflow="auto">
-                                    <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>
+                    <div class="well bs-component">
+                        <div class="form-horizontal" action="" method="POST">
+                            <div class="well-2 bs-component">
+                                <div class="captcha-container">
+                                    <div class="captcha-container frame">
+                                        <table class="table table-striped" width="90%" cellpadding="2" cellspacing="2"
+                                               overflow="auto">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>
                                             <h1 class="small">Title</h1>
-                                        </th>
-                                        <th>
+                                            </th>
+                                            <th>
                                             <h1 class="small">Artist</h1>
-                                        </th>
-                                        <th>
+                                            </th>
+                                            <th>
                                             <h1 class="small">Genre</h1>
-                                        </th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php
-                                    $increment = 1;
-                                    $userMixtape = getMixtape($_SESSION['user_id']);
-                                    foreach ($userMixtape as $songId) {
-                                        $song = getSongById($songId);
-                                        $songTitle = $song->title;
-                                        $songArtist = $song->getArtists();
-                                        $songGenre = $song->getGenres();
-                                        $songLink = $song->getLink();
-                                        echo '<tr><th></th><th><h2>' .
-                                            $songTitle . '</h2></th><th><h2>' .
-                                            $songArtist . '</h2></th><th><h2>' .
-                                            $songGenre . '</h2></th><th></th><th></th><th>' .
-                                            '<div class="btn btn-primary" >Play Song</div>' .
-                                            '</th><th></th><th> <div class="btn btn-warning" >Delete</div>' .
-                                            '</th><th></th></tr>';
+                                            </th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $increment = 1;
+                                                $userMixtape = getMixtape($_SESSION['user_id']);
+                                                foreach ($userMixtape as $songId) {
+                                                    $song = getSongById($songId);
+                                                    $songTitle = $song->title;
+                                                    $songArtist = $song->getArtists();
+                                                    $songGenre = $song->getGenres();
+                                                    $songLink = $song->getLink();
+                                                    echo '<tr><th></th><th><h2>' .
+                                                    $songTitle . '</h2></th><th><h2>' .
+                                                    $songArtist . '</h2></th><th><h2>' .
+                                                    $songGenre;
+                                                    ?>'</h2></th><th></th><th></th><th>
+                                                <div class="btn btn-primary" onclick="<?php echo $song->js_changeBox(true); ?>">Play Song</div>
+                                            </th><th></th><th><a href='/php/toggleMixtape.php?songId=<?php echo $songId; ?>'> <div class="btn btn-warning" >Delete</div></a>
+                                        </th><th></th></tr>
+                                        <?php
                                     }
                                     ?>
                                     <?php ?>
@@ -140,7 +149,7 @@
                             href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
                             title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
                             Artist Painter Comic Characters Painters</a> from <a href="http://vector.me"
-                                                                                 title="Vector.me" target="_blank">Vector.me</a>
+                                                                             title="Vector.me" target="_blank">Vector.me</a>
                         (by nicubunu)
                     </a1>
                 </div>
@@ -186,7 +195,7 @@
                             href="http://vector.me/browse/132175/people_man_artist_painter_comic_characters_painters"
                             title="People Man Artist Painter Comic Characters Painters" target="_blank">People Man
                             Artist Painter Comic Characters Painters</a> from <a href="http://vector.me"
-                                                                                 title="Vector.me" target="_blank">Vector.me</a>
+                                                                             title="Vector.me" target="_blank">Vector.me</a>
                         (by nicubunu)
                     </a1>
                 </div>
