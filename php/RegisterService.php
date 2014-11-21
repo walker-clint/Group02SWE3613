@@ -2,6 +2,8 @@
 
 require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
 require_once $_SERVER['DOCUMENT_ROOT'] . ("/recaptchalib.php");
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $privatekey = "6LcMdf0SAAAAAGoCSMb54T2MbWvgxaNpnDqhLwSj";
