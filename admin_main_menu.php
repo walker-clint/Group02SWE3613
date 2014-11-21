@@ -45,7 +45,6 @@
             </div>
 
 
-
             <div class="well bs-component">
                 <!--<legend>RIGHT COLUMN</legend>-->
 
@@ -99,50 +98,51 @@
                         </table>
                     </div>
                 <?php } ?>
-                </div>
-                <div id="right-column" class="col-sm-4">
-                <h1>Songs</h1>
-
-                <div class="well-1 bs-component">
-
-                    <table class="table">
-                        <?php
-                        $songListNormal = getApprovedAndUnflaggedSongs();
-                        foreach ($songListNormal as $song) {
-                            if ($song instanceof Song) {
-                                $songTitle = $song->title;
-                                $songArtist = $song->getArtists();
-                                $songGenre = $song->getGenres();
-                                $songLink = $song->getLink();
-
-                                echo '<tr><td>'
-                                    . $song->js_infoBox_admin(true) . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
-                            }
-                        }
-                        ?>
-                        <?php ?>
-                    </table>
-                </div>
-                <!--End well-1-->
-
             </div>
+        </div>
+        <div id="right-column" class="col-sm-4">
+            <h1>Songs</h1>
+
+            <div class="well-1 bs-component">
+
+                <table class="table">
+                    <?php
+                    $songListNormal = getApprovedAndUnflaggedSongs();
+                    foreach ($songListNormal as $song) {
+                        if ($song instanceof Song) {
+                            $songTitle = $song->title;
+                            $songArtist = $song->getArtists();
+                            $songGenre = $song->getGenres();
+                            $songLink = $song->getLink();
+
+                            echo '<tr><td>'
+                                . $song->js_infoBox_admin(true) . '</td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                        }
+                    }
+                    ?>
+                    <?php ?>
+                </table>
+            </div>
+            <!--End well-1-->
 
         </div>
-        <div id="left-space" class="col-sm-2"></div>
+
     </div>
-    <!--End Middle-->
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/footer.php'; ?>
-    <!--End Container-->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <!--<script src="http://code.jquery.com/jquery.js"></script>-->
-    <script src="plugins/jquery/jquery-2.1.0.min.js"></script>
-    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="plugins/bootstrap/bootstrap.min.js"></script>
-    <script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script>
-    <script src="plugins/tinymce/tinymce.min.js"></script>
-    <script src="plugins/tinymce/jquery.tinymce.min.js"></script>
-    <!-- All functions for this theme + document.ready processing -->
-    <script src="js/devoops.js"></script>
+    <div id="left-space" class="col-sm-2"></div>
+</div>
+<!--End Middle-->
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/footer.php'; ?>
+<!--End Container-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="plugins/jquery/jquery-2.1.0.min.js"></script>
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script>
+<script src="plugins/tinymce/tinymce.min.js"></script>
+<script src="plugins/tinymce/jquery.tinymce.min.js"></script>
+<!-- All functions for this theme + document.ready processing -->
+<script src="js/devoops.js"></script>
 </body>
 </html>
