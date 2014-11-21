@@ -30,7 +30,7 @@ if (!empty($_SESSION['user_id'])) {
             </li>
 			 <li class="btn-label-right">
 			<div class="well-1 btn btn-primary">
-            ' . $full_name . "Song List" . '
+            ' . $full_name . "&#39;s Song List" . '
             </div>
             </li>
             <li class="btn-label-right">
@@ -53,7 +53,7 @@ if (!empty($_SESSION['user_id'])) {
              <li class="btn-label-right">
             <a href="user_song_list.php">
 			<div class="well-1 btn btn-primary">
-            ' . $full_name . "Song List" . '
+            ' . $full_name . "&#39;s Song List" . '
             </div>
 			</a>
             </li>
