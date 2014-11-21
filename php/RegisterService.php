@@ -1,7 +1,7 @@
 <?php
 
 require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
-require_once $_SERVER['DOCUMENT_ROOT'] . ("recaptchalib.php");
+require_once $_SERVER['DOCUMENT_ROOT'] . ("/recaptchalib.php");
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $privatekey = "6LcMdf0SAAAAAGoCSMb54T2MbWvgxaNpnDqhLwSj";
@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = htmlspecialchars($_POST['password']);
     $firstname = htmlspecialchars($_POST['firstname']); // filter everything but numbers and letters
     $lastname = htmlspecialchars($_POST['lastname']); // filter everything but numbers and letters
-    $email = htmlspecialchars($email);
+    $email = htmlspecialchars($_POST['email']);
     $secret_q = htmlspecialchars($_POST['secret_q']);
     $secret_a = htmlspecialchars($_POST['secret_a']);
 	
