@@ -81,8 +81,8 @@
             <div class="well bs-component">
                 <div class="form-horizontal" action="" method="POST">
                     <div class="well-2 bs-component">
-                        <div class="captcha-container">
-                            <div class="captcha-container frame">
+                        <div class="scroll-container">
+                            <div class="scroll-container frame">
                                 <table class="table table-striped" width="90%" cellpadding="2" cellspacing="2"
                                        overflow="auto">
                                     <thead>
