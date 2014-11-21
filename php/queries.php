@@ -93,7 +93,8 @@ function getAllSongs() {
     $con = initializeConnection();
 
     $query = 'SELECT song_id, title, approved, flagged, youtube, youtube_approved '
-            . 'FROM tbl_song';
+            . 'FROM tbl_song '
+            . 'ORDER BY title';
     $stmt = $con->prepare($query);
 
     $stmt->execute();
