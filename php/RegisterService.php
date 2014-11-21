@@ -9,9 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resp = recaptcha_check_answer($privatekey, $_SERVER["REMOTE_ADDR"], htmlspecialchars($_POST["recaptcha_challenge_field"]), htmlspecialchars($_POST["recaptcha_response_field"]));
     if (!$resp->is_valid) {
         // What happens when the CAPTCHA was entered incorrectly
-        $errorMsg .= "The reCAPTCHA wasn't entered correctly. Go back and try it again.";
+       echo "The reCAPTCHA wasn't entered correctly. Go back and try it again.";
 		
-	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
+	//header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
     } else {
         $username = ereg_replace("[^A-Za-z0-9]", "", $_POST['username']);
         $password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']);
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $secret_a = ereg_replace("[^A-Za-z0-9 ]", "", $_POST['secret_a']);
         if ((!$firstname) || (!$lastname) || (!$email) || (!$username || (!$password))) {
 
-            $errorMsg = "You did not submit the following required information!<br /><br />";
+           echo "You did not submit the following required information!<br /><br />";
             if (!$firstname) {
                 $errorMsg .= "--- First Name<br />";
             } if (!$lastname) {
@@ -37,15 +37,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $errorMsg .= "--- Password<br />";
             }
 			
-	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
+	//header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
         } else {
 			 $conLogin = initializeConnection();
             $sql_username_check = mysql_query("SELECT user_id FROM tbl_user WHERE login='$username' LIMIT 1");
             $username_check = mysql_num_rows($sql_username_check);
             if ($username_check > 0) {
-                $errorMsg = "<u>ERROR:</u><br />The username is already in use inside our system. Please try another.";
+               echo "<u>ERROR:</u><br />The username is already in use inside our system. Please try another.";
 				
-	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
+	//header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
             } else {
                 // Add MD5 Hash to the password variable
                 $hashedPass = md5($password);
@@ -69,6 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } // Close else after missing vars check
     }
 } else {
-    $error = '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
-	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
+    echo '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
+	//header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 }
