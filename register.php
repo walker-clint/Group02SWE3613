@@ -8,7 +8,7 @@ require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/setQueries.php';
 
 session_start();
-/*$error = $_SESSION['error'];
+$error = $_SESSION['error'];
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $privatekey = "6LcMdf0SAAAAAGoCSMb54T2MbWvgxaNpnDqhLwSj";
     $resp = recaptcha_check_answer($privatekey, $_SERVER["REMOTE_ADDR"], htmlspecialchars($_POST["recaptcha_challenge_field"]), htmlspecialchars($_POST["recaptcha_response_field"]));
@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 	exit;
 }
-*/
+
 ?>
 </head>
 <body>

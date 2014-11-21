@@ -30,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
              header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
 			}
 			else{
+				 flush();
 				   $error =  '<span class="error">The username is already in use inside our system. Please try another.</span>';
 				   $_SESSION['error']=$error;
 				   header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
@@ -39,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			}
 			
 	 }else{
+		 flush();
 		 $error = "You did not submit the following required information!<br /><br />";
             if (!$firstname) {
                 $error .= "--- First Name<br />";
@@ -51,10 +53,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }if (!$password) {
                 $error .= "--- Password<br />";
             }
+			 
 			$_SESSION['error']=$error;
 			header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 		 }
 	 }else{
+		 flush();
 		  $error =  '<span class="error">Captia is not correct<br></span>';
 		  $_SESSION['error']=$error;
 	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
@@ -62,6 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	 }
 
 } else {
+	 flush();
     $error =  '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
 	$_SESSION['error']=$error;
 	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
