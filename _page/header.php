@@ -257,7 +257,7 @@ if (!empty($_SESSION['user_id'])) {
                                                     </div>
                                                 </div>
                                                 <div align="center">
-                                                    <input type="submit" class="btn btn-primary btn-lg" value="Submit"/>
+                                                    <input class="btn btn-primary" type="submit" value="Register"/>
                                                 </div>
                                             </div>
                                         </div>
