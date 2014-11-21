@@ -21,14 +21,14 @@ if (isset($_POST['genres'])) {
     $genres = [];
 }
 //add a new artist if given
-if (isset($_POST['newArtist'])) {
+if (isset($_POST['newArtist']) && count($_POST['newArtist'])) {
     $newArtist = $_POST['newArtist'];
     $newArtistId = addArtist($newArtist);
     array_push($artists, $newArtistId);
 }
 
 //add a new genre if given
-if (isset($_POST['newGenre'])) {
+if (isset($_POST['newGenre'])&& count($_POST['newGenre'])) {
     $newGenre = $_POST['newGenre'];
     $newGenreId = addGenre($newGenre);
     array_push($genres, $newGenreId);
