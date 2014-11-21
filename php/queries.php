@@ -466,7 +466,7 @@ function getMixtapeSortPosition($userIDInc) {
  * returns URL of current page.
  * found @ http://webcheatsheet.com/php/get_current_page_url.php
  * */
-function curPageURL() {
+function getCurrentPageURL() {
     $pageURL = 'http';
     if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
     $pageURL .= "://";

@@ -9,7 +9,8 @@ if (!empty($_SESSION['user_id'])) {
 
     $con = initializeConnection();
     $sql = mysqli_query($con, "SELECT * FROM tbl_user WHERE user_id = '$id'");
-
+    $page = getCurrentPageURL();
+    echo "Current URL: " . $page;
     $full_name = '';
     while ($row = mysqli_fetch_array($sql)) {
         $full_name = $row["first_name"] . " " . $row["last_name"];
