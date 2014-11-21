@@ -116,7 +116,7 @@ function changeInfo_admin(id, title, artist, genre, approved, flagged) {
         thumbDirection = 'Up';
         message = 'Approve';
     }
-    info += '<br><a href="/php/toggleMixtape.php?songId=' + id + '">Add/remove this song from your Mixtape</a>';
+    //info += '<br><a href="/php/toggleMixtape.php?songId=' + id + '">Add/remove this song from your Mixtape</a>';
     info += '<br><a href="/songForm.php?songId=' + id + '">Edit this song</a>';
 
     info += '<a1 class="well-2"><form method="POST" action = "./php/menu_functions.php">'
