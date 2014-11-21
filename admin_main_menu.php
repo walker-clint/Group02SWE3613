@@ -22,8 +22,9 @@
         <div id="left-space" class="col-sm-2"></div>
         <div id="left-column" class="col-sm-4">
 
-
-            <h1>Songs awaiting approval</h1>
+            <div align="center">
+                <h1>Songs awaiting approval</h1>
+            </div>
             <div class="well bs-component">
                 <!--<legend>RIGHT COLUMN</legend>-->
                 <div class="well-1 bs-component">
@@ -34,7 +35,6 @@
                     if (count($songListUnapproved) > 0) {
                         ?>
                         <table class="table">
-
 
 
                             <?php
@@ -54,7 +54,9 @@
                     <?php } ?>
                 </div>
             </div>
-            <h1>Flagged songs</h1>
+            <div align="center">
+                <h1>Flagged songs</h1>
+            </div>
             <div class="well bs-component">
                 <?php
                 $songListFlagged = getFlaggedSongs();
@@ -106,8 +108,9 @@
             </div>
         </div>
         <div id="right-column" class="col-sm-4">
-            <h1>Songs</h1>
-
+            <div align="center">
+                <h1>Songs</h1>
+            </div>
             <div class="well bs-component">
                 <div class="well-1 bs-component">
 
