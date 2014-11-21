@@ -70,7 +70,7 @@ if (!empty($_SESSION['user_id'])) {
             </div>
 			</a>
             </li>
-             <li class="btn-label-right">
+            <li class="btn-label-right">
 			<a data-toggle="modal" href="#myModal2">
             <div class="well-1 btn btn-primary">
             Register
@@ -176,7 +176,8 @@ if (!empty($_SESSION['user_id'])) {
                                                            align="right">First Name</label>
 
                                                     <div class="col-xs-8 col-md-8">
-                                                        <input type="text" class="form-control-1" id="firstname" name="firstname"
+                                                        <input type="text" class="form-control-1" id="firstname"
+                                                               name="firstname"
                                                                placeholder="First Name">
                                                     </div>
                                                 </div>
@@ -185,7 +186,8 @@ if (!empty($_SESSION['user_id'])) {
                                                            align="right">Last Name</label>
 
                                                     <div class="col-xs-8 col-md-8">
-                                                        <input type="text" class="form-control-1" id="lastname"name="lastname"
+                                                        <input type="text" class="form-control-1" id="lastname"
+                                                               name="lastname"
                                                                placeholder="Last Name">
                                                     </div>
                                                 </div>
@@ -194,7 +196,8 @@ if (!empty($_SESSION['user_id'])) {
                                                            align="right">Email</label>
 
                                                     <div class="col-xs-8 col-md-8">
-                                                        <input type="email" class="form-control-1" id="email" name="email"
+                                                        <input type="email" class="form-control-1" id="email"
+                                                               name="email"
                                                                placeholder="Email">
                                                     </div>
                                                 </div>
@@ -203,7 +206,8 @@ if (!empty($_SESSION['user_id'])) {
                                                            align="right">Username</label>
 
                                                     <div class="col-xs-8 col-md-8">
-                                                        <input type="text" class="form-control-1" id="username" name="username"
+                                                        <input type="text" class="form-control-1" id="username"
+                                                               name="username"
                                                                placeholder="Username" autocomplete="off">
                                                     </div>
                                                 </div>
@@ -212,7 +216,8 @@ if (!empty($_SESSION['user_id'])) {
                                                            align="right">Password</label>
 
                                                     <div class="col-xs-8 col-md-8">
-                                                        <input type="password" class="form-control-1" name="password" name="password"
+                                                        <input type="password" class="form-control-1" name="password"
+                                                               name="password"
                                                                placeholder="Password" autocomplete="off">
                                                     </div>
                                                 </div>
@@ -221,7 +226,8 @@ if (!empty($_SESSION['user_id'])) {
                                                            align="right">Secret Question</label>
 
                                                     <div class="col-xs-8 col-md-8">
-                                                        <input type="text" class="form-control-1" name="secret_q" name="secret_q"
+                                                        <input type="text" class="form-control-1" name="secret_q"
+                                                               name="secret_q"
                                                                placeholder="Secret Question">
                                                     </div>
                                                 </div>
@@ -230,7 +236,8 @@ if (!empty($_SESSION['user_id'])) {
                                                            align="right">Secret Answer</label>
 
                                                     <div class="col-xs-8 col-md-8">
-                                                        <input type="text" class="form-control-1" name="secret_a" name="secret_a"
+                                                        <input type="text" class="form-control-1" name="secret_a"
+                                                               name="secret_a"
                                                                placeholder="Secret Answer">
                                                     </div>
                                                 </div>
