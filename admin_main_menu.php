@@ -84,9 +84,10 @@
                     </div>
                 <?php } ?>
             </div>
+            <h1>YouTube Video</h1>
             <div class="well bs-component">
                 <!--<legend>LEFT COLUMN</legend>-->
-                <h1></h1>
+
 
                 <div class="form-horizontal" action="" method="POST"></div>
 
