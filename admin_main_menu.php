@@ -143,7 +143,7 @@
                                 $songGenre = $song->getGenres();
                                 $songLink = $song->getLink();
 
-                                echo '<tr><div class="btn btn-primary">'
+                                echo '<tr><div class="btn btn-responsive btn-primary">'
                                     . $song->js_infoBox_admin(true) . '</div><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                             }
                         }
