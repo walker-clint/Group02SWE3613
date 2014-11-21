@@ -110,10 +110,10 @@ function changeInfo_admin(id, title, artist, genre, approved, flagged) {
             + '<br>Genre: ' + genre;
     //+ '<br>Approved: ' + approved
     //+ '<br>Flagged: ' + flagged;
-    var thumbDirection = 'down';
+    var thumbDirection = 'Down';
     var message = 'Un-approve';
     if (approved == 0) {
-        thumbDirection = 'up';
+        thumbDirection = 'Up';
         message = 'Approve';
     }
     info += '<br><a href="/php/toggleMixtape.php?songId=' + id + '">Add/remove this song from your Mixtape</a>';
