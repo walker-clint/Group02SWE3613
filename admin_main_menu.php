@@ -19,8 +19,8 @@
 <div id="main" class="container-fluid">
     <!--Start Content-->
     <div class="row">
-        <div id="left-space" class="col-sm-2"></div>
-        <div id="left-column" class="col-sm-4">
+        <div id="left-space" class="col-sm-1"></div>
+        <div id="left-column" class="col-sm-5">
             <div align="center">
                 <h1>Song Approval Menu</h1>
             </div>
@@ -109,7 +109,7 @@
 
 
         </div>
-        <div id="right-column" class="col-sm-4">
+        <div id="right-column" class="col-sm-5">
             <div align="center">
                 <h1>Songs Currently In Library</h1>
             </div>
@@ -160,7 +160,7 @@
         </div>
 
     </div>
-    <div id="left-space" class="col-sm-2"></div>
+    <div id="left-space" class="col-sm-1"></div>
 </div>
 <!--End Middle-->
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/footer.php'; ?>
