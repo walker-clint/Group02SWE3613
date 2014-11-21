@@ -19,8 +19,9 @@
     <div class="row">
         <div id="left-space" class="col-sm-1"></div>
         <div id="left-column" class="col-sm-4">
-
-            <h1>Awesome Tunes!</h1>
+            <div align="center">
+                <h1>Awesome Tunes!</h1>
+            </div>
 
             <div class="well bs-component">
                 <div class="form-horizontal" action="" method="POST">
@@ -88,13 +89,13 @@
                                     <tr>
                                         <th></th>
                                         <th>
-                                            <h1 class="small">Title</h1>
+                                            <h3>Title</h3>
                                         </th>
                                         <th>
-                                            <h1 class="small">Artist</h1>
+                                            <h3>Artist</h3>
                                         </th>
                                         <th>
-                                            <h1 class="small">Genre</h1>
+                                            <h3>Genre</h3>
                                         </th>
                                         <th></th>
                                         <th></th>
