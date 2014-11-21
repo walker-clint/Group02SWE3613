@@ -118,7 +118,7 @@ if (!empty($_SESSION['user_id'])) {
 
                                                 <div class="col-xs-8 col-md-8">
                                                     <input type="text" class="form-control-1" id="username"
-                                                           name="username" placeholder="User Name">
+                                                           name="username" placeholder="User Name" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -128,7 +128,7 @@ if (!empty($_SESSION['user_id'])) {
                                                 <div class="col-xs-8 col-md-8">
                                                     <input type="Password" class="form-control-1"
                                                            id="password" name="password"
-                                                           placeholder="Password">
+                                                           placeholder="Password" required>
                                                 </div>
                                             </div>
                                             <div align="center">
