@@ -43,16 +43,16 @@
                     </div>
                 </div>
             </div>
-            <div align="center">
-                <h1>Songs awaiting approval</h1>
-            </div>
+
 
             <?php
             $songListUnapproved = getUnapprovedSongs();
             if (count($songListUnapproved) > 0) {
                 ?>
                 <div class="well bs-component">
-                    <!--<legend>RIGHT COLUMN</legend>-->
+                    <div align="center">
+                        <h1>Songs awaiting approval</h1>
+                    </div>
                     <div class="well-1 bs-component">
                         <div class="form-horizontal" action="" method="POST">
                             <table class="table table-striped">
@@ -76,7 +76,7 @@
                     </div>
                 </div>
             <?php } ?>
-                  
+
 
             <?php
             $songListFlagged = getFlaggedSongs();
