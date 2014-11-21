@@ -19,7 +19,7 @@ if (!empty($_SESSION['user_id'])) {
     if ($userType == 'admin') {
         $indexLink = 'admin_main_menu.php';
     }
-    if($page == "http://group02p2.swe3613.com/user_song_list.php") {
+    if ($page == "http://group02p2.swe3613.com/user_song_list.php") {
         $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
             <li class="btn-label-right">
             <a href="' . $indexLink . '">
@@ -36,7 +36,7 @@ if (!empty($_SESSION['user_id'])) {
 			</a>
             </li>
             </ul>';
-    }else{
+    } else {
         $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
             <li class="btn-label-right">
             <a href="' . $indexLink . '">
@@ -157,106 +157,130 @@ if (!empty($_SESSION['user_id'])) {
                 <!-- /.modal-dialog -->
             </div>
             <!-- /.modal -->
-</div>
+        </div>
 
-            <!-- Modal 2 -->
-            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-dialog modal-vertical-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="btn btn-primary" class="close" data-dismiss="modal" aria-hidden="true">×
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div align="center">
+        <!-- Modal 2 -->
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-dialog modal-vertical-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="btn btn-primary" class="close" data-dismiss="modal" aria-hidden="true">×
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div align="center">
+                                <!--Start Content-->
+                                <form class="form-horizontal" align="center"
+                                      action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"
+                                      enctype="multipart/form-data">
+                                    <h1>Registration</h1>
 
-                                    <!--Start Content-->
-                                    <form class="form-horizontal" align="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-                                        <h1>Registration</h1>
-                                        <div class="row">
-                                            <div id="center-column" class="col-xs-12 col-md-8 col-lg-8">
-                                                <div class="well bs-component">
-                                                    <div class="well-1 bs-component">
+                                    <div class="row">
+                                        <div class="well bs-component">
+                                            <div class="well-1 bs-component">
 
-                                                        <div class="form-group">
-                                                            <label for="firstname" class="col-xs-4 col-md-4 control-label" align="right">First Name</label>
-                                                            <div class="col-xs-8 col-md-8">
-                                                                <input type="text" class="form-control-1" name="firstname" placeholder="First Name" value="<?php echo "$firstname"; ?>">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="lastname" class="col-xs-4 col-md-4 control-label" align="right">Last Name</label>
-                                                            <div class="col-xs-8 col-md-8">
-                                                                <input type="text" class="form-control-1" name="lastname" placeholder="Last Name" value="<?php echo "$lastname"; ?>">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="email" class="col-xs-4 col-md-4 control-label" align="right">Email</label>
-                                                            <div class="col-xs-8 col-md-8">
-                                                                <input type="email" class="form-control-1" name="email" placeholder="Email" value="<?php echo "$email"; ?>">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="username" class="col-xs-4 col-md-4 control-label" align="right">Username</label>
-                                                            <div class="col-xs-8 col-md-8">
-                                                                <input type="text" class="form-control-1" name="username" placeholder="Username" value="<?php echo "$username"; ?>">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="password" class="col-xs-4 col-md-4 control-label" align="right">Password</label>
-                                                            <div class="col-xs-8 col-md-8">
-                                                                <input type="password" class="form-control-1" name="password" placeholder="Password" value="<?php echo "$password"; ?>">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="secret_q" class="col-xs-4 col-md-4 control-label" align="right">Secret Question</label>
-                                                            <div class="col-xs-8 col-md-8">
-                                                                <input type="text" class="form-control-1" name="secret_q" placeholder="Secret Question" value="<?php echo "$secret_q"; ?>">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="secret_a" class="col-xs-4 col-md-4 control-label" align="right">Secret Answer</label>
-                                                            <div class="col-xs-8 col-md-8">
-                                                                <input type="text" class="form-control-1" name="secret_a" placeholder="Secret Answer" value="<?php echo "$secret_a"; ?>">
-                                                            </div>
-                                                        </div>
-                                                        <div class="captcha-container" align="center">
-                                                            <!--                                    <div class="col-xs-12 col-md-12" align="center">-->
-                                                            <div class="captcha-container frame">
-                                                                <?php
-                                                                require_once('recaptchalib.php');
-                                                                $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
-                                                                echo recaptcha_get_html($publickey);
-                                                                ?>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-12 col-md-12" align="center"></div>
-                                                        <div align="center">
-                                                            <input type="submit" class="btn btn-primary btn-lg" value="Submit"/>
-                                                        </div>
+                                                <div class="form-group">
+                                                    <label for="firstname" class="col-xs-4 col-md-4 control-label"
+                                                           align="right">First Name</label>
+
+                                                    <div class="col-xs-8 col-md-8">
+                                                        <input type="text" class="form-control-1" name="firstname"
+                                                               placeholder="First Name"
+                                                               value="<?php echo "$firstname"; ?>">
                                                     </div>
                                                 </div>
+                                                <div class="form-group">
+                                                    <label for="lastname" class="col-xs-4 col-md-4 control-label"
+                                                           align="right">Last Name</label>
+
+                                                    <div class="col-xs-8 col-md-8">
+                                                        <input type="text" class="form-control-1" name="lastname"
+                                                               placeholder="Last Name"
+                                                               value="<?php echo "$lastname"; ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email" class="col-xs-4 col-md-4 control-label"
+                                                           align="right">Email</label>
+
+                                                    <div class="col-xs-8 col-md-8">
+                                                        <input type="email" class="form-control-1" name="email"
+                                                               placeholder="Email" value="<?php echo "$email"; ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="username" class="col-xs-4 col-md-4 control-label"
+                                                           align="right">Username</label>
+
+                                                    <div class="col-xs-8 col-md-8">
+                                                        <input type="text" class="form-control-1" name="username"
+                                                               placeholder="Username"
+                                                               value="<?php echo "$username"; ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="password" class="col-xs-4 col-md-4 control-label"
+                                                           align="right">Password</label>
+
+                                                    <div class="col-xs-8 col-md-8">
+                                                        <input type="password" class="form-control-1" name="password"
+                                                               placeholder="Password"
+                                                               value="<?php echo "$password"; ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="secret_q" class="col-xs-4 col-md-4 control-label"
+                                                           align="right">Secret Question</label>
+
+                                                    <div class="col-xs-8 col-md-8">
+                                                        <input type="text" class="form-control-1" name="secret_q"
+                                                               placeholder="Secret Question"
+                                                               value="<?php echo "$secret_q"; ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="secret_a" class="col-xs-4 col-md-4 control-label"
+                                                           align="right">Secret Answer</label>
+
+                                                    <div class="col-xs-8 col-md-8">
+                                                        <input type="text" class="form-control-1" name="secret_a"
+                                                               placeholder="Secret Answer"
+                                                               value="<?php echo "$secret_a"; ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="captcha-container" align="center">
+                                                    <!--                                    <div class="col-xs-12 col-md-12" align="center">-->
+                                                    <div class="captcha-container frame">
+                                                        <?php
+                                                        require_once('recaptchalib.php');
+                                                        $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
+                                                        echo recaptcha_get_html($publickey);
+                                                        ?>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-md-12" align="center"></div>
+                                                <div align="center">
+                                                    <input type="submit" class="btn btn-primary btn-lg" value="Submit"/>
+                                                </div>
                                             </div>
-                                            
                                         </div>
-                                    </form>
-                                </div>
-
-                                <!--End Content-->
-
+                                    </div>
+                                </form>
                             </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close
-                                    </button>
-                                </div>
-                            </div>
-                            <!-- /.modal-content -->
+                            <!--End Content-->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close
+                            </button>
                         </div>
                     </div>
-                    <!-- /.modal-dialog -->
+                    <!-- /.modal-content -->
                 </div>
-                <!-- /.modal -->
             </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    </div>
 </header>
