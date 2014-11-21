@@ -133,7 +133,7 @@ if (!empty($_SESSION['user_id'])) {
                                                        class="col-xs-4 col-md-4 control-label">Password</label>
 
                                                 <div class="col-xs-8 col-md-8">
-                                                    <input align="center" type="Password" class="form-control-1"
+                                                    <input type="Password" class="form-control-1"
                                                            id="password" name="password"
                                                            placeholder="Password">
                                                 </div>
@@ -171,8 +171,7 @@ if (!empty($_SESSION['user_id'])) {
                         <div class="modal-body">
                             <div align="center">
                                 <!--Start Content-->
-                                <form class="form-horizontal" align="center"
-                                      action="php/RegisterService.php" method="POST">
+                                <form class="form-horizontal" action="php/RegisterService.php" method="POST">
                                     <h1>Registration</h1>
 
                                     <div class="row">
@@ -184,9 +183,8 @@ if (!empty($_SESSION['user_id'])) {
                                                            align="right">First Name</label>
 
                                                     <div class="col-xs-8 col-md-8">
-                                                        <input type="text" class="form-control-1" name="firstname"
-                                                               placeholder="First Name"
-                                                               value="<?php echo "$firstname"; ?>">
+                                                        <input type="text" class="form-control-1" id="firstname" name="firstname"
+                                                               placeholder="First Name">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -194,7 +192,7 @@ if (!empty($_SESSION['user_id'])) {
                                                            align="right">Last Name</label>
 
                                                     <div class="col-xs-8 col-md-8">
-                                                        <input type="text" class="form-control-1" name="lastname"
+                                                        <input type="text" class="form-control-1" id="lastname"name="lastname"
                                                                placeholder="Last Name"
                                                                value="<?php echo "$lastname"; ?>">
                                                     </div>
@@ -204,8 +202,8 @@ if (!empty($_SESSION['user_id'])) {
                                                            align="right">Email</label>
 
                                                     <div class="col-xs-8 col-md-8">
-                                                        <input type="email" class="form-control-1" name="email"
-                                                               placeholder="Email" value="<?php echo "$email"; ?>">
+                                                        <input type="email" class="form-control-1" id="email" name="email"
+                                                               placeholder="Email">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -213,9 +211,8 @@ if (!empty($_SESSION['user_id'])) {
                                                            align="right">Username</label>
 
                                                     <div class="col-xs-8 col-md-8">
-                                                        <input type="text" class="form-control-1" name="username"
-                                                               placeholder="Username" autocomplete="off"
-                                                               value="<?php echo "$username"; ?>">
+                                                        <input type="text" class="form-control-1" id="username" name="username"
+                                                               placeholder="Username" autocomplete="off">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -223,7 +220,7 @@ if (!empty($_SESSION['user_id'])) {
                                                            align="right">Password</label>
 
                                                     <div class="col-xs-8 col-md-8">
-                                                        <input type="password" class="form-control-1" name="password"
+                                                        <input type="password" class="form-control-1" name="password" name="password"
                                                                placeholder="Password" autocomplete="off">
                                                     </div>
                                                 </div>
@@ -232,9 +229,8 @@ if (!empty($_SESSION['user_id'])) {
                                                            align="right">Secret Question</label>
 
                                                     <div class="col-xs-8 col-md-8">
-                                                        <input type="text" class="form-control-1" name="secret_q"
-                                                               placeholder="Secret Question"
-                                                               value="<?php echo "$secret_q"; ?>">
+                                                        <input type="text" class="form-control-1" name="secret_q" name="secret_q"
+                                                               placeholder="Secret Question">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -242,9 +238,8 @@ if (!empty($_SESSION['user_id'])) {
                                                            align="right">Secret Answer</label>
 
                                                     <div class="col-xs-8 col-md-8">
-                                                        <input type="text" class="form-control-1" name="secret_a"
-                                                               placeholder="Secret Answer"
-                                                               value="<?php echo "$secret_a"; ?>">
+                                                        <input type="text" class="form-control-1" name="secret_a" name="secret_a"
+                                                               placeholder="Secret Answer">
                                                     </div>
                                                 </div>
                                                 <div class="captcha-container" align="center">
