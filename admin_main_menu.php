@@ -98,9 +98,9 @@
 //                                        $songArtist = $song->getArtists();
 //                                        $songGenre = $song->getGenres();
 //                                        $songLink = $song->getLink();
-                
+
                                     echo '<tr><th bgcolor="#ff4500">'
-                                        . $song->js_infoBox_admin(true) . '</th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                        . $song->js_infoBox_admin(true) . '</th><th></th><th></th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                                 }
                             }
                             ?>
@@ -144,7 +144,7 @@
                                 $songLink = $song->getLink();
 
                                 echo '<tr><th>'
-                                    . $song->js_infoBox_admin(true) . '</th><th></th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                    . $song->js_infoBox_admin(true) . '</th><th></th><th></th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                             }
                         }
                         ?>
