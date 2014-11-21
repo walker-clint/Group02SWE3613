@@ -20,12 +20,11 @@
     <div class="row">
         <div id="left-column" class="col-sm-2"></div>
         <div id="left-column" class="col-sm-4">
+            <div align="center">
+                <h1>Awesome Tunes!</h1>
+            </div>
             <div class="well bs-component">
-                <!--<legend>LEFT COLUMN</legend>-->
-                <h1></h1>
-
                 <div class="form-horizontal" action="" method="POST">
-
                     <div class="well-1 bs-component">
                         <div class="video-container" id="vidWindow">
                             <!-- to autoplay in the src="//www.youtube.com/embed/...?autoplay" the ... is the link #= ... and this is the number we need to get and fill from YouTube -->

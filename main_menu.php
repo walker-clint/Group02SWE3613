@@ -18,6 +18,9 @@
     <div class="row">
         <div id="left-column" class="col-sm-2"></div>
         <div id="left-column" class="col-sm-4">
+            <div align="center">
+                <h1>Awesome Tunes!</h1>
+            </div>
             <div class="well bs-component">
                 <!--<legend>LEFT COLUMN</legend>-->
                 <h1></h1>

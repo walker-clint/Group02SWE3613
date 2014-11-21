@@ -100,6 +100,7 @@
                                         <th></th>
                                         <th></th>
                                         <th></th>
+                                        <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -115,9 +116,9 @@
                                         ?>
                                         <tr>
                                             <th></th>
-                                            <th><h2><?php echo $songTitle; ?></h2></th>
-                                            <th><h2><?php echo $songArtist; ?></h2></th>
-                                            <th><h2><?php echo $songGenre; ?></h2></th>
+                                            <th><h4><?php echo $songTitle; ?></h4></th>
+                                            <th><h4><?php echo $songArtist; ?></h4></th>
+                                            <th><h4><?php echo $songGenre; ?></h4></th>
                                             <th></th>
                                             <th></th>
                                             <th>

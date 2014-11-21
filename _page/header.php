@@ -117,22 +117,22 @@ if (!empty($_SESSION['user_id'])) {
                                 <div class="well bs-component">
                                     <h1 align="center">Login</h1>
 
-                                    <div class="well-2 bs-component">
+                                    <div class="well-1 bs-component">
                                         <form class="form-horizontal" action="php/loginService.php" method="POST">
                                             <div class="form-group">
-                                                <label for="user_name" class="col-lg-4 control-label">User
+                                                <label for="user_name" class="col-xs-4 col-md-4 control-label">User
                                                     Name</label>
 
-                                                <div class="col-lg-8">
+                                                <div class="col-xs-8 col-md-8">
                                                     <input type="text" class="form-control-1" id="username"
                                                            name="username" placeholder="User Name">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="password"
-                                                       class="col-lg-4 control-label">Password</label>
+                                                       class="col-xs-4 col-md-4 control-label">Password</label>
 
-                                                <div class="col-lg-8">
+                                                <div class="col-xs-8 col-md-8">
                                                     <input align="center" type="Password" class="form-control-1"
                                                            id="password" name="password"
                                                            placeholder="Password">
@@ -144,7 +144,6 @@ if (!empty($_SESSION['user_id'])) {
                                         </form>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close
@@ -212,7 +211,7 @@ if (!empty($_SESSION['user_id'])) {
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="username" class="col-xs-4 col-md-4 control-label"
-                                                           align="right"  >Username</label>
+                                                           align="right">Username</label>
 
                                                     <div class="col-xs-8 col-md-8">
                                                         <input type="text" class="form-control-1" name="username"
@@ -226,8 +225,7 @@ if (!empty($_SESSION['user_id'])) {
 
                                                     <div class="col-xs-8 col-md-8">
                                                         <input type="password" class="form-control-1" name="password"
-                                                               placeholder="Password" autocomplete="off"
-                                                               value="<?php echo "$password"; ?>">
+                                                               placeholder="Password" autocomplete="off">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -251,7 +249,6 @@ if (!empty($_SESSION['user_id'])) {
                                                     </div>
                                                 </div>
                                                 <div class="captcha-container" align="center">
-                                                    <!--                                    <div class="col-xs-12 col-md-12" align="center">-->
                                                     <div class="captcha-container frame">
                                                         <?php
                                                         require_once('recaptchalib.php');
@@ -260,7 +257,6 @@ if (!empty($_SESSION['user_id'])) {
                                                         ?>
                                                     </div>
                                                 </div>
-                                                <div class="col-xs-12 col-md-12" align="center"></div>
                                                 <div align="center">
                                                     <input type="submit" class="btn btn-primary btn-lg" value="Submit"/>
                                                 </div>
