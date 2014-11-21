@@ -42,7 +42,7 @@
                     <h3 align="center">Add Song: Search for an Existing Song</h3>
 
                     <div class="well bs-component">
-                        <form class="form-horizontal" action="add_song_search.php" method="post">
+                        <form class="form-horizontal" action="songForm.php" method="post">
                             <div class="well-2 bs-component">
                                 <div align="center">
                                     <input type="text" class="search" id="searchid" placeholder="Search for songs" /><br /><br>
