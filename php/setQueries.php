@@ -106,7 +106,7 @@ function addArtist($nameInc) {
  */
 function addGenre($nameInc) {
     $con = initializeConnection();
-    $name = htmlspecialchars($name, ENT_QUOTES);
+    $name = htmlspecialchars($nameInc, ENT_QUOTES);
 
     $query = 'INSERT INTO tbl_genre(name) values (?)';
 
