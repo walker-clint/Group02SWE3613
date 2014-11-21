@@ -212,11 +212,11 @@ if (!empty($_SESSION['user_id'])) {
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="username" class="col-xs-4 col-md-4 control-label"
-                                                           align="right">Username</label>
+                                                           align="right"  >Username</label>
 
                                                     <div class="col-xs-8 col-md-8">
                                                         <input type="text" class="form-control-1" name="username"
-                                                               placeholder="Username"
+                                                               placeholder="Username" autocomplete="off"
                                                                value="<?php echo "$username"; ?>">
                                                     </div>
                                                 </div>
@@ -226,7 +226,7 @@ if (!empty($_SESSION['user_id'])) {
 
                                                     <div class="col-xs-8 col-md-8">
                                                         <input type="password" class="form-control-1" name="password"
-                                                               placeholder="Password"
+                                                               placeholder="Password" autocomplete="off"
                                                                value="<?php echo "$password"; ?>">
                                                     </div>
                                                 </div>
