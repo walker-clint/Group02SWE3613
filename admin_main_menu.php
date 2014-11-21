@@ -116,11 +116,12 @@
                 <h1>Songs</h1>
             </div>
             <div class="well bs-component">
+                <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
                 <div class="well-1 bs-component">
 
                     <table class="table">
                         <thead>
-                        <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
+
                                 <!--                        <tr>-->
 <!--                            <th>-->
 <!--                                <b>Song by Artist</b>-->
