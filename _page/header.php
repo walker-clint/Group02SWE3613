@@ -1,6 +1,8 @@
 <?php
 $toplinks = "";
 require_once $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 $indexLink = 'index.php';
 
 
