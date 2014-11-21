@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			}
 			else{
 				   $error =  '<span class="error">The username is already in use inside our system. Please try another.</span>';
+				   $_SESSION['error']=$error;
 				   header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 	
 	
@@ -50,15 +51,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }if (!$password) {
                 $error .= "--- Password<br />";
             }
+			$_SESSION['error']=$error;
 			header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 		 }
 	 }else{
 		  $error =  '<span class="error">Captia is not correct<br></span>';
+		  $_SESSION['error']=$error;
 	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 		 
 	 }
 
 } else {
     $error =  '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
+	$_SESSION['error']=$error;
 	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 }
