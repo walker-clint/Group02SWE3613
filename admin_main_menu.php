@@ -48,7 +48,7 @@
                         <!--<legend>RIGHT COLUMN</legend>-->
 
                         <div class="form-horizontal" action="" method="POST"></div>
-
+                        <a href='songForm.php'><span class='well-1 btn btn-label-right'>Add a song</span></a>
                         <?php
                         $songListUnapproved = getUnapprovedSongs();
                         if (count($songListUnapproved) > 0) {
