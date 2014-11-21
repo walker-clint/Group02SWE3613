@@ -8,30 +8,32 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_POST['actionType'] == 'toggleFlag') {
         $songId = $_POST['songId'];
-        $song = getSongById($songId);
+        //$song = getSongById($songId);
         $flag = 1;
         if ($song->flagged == 1 && $userType == 'admin') {
             $flag = 0;
         }
-        $title = $song->title;
-        $approved = $song->approved;
-        $youtubeLink = $song->youtubeLink;
-        $youtubeApproved = $song->youtubeApproved;
+        //$title = $song->title;
+        //$approved = $song->approved;
+        //$youtubeLink = $song->youtubeLink;
+        //$youtubeApproved = $song->youtubeApproved;
 
-        updateSong($songId, $title, $approved, $flag, $youtubeLink, $youtubeApproved);
+        //updateSong($songId, $title, $approved, $flag, $youtubeLink, $youtubeApproved);
+        updateSongFlagged($songId, $flag);
     } else if ($_POST['actionType'] == 'toggleApproval' && $userType == 'admin') {
         $songId = $_POST['songId'];
-        $song = getSongById($songId);
+        //$song = getSongById($songId);
         $approve = 0;
         if ($song->approved == 0) {
             $approve = 1;
         }
-        $title = $song->title;
-        $flag = $song->flagged;
-        $youtubeLink = $song->youtubeLink;
-        $youtubeApproved = $song->youtubeApproved;
+        //$title = htmlspecialchars($song->title);
+        //$flag = $song->flagged;
+        //$youtubeLink = $song->youtubeLink;
+        //$youtubeApproved = $song->youtubeApproved;
 
-        updateSong($songId, $title, $approve, $flag, $youtubeLink, $youtubeApproved);
+        //updateSong($songId, $title, $approve, $flag, $youtubeLink, $youtubeApproved);
+        updateSongApproved($songId, $approve);
     }
 }
 

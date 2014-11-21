@@ -48,6 +48,28 @@ function updateSong($id, $titleInc, $approved, $flagged, $youtubeLink, $youtubeA
     $stmt->execute();
 }
 
+function updateSongApproved($id, $approved) {
+    $con = initializeConnection();
+    $title = htmlspecialchars($titleInc, ENT_QUOTES);
+
+    $query = 'UPDATE tbl_song SET approved=? WHERE song_id = ?';
+
+    $stmt = $con->prepare($query);
+    $stmt->bind_param('ii', $approved, $id);
+    $stmt->execute();
+}
+
+function updateSongFlagged($id, $flagged) {
+    $con = initializeConnection();
+    $title = htmlspecialchars($titleInc, ENT_QUOTES);
+
+    $query = 'UPDATE tbl_song SET flagged=? WHERE song_id = ?';
+
+    $stmt = $con->prepare($query);
+    $stmt->bind_param('ii', $flagged, $id);
+    $stmt->execute();
+}
+
 /**
  * Deletes a song and all references to it from the DB
  * 
