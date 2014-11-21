@@ -118,6 +118,13 @@
                 <div class="well-1 bs-component">
 
                     <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <b>Song by Artist</b>
+                                </th>
+                            </tr>
+                        </thead>
                         <tbody>
                         <?php
                         $songListNormal = getApprovedAndUnflaggedSongs();
