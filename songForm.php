@@ -46,7 +46,7 @@
                             <label for="title" class="col-lg-4 control-label">Title</label>
 
                             <div class="col-lg-8">
-                                <input align="center" type="text" class="form-control" id="title" name="title"
+                                <input align="center" type="text" class="form-control-1" id="title" name="title"
                                        value="<?php
                                        if (!empty($song)) {
                                            echo $song->title;
@@ -82,7 +82,7 @@
                             <label class="col-lg-4 control-label"></label>
 
                             <div class="col-lg-8">
-                                <input align="center" type="text" class="form-control" id="newArtist" name="newArtist"
+                                <input align="center" type="text" class="form-control-1" id="newArtist" name="newArtist"
                                        placeholder="Enter an artist if not already in the system here">
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                             <label for="link" class="col-lg-4 control-label">Youtube Link</label>
 
                             <div class="col-lg-8">
-                                <input align="center" type="text" class="form-control" id="link" name="link"
+                                <input align="center" type="text" class="form-control-1" id="link" name="link"
                                        value="<?php if (!empty($song)) {
                                            echo $song->youtubeLink;
                                        } ?>" placeholder="example: https://www.youtube.com/watch?v=PTC3zoXMrIg">
