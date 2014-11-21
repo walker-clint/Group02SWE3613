@@ -120,7 +120,7 @@ if (!empty($_SESSION['user_id'])) {
                                     <div class="well-2 bs-component">
                                         <form class="form-horizontal" action="php/loginService.php" method="POST">
                                             <div class="form-group">
-                                                <label for="user_name" class="col-lg-4 control-label">User
+                                                <label for="user_name" class="col-xs-4 col-md-4 control-label">User
                                                     Name</label>
 
                                                 <div class="col-lg-8">
@@ -130,7 +130,7 @@ if (!empty($_SESSION['user_id'])) {
                                             </div>
                                             <div class="form-group">
                                                 <label for="password"
-                                                       class="col-lg-4 control-label">Password</label>
+                                                       class="col-xs-4 col-md-4 control-label">Password</label>
 
                                                 <div class="col-lg-8">
                                                     <input align="center" type="Password" class="form-control-1"
