@@ -52,11 +52,13 @@
                                             <?php
                                             $songList = getApprovedSongs();
                                             foreach ($songList as $song) {
-                                                echo '<tr><td>' . $song->js_infoBox(true)
-                                                . '<a href="/php/toggleMixtape.php?songId='
-                                                . $song->id . '">Add to your Mixtape</a>'
-                                                . '</tr></td>';
-                                            }
+                                                ?>
+                                                <tr><td><a href='/php/toggleMixtape.php?songId=<?php echo $song->id; ?>'>
+                                                            <div class="btn btn-warning" >Add</div></a>
+                                                        <?php echo $song->js_infoBox(true); ?>
+
+                                                    </td></tr>
+                                            <?php }
                                             ?>
                                         </div>
                                     </table>
