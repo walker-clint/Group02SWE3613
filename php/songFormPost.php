@@ -71,5 +71,5 @@ foreach ($genres as $genre) {
 if ($userType == 'admin') {
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/admin_main_menu.php');
 } else {
-    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/mixtape.php');
+    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/user_song_list.php');
 }
