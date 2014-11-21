@@ -84,7 +84,9 @@
                     </div>
                 <?php } ?>
             </div>
-            <h1>YouTube Video</h1>
+            <div align="center">
+                <h1>YouTube Video</h1>
+            </div>
             <div class="well bs-component">
                 <!--<legend>LEFT COLUMN</legend>-->
 
