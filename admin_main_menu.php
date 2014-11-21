@@ -50,7 +50,7 @@
             if (count($songListUnapproved) > 0) {
                 ?>
                 <div align="center">
-                    <h1>Songs awaiting approval</h1>
+                    <h1>Songs Awaiting Approval</h1>
                 </div>
                 <div class="well bs-component">
 
@@ -82,7 +82,7 @@
             if (count($songListFlagged) > 0) {
                 ?>
                 <div align="center">
-                    <h1>Flagged songs</h1>
+                    <h1>Flagged Songs</h1>
                 </div>
                 <div class="well bs-component">
                     <div class="well-1 bs-component">
@@ -111,7 +111,7 @@
         </div>
         <div id="right-column" class="col-sm-4">
             <div align="center">
-                <h1>Songs</h1>
+                <h1>Songs Currently In Library</h1>
             </div>
             <div class="well bs-component">
                 <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
