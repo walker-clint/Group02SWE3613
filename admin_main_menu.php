@@ -19,6 +19,7 @@
         <div id="main" class="container-fluid">
             <!--Start Content-->
             <div class="row">
+                <div id="left-space" class="col-sm-2"></div>
                 <div id="left-column" class="col-sm-4">
                     <div class="well bs-component">
                         <!--<legend>LEFT COLUMN</legend>-->
@@ -48,7 +49,7 @@
                         <!--<legend>RIGHT COLUMN</legend>-->
 
                         <div class="form-horizontal" action="" method="POST"></div>
-                        <a href='songForm.php'><span class='well-1 btn btn-label-right'>Add a song</span></a>
+                        <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
                         <?php
                         $songListUnapproved = getUnapprovedSongs();
                         if (count($songListUnapproved) > 0) {
@@ -117,7 +118,7 @@
                     </div>
 
                 </div>
-
+                <div id="left-space" class="col-sm-2"></div>
             </div>
             <!--End Middle-->
             <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/footer.php'; ?>
