@@ -172,7 +172,7 @@ if (!empty($_SESSION['user_id'])) {
                             <div align="center">
                                 <!--Start Content-->
                                 <form class="form-horizontal" align="center"
-                                      action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"
+                                      action="php/RegisterService.php" method="post"
                                       enctype="multipart/form-data">
                                     <h1>Registration</h1>
 
