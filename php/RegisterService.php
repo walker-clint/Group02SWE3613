@@ -1,7 +1,7 @@
 <?php
 
 require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
-require $_SERVER['DOCUMENT_ROOT'] . ("/recaptchalib.php");
+require_once $_SERVER['DOCUMENT_ROOT'] . ("/recaptchalib.php");
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/setQueries.php';
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
