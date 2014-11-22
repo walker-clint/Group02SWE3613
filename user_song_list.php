@@ -45,10 +45,11 @@
                     <h3 align="center">Add Song: Search for an Existing Song</h3>
 
                     <div class="well bs-component">
-                        <form class="form-horizontal" action="songForm.php" method="post">
+                        <!--<form class="form-horizontal" action="songForm.php" method="post">-->
                             <div class="well-2 bs-component">
+                                <em>Can't find your song?</em> <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add it!</span></a>
                                 <div align="center">
-                                    <input type="text" class="search" id="searchid" placeholder="Search for songs"/><br/><br>
+                                    Enter a title or artist to search for: <input type="text" class="search" id="searchid" placeholder="Search for songs"/><br/><br>
                                     <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
                                     <script type="text/javascript" src="./js/liveSearch.js"></script>
                                     <table id="result" class="table-striped">
@@ -74,7 +75,7 @@
                                     </table>
                                 </div>
                             </div>
-                        </form>
+                        <!--</form>-->
                     </div>
                 </div>
                 <!--Start Display User Song List-->
