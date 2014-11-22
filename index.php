@@ -62,9 +62,9 @@
 
                         foreach ($mixTapeList as $songInt) {
                             if ($increment < 10) {
-                                $incDisplay = $increment . \u0020 . \u0020 . ":" . \u0020;
+                                $incDisplay = $increment . xA0 . xA0 . ":" . xA0;
                             } else {
-                                $incDisplay = $increment . \u0020 . ":" . \u0020;
+                                $incDisplay = $increment . xA0 . ":" . xA0;
                             }
                             $song = getSongById($songInt);
                             if ($song instanceof Song) {
