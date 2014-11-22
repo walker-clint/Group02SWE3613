@@ -56,8 +56,6 @@ if ($action != 'Edit') {
     deleteSongAllGenres($songId);
 }
 
-
-
 //add all the artists to the song
 foreach ($artists as $artist) {
     addSongArtist($songId, $artist);
@@ -67,6 +65,9 @@ foreach ($artists as $artist) {
 foreach ($genres as $genre) {
     addSongGenre($songId, $genre);
 }
+
+//add the song to the user's tape
+addMixtape($_SESSION['user_id'], $songId, 1);
 
 if ($userType == 'admin') {
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/admin_main_menu.php');
