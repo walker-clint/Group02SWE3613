@@ -60,6 +60,33 @@ function getSongById($songIDinc) {
     return $tempSong;
 }
 
+function getSongsBySearch($songTitleInc) {
+    $songTitle = '%' . htmlspecialchars($songTitleInc) . '%';
+
+    $con = initializeConnection();
+
+    $query = 'SELECT tbl_song.song_id, title, approved, flagged, youtube, youtube_approved '
+            . 'FROM tbl_song '
+            . 'JOIN tbl_mixtape ON tbl_mixtape.song_id = tbl_song.song_id '
+            . 'WHERE approved = 1 AND title LIKE ? '
+            . 'GROUP BY tbl_song.song_id '
+            . 'ORDER BY title';
+    $stmt = $con->prepare($query);
+
+    $stmt->bind_param('s', $songTitle);
+
+    $stmt->execute();
+    $stmt->bind_result($id, $song_title, $app, $flag, $you, $youApp);
+    $returnArray = array();
+    while ($stmt->fetch()) {
+        $genre = getSongGenre($id);
+        $artist = getSongArtist($id);
+        $tempSong = new Song($id, $song_title, $app, $flag, $you, $youApp, $genre, $artist);
+        array_push($returnArray, $tempSong);
+    }
+    return $returnArray;
+}
+
 function getSongsBySearch_notOnMixtape($songTitleInc, $userIdInc) {
     $songTitle = '%' . htmlspecialchars($songTitleInc) . '%';
     $userId = htmlspecialchars($userIdInc);
@@ -68,9 +95,9 @@ function getSongsBySearch_notOnMixtape($songTitleInc, $userIdInc) {
 
     $query = 'SELECT tbl_song.song_id, title, approved, flagged, youtube, youtube_approved '
             . 'FROM tbl_song '
-            . 'JOIN tbl_mixtape ON tbl_mixtape.song_id = tbl_song.song_id '
-            . 'WHERE approved = 1 AND title LIKE ? AND NOT tbl_mixtape.user_id =? '
-            . 'GROUP BY tbl_song.song_id '
+            . 'WHERE title LIKE ? '
+            . 'AND tbl_song.song_id NOT IN (SELECT tbl_mixtape.song_id FROM tbl_mixtape WHERE tbl_mixtape.user_id = ?) '
+            . 'GROUP BY song_id '
             . 'ORDER BY title';
     $stmt = $con->prepare($query);
 
@@ -141,12 +168,18 @@ function getApprovedSongs_notOnMixtape($userIdInc) {
     $con = initializeConnection();
     $userId = htmlspecialchars($userIdInc);
 
+//    $query = 'SELECT tbl_song.song_id, title, approved, flagged, youtube, youtube_approved '
+//            . 'FROM tbl_song '
+//            . 'RIGHT JOIN tbl_mixtape ON tbl_mixtape.song_id = tbl_song.song_id  '
+//            . 'WHERE tbl_song.approved = 1 AND tbl_mixtape.user_id != ? '
+//            . 'GROUP BY tbl_song.song_id '
+//            . 'ORDER BY title';
     $query = 'SELECT tbl_song.song_id, title, approved, flagged, youtube, youtube_approved '
             . 'FROM tbl_song '
-            . 'JOIN tbl_mixtape ON tbl_mixtape.song_id = tbl_song.song_id  '
-            . 'WHERE tbl_song.approved = 1 AND tbl_mixtape.user_id != ? '
-            . 'GROUP BY tbl_song.song_id '
+            . 'WHERE tbl_song.song_id NOT IN (SELECT tbl_mixtape.song_id FROM tbl_mixtape WHERE tbl_mixtape.user_id = ?) '
+            . 'GROUP BY song_id '
             . 'ORDER BY title';
+
     $stmt = $con->prepare($query);
 
     $stmt->bind_param('i', $userId);
