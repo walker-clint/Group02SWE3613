@@ -5352,6 +5352,16 @@ button.close {
     width: 900px;
   }
 }
+/*//small screen sizes*/
+@media (max-width: 991px) {
+  .mobile-only {
+    display:block !important;
+  }
+
+  .desktop-only {
+    display:none !important;
+  }
+}
 .tooltip {
   position: absolute;
   z-index: 1030;

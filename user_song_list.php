@@ -17,7 +17,7 @@
         <!--Start Row Main Page Data-->
         <div id="main" class="container-fluid">
             <div class="row">
-                <div id="left-space" class="col-xs-0 col-sm-1 hidden-phone">
+                <div id="left-space" class="col-xs-2 desktop-only">
                     <img src="img/loud-speaker-L-md.png" class="img-responsive" align="left"/>
                 </div>
                 <div id="left-column" class="col-sm-4">
