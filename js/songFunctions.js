@@ -52,7 +52,7 @@ function changeInfo(id, title, artist, genre, flagged) {
 
     if (flagged != 1) {
         var color = 'red';
-        var message = 'Flag image (incorrect information or inappropriate)';
+        var message = 'Flag song (incorrect information or inappropriate)';
         info += '<a1 class="well-2"><form method="POST" action = "./php/menu_functions.php">'
                 + '<input type="hidden" name="actionType" value="toggleFlag">'
                 + '<input type="hidden" name="songId" value="' + id + '">'
@@ -128,7 +128,7 @@ function changeInfo_admin(id, title, artist, genre, approved, flagged) {
 
 
     var color = 'red';
-    var message = 'Flag image (incorrect information or inappropriate)';
+    var message = 'Flag song (incorrect information or inappropriate)';
     if (flagged == 1) {
         color = 'green';
         message = 'Unflag image';
