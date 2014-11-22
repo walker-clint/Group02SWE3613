@@ -79,7 +79,7 @@
                 <h1>Your Song List</h1>
             </div>
             <div class="well bs-component">
-                <div class="col-xs=6">
+                <div class="col-xs=10">
                     <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
                 </div>
                 <div class="col-xs-2">
