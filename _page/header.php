@@ -49,7 +49,7 @@ if (!empty($_SESSION['user_id'])) {
             <li class="btn-label-right">
             <a href="' . $indexLink . '">
 			<div class="well-1 btn btn-primary">
-            Top 10 Songs
+            Refresh Page
             </div>
 			</a>
             </li>
