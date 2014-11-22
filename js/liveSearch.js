@@ -3,7 +3,7 @@
 $(function () {
     $(".search").keyup(function () {
         var searchid = $(this).val();
-        if (searchid != '') {
+        if (searchid != "") {
 
             var dataString = 'search=' + searchid;
             if (true || searchid != '') {
@@ -25,7 +25,7 @@ $(function () {
         var $clicked = $(e.target);
         var $name = $clicked.find('.name').html();
         var decoded = $("<div>").html($name).text();
-        if ($name != '') {
+        if ($name != "") {
             $('#searchid').val(decoded);
         }
     });
