@@ -16,6 +16,9 @@ if (!empty($_SESSION['user_id'])) {
         $full_name = $row["first_name"] . " " . $row["last_name"];
     }
     $indexLink = 'main_menu.php';
+    if ($full_name != ''){
+        echo '<h1>' . $full_name .'</h1>';
+    }
     if ($userType == 'admin') {
         $indexLink = 'admin_main_menu.php';
     }
@@ -24,13 +27,13 @@ if (!empty($_SESSION['user_id'])) {
             <li class="btn-label-right">
             <a href="' . $indexLink . '">
 			<div class="well-1 btn btn-primary">
-            Top 10 Songs
+            HOME
             </div>
 			</a>
             </li>
 			 <li class="btn-label-right">
 			<div class="well-1 btn btn-primary">
-            ' . $full_name . "&#39;s Song List" . '
+            ' . "Your Song List" . '
             </div>
             </li>
             <li class="btn-label-right">
