@@ -17,7 +17,9 @@
 <!--Start Row Main Page Data-->
 <div id="main" class="container-fluid">
     <div class="row">
-        <div id="left-space" class="col-sm-1"></div>
+        <div id="left-space" class="col-sm-1">
+            <img src="img/loud-speaker-L-md.png" class="img-responsive" align="left"/>
+        </div>
         <div id="left-column" class="col-sm-4">
             <div align="center">
                 <h1>Awesome Tunes!</h1>
@@ -80,7 +82,7 @@
             </div>
             <div class="well bs-component">
                 <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
-              
+
 
                 <div class="form-horizontal" action="" method="POST">
                     <div class="well-2 bs-component">
@@ -149,7 +151,7 @@
         </div>
         <!--End Display User Song List-->
         <div id="right-space" class="col-sm-1">
-            <img src="img/mad.png" class="img-responsive" align="right"/>
+            <img src="img/loud-speaker-R-md.png" class="img-responsive" align="right"/>
         </div>
     </div>
 </div>
