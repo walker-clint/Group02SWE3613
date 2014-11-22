@@ -52,8 +52,9 @@
                 <h1>Top <?php echo count($mixTapeList); ?> Songs</h1>
             </div>
             <div class="well bs-component">
-                <!--<legend>RIGHT COLUMN</legend>-->
-                <!--                <h1>Top Ten Songs</h1>-->
+                <div align="center">
+                    <h3>Click Song Title to Play!</h3>
+                </div>
 
                 <div class="form-horizontal" action="" method="POST">
 
@@ -63,7 +64,7 @@
                         $increment = 1;
 
                         foreach ($mixTapeList as $songInt) {
-                            if ($increment < 10){
+                            if ($increment < 10) {
                                 $incDisplay = $increment . " :";
                             } else {
                                 $incDisplay = $increment . ":";

@@ -54,7 +54,6 @@
                 <h1>Top <?php echo count($mixTapeList); ?> Songs</h1>
             </div>
             <div class="well bs-component">
-                <!--<legend>RIGHT COLUMN</legend>-->
                 <div align="center">
                     <h3>Click Song Title to Play!</h3>
                 </div>
