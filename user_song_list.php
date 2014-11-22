@@ -170,7 +170,7 @@
                     </div>
                 </div>
                 <!--End Display User Song List-->
-                <div id="right-space" class="col-xs-0 col-sm-1 hidden-phone">
+                <div id="right-space" class="col-sm-2 ">
                     <img src="img/loud-speaker-R-md.png" class="img-responsive" align="right"/>
         <!--            <img src="img/mad.png" class="img-responsive" align="right"/>-->
                 </div>
