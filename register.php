@@ -38,7 +38,7 @@ $secret_a = $_SESSION['secret_a'];
       <div class="col-xs-8 col-md-8">
         <input type="text" class="form-control-1" id="firstname"
                                                                name="firstname"
-                                                               placeholder="First Name" value='<?php echo "$firstname" ?>'>
+                                                               placeholder="First Name" value='<?php echo "$firstname" ?>' required>
       </div>
     </div>
     <div class="form-group">
@@ -47,7 +47,7 @@ $secret_a = $_SESSION['secret_a'];
       <div class="col-xs-8 col-md-8">
         <input type="text" class="form-control-1" id="lastname"
                                                                name="lastname"
-                                                               placeholder="Last Name" value='<?php echo "$lastname" ?>'>
+                                                               placeholder="Last Name" value='<?php echo "$lastname" ?>' required>
       </div>
     </div>
     <div class="form-group">
@@ -56,7 +56,7 @@ $secret_a = $_SESSION['secret_a'];
       <div class="col-xs-8 col-md-8">
         <input type="email" class="form-control-1" id="email"
                                                                name="email"
-                                                               placeholder="Email" value='<?php echo "$email" ?>'>
+                                                               placeholder="Email" value='<?php echo "$email" ?>' required>
       </div>
     </div>
     <div class="form-group">
@@ -65,7 +65,7 @@ $secret_a = $_SESSION['secret_a'];
       <div class="col-xs-8 col-md-8">
         <input type="text" class="form-control-1" id="username"
                                                                name="username"
-                                                               placeholder="Username" autocomplete="off">
+                                                               placeholder="Username" autocomplete="off" required>
       </div>
     </div>
     <div class="form-group">
@@ -74,7 +74,7 @@ $secret_a = $_SESSION['secret_a'];
       <div class="col-xs-8 col-md-8">
         <input type="password" class="form-control-1" name="password"
                                                                name="password"
-                                                               placeholder="Password" autocomplete="off">
+                                                               placeholder="Password" autocomplete="off" required>
       </div>
     </div>
     <div class="form-group">

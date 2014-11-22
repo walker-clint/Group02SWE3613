@@ -31,14 +31,14 @@ $myusername = $_SESSION['myusername'];
                                 <div class="form-group">
                                     <label for="user_name" class="col-lg-4 control-label">User Name</label>
                                     <div class="col-lg-8">
-                                        <input type="text" class="form-control" id="username" name="username" placeholder="User Name" value='<?php echo "$myusername" ?>'>
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="User Name" value='<?php echo "$myusername" ?>' required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password" class="col-lg-4 control-label">Password</label>
                                     <div class="col-lg-8">
                                         <input align="center" type="Password" class="form-control" id="password" name="password"
-                                               placeholder="Password">
+                                               placeholder="Password" required>
                                     </div>
                                 </div>
                                 <div align="center">
