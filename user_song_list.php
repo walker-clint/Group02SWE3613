@@ -31,6 +31,8 @@
                                 <div class="video-container" id="vidWindow">
                                     <?php
                                     $mixTapeList = getBestMixTape();
+                                    $userMixtape = getMixtape($_SESSION['user_id']); //need to get mixtape now to check count soon
+
                                     $randSongNumber = rand(0, (count($mixTapeList) - 1));
                                     $initialSong = getSongById($mixTapeList[$randSongNumber]);
                                     if ($initialSong instanceof Song) {
@@ -56,20 +58,21 @@
                                 <table id="result" class="table-striped">
                                     <div class="show" align="left">
                                         <?php
-                                        $userMixtape = getMixtape($_SESSION['user_id']); //need to get mixtape now to check count soon
-                                        $songList = getApprovedSongs_notOnMixtape($_SESSION['user_id']);
-                                        foreach ($songList as $song) {
-                                            ?>
-                                            <tr>
-                                                <td><a href='/php/toggleMixtape.php?songId=<?php echo $song->id; ?>'>
-                                                        <?php if (count($userMixtape) < 30) {
-                                                            ?><div class = "btn btn-warning">Add</div><?php } ?>
-                                                    </a>
-                                                    <?php echo $song->js_infoBox(true); ?>
+                                        if (false) {
+                                            $songList = getApprovedSongs_notOnMixtape($_SESSION['user_id']);
+                                            foreach ($songList as $song) {
+                                                ?>
+                                                <tr>
+                                                    <td><a href='/php/toggleMixtape.php?songId=////<?php echo $song->id; ?>'>
+                                                            <?php if (count($userMixtape) < 30) {
+                                                                ?><div class = "btn btn-warning">Add</div><?php } ?>
+                                                        </a>
+                                                        <?php echo $song->js_infoBox(true); ?>
 
-                                                </td>
-                                            </tr>
-                                            <?php
+                                                    </td>
+                                                </tr>
+                                                <?php
+                                            }
                                         }
                                         ?>
                                     </div>

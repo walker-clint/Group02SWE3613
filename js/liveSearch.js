@@ -5,7 +5,7 @@ $(function () {
     {
         var searchid = $(this).val();
         var dataString = 'search=' + searchid;
-        if (searchid != '') {
+        if (true || searchid != '') {
             $.ajax({
                 type: "POST",
                 url: "/php/liveSearchResult.php",
@@ -22,12 +22,9 @@ $(function () {
 
     jQuery("#result").live("click", function (e) {
         var $clicked = $(e.target);
-        if ('.name' != "") {
-            var $name = $clicked.find('.name').html();
-            var decoded = $("<div>").html($name).text();
-
-            $('#searchid').val(decoded);
-        }
+        var $name = $clicked.find('.name').html();
+        var decoded = $("<div>").html($name).text();
+        $('#searchid').val(decoded);
     });
     jQuery(document).live("click", function (e) {
         var $clicked = $(e.target);
