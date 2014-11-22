@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $myusername = htmlspecialchars($_POST['username']);
     $mypassword = htmlspecialchars($_POST['password']);
 $_SESSION['myusername'] = $myusername;
-		$_SESSION['mypassword'] = $mypassword;
+$_SESSION['mypassword'] = $mypassword;
     $conLogin = initializeConnection();
 
     $sql = "SELECT user_id, admin FROM tbl_user WHERE login = '$myusername' and password = '$mypassword'";
@@ -31,8 +31,11 @@ $_SESSION['myusername'] = $myusername;
         }
     } else {
         $error = 'Your Login Name or Password is invalid';
+		$_SESSION['error'] = $error;
         header('Location: http://' . $_SERVER['SERVER_NAME'] . '/login.php');
     }
 } else {
     $error = 'DID NOT CONNECT TO SERVER';
+	$_SESSION['error'] = $error;
+        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/login.php');
 }
