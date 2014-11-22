@@ -85,7 +85,7 @@
                 </div>
                 <div class="col-xs-2">
 
-                    <img src="img/mad.png" class="img-responsive" align="right"/></a>
+                    <img src="img/mad.png" class="img-responsive" align="right"/>
                 </div>
                 <div class="form-horizontal" action="" method="POST">
                     <div class="well-2 bs-component">
