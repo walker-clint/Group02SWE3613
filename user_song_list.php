@@ -57,7 +57,7 @@
                                     <div class="show" align="left">
                                         <?php
                                         $userMixtape = getMixtape($_SESSION['user_id']); //need to get mixtape now to check count soon
-                                        //$songList = getApprovedSongs_notOnMixtape($_SESSION['user_id']);
+                                        $songList = getApprovedSongs_notOnMixtape($_SESSION['user_id']);
                                         foreach ($songList as $song) {
                                             ?>
                                             <tr>
