@@ -83,7 +83,7 @@
                     <div class="well bs-component">
                         <?php
                         $userMixtape = getMixtape($_SESSION['user_id']);
-                        if (count($userMixtape) >= 10) {
+                        if (count($userMixtape) >= 30) {
                             ?>
                             <p>You have a full mixtape! Remove some songs to add more!</p>
                             <?php
