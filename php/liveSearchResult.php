@@ -1,12 +1,14 @@
 <?php
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/lockService.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 if ($_POST) {
     $q = htmlspecialchars($_POST['search']);
     if (count($q) == 0) {
-        $songList = getApprovedSongs();
+        $songList = getApprovedSongs_notOnMixtape($_SESSION['user_id']);
+        ;
     } else {
-        $songList = getSongsBySearch($q);
+        $songList = getSongsBySearch_notOnMixtape($q, $_SESSION['user_id']);
     }
     foreach ($songList as $song) {
         ?>
@@ -14,7 +16,7 @@ if ($_POST) {
             <td><a href='/php/toggleMixtape.php?songId=<?php echo $song->id; ?>'>
                     <div class="btn btn-warning">Add</div>
                 </a>
-                <?php echo $song->js_infoBox(true); ?>
+        <?php echo $song->js_infoBox(true); ?>
 
             </td>
         </tr>

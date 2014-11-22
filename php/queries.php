@@ -60,18 +60,21 @@ function getSongById($songIDinc) {
     return $tempSong;
 }
 
-function getSongsBySearch($songTitleInc) {
+function getSongsBySearch_notOnMixtape($songTitleInc, $userIdInc) {
     $songTitle = '%' . htmlspecialchars($songTitleInc) . '%';
+    $userId = htmlspecialchars($userIdInc);
 
     $con = initializeConnection();
 
-    $query = 'SELECT song_id, title, approved, flagged, youtube, youtube_approved '
+    $query = 'SELECT tbl_song.song_id, title, approved, flagged, youtube, youtube_approved '
             . 'FROM tbl_song '
-            . 'WHERE title LIKE ? '
+            . 'JOIN tbl_mixtape ON tbl_mixtape.song_id = tbl_song.song_id '
+            . 'WHERE approved = 1 AND title LIKE ? AND NOT tbl_mixtape.user_id =? '
+            . 'GROUP BY tbl_song.song_id '
             . 'ORDER BY title';
     $stmt = $con->prepare($query);
 
-    $stmt->bind_param('s', $songTitle);
+    $stmt->bind_param('si', $songTitle, $userId);
 
     $stmt->execute();
     $stmt->bind_result($id, $song_title, $app, $flag, $you, $youApp);
@@ -122,6 +125,31 @@ function getApprovedSongs() {
             . 'ORDER BY title';
     $stmt = $con->prepare($query);
 
+    $stmt->execute();
+    $stmt->bind_result($id, $song_title, $app, $flag, $you, $youApp);
+    $returnArray = array();
+    while ($stmt->fetch()) {
+        $genre = getSongGenre($id);
+        $artist = getSongArtist($id);
+        $tempSong = new Song($id, $song_title, $app, $flag, $you, $youApp, $genre, $artist);
+        array_push($returnArray, $tempSong);
+    }
+    return $returnArray;
+}
+
+function getApprovedSongs_notOnMixtape($userIdInc) {
+    $con = initializeConnection();
+    $userId = htmlspecialchars($userIdInc);
+
+    $query = 'SELECT tbl_song.song_id, title, approved, flagged, youtube, youtube_approved '
+            . 'FROM tbl_song '
+            . 'JOIN tbl_mixtape ON tbl_mixtape.song_id = tbl_song.song_id  '
+            . 'WHERE tbl_song.approved = 1 AND tbl_mixtape.user_id != ? '
+            . 'GROUP BY tbl_song.song_id '
+            . 'ORDER BY title';
+    $stmt = $con->prepare($query);
+
+    $stmt->bind_param('i', $userId);
     $stmt->execute();
     $stmt->bind_result($id, $song_title, $app, $flag, $you, $youApp);
     $returnArray = array();

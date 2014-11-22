@@ -54,7 +54,7 @@
                                 <script type="text/javascript" src="./js/liveSearch.js"></script>
                                 <div class="show" align="left">
                                     <?php
-                                    $songList = getApprovedSongs();
+                                    $songList = getApprovedSongs_notOnMixtape($_SESSION['user_id']);
                                     foreach ($songList as $song) {
                                         ?>
                                         <tr>
