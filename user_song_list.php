@@ -136,6 +136,9 @@
                                                     <tr>
                                                         <th></th>
                                                         <th><h4><?php
+                                                    if ($songApproved != 1) {
+                                                        echo '<img src = "/img/warning.png" height = "20px" width = "20px"/>';
+                                                    }
                                                     echo $songTitle;
                                                     ?>
                                                 </h4></th>
