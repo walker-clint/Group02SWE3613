@@ -95,6 +95,7 @@
                         }
                         ?>
                         <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a new song!</span></a>
+                        <p><span style = "font-size: 1em">This icon <img src = "/img/warning.png" height = "20px" width = "20px"/> means the song is waiting for admin approval</span></p>
 
                         <div class="form-horizontal" action="" method="POST">
                             <div class="well-2 bs-component">
@@ -136,11 +137,6 @@
                                                         <th></th>
                                                         <th><h4><?php
                                                     echo $songTitle;
-                                                    if ($songApproved != 1) {
-                                                        ?>
-                                                        <br><img src = "/img/warning.png" height = "20px" width = "20px"/><span style = "font-size: .5em">this song is waiting for admin approval</span>
-                                                        <?php
-                                                    }
                                                     ?>
                                                 </h4></th>
                                                 <th><h4><?php echo $songArtist; ?></h4></th>
