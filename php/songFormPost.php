@@ -46,7 +46,11 @@ $youtube = $_POST['link'];
 if ($action != 'Edit') {
     //$newSongId = addSong($title, $approved, $flagged, $youtubeLink, $youtubeApproved)
     $songId = addSong($title, 0, 0, $youtube, 1);
-    $_SESSION['error'] = '<p>Your song "' . $title . '" has been submitted, an admin will review and approve it</p>';
+    if(!empty($songId)) {
+        $_SESSION['error'] = '<p>Your song "' . $title . '" has been submitted, an admin will review and approve it</p>';
+    }else{
+        $_SESSION['error'] = '<p>There was an error adding "' . $title . '", perhaps it\'s already in our song list?</p>';
+    }
 } else {//otherwise update existing
     //updateSong($id, $title, $approved, $flagged, $youtubeLink, $youtubeApproved)
     updateSong($songId, $title, 0, 0, $youtube, 1);
