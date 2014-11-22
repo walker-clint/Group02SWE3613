@@ -30,6 +30,7 @@ h1 {
     color: #FDE910;
     font-family: FontAwesome;
 }
+
 h2 {
     color: #700000;
     font-family: FontAwesome;
@@ -41,6 +42,7 @@ h3 {
     font-family: FontAwesome;
     font-size: medium;
 }
+
 #logo {
     position: relative;
     background: #700000;
@@ -2477,6 +2479,15 @@ td.beauty-hover {
     .page-404 .form-inline {
         width: 40%;
     }
+
+    .mobile-only {
+        display: block !important;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+
 }
 
 .middle {
@@ -2527,8 +2538,7 @@ http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-respo
     width: auto;
 }
 
-
-.captcha-container frame{
+.captcha-container frame {
     position: absolute;
     top: 0;
     left: 0;
@@ -2544,8 +2554,7 @@ http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-respo
     width: auto;
 }
 
-
-.captcha-container-1 frame{
+.captcha-container-1 frame {
     position: absolute;
     top: 0;
     left: 0;
@@ -2562,14 +2571,13 @@ http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-respo
     height: 50%;
 }
 
-.scroll-container frame{
+.scroll-container frame {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 }
-
 
 /*http://speckyboy.com/2012/03/05/the-challenge-of-responsive-images/*/
 
