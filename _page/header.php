@@ -119,7 +119,7 @@ if (!empty($_SESSION['user_id'])) {
                                 <div class="well bs-component">
                                     <h1 align="center">Login</h1>
 
-                                    <div class="well-1 bs-component">
+                                    <div class="well-2 bs-component">
                                         <form class="form-horizontal" action="php/loginService.php" method="POST">
                                             <div class="form-group">
                                                 <label for="user_name" class="col-xs-4 col-md-4 control-label">User
