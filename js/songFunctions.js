@@ -60,7 +60,7 @@ function changeInfo(id, title, artist, genre, flagged) {
                 + message + '</form>' + '</a1>';
     } else {
         info += '<br><a1 class = "well-2" style=font-size: .75em">'
-                + '<img src = "/img/warning.png" height = "20px" width = "20px" />'
+                + '<img src = "/img/red_flag.png" height = "20px" width = "20px" />'
                 + 'This song has been flagged as being inappropriate or having incorrect information</a1>';
     }
 
