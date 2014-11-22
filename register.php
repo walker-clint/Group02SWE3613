@@ -96,6 +96,7 @@ $secret_a = $_SESSION['secret_a'];
     <div class="captcha-container" align="center">
       <div class="captcha-container frame">
         <?php
+		require_once $_SERVER['DOCUMENT_ROOT'] . ("/recaptchalib.php");
                 $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
                 echo recaptcha_get_html($publickey);
                 ?>

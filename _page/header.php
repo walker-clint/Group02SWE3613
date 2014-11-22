@@ -269,9 +269,17 @@ if (!empty($_SESSION['user_id'])) {
                                                 <div class="captcha-container" align="center">
                                                     <div class="captcha-container frame">
                                                         <?php
-                                                        require_once $_SERVER['DOCUMENT_ROOT'] . ("/recaptchalib.php");
+														$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+
+
+if (false !== strpos($url,'register.php')) {
+   
+} else {
+    require_once $_SERVER['DOCUMENT_ROOT'] . ("/recaptchalib.php");
                                                         $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
                                                         echo recaptcha_get_html($publickey);
+}
+                                                       
                                                         ?>
                                                     </div>
                                                 </div>
