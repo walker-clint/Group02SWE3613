@@ -22,8 +22,8 @@ if (!empty($_SESSION['user_id'])) {
         $indexLink = 'admin_main_menu.php';
     }
     if ($page == "http://group02p2.swe3613.com/user_song_list.php") {
-        if ($full_name != ""){
-            $display_name = '<div align="center"><div align="right"> <h3>' . "Welcome: " . $full_name .'</h3> </div></div>';
+        if ($full_name != "") {
+            $display_name = '<div align="center"><div align="right"> <h3>' . "Welcome: " . $full_name . '</h3> </div></div>';
         }
         $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
             <li class="btn-label-right">
@@ -42,8 +42,8 @@ if (!empty($_SESSION['user_id'])) {
             </li>
             </ul>';
     } else {
-        if ($full_name != ""){
-            $display_name = '<div align=""> <h3>' . "Welcome: " . $full_name .'</h3> </div>';
+        if ($full_name != "") {
+            $display_name = '<div align=""> <h3>' . "Welcome: " . $full_name . '</h3> </div>';
         }
         $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
             <li class="btn-label-right">
@@ -100,10 +100,10 @@ if (!empty($_SESSION['user_id'])) {
     <div id="top-panel" class="container-fluid expanded-panel"><br>
 
         <div class="row">
-
-            <?php echo $display_name . $toplinks; ?>
+            <div align="center">
+                <?php echo $display_name . $toplinks; ?>
+            </div>
         </div>
-
         <!-- Modal 1 -->
         <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
              aria-hidden="true">
