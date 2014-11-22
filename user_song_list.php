@@ -55,23 +55,23 @@
                                 <script type="text/javascript" src="./js/liveSearch.js"></script>
                                 <table id="result" class="table-striped">
                                     <div class="show" align="left">
-                                        <?php
-                                        $userMixtape = getMixtape($_SESSION['user_id']); //need to get mixtape now to check count soon
-                                        $songList = getApprovedSongs_notOnMixtape($_SESSION['user_id']);
-                                        foreach ($songList as $song) {
-                                            ?>
-                                            <tr>
-                                                <td><a href='/php/toggleMixtape.php?songId=<?php echo $song->id; ?>'>
-                                                        <?php if (count($userMixtape) < 30) {
-                                                            ?><div class = "btn btn-warning">Add</div><?php } ?>
-                                                    </a>
-                                                    <?php echo $song->js_infoBox(true); ?>
-
-                                                </td>
-                                            </tr>
-                                            <?php
-                                        }
-                                        ?>
+<!--                                        --><?php
+//                                        $userMixtape = getMixtape($_SESSION['user_id']); //need to get mixtape now to check count soon
+//                                        $songList = getApprovedSongs_notOnMixtape($_SESSION['user_id']);
+//                                        foreach ($songList as $song) {
+//                                            ?>
+<!--                                            <tr>-->
+<!--                                                <td><a href='/php/toggleMixtape.php?songId=--><?php //echo $song->id; ?><!--'>-->
+<!--                                                        --><?php //if (count($userMixtape) < 30) {
+//                                                            ?><!--<div class = "btn btn-warning">Add</div>--><?php //} ?>
+<!--                                                    </a>-->
+<!--                                                    --><?php //echo $song->js_infoBox(true); ?>
+<!---->
+<!--                                                </td>-->
+<!--                                            </tr>-->
+<!--                                            --><?php
+//                                        }
+//                                        ?>
                                     </div>
                                 </table>
                             </div>
