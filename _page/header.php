@@ -17,7 +17,7 @@ if (!empty($_SESSION['user_id'])) {
     }
     $indexLink = 'main_menu.php';
     if ($full_name != ''){
-        echo '<div align="right"> <h1>' . "Welcome: " . $full_name .'</h1> </div>';
+        echo '<div align="right"> <h3>' . "Welcome: " . $full_name .'</h3> </div>';
     }
     if ($userType == 'admin') {
         $indexLink = 'admin_main_menu.php';
