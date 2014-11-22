@@ -25,7 +25,7 @@ if (!empty($_SESSION['user_id'])) {
         if ($full_name != "") {
             $display_name = '<div align="center"> <h3>' . "Welcome: " . $full_name . '</h3> </div>';
         }
-        $toplinks = '<ul class="nav navbar-collapse pull-right panel-menu">
+        $toplinks = '<ul class="nav navbar-default pull-right panel-menu">
             <li class="btn-label-right">
             <a href="' . $indexLink . '">
 			<div class="well-1 btn btn-primary">
@@ -45,7 +45,7 @@ if (!empty($_SESSION['user_id'])) {
         if ($full_name != "") {
             $display_name = '<div align="center"> <h3>' . "Welcome: " . $full_name . '</h3> </div>';
         }
-        $toplinks = '<ul class="nav navbar-collapse pull-right panel-menu">
+        $toplinks = '<ul class="nav navbar-default pull-right panel-menu">
             <li class="btn-label-right">
             <a href="' . $indexLink . '">
 			<div class="well-1 btn btn-primary">
@@ -70,7 +70,7 @@ if (!empty($_SESSION['user_id'])) {
             </ul>';
     }
 } else {
-    $toplinks = '<ul class="nav navbar-collapse pull-right panel-menu">
+    $toplinks = '<ul class="nav navbar-default pull-right panel-menu">
             <li class="btn-label-right">
 			<a data-toggle="modal" href="#myModal1">
             <div class="well-1 btn btn-primary">
