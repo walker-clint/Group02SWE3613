@@ -17,7 +17,7 @@
         <!--Start Row Main Page Data-->
         <div id="main" class="container-fluid">
             <div class="row">
-                <div id="left-space" class="col-xs-0 col-sm-1">
+                <div id="left-space" class="col-xs-0 col-sm-1 hidden-phone">
                     <img src="img/loud-speaker-L-md.png" class="img-responsive" align="left"/>
                 </div>
                 <div id="left-column" class="col-sm-4">
@@ -170,7 +170,7 @@
                     </div>
                 </div>
                 <!--End Display User Song List-->
-                <div id="right-space" class="col-xs-0 col-sm-1">
+                <div id="right-space" class="col-xs-0 col-sm-1 hidden-phone">
                     <img src="img/loud-speaker-R-md.png" class="img-responsive" align="right"/>
         <!--            <img src="img/mad.png" class="img-responsive" align="right"/>-->
                 </div>
