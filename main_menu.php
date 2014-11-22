@@ -61,8 +61,15 @@
 
                     <table>
                         <?php
+                        $incDisplay = "";
                         $increment = 1;
+
                         foreach ($mixTapeList as $songInt) {
+                            if ($increment < 10){
+                                $incDisplay = $increment . " :";
+                            } else {
+                                $incDisplay = $increment . ":";
+                            }
                             $song = getSongById($songInt);
                             if ($song instanceof Song) {
                                 $songTitle = $song->title;
@@ -70,9 +77,9 @@
                                 $songGenre = $song->getGenres();
                                 $songLink = $song->getLink();
 
-                                echo '<tr><td><h1>' . $increment . '</h1></td><td><div class="well-2 bs-component"'
+                                echo '<tr><th><h3>' . $incDisplay . '</h3><th><div class="well-2 bs-component"'
                                     . 'onclick="' . $song->js_changeBox(true) . '" onmouseover="" style="cursor: pointer;">'
-                                    . $song->js_infoBox() . '</div></td><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
+                                    . $song->js_infoBox(true) . '</div></th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                             }
                             $increment += 1;
                         }
