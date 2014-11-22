@@ -1,22 +1,22 @@
 //<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
 //<script type="text/javascript">
 $(function () {
-    $(".search").keyup(function ()
-    {
+    $(".search").keyup(function () {
         var searchid = $(this).val();
-        var dataString = 'search=' + searchid;
-        if (true || searchid != '')
-        {
-            $.ajax({
-                type: "POST",
-                url: "/php/liveSearchResult.php",
-                data: dataString,
-                cache: false,
-                success: function (html)
-                {
-                    $("#result").html(html).show();
-                }
-            });
+        if (searchid != '') {
+
+            var dataString = 'search=' + searchid;
+            if (true || searchid != '') {
+                $.ajax({
+                    type: "POST",
+                    url: "/php/liveSearchResult.php",
+                    data: dataString,
+                    cache: false,
+                    success: function (html) {
+                        $("#result").html(html).show();
+                    }
+                });
+            }
         }
         return false;
     });
@@ -36,5 +36,6 @@ $(function () {
     $('#searchid').click(function () {
         jQuery("#result").fadeIn();
     });
-});
+})
+;
 //</script>
