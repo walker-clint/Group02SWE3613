@@ -10,6 +10,12 @@ $action = $_POST['actionType'];
 $songId = $_POST['songId'];
 $title = $_POST['title'];
 
+//if trying to edit verify admin
+if ($userType != 'admin' && $action == 'Edit') {
+    $_SESSION['error'] += '<p>You must be an admin to edit songs!</p>';
+    die();
+}
+
 if (isset($_POST['artists'])) {
     $artists = $_POST['artists'];
 } else {
@@ -37,20 +43,15 @@ if (isset($_POST['newGenre']) && !empty($_POST['newGenre'])) {
 
 $youtube = $_POST['link'];
 
-
-//if trying to edit verify admin
-if ($userType != 'admin' && $action == 'Edit') {
-    die("You must be an admin to edit songs!");
-}
-
 //if not editing add new song
 if ($action != 'Edit') {
     //$newSongId = addSong($title, $approved, $flagged, $youtubeLink, $youtubeApproved)
     $songId = addSong($title, 0, 0, $youtube, 1);
+    $_SESSION['error'] +='<p>Your song ' . $title . ' has been submitted, an admin will review and approve it</p>';
 } else {//otherwise update existing
     //updateSong($id, $title, $approved, $flagged, $youtubeLink, $youtubeApproved)
     updateSong($songId, $title, 0, 0, $youtube, 1);
-
+    $_SESSION['error'] +='<p>' . $title . ' has been updated. It will require approval before users can see it.</p>';
     //lazy, delete all the references to the song now
     deleteSongAllArtists($songId);
     deleteSongAllGenres($songId);

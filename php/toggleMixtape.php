@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $approved = $song->approved;
         $youtubeLink = $song->youtubeLink;
         $youtubeApproved = $song->youtubeApproved;
-        
+
         //get user's mix tape count
         $conMixtapeCount = initializeConnection();
         $sqlCount = "SELECT COUNT(*) as 'count' FROM tbl_mixtape WHERE user_id = " . $userId;
@@ -29,15 +29,15 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $mixResult = mysqli_query($conMixtape, $sql);
         $row = mysqli_fetch_array($mixResult, MYSQLI_ASSOC);
         $count = $row['count'];
-        
+
         if ($count > 0) {//on list now, delete
             deleteMixtape($userId, $songId);
-            //$addSongMessage = 'Song removed from your mixtape!';
+            $_SERVER['error'] += '<p>Song removed from your mixtape</p>';
         } elseif ($totalCount < 30) {//not on list, add
             addMixtape($userId, $songId, 1);
-            //$addSongMessage = 'Song added to your mixtape!';
+            $_SESSION['error'] += '<p>Song added to your mixtape</p>';
         } else {//too many songs, don't add
-            //$addSongMessage = 'You may only have 30 songs on your mixtape! Remove some if you want to add more!';
+            $_SESSION['error'] += '<p>You may only have 30 songs on your mixtape! Remove some if you want to add more</p>';
         }
     }
 }
