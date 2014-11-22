@@ -93,14 +93,14 @@
 
         </div>
         <div id="left-column" class="col-sm-2">
-            <img src="img/loud-speaker-R-md.png" class="img-responsive" align="right"/>
+            <img src="img/loud-speaker-R-md.png" class="img-responsive" align="left"/>
         </div>
     </div>
 
     <!--End Middle-->
     <div class="row">
         <div id="left-column" class="col-sm-2">
-           
+
         </div>
         <div id="left-ad" class="col-sm-2">
             <div class="well bs-component">
