@@ -43,7 +43,7 @@ if (!empty($_SESSION['user_id'])) {
             </ul>';
     } else {
         if ($full_name != ""){
-            $display_name = '<div align="center"><div align="right"> <h3>' . "Welcome: " . $full_name .'</h3> </div></div>';
+            $display_name = '<div align=""> <h3>' . "Welcome: " . $full_name .'</h3> </div>';
         }
         $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
             <li class="btn-label-right">
