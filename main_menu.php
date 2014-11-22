@@ -16,7 +16,9 @@
 <div id="main" class="container-fluid">
     <!--Start Content-->
     <div class="row">
-        <div id="left-column" class="col-sm-2"></div>
+        <div id="left-column" class="col-sm-2">
+            <img src="img/loud-speaker-R-md.png" class="img-responsive" align="right"/>
+        </div>
         <div id="left-column" class="col-sm-4">
             <div align="center">
                 <h1>Awesome Tunes!</h1>
@@ -47,8 +49,6 @@
                 </div>
             </div>
         </div>
-
-
         <div id="right-column" class="col-sm-4">
             <div align="center">
                 <h1>Top <?php echo count($mixTapeList); ?> Songs</h1>
@@ -92,12 +92,16 @@
             </div>
 
         </div>
-        <div id="left-column" class="col-sm-2"></div>
+        <div id="left-column" class="col-sm-2">
+            <img src="img/loud-speaker-R-md.png" class="img-responsive" align="right"/>
+        </div>
     </div>
 
     <!--End Middle-->
     <div class="row">
-        <div id="left-column" class="col-sm-2"></div>
+        <div id="left-column" class="col-sm-2">
+            <img src="img/loud-speaker-L-md.png" class="img-responsive" align="right"/>
+        </div>
         <div id="left-ad" class="col-sm-2">
             <div class="well bs-component">
                 <div class="panel panel-default" align="left">
@@ -168,7 +172,9 @@
                 </div>
             </div>
         </div>
-        <div id="left-column" class="col-sm-2"></div>
+        <div id="left-column" class="col-sm-2">
+            <img src="img/loud-speaker-R-md.png" class="img-responsive" align="right"/>
+        </div>
     </div>
 
     <!--footer-->
