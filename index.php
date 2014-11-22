@@ -19,7 +19,7 @@
     <!--Start Content-->
     <div class="row">
         <div id="left-column" class="col-sm-1">
-            <img src="img/loud-speaker-L-md.png" class="img-responsive" align="right"/>
+<!--            <img src="img/loud-speaker-L-md.png" class="img-responsive" align="right"/>-->
         </div>
         <div id="left-column" class="col-sm-6">
             <div align="center">
