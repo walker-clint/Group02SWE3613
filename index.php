@@ -73,7 +73,7 @@
                                 $songGenre = $song->getGenres();
                                 $songLink = $song->getLink();
 
-                                echo '<tr><th><h1>' . $incDisplay . " " . '</h1><div class="well-2 bs-component"'
+                                echo '<tr><th><h3>' . $incDisplay . " " . '</h3><div class="well-2 bs-component"'
                                     . 'onclick="' . $song->js_changeBox(true) . '" onmouseover="" style="cursor: pointer;">'
                                     . $song->js_infoBox(true) . '</div></th><tr>'; //' by '.$song->getArtists().'</div></td><tr>';
                             }
