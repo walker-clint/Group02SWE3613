@@ -170,12 +170,6 @@ function getApprovedSongs_notOnMixtape($userIdInc) {
     $con = initializeConnection();
     $userId = htmlspecialchars($userIdInc);
 
-//    $query = 'SELECT tbl_song.song_id, title, approved, flagged, youtube, youtube_approved '
-//            . 'FROM tbl_song '
-//            . 'RIGHT JOIN tbl_mixtape ON tbl_mixtape.song_id = tbl_song.song_id  '
-//            . 'WHERE tbl_song.approved = 1 AND tbl_mixtape.user_id != ? '
-//            . 'GROUP BY tbl_song.song_id '
-//            . 'ORDER BY title';
     $query = 'SELECT tbl_song.song_id, title, approved, flagged, youtube, youtube_approved '
             . 'FROM tbl_song '
             . 'WHERE tbl_song.song_id NOT IN (SELECT tbl_mixtape.song_id FROM tbl_mixtape WHERE tbl_mixtape.user_id = ?) '
@@ -186,6 +180,43 @@ function getApprovedSongs_notOnMixtape($userIdInc) {
     $stmt = $con->prepare($query);
 
     $stmt->bind_param('i', $userId);
+    $stmt->execute();
+    $stmt->bind_result($id, $song_title, $app, $flag, $you, $youApp);
+    $returnArray = array();
+    while ($stmt->fetch()) {
+        $genre = getSongGenre($id);
+        $artist = getSongArtist($id);
+        $tempSong = new Song($id, $song_title, $app, $flag, $you, $youApp, $genre, $artist);
+        array_push($returnArray, $tempSong);
+    }
+    return $returnArray;
+}
+
+function getRandApprovedSongs_notOnMixtape($userIdInc) {
+    $con = initializeConnection();
+    $userId = htmlspecialchars($userIdInc);
+
+    //From http://explainextended.com/2009/03/01/selecting-random-rows/
+    $query = 'SELECT song_id, title, approved, flagged, youtube, youtube_approved '
+            . 'FROM '
+            . '( '
+            . 'SELECT @cnt := count(*) +1, '
+            . '@lim := 10 '
+            . 'FROM tbl_song '
+            . ') vars '
+            . 'JOIN '
+            . '( '
+            . 'SELECT song_table.*, '
+            . '@lim := @lim - 1 '
+            . 'FROM tbl_song song_table '
+            . 'WHERE (@cnt := @cnt -1) '
+            . 'AND RAND() < @lim / @cnt '
+            . 'AND approved = 1 '
+            . ') i';
+
+    $stmt = $con->prepare($query);
+
+    //$stmt->bind_param('i', $userId);
     $stmt->execute();
     $stmt->bind_result($id, $song_title, $app, $flag, $you, $youApp);
     $returnArray = array();
