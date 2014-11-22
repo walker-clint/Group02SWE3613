@@ -59,12 +59,13 @@
                         <?php
                         $incDisplay = "";
                         $increment = 1;
-                        if ($increment < 10){
-                            $incDisplay = " " . $increment . " : ";
-                        } else {
-                            $incDisplay = $increment . " : ";
-                        }
+
                         foreach ($mixTapeList as $songInt) {
+                            if ($increment < 10){
+                                $incDisplay = " " . $increment . " : ";
+                            } else {
+                                $incDisplay = $increment . " : ";
+                            }
                             $song = getSongById($songInt);
                             if ($song instanceof Song) {
                                 $songTitle = $song->title;
