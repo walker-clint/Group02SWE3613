@@ -16,6 +16,7 @@ function initializeConnection() {
     return $con;
 }
 
+//from http://stackoverflow.com/a/23874239/3266586
 function isMobileDevice() {
     $aMobileUA = array(
         '/iphone/i' => 'iPhone',
