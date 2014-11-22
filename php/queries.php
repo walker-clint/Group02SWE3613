@@ -179,6 +179,7 @@ function getApprovedSongs_notOnMixtape($userIdInc) {
     $query = 'SELECT tbl_song.song_id, title, approved, flagged, youtube, youtube_approved '
             . 'FROM tbl_song '
             . 'WHERE tbl_song.song_id NOT IN (SELECT tbl_mixtape.song_id FROM tbl_mixtape WHERE tbl_mixtape.user_id = ?) '
+            . 'AND tbl_song.approved = 1 '
             . 'GROUP BY song_id '
             . 'ORDER BY title';
 
