@@ -134,7 +134,7 @@
                                                     $songApproved = $song->approved;
                                                     if ($songApproved == 0){
                                                         ?>
-                                                   <tr>
+                                                   <tr bgcolor="#A17D0F">
                                                        <?php
                                                         } else { ?>
                                                     <tr bgcolor="#FF9427">
