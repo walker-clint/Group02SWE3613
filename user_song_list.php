@@ -46,35 +46,36 @@
 
                     <div class="well bs-component">
                         <!--<form class="form-horizontal" action="songForm.php" method="post">-->
-                            <div class="well-2 bs-component">
+                        <div class="well-2 bs-component">
+                            <div align="center">
+                                Enter a title or artist to search for: <input type="text" class="search" id="searchid" placeholder="Search for songs"/><br/><br>
                                 <em>Can't find your song?</em> <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add it!</span></a>
-                                <div align="center">
-                                    Enter a title or artist to search for: <input type="text" class="search" id="searchid" placeholder="Search for songs"/><br/><br>
-                                    <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
-                                    <script type="text/javascript" src="./js/liveSearch.js"></script>
-                                    <table id="result" class="table-striped">
-                                        <div class="show" align="left">
-                                            <?php
-                                            $userMixtape = getMixtape($_SESSION['user_id']); //need to get mixtape now to check count soon
-                                            $songList = getApprovedSongs_notOnMixtape($_SESSION['user_id']);
-                                            foreach ($songList as $song) {
-                                                ?>
-                                                <tr>
-                                                    <td><a href='/php/toggleMixtape.php?songId=<?php echo $song->id; ?>'>
-                                                            <?php if (count($userMixtape) < 30) {
-                                                                ?><div class = "btn btn-warning">Add</div><?php } ?>
-                                                        </a>
-                                                        <?php echo $song->js_infoBox(true); ?>
 
-                                                    </td>
-                                                </tr>
-                                                <?php
-                                            }
+                                <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+                                <script type="text/javascript" src="./js/liveSearch.js"></script>
+                                <table id="result" class="table-striped">
+                                    <div class="show" align="left">
+                                        <?php
+                                        $userMixtape = getMixtape($_SESSION['user_id']); //need to get mixtape now to check count soon
+                                        $songList = getApprovedSongs_notOnMixtape($_SESSION['user_id']);
+                                        foreach ($songList as $song) {
                                             ?>
-                                        </div>
-                                    </table>
-                                </div>
+                                            <tr>
+                                                <td><a href='/php/toggleMixtape.php?songId=<?php echo $song->id; ?>'>
+                                                        <?php if (count($userMixtape) < 30) {
+                                                            ?><div class = "btn btn-warning">Add</div><?php } ?>
+                                                    </a>
+                                                    <?php echo $song->js_infoBox(true); ?>
+
+                                                </td>
+                                            </tr>
+                                            <?php
+                                        }
+                                        ?>
+                                    </div>
+                                </table>
                             </div>
+                        </div>
                         <!--</form>-->
                     </div>
                 </div>
