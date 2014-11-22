@@ -11,7 +11,7 @@ if (!empty($_SESSION['user_id'])) {
     $con = initializeConnection();
     $sql = mysqli_query($con, "SELECT * FROM tbl_user WHERE user_id = '$id'");
     $page = getCurrentPageURL();
-    //echo "Current URL: " . $page;
+//echo "Current URL: " . $page;
     $full_name = '';
     while ($row = mysqli_fetch_array($sql)) {
         $full_name = $row["first_name"] . " " . $row["last_name"];
@@ -92,7 +92,7 @@ if (!empty($_SESSION['user_id'])) {
 
 
 <header class="navbar-collapse">
-    <!--    <a href="/--><?php //echo '' . $indexLink; ?><!--">-->
+    <!--    <a href="/--><?php //echo '' . $indexLink;                    ?><!--">-->
     <div id="logo" class="col-xs-6 col-sm-6">
         <img src="img/cllogo_medium.png" class="img-responsive"/></a>
     </div>
@@ -104,6 +104,22 @@ if (!empty($_SESSION['user_id'])) {
                 <?php echo $display_name . $toplinks; ?>
             </div>
         </div>
+
+        <?php
+        if (!empty($_SESSION['error'])) {
+            ?><div class = "row">
+                <div id = "center1-column" class = "col-sm-4"></div>
+                <div id = "center1-column" class = "col-sm-4">
+                    <div class = "well bs-component">
+                        <font color="#"><?php
+                        echo$_SESSION['error'];
+                        $_SESSION['error'] = '';
+                        ?></font>
+
+                    </div>
+                </div>
+            </div><?php } ?>
+
         <!-- Modal 1 -->
         <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
              aria-hidden="true">
