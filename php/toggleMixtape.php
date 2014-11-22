@@ -32,10 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
         if ($count > 0) {//on list now, delete
             deleteMixtape($userId, $songId);
-            $_SERVER['error'] += '<p>Song removed from your mixtape</p>';
+            $_SESSION['error'] = '<p>"' . $title . '" removed from your mixtape</p>';
         } elseif ($totalCount < 30) {//not on list, add
             addMixtape($userId, $songId, 1);
-            $_SESSION['error'] += '<p>Song added to your mixtape</p>';
+            $_SESSION['error'] = '<p>"' . $title . '" added to your mixtape</p>';
         } else {//too many songs, don't add
             $_SESSION['error'] += '<p>You may only have 30 songs on your mixtape! Remove some if you want to add more</p>';
         }
