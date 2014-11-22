@@ -23,7 +23,7 @@ if (!empty($_SESSION['user_id'])) {
     }
     if ($page == "http://group02p2.swe3613.com/user_song_list.php") {
         if ($full_name != "") {
-            $display_name = '<div align="center"><div align="right"> <h3>' . "Welcome: " . $full_name . '</h3> </div></div>';
+            $display_name = '<div align="center"> <h3>' . "Welcome: " . $full_name . '</h3> </div>';
         }
         $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
             <li class="btn-label-right">
@@ -43,7 +43,7 @@ if (!empty($_SESSION['user_id'])) {
             </ul>';
     } else {
         if ($full_name != "") {
-            $display_name = '<div align=""> <h3>' . "Welcome: " . $full_name . '</h3> </div>';
+            $display_name = '<div align="center"> <h3>' . "Welcome: " . $full_name . '</h3> </div>';
         }
         $toplinks = '<ul class="nav navbar-nav pull-right panel-menu">
             <li class="btn-label-right">
