@@ -14,9 +14,10 @@ if ($_POST) {
         ?>
         <tr>
             <td><a href='/php/toggleMixtape.php?songId=<?php echo $song->id; ?>'>
-                    <div class="btn btn-warning">Add</div>
+                    <?php if (count($songList) < 30) {
+                        ?><div class = "btn btn-warning">Add</div><?php } ?>
                 </a>
-        <?php echo $song->js_infoBox(true); ?>
+                <?php echo $song->js_infoBox(true); ?>
 
             </td>
         </tr>
@@ -25,3 +26,4 @@ if ($_POST) {
         //echo '<tr><td>' . $song->js_infoBox(true) . '</td></tr>';
     }
 }
+    
