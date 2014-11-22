@@ -69,7 +69,6 @@ foreach ($genres as $genre) {
 //add the song to the user's tape
 addMixtape($_SESSION['user_id'], $songId, 1);
 
-$_SESSION['error'] = $error;
 if ($userType == 'admin') {
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/admin_main_menu.php');
 } else {
