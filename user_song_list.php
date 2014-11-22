@@ -82,8 +82,8 @@
                 <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
                 <div class="form-horizontal" action="" method="POST">
                     <div class="well-2 bs-component">
-                        <div class="captcha-container">
-                            <div class="captcha-container frame">
+                        <div class="captcha-container-1">
+                            <div class="captcha-container-1 frame">
                                 <table class="table table-striped" width="90%" cellpadding="2" cellspacing="2"
                                        overflow="auto">
                                     <thead>
