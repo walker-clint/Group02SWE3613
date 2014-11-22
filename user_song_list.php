@@ -80,13 +80,8 @@
             </div>
             <div class="well bs-component">
                 <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
-                <div class="col-xs=10">
+              
 
-                </div>
-                <div class="col-xs-2">
-
-                    <img src="img/mad.png" class="img-responsive" align="right"/>
-                </div>
                 <div class="form-horizontal" action="" method="POST">
                     <div class="well-2 bs-component">
                         <div class="captcha-container-1">
@@ -153,7 +148,9 @@
             </div>
         </div>
         <!--End Display User Song List-->
-        <div id="right-space" class="col-sm-1"></div>
+        <div id="right-space" class="col-sm-1">
+            <img src="img/mad.png" class="img-responsive" align="right"/>
+        </div>
     </div>
 </div>
 <!--End Row Main Page Data-->
