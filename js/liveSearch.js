@@ -3,29 +3,29 @@
 $(function () {
     $(".search").keyup(function () {
         var searchid = $(this).val();
-        if (searchid != "") {
 
-            var dataString = 'search=' + searchid;
-            if (true || searchid != '') {
-                $.ajax({
-                    type: "POST",
-                    url: "/php/liveSearchResult.php",
-                    data: dataString,
-                    cache: false,
-                    success: function (html) {
-                        $("#result").html(html).show();
-                    }
-                });
-            }
+        var dataString = 'search=' + searchid;
+        if (true || searchid != '') {
+            $.ajax({
+                type: "POST",
+                url: "/php/liveSearchResult.php",
+                data: dataString,
+                cache: false,
+                success: function (html) {
+                    $("#result").html(html).show();
+                }
+            });
         }
+
         return false;
     });
 
     jQuery("#result").live("click", function (e) {
         var $clicked = $(e.target);
+        if ('.name' != "") {
         var $name = $clicked.find('.name').html();
         var decoded = $("<div>").html($name).text();
-        if ($name != "") {
+
             $('#searchid').val(decoded);
         }
     });
