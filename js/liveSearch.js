@@ -25,7 +25,9 @@ $(function () {
         var $clicked = $(e.target);
         var $name = $clicked.find('.name').html();
         var decoded = $("<div>").html($name).text();
-        $('#searchid').val(decoded);
+        if ($name != '') {
+            $('#searchid').val(decoded);
+        }
     });
     jQuery(document).live("click", function (e) {
         var $clicked = $(e.target);
