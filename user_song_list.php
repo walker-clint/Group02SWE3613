@@ -96,7 +96,6 @@
                         ?>
                         <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a new song!</span></a>
 
-
                         <div class="form-horizontal" action="" method="POST">
                             <div class="well-2 bs-component">
                                 <div class="captcha-container-1">
@@ -136,11 +135,13 @@
                                                     <tr>
                                                         <th></th>
                                                         <th><h4><?php
+                                                    echo $songTitle;
                                                     if ($songApproved != 1) {
-                                                        ?><img src="/img/warning.png" height="20px" width="20px"/> <?php
-                                                            }
-                                                            echo $songTitle;
-                                                            ?>
+                                                        ?>
+                                                        <br><img src = "/img/warning.png" height = "20px" width = "20px"/><span style = "font-size: .5em">this song is waiting for admin approval</span>
+                                                        <?php
+                                                    }
+                                                    ?>
                                                 </h4></th>
                                                 <th><h4><?php echo $songArtist; ?></h4></th>
                                                 <th><h4><?php echo $songGenre; ?></h4></th>
