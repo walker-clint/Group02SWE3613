@@ -132,7 +132,7 @@
                                                     $songGenre = $song->getGenres();
                                                     $songLink = $song->getLink();
                                                     $songApproved = $song->approved;
-                                                    if ($songApproved == 0){
+                                                    if ($songApproved != 0){
                                                         ?>
                                                    <tr bgcolor="#A17D0F">
                                                        <?php
