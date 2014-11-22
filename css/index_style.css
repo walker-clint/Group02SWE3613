@@ -2480,13 +2480,13 @@ td.beauty-hover {
         width: 40%;
     }
 
-    .mobile-only {
-        display: block !important;
-    }
+    /*.mobile-only {*/
+        /*display: block !important;*/
+    /*}*/
 
-    .desktop-only {
-        display: none !important;
-    }
+    /*.desktop-only {*/
+        /*display: none !important;*/
+    /*}*/
 
 }
 
