@@ -19,7 +19,7 @@
     <!--Start Content-->
     <div class="row">
         <div id="left-column" class="col-sm-1"></div>
-        <div id="left-column" class="col-sm-4">
+        <div id="left-column" class="col-sm-6">
             <div align="center">
                 <h1>Awesome Tunes!</h1>
             </div>
@@ -45,7 +45,7 @@
                 </div>
             </div>
         </div>
-        <div id="right-column" class="col-sm-6">
+        <div id="right-column" class="col-sm-4">
             <div align="center">
                 <h1>Top <?php echo count($mixTapeList); ?> Songs</h1>
             </div>
