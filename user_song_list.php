@@ -132,35 +132,35 @@
                                                     $songGenre = $song->getGenres();
                                                     $songLink = $song->getLink();
                                                     $songApproved = $song->approved;
-                                                    if ($songApproved == 0){
-                                                        ?>
-                                                   <tr bgcolor="#CFB06F">
-                                                       <?php
-                                                        } else { ?>
-                                                    <tr bgcolor="#FF9427">
-                                                        <?php } ?>
-
+                                                    ?>
+                                                    <tr>
                                                         <th></th>
-                                                        <th><h4><?php echo $songTitle; ?></h4></th>
-                                                    <th><h4><?php echo $songArtist; ?></h4></th>
-                                                    <th><h4><?php echo $songGenre; ?></h4></th>
-                                                    <th></th>
-                                                    <th></th>
-                                                    <th>
-                                                    <div class="btn btn-primary"
-                                                         onclick="<?php echo $song->js_changeBox(true); ?>">Play Song
-                                                    </div>
-                                                    </th>
-                                                    <th></th>
-                                                    <th><a href='/php/toggleMixtape.php?songId=<?php echo $songId; ?>'>
-                                                            <div class="btn btn-warning">Delete</div>
-                                                        </a></th>
-                                                    <th></th>
-                                                    </tr>
+                                                        <th><h4><?php
+                                                    if ($songApproved != 1) {
+                                                        ?><img src="/img/warning.png" height="20px" width="20px"/> <?php
+                                                            }
+                                                            echo $songTitle;
+                                                            ?>
+                                                </h4></th>
+                                                <th><h4><?php echo $songArtist; ?></h4></th>
+                                                <th><h4><?php echo $songGenre; ?></h4></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th>
+                                                <div class="btn btn-primary"
+                                                     onclick="<?php echo $song->js_changeBox(true); ?>">Play Song
+                                                </div>
+                                                </th>
+                                                <th></th>
+                                                <th><a href='/php/toggleMixtape.php?songId=<?php echo $songId; ?>'>
+                                                        <div class="btn btn-warning">Delete</div>
+                                                    </a></th>
+                                                <th></th>
+                                                </tr>
 
-                                                    <?php
-                                                }
-                                                ?>
+                                                <?php
+                                            }
+                                            ?>
                                             </tbody>
                                         </table>
                                     </div>
