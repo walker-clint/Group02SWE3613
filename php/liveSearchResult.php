@@ -9,11 +9,17 @@ if ($_POST) {
         $songList = getSongsBySearch($q);
     }
     foreach ($songList as $song) {
-        ?><a href='/php/toggleMixtape.php?songId=<?php echo $song->id; ?>'>
-            <div class="btn btn-warning">Add</div>
-        </a>
+        ?>
+        <tr>
+            <td><a href='/php/toggleMixtape.php?songId=<?php echo $song->id; ?>'>
+                    <div class="btn btn-warning">Add</div>
+                </a>
+                <?php echo $song->js_infoBox(true); ?>
+
+            </td>
+        </tr>
         <?php
-        echo $song->js_infoBox(true);
-        echo '<tr><td>' . $song->js_infoBox(true) . '</td></tr>';
+        //echo $song->js_infoBox(true);
+        //echo '<tr><td>' . $song->js_infoBox(true) . '</td></tr>';
     }
 }
