@@ -63,7 +63,7 @@
                                         foreach ($songList as $song) {
                                             ?>
                                             <tr>
-                                                <td><a href='/php/toggleMixtape.php?songId=/<?php echo $song->id; ?>'>
+                                                <td><a href='/php/toggleMixtape.php?songId=<?php echo $song->id; ?>'>
                                                         <?php if (count($userMixtape) < 30) {
                                                             ?><div class = "btn btn-warning">Add</div><?php } ?>
                                                     </a>
