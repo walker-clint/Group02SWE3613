@@ -18,7 +18,9 @@
 <div id="main" class="container-fluid">
     <!--Start Content-->
     <div class="row">
-        <div id="left-column" class="col-sm-1"></div>
+        <div id="left-column" class="col-sm-1">
+            <img src="img/loud-speaker-L-md.png" class="img-responsive" align="right"/>
+        </div>
         <div id="left-column" class="col-sm-6">
             <div align="center">
                 <h1>Awesome Tunes!</h1>
@@ -87,7 +89,9 @@
                 </div>
             </div>
         </div>
-        <div id="left-column" class="col-sm-1"></div>
+        <div id="left-column" class="col-sm-1">
+            <img src="img/loud-speaker-R-md.png" class="img-responsive" align="right"/>
+        </div>
     </div>
 
 
