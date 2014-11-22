@@ -80,6 +80,7 @@
             </div>
             <div class="well bs-component">
                 <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
+                <img src="img/mad.png" class="img-responsive" align="right"/></a>
                 <div class="form-horizontal" action="" method="POST">
                     <div class="well-2 bs-component">
                         <div class="captcha-container-1">
