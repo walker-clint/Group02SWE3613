@@ -48,16 +48,20 @@ function changeInfo(id, title, artist, genre, flagged) {
             + '<br>Genre: ' + genre;
 
     //info += '<br><a href="/php/toggleMixtape.php?songId=' + id + '">Add/remove this song from your Mixtape</a>';
-    info +='<br><a href=\'/php/toggleMixtape.php?songId=<?php echo $song->id; ?>\'><div class="btn btn-warning">Add/Remove</div></a> from my playlist';
+    info += '<br><a href=\'/php/toggleMixtape.php?songId=<?php echo $song->id; ?>\'><div class="btn btn-warning">Add/Remove</div></a> from my playlist';
 
     if (flagged != 1) {
         var color = 'red';
-        var message = 'Flag song (incorrect information or inappropriate)';
+        var message = 'Flag song (inappropriate or incorrect information)';
         info += '<a1 class="well-2"><form method="POST" action = "./php/menu_functions.php">'
                 + '<input type="hidden" name="actionType" value="toggleFlag">'
                 + '<input type="hidden" name="songId" value="' + id + '">'
                 + '<input type="image" src="./img/' + color + '_flag.png" height="20px" width="20px">'
                 + message + '</form>' + '</a1>';
+    } else {
+        info += '<br><a1 class = "well-2" style=font-size: .75em">'
+                + '<img src = "/img/warning.png" height = "20px" width = "20px"/>'
+                + 'This song has been flagged as being inappropriate or having incorrect information</a1>';
     }
 
     element.innerHTML = info;
