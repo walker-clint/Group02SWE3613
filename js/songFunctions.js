@@ -48,6 +48,7 @@ function changeInfo(id, title, artist, genre, flagged) {
             + '<br>Genre: ' + genre;
 
     //info += '<br><a href="/php/toggleMixtape.php?songId=' + id + '">Add/remove this song from your Mixtape</a>';
+    info +='<br><a href=\'/php/toggleMixtape.php?songId=<?php echo $song->id; ?>\'><div class="btn btn-warning">Add/Remove</div></a> from my playlist';
 
     if (flagged != 1) {
         var color = 'red';
