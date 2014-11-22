@@ -3,7 +3,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/lockService.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 if ($_POST) {
-    $q = htmlspecialchars($_POST['search']);
+    $q = $_POST['search'];
     if (count($q) == 0) {
         $songList = getApprovedSongs_notOnMixtape($_SESSION['user_id']);
         ;

@@ -61,7 +61,7 @@ function getSongById($songIDinc) {
 }
 
 function getSongsBySearch($songTitleInc) {
-    $songTitle = '%' . htmlspecialchars($songTitleInc) . '%';
+    $songTitle = '%' . htmlspecialchars($songTitleInc, ENT_QUOTES) . '%';
 
     $con = initializeConnection();
 
@@ -88,7 +88,7 @@ function getSongsBySearch($songTitleInc) {
 }
 
 function getSongsBySearch_notOnMixtape($songTitleInc, $userIdInc) {
-    $songTitle = '%' . htmlspecialchars($songTitleInc) . '%';
+    $songTitle = '%' . htmlspecialchars($songTitleInc, ENT_QUOTES) . '%';
     $userId = htmlspecialchars($userIdInc);
 
     $con = initializeConnection();

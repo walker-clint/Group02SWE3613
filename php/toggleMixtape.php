@@ -15,8 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $title = $song->title;
         $approved = $song->approved;
         $youtubeLink = $song->youtubeLink;
-        $youtubeApproved = $song->youtubeApproved;
-        {//get user's mix tape count
+        $youtubeApproved = $song->youtubeApproved; {//get user's mix tape count
             $conMixtapeCount = initializeConnection();
             $sqlCount = "SELECT COUNT(*) as 'count' FROM tbl_mixtape WHERE user_id = " . $userId;
             $mixResultCount = mysqli_query($conMixtape, $sqlCount);
