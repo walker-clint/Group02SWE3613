@@ -81,7 +81,15 @@
                         <h1>Your Song List</h1>
                     </div>
                     <div class="well bs-component">
-                        <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a song</span></a>
+                        <?php
+                        $userMixtape = getMixtape($_SESSION['user_id']);
+                        if (count($userMixtape) >= 10) {
+                            ?>
+                            <p>You have a full mixtape! Remove some songs to add more!</p>
+                            <?php
+                        }
+                        ?>
+                        <a href='songForm.php'><span class='well-1 btn btn-label-right btn-primary'>Add a new song!</span></a>
 
 
                         <div class="form-horizontal" action="" method="POST">
@@ -112,7 +120,6 @@
                                             <tbody>
                                                 <?php
                                                 $increment = 1;
-                                                $userMixtape = getMixtape($_SESSION['user_id']);
                                                 foreach ($userMixtape as $songId) {
                                                     $song = getSongById($songId);
                                                     $songTitle = $song->title;
