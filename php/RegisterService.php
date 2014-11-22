@@ -24,7 +24,6 @@ $_SESSION['secret_a']=$secret_a;
 	
 	
 	 if ($resp->is_valid) {
-		 if($firstname && $lastname && $email && $username && $password){
 	$conLogin = initializeConnection();
             $sql_username_check = "SELECT user_id FROM tbl_user WHERE login='$username' LIMIT 1";
 			$result = mysqli_query($conLogin, $sql_username_check);
@@ -45,33 +44,14 @@ $_SESSION['secret_a']=$secret_a;
 	
 	
 			}
-			
 	 }else{
-		
-		 $error = "You did not submit the following required information!<br /><br />";
-            if (!$firstname) {
-                $error .= "--- First Name<br />";
-            } if (!$lastname) {
-                $error .= "--- Last Name<br />";
-            }if (!$email) {
-                $error .= "--- Email Address<br />";
-            }if (!$username) {
-                $error .= "--- Username<br />";
-            }if (!$password) {
-                $error .= "--- Password<br />";
-            }
-			 
-			$_SESSION['error']=$error;
-			header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
-		 }
-	 }else{
-		  $error =  '<span class="error">Captia is not correct<br></span>';
+		  $error =  'Recaptcha entry is invalid';
 		  $_SESSION['error']=$error;
 	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 		 
 	 }
 } else {
-    $error =  '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
+    $error =  'DID NOT CONNECT TO SERVER';
 	$_SESSION['error']=$error;
 	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 }

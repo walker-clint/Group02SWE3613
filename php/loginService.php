@@ -6,7 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // username and password sent from form
     $myusername = htmlspecialchars($_POST['username']);
     $mypassword = htmlspecialchars($_POST['password']);
-
+$_SESSION['myusername'] = $myusername;
+		$_SESSION['mypassword'] = $mypassword;
     $conLogin = initializeConnection();
 
     $sql = "SELECT user_id, admin FROM tbl_user WHERE login = '$myusername' and password = '$mypassword'";
@@ -22,15 +23,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // session_register("myusername");
         //$_SESSION['login_user'] = $myusername;
         $_SESSION['user_id'] = $userId;
+		
         if ($admin == 1) {
             header('Location: http://' . $_SERVER['SERVER_NAME'] . '/admin_main_menu.php');
         } else {
             header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
         }
     } else {
-        $error = '<span class="error">Your Login Name or Password is invalid<br></span>';
+        $error = 'Your Login Name or Password is invalid';
         header('Location: http://' . $_SERVER['SERVER_NAME'] . '/login.php');
     }
 } else {
-    $error = '<span class="error">DID NOT CONNECT TO SERVER<br></span>';
+    $error = 'DID NOT CONNECT TO SERVER';
 }
