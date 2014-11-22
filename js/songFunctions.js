@@ -48,7 +48,7 @@ function changeInfo(id, title, artist, genre, flagged) {
             + '<br>Genre: ' + genre;
 
     //info += '<br><a href="/php/toggleMixtape.php?songId=' + id + '">Add/remove this song from your Mixtape</a>';
-    info += '<br><a href=\'/php/toggleMixtape.php?songId=' + id + '><div class="btn btn-warning">Add/Remove</div></a> from my playlist';
+    info += '<br><a href="/php/toggleMixtape.php?songId=' + id + '"><div class="btn btn-warning">Add/Remove</div></a> from my playlist';
 
     if (flagged != 1) {
         var color = 'red';
@@ -60,7 +60,7 @@ function changeInfo(id, title, artist, genre, flagged) {
                 + message + '</form>' + '</a1>';
     } else {
         info += '<br><a1 class = "well-2" style=font-size: .75em">'
-                + '<img src = "/img/warning.png" height = "20px" width = "20px"/>'
+                + '<img src = "/img/warning.png" height = "20px" width = "20px" />'
                 + 'This song has been flagged as being inappropriate or having incorrect information</a1>';
     }
 
