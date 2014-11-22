@@ -31,11 +31,6 @@ if (!empty($_SESSION['user_id'])) {
             </div>
 			</a>
             </li>
-			 <li class="btn-label-right">
-			<div class="well-1 btn btn-primary">
-            ' . "Your Song List" . '
-            </div>
-            </li>
             <li class="btn-label-right">
 			<a href="http://' . $_SERVER['SERVER_NAME'] . '/php/logoutService.php">
             <div class="well-1 btn btn-warning">
@@ -56,7 +51,7 @@ if (!empty($_SESSION['user_id'])) {
              <li class="btn-label-right">
             <a href="user_song_list.php">
 			<div class="well-1 btn btn-primary">
-            ' . $full_name . "&#39;s Song List" . '
+            ' . "Your Song List" . '
             </div>
 			</a>
             </li>
