@@ -5,7 +5,6 @@
 session_start();
 require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; 
 require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
-$error = $_SESSION['error'];
 $firstname = $_SESSION['firstname'];
 $lastname = $_SESSION['lastname'];
 $email = $_SESSION['email'];
@@ -31,7 +30,6 @@ $secret_a = $_SESSION['secret_a'];
   <h1 align="center">Registration</h1>
   <div class="well-1 bs-component">
   <form class="form-horizontal" action="php/RegisterService.php" method="POST">
-    <font color="#FF0000"><?php echo $error; ?></font> <br>
     <div class="form-group">
       <label for="firstname" class="col-xs-4 col-md-4 control-label"
                                                            align="right">First Name</label>

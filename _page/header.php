@@ -110,11 +110,11 @@ if (!empty($_SESSION['user_id'])) {
             ?><div class = "row">
                 <div id = "center1-column" class = "col-sm-4"></div>
                 <div id = "center1-column" class = "col-sm-4">
-                    <div class = "well bs-component">
-                        <font color="#"><?php
+                    <div class = "well bs-component" align="center">
+                        <strong><font color="#"><?php
                         echo$_SESSION['error'];
                         $_SESSION['error'] = '';
-                        ?></font>
+                        ?></font></strong>
 
                     </div>
                 </div>
