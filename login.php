@@ -1,15 +1,13 @@
-
-<?php
-session_start();
-$error = $_SESSION['error'];
-$myusername = $_SESSION['myusername'];
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <?php
+		session_start();
         require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
+		require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
+		
+$error = $_SESSION['error'];
+$myusername = $_SESSION['myusername'];
         ?>
     </head>
     <body>
@@ -29,7 +27,7 @@ $myusername = $_SESSION['myusername'];
                         <h1 align="center">Login</h1>
                         <div class="well-1 bs-component">
                             <form class="form-horizontal" action="php/loginService.php" method="POST">
-                                <!--<font color="#FF0000"><?php echo $error; ?></font> <br>-->
+                                <font color="#FF0000"><?php echo $error; ?></font> <br>
                                 <div class="form-group">
                                     <label for="user_name" class="col-lg-4 control-label">User Name</label>
                                     <div class="col-lg-8">
