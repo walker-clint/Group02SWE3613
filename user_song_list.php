@@ -152,6 +152,7 @@
         <!--End Display User Song List-->
         <div id="right-space" class="col-sm-1">
             <img src="img/loud-speaker-R-md.png" class="img-responsive" align="right"/>
+            <img src="img/mad.png" class="img-responsive" align="right"/>
         </div>
     </div>
 </div>
