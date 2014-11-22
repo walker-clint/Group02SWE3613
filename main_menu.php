@@ -100,7 +100,7 @@
     <!--End Middle-->
     <div class="row">
         <div id="left-column" class="col-sm-2">
-            <img src="img/loud-speaker-L-md.png" class="img-responsive" align="right"/>
+           
         </div>
         <div id="left-ad" class="col-sm-2">
             <div class="well bs-component">
@@ -173,7 +173,7 @@
             </div>
         </div>
         <div id="left-column" class="col-sm-2">
-            <img src="img/loud-speaker-R-md.png" class="img-responsive" align="right"/>
+
         </div>
     </div>
 
