@@ -62,7 +62,7 @@
 
                         foreach ($mixTapeList as $songInt) {
                             if ($increment < 10){
-                                $incDisplay = $increment . ":";
+                                $incDisplay = "0" . $increment . " :";
                             } else {
                                 $incDisplay = $increment . ":";
                             }
