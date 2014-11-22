@@ -5,7 +5,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 if ($_POST) {
     $q = $_POST['search'];
     if (count($q) == 0) {
-        $songList = getApprovedSongs_notOnMixtape($_SESSION['user_id']);
+       // $songList = getApprovedSongs_notOnMixtape($_SESSION['user_id']);
         ;
     } else {
         $songList = getSongsBySearch_notOnMixtape($q, $_SESSION['user_id']);
