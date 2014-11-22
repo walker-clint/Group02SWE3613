@@ -91,7 +91,7 @@
             </div>
         </div>
         <div id="left-column" class="col-sm-1">
-            <img src="img/loud-speaker-R-md.png" class="img-responsive" align="right"/>
+<!--            <img src="img/loud-speaker-R-md.png" class="img-responsive" align="right"/>-->
         </div>
     </div>
 
