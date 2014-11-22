@@ -2521,8 +2521,8 @@ http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-respo
 
 .captcha-container {
     position: inherit;
-    padding-bottom: 5%;
-    padding-top: 5%;
+    padding-bottom: 1%;
+    padding-top: 1%;
     overflow: auto;
     width: auto;
 }
