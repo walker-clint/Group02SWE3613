@@ -5,8 +5,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
 $indexLink = 'index.php';
 $page = getCurrentPageURL();
 
+//array of buttons to display on the page
 $buttons = array();
 
+//usable buttons, more are below after some values are set
 $buttonSongList = '<li class="btn-label-right"><a href="user_song_list.php">'
         . '<div class="well-1 btn btn-primary">Your Song List</div></a></li>';
 $buttonLogin = ' <li class="btn-label-right"><a data-toggle="modal" href="#myModal1">'
@@ -31,6 +33,7 @@ if (!empty($_SESSION['user_id'])) {//logged in
         $indexLink = 'admin_main_menu.php';
     }
 
+    //these buttons need values set to work
     $buttonHome = '<li class="btn-label-right"><a href="' . $indexLink . '">'
             . '<div class="well-1 btn btn-primary">HOME</div></a></li>';
     $buttonLogOut = '<li class="btn-label-right"><a href="http://' . $_SERVER['SERVER_NAME'] . '/php/logoutService.php">'

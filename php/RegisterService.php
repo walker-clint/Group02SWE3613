@@ -3,7 +3,6 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/php/connection.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/recaptchalib.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/setQueries.php';
-//session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $privatekey = "6LcMdf0SAAAAAGoCSMb54T2MbWvgxaNpnDqhLwSj";
     $resp = recaptcha_check_answer($privatekey, $_SERVER["REMOTE_ADDR"], htmlspecialchars($_POST["recaptcha_challenge_field"]), htmlspecialchars($_POST["recaptcha_response_field"]));
@@ -14,14 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST['email']);
     $secret_q = htmlspecialchars($_POST['secret_q']);
     $secret_a = htmlspecialchars($_POST['secret_a']);
-//    $_SESSION['username'] = $username;
-//    $_SESSION['password'] = $password;
-//    $_SESSION['firstname'] = $firstname;
-//    $_SESSION['email'] = $email;
-//    $_SESSION['lastname'] = $lastname;
-//    $_SESSION['secret_q'] = $secret_q;
-//    $_SESSION['secret_a'] = $secret_a;
-
 
     if ($resp->is_valid) {
         $conLogin = initializeConnection();
