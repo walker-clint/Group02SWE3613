@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * This takes in POSTs from a registration and attempts to add it to the DB.
+ * 
+ * If successful it logs in the user (by setting $_SESSION['user_id']).
+ */
 require_once $_SERVER['DOCUMENT_ROOT'] . '/php/connection.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/recaptchalib.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/php/setQueries.php';
@@ -25,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $id = mysql_insert_id();
             // Add user info into the database table, claim your fields then values 
             $_SESSION['user_id'] = addUser($username, $password, $email, $firstname, $lastname, 0, $secret_q, $secret_a);
+            $_SESSION['full_name'] = $firstname . ' ' . $lastname;
             header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
             die();
         } else {

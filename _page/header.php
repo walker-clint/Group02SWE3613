@@ -1,12 +1,15 @@
 <?php
-$display_name = "";
-$toplinks = "";
-require_once $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
-$indexLink = 'index.php';
-$page = getCurrentPageURL();
+/**
+ * The header loaded on all pages of the site.
+ */
 
-//array of buttons to display on the page
-$buttons = array();
+$display_name = "";
+//$toplinks = "";
+require_once $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
+$indexLink = 'index.php';//default the "Index" or "Home" button to this var
+$page = getCurrentPageURL();//get the name of the loading page
+
+$buttons = array();//array of buttons to display on the page
 
 //usable buttons, more are below after some values are set
 $buttonSongList = '<li class="btn-label-right"><a href="user_song_list.php">'
@@ -16,17 +19,16 @@ $buttonLogin = ' <li class="btn-label-right"><a data-toggle="modal" href="#myMod
 $buttonRegister = '<li class="btn-label-right"><a data-toggle="modal" href="#myModal2">'
         . '<div class="well-1 btn btn-primary">Register</div></a></li>';
 
-if (!empty($_SESSION['user_id'])) {//logged in
-    $id = $_SESSION['user_id'];
+if (!empty($_SESSION['user_id'])) {//if logged in
+    $id = $_SESSION['user_id'];//get the user's id so we can get their name
 
-    $con = initializeConnection();
-    $sql = mysqli_query($con, "SELECT * FROM tbl_user WHERE user_id = '$id'");
+//    $con = initializeConnection();
+//    $sql = mysqli_query($con, "SELECT * FROM tbl_user WHERE user_id = '$id'");
 
-
-    $full_name = '';
-    while ($row = mysqli_fetch_array($sql)) {
-        $full_name = $row["first_name"] . " " . $row["last_name"];
-    }
+    $full_name = $_SESSION['full_name'];
+//    while ($row = mysqli_fetch_array($sql)) {
+//        $full_name = $row["first_name"] . " " . $row["last_name"];
+//    }
     $indexLink = 'main_menu.php';
 
     if ($userType == 'admin') {
@@ -66,7 +68,7 @@ if (!empty($_SESSION['user_id'])) {//logged in
 
         <div class="row">
             <div align="center">
-                <?php echo $display_name . $toplinks; ?>
+                <?php echo $display_name; ?>
                 <ul class="nav navbar-nav pull-right panel-menu">
                     <?php
                     foreach ($buttons as $button) {

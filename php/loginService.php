@@ -10,12 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //    $_SESSION['mypassword'] = $mypassword;
     $conLogin = initializeConnection();
 
-    $sql = "SELECT user_id, admin FROM tbl_user WHERE login = '$myusername' and password = '$mypassword'";
+    $sql = "SELECT user_id, admin, first_name, last_name FROM tbl_user WHERE login = '$myusername' and password = '$mypassword'";
     $result = mysqli_query($conLogin, $sql);
 
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $userId = $row['user_id'];
     $admin = $row['admin'];
+    $firstname = $row['first_name'];
+    $lastname = $row['last_name'];
     $count = mysqli_num_rows($result);
 
     // If result matched $myusername and $mypassword, table row must be 1 row
@@ -23,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // session_register("myusername");
         //$_SESSION['login_user'] = $myusername;
         $_SESSION['user_id'] = $userId;
+        $_SESSION['full_name'] = $firstname . ' ' . $lastname;
 
         if ($admin == 1) {
             header('Location: http://' . $_SERVER['SERVER_NAME'] . '/admin_main_menu.php');
