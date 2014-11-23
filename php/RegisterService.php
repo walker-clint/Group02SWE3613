@@ -39,7 +39,7 @@ $_SESSION['secret_a']=$secret_a;
 			else{
 				   $error =  '<span class="error">The username is already in use inside our system. Please try another.</span>';
 				   $_SESSION['error']=$error;
-				   header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
+				   header('Location: http://' . $_SERVER['SERVER_NAME']);
 	
 	
 	
@@ -47,11 +47,11 @@ $_SESSION['secret_a']=$secret_a;
 	 }else{
 		  $error =  'Recaptcha entry is invalid';
 		  $_SESSION['error']=$error;
-	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
+	header('Location: http://' . $_SERVER['SERVER_NAME']);
 		 
 	 }
 } else {
     $error =  'DID NOT CONNECT TO SERVER';
 	$_SESSION['error']=$error;
-	header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
+	header('Location: http://' . $_SERVER['SERVER_NAME']);
 }
