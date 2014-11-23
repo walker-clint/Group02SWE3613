@@ -12,9 +12,6 @@ $secret_q = $_SESSION['secret_q'];
 $secret_a = $_SESSION['secret_a'];
 $myusername = $_SESSION['myusername'];
 }
-if($myusername =="" && $firstname ==""){
-	session_unset();
-	}
 
 if (!empty($_SESSION['user_id'])) {
     $id = $_SESSION['user_id'];
