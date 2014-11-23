@@ -4,12 +4,17 @@ $toplinks = "";
 require_once $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
 $indexLink = 'index.php';
 session_start();
+if(!empty($_SESSION['error'])){
 $firstname = $_SESSION['firstname'];
 $lastname = $_SESSION['lastname'];
 $email = $_SESSION['email'];
 $secret_q = $_SESSION['secret_q'];
 $secret_a = $_SESSION['secret_a'];
 $myusername = $_SESSION['myusername'];
+}
+if($myusername =="" && $firstname ==""){
+	session_unset();
+	}
 
 if (!empty($_SESSION['user_id'])) {
     $id = $_SESSION['user_id'];
