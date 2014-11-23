@@ -100,12 +100,13 @@
                     <div class="captcha-container" align="center">
                         <div class="captcha-container frame">
                             <?php
-                                            if (false !== strpos($page, 'register.php')) {
-                                            } else {
-                            require_once $_SERVER['DOCUMENT_ROOT'] . ("/recaptchalib.php");
-                            $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
-                            echo recaptcha_get_html($publickey);
-                                            }
+                            if (strpos($page, 'egister.php') > 0 && $secondCap == false) {
+                                $secondCap = true;
+                            } else {
+                                require_once $_SERVER['DOCUMENT_ROOT'] . ("/recaptchalib.php");
+                                $publickey = "6LcMdf0SAAAAAGjxpNWGXfNDgYGk-v-dxZSoUxrg"; // you got this from the signup page
+                                echo recaptcha_get_html($publickey);
+                            }
                             ?>
                         </div>
                     </div>

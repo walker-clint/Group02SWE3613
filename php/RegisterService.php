@@ -36,6 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
     }
 } else {
-    $_SESSION['error'] = 'DID NOT CONNECT TO SERVER';
+    //$_SESSION['error'] = 'DID NOT CONNECT TO SERVER';
     //header('Location: http://' . $_SERVER['SERVER_NAME'] . '/register.php');
 }
