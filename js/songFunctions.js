@@ -135,7 +135,7 @@ function changeInfo_admin(id, title, artist, genre, approved, flagged) {
     var message = 'Flag song (incorrect information or inappropriate)';
     if (flagged == 1) {
         color = 'green';
-        message = 'Unflag image';
+        message = 'Unflag song';
     }
     info += '<a1 class="well-2"><form method="POST" action = "./php/menu_functions.php">'
             + '<input type="hidden" name="actionType" value="toggleFlag">'
