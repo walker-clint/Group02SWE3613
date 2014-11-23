@@ -13,14 +13,14 @@
                             <h1 align="center">Login</h1>
 
                             <div class="well-2 bs-component">
-                                <form class="form-horizontal" action="php/loginService.php" method="POST">
+                                <form class="form-horizontal" action="/php/loginService.php" method="POST">
                                     <div class="form-group">
                                         <label for="user_name" class="col-sm-4 col-md-4 control-label">User
                                             Name</label>
 
                                         <div class="col-sm-8 col-md-8">
                                             <input type="text" class="form-control-1" id="username"
-                                                   name="username" placeholder="User Name" value='<?php echo "$myusername" ?>' required>
+                                                   name="username" placeholder="User Name" value='<?php // echo "$myusername"       ?>' required>
                                         </div>
                                     </div>
                                     <div class="form-group">
