@@ -3,7 +3,12 @@ $display_name = "";
 $toplinks = "";
 require_once $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
 $indexLink = 'index.php';
-
+session_start();
+$firstname = $_SESSION['firstname'];
+$lastname = $_SESSION['lastname'];
+$email = $_SESSION['email'];
+$secret_q = $_SESSION['secret_q'];
+$secret_a = $_SESSION['secret_a'];
 
 if (!empty($_SESSION['user_id'])) {
     $id = $_SESSION['user_id'];
