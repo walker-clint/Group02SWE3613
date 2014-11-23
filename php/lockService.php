@@ -26,7 +26,7 @@ if ($session_admin == '1') {
 
 //if ($adminPage != 0 && $session_admin != '1') {
 if ($adminPage != 0 && $userType != 'admin') {
-    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
+    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/user_song_list.php');
     die();
 } else if ($userType == '') {//not logged in
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/login.php');
