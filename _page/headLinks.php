@@ -1,3 +1,4 @@
+<!--links and dependencies for all pages-->
 <meta charset="utf-8">
 <title>Crazy Leroy's Music</title>
 <meta name="description" content="description">

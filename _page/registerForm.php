@@ -1,3 +1,4 @@
+<!--Registration form-->
 <div align="center">
     <!--Start Content-->
     <form class="form-horizontal" action="register.php" method="POST">

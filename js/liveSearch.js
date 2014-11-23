@@ -1,5 +1,3 @@
-//<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
-//<script type="text/javascript">
 $(function () {
     $(".search").keyup(function ()
     {
@@ -36,4 +34,3 @@ $(function () {
         jQuery("#result").fadeIn();
     });
 });
-//</script>
