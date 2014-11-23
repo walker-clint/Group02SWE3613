@@ -5,6 +5,8 @@
 		session_start();
         require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
 		require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
+		    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
 		
 $error = $_SESSION['error'];
 $myusername = $_SESSION['myusername'];
