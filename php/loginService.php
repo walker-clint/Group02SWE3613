@@ -32,10 +32,10 @@ $_SESSION['mypassword'] = $mypassword;
     } else {
         $error = 'Your Login Name or Password is invalid';
 		$_SESSION['error'] = $error;
-        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/login.php');
+        header('Location: http://' . $_SERVER['SERVER_NAME']);
     }
 } else {
     $error = 'DID NOT CONNECT TO SERVER';
 	$_SESSION['error'] = $error;
-        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/login.php');
+        header('Location: http://' . $_SERVER['SERVER_NAME']);
 }

@@ -9,6 +9,7 @@ $lastname = $_SESSION['lastname'];
 $email = $_SESSION['email'];
 $secret_q = $_SESSION['secret_q'];
 $secret_a = $_SESSION['secret_a'];
+$myusername = $_SESSION['myusername'];
 
 if (!empty($_SESSION['user_id'])) {
     $id = $_SESSION['user_id'];
@@ -148,7 +149,7 @@ if (!empty($_SESSION['user_id'])) {
 
                                                 <div class="col-sm-8 col-md-8">
                                                     <input type="text" class="form-control-1" id="username"
-                                                           name="username" placeholder="User Name" required>
+                                                           name="username" placeholder="User Name" value='<?php echo "$myusername" ?>' required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
