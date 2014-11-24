@@ -6,11 +6,11 @@ $display_name = "";
 //$toplinks = "";
 require_once $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
 $indexLink = 'index.php'; //default the "Index" or "Home" button to this var
-$page = getCurrentPageURL(); //get the name of the loading page
+//$page = getCurrentPageURL(); //get the name of the loading page
+$page = basename($_SERVER['PHP_SELF']);
 
 $buttons = array(); //array of buttons to display on the page
 //usable buttons, more are below after some values are set
-
 //the register button, opens registration modal, for non-logged in users
 $buttonRegister = '<li class="btn-label-right"><a data-toggle="modal" href="#myModal2">'
         . '<div class="well-1 btn btn-primary">Register</div></a></li>';
@@ -27,6 +27,9 @@ $buttonSongList = '<li class="btn-label-right"><a href="user_song_list.php">'
 $buttonLogOut = '<li class="btn-label-right"><a href="http://' . $_SERVER['SERVER_NAME'] . '/php/logoutService.php">'
         . '<div class="well-1 btn btn-warning">Log Out</div></a></li>';
 
+$buttonHome = '<li class="btn-label-right"><a href="' . $indexLink . '">'
+        . '<div class="well-1 btn btn-primary">HOME</div></a></li>';
+
 if (!empty($_SESSION['user_id'])) {//if logged in
     $id = $_SESSION['user_id']; //get the user's id so we can get their name
     $full_name = $_SESSION['full_name'];
@@ -37,7 +40,6 @@ if (!empty($_SESSION['user_id'])) {//if logged in
     }
 
     //these buttons need $indexLink set to work
-    
     //the home button, goes to the user's index page
     $buttonHome = '<li class="btn-label-right"><a href="' . $indexLink . '">'
             . '<div class="well-1 btn btn-primary">HOME</div></a></li>';
@@ -58,6 +60,9 @@ if (!empty($_SESSION['user_id'])) {//if logged in
         array_push($buttons, $buttonRefresh, $buttonSongList, $buttonLogOut);
     }
 } else {//not logged in
+    if (strpos($page, 'egister.php') > 0) {
+        $buttonRegister = $buttonHome;
+    }
     array_push($buttons, $buttonLogin, $buttonRegister);
 }
 ?>
@@ -84,7 +89,7 @@ if (!empty($_SESSION['user_id'])) {//if logged in
         </div>
 
         <?php
-        //This displays any feedback messages to the user in a pop-up box
+//This displays any feedback messages to the user in a pop-up box
         if (!empty($_SESSION['error'])) {
             ?><div class = "row">
                 <div id = "center1-column" class = "col-sm-4"></div>
@@ -107,7 +112,10 @@ if (!empty($_SESSION['user_id'])) {//if logged in
             ?>
             <!--Modal 2 -->
             <?php
-            require_once $_SERVER['DOCUMENT_ROOT'] . ("/_page/MyModal2.php");
+            $page = basename($_SERVER['PHP_SELF']);
+            if (!strpos($page, 'egister.php') > 0) {
+                require_once $_SERVER['DOCUMENT_ROOT'] . ("/_page/MyModal2.php");
+            }
         }
         ?>
     </div>
