@@ -1,20 +1,23 @@
+<?php
+require $_SERVER['DOCUMENT_ROOT'] . '/php/connection.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <?php
-		session_start();
+        session_start();
         require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
-		require $_SERVER['DOCUMENT_ROOT'] . ("/php/connection.php");
-		    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
-		
-$error = $_SESSION['error'];
-$myusername = $_SESSION['myusername'];
+
+
+//        $error = $_SESSION['error'];
+        $myusername = $_SESSION['myusername'];
         ?>
     </head>
     <body>
         <!--Start Header-->
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/header.php'; ?>
         <!--End Header--> 
 
         <!--Start Middle-->
@@ -51,7 +54,7 @@ $myusername = $_SESSION['myusername'];
                 </div>
             </div>
             <!--End Content-->
-                <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/footer.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/footer.php'; ?>
             <div id="right-column" class="col-sm-4"></div>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
