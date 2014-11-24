@@ -33,12 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
         }
     } else {
-        $error = 'Your Login Name or Password is invalid';
-        $_SESSION['error'] = $error;
-        header('Location: http://' . $_SERVER['SERVER_NAME']);
+        $_SESSION['error'] = 'Your Login Name or Password is invalid';
+        header('Location: http://' . $_SERVER['SERVER_NAME'].'/index.php');
     }
 } else {
-    $error = 'DID NOT CONNECT TO SERVER';
-    $_SESSION['error'] = $error;
+    $_SESSION['error'] = 'DID NOT CONNECT TO SERVER';
     header('Location: http://' . $_SERVER['SERVER_NAME']);
 }
