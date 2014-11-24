@@ -210,13 +210,14 @@ function getRandApprovedSongs_notOnMixtape($userIdInc) {
             . '@lim := @lim - 1 '
             . 'FROM tbl_song song_table '
             . 'WHERE (@cnt := @cnt -1) '
+            . 'AND song_table.song_id NOT IN (SELECT tbl_mixtape.song_id FROM tbl_mixtape WHERE tbl_mixtape.user_id = ? ) '
             . 'AND RAND() < @lim / @cnt '
             . 'AND approved = 1 '
             . ') i';
 
     $stmt = $con->prepare($query);
 
-    //$stmt->bind_param('i', $userId);
+    $stmt->bind_param('i', $userId);
     $stmt->execute();
     $stmt->bind_result($id, $song_title, $app, $flag, $you, $youApp);
     $returnArray = array();
