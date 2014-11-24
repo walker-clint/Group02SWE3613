@@ -1,14 +1,15 @@
+<?php
+session_start();
+require $_SERVER['DOCUMENT_ROOT'] . '/php/connection.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/php/RegisterService.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <?php
-        session_start();
-        require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
-        require $_SERVER['DOCUMENT_ROOT'] . '/php/connection.php';
-        include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
-        include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
-        require $_SERVER['DOCUMENT_ROOT'] . '/php/RegisterService.php';
-        ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php'; ?>
+
     </head>
     <body>
         <!--Start Header-->
