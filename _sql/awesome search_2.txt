@@ -1,0 +1,22 @@
+SELECT tbl_song.song_id, title, approved, flagged, youtube, youtube_approved
+FROM tbl_song
+WHERE
+(
+	title LIKE ?
+	OR
+	tbl_song.song_id IN 
+		(
+		SELECT tbl_song_artist.song_id
+		FROM tbl_song_artist
+		JOIN tbl_artist ON tbl_artist.artist_id = tbl_song_artist.artist_id
+		WHERE tbl_artist.name LIKE ?
+		)
+)
+AND tbl_song.song_id NOT IN
+		(
+		SELECT tbl_mixtape.song_id
+		FROM tbl_mixtape
+		WHERE tbl_mixtape.user_id = ?
+		)
+AND tbl_song.approved = 1
+GROUP BY song_id ORDER BY title

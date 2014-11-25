@@ -1,0 +1,22 @@
+SELECT song_id, title, approved, flagged, youtube, youtube_approved
+FROM
+	(
+	SELECT @cnt := count(*) +1,
+	@lim := 10
+	FROM tbl_song
+	) vars
+JOIN
+	(
+	SELECT song_table.*,
+	@lim := @lim - 1
+	FROM tbl_song song_table
+	WHERE (@cnt := @cnt -1)
+	AND song_table.song_id NOT IN
+		(
+		SELECT tbl_mixtape.song_id
+		FROM tbl_mixtape
+		WHERE tbl_mixtape.user_id = ?
+		)
+	AND RAND() < @lim / @cnt
+	AND approved = 1
+	) i
