@@ -34,7 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
 		$_SESSION['error'] = 'Your Login Name or Password is invalid';
-        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/login.php');
     }
 } else {
     $_SESSION['error'] = 'DID NOT CONNECT TO SERVER';
