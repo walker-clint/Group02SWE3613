@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header('Location: http://' . $_SERVER['SERVER_NAME'] . '/main_menu.php');
         }
     } else {
-        $_SESSION['error'] = 'Your Login Name or Password is invalid';
+		$_SESSION['error'] = 'Your Login Name or Password is invalid';
         header('Location: http://' . $_SERVER['SERVER_NAME']);
     }
 } else {
