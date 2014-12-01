@@ -61,8 +61,10 @@ if (!empty($_SESSION['user_id'])) {//if logged in
         array_push($buttons, $buttonRefresh, $buttonSongList, $buttonLogOut);
     }
 } else {//not logged in
-    if (strpos($page, 'egister.php') > 0) {
+    if (strpos($page, 'register.php') > 0) {
         $buttonRegister = $buttonHome;
+    }else if (strpos($page, 'login.php') > 0) {
+        $buttonLogin = $buttonHome;
     }
     array_push($buttons, $buttonLogin, $buttonRegister);
 }
