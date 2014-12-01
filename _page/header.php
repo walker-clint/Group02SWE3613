@@ -48,7 +48,8 @@ if (!empty($_SESSION['user_id'])) {//if logged in
             . '<div class="well-1 btn btn-primary">Refresh Page</div></a></li>';
 
     //the following if's set which buttons a user will see
-    if ($page == "http://group02p2.swe3613.com/user_song_list.php") {
+    //if ($page == "http://group02p2.swe3613.com/user_song_list.php") {
+    if (strpos($page, 'ser_song_list.php') > 0) {
         if (!empty($full_name)) {
             $display_name = '<div align="center"> <h3>' . "Rock On! : " . $full_name . '</h3> </div>';
         }
