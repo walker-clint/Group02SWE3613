@@ -1,7 +1,7 @@
 <!--Registration form-->
 <div align="center">
     <!--Start Content-->
-    <form class="form-horizontal" action="register.php" method="POST">
+    <form class="form-horizontal" action="login.php" method="POST">
         <h1>Registration</h1>
 
         <div class="row">
