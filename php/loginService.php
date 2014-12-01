@@ -26,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //$_SESSION['login_user'] = $myusername;
         $_SESSION['user_id'] = $userId;
         $_SESSION['full_name'] = $firstname . ' ' . $lastname;
-		$_SESSION['error'] = '';
         if ($admin == 1) {
             header('Location: http://' . $_SERVER['SERVER_NAME'] . '/admin_main_menu.php');
         } else {
