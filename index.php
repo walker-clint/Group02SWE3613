@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--<base href="../">-->
-    <?php
-    require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
+    <?php require $_SERVER['DOCUMENT_ROOT'] . '/_page/headLinks.php';
     include_once $_SERVER['DOCUMENT_ROOT'] . '/php/queries.php';
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php';
-    echo '<script src="http://' . $_SERVER['SERVER_NAME'] . '/js/songFunctions.js"></script>';
-    ?>
-
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/objects.php'; ?>
+    <script src="./js/songFunctions.js"></script>
 </head>
 <body>
 <!--Start Header-->
